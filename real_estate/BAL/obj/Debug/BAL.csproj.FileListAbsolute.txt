@@ -1,0 +1,7 @@
+C:\GITHUB\realEstate\real_estate\BAL\bin\Debug\BAL.dll
+C:\GITHUB\realEstate\real_estate\BAL\bin\Debug\BAL.pdb
+C:\GITHUB\realEstate\real_estate\BAL\bin\Debug\DAL.dll
+C:\GITHUB\realEstate\real_estate\BAL\bin\Debug\DAL.pdb
+C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.dll
+C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.pdb

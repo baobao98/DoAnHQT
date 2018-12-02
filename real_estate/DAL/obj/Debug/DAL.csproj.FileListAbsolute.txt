@@ -1,0 +1,6 @@
+C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll.config
+C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll
+C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.pdb
+C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.dll
+C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.pdb
