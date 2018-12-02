@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealEstateEntityStoreContainer" CdmEntityContainer="RealEstateEntities">
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="RealEstateEntity.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
+          <ScalarProperty Name="type_ac" ColumnName="type_ac" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="advertisements">
+      <EntityTypeMapping TypeName="RealEstateEntity.advertisement">
+        <MappingFragment StoreEntitySet="advertisement">
+          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+          <ScalarProperty Name="name_ad" ColumnName="name_ad" />
+          <ScalarProperty Name="information" ColumnName="information" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="appointments">
+      <EntityTypeMapping TypeName="RealEstateEntity.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="areas">
+      <EntityTypeMapping TypeName="RealEstateEntity.area">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="RealEstateEntity.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="id_ct" ColumnName="id_ct" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="RealEstateEntity.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+          <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+          <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="districts">
+      <EntityTypeMapping TypeName="RealEstateEntity.district">
+        <MappingFragment StoreEntitySet="district">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="RealEstateEntity.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="id_emp" ColumnName="id_emp" />
+          <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+          <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+          <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="account" ColumnName="account" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="RealEstateEntity.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="id_proj" ColumnName="id_proj" />
+          <ScalarProperty Name="name_project" ColumnName="name_project" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="license_number" ColumnName="license_number" />
+          <ScalarProperty Name="dateOfIssue" ColumnName="dateOfIssue" />
+          <ScalarProperty Name="PlaceOfIssue" ColumnName="PlaceOfIssue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="properties">
+      <EntityTypeMapping TypeName="RealEstateEntity.property">
+        <MappingFragment StoreEntitySet="property">
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="id_district" ColumnName="id_district" />
+          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="realEstateTypes">
+      <EntityTypeMapping TypeName="RealEstateEntity.realEstateType">
+        <MappingFragment StoreEntitySet="realEstateType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="townRegions">
+      <EntityTypeMapping TypeName="RealEstateEntity.townRegion">
+        <MappingFragment StoreEntitySet="townRegion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trannsactions">
+      <EntityTypeMapping TypeName="RealEstateEntity.trannsaction">
+        <MappingFragment StoreEntitySet="trannsaction">
+          <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typeAccounts">
+      <EntityTypeMapping TypeName="RealEstateEntity.typeAccount">
+        <MappingFragment StoreEntitySet="typeAccount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

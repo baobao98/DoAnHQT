@@ -9,10 +9,6 @@ namespace BAL
 {
     public class BALNV
     {
-        QLBDSDataContext dbs = new QLBDSDataContext();
-        public List<NHAN_VIEN> getAllEmployee()
-        {
-            return dbs.NHAN_VIENs.ToList();
-        }
+       
     }
 }
