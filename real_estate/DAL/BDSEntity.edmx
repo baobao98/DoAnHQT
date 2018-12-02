@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RealEstateEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nameAcc" Type="nvarchar" MaxLength="150" />
+          <Property Name="type_ac" Type="int" />
+          <Property Name="password" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="advertisement">
+          <Key>
+            <PropertyRef Name="id_ad" />
+          </Key>
+          <Property Name="id_ad" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
+          <Property Name="information" Type="text" />
+          <Property Name="discount" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="appointment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="id_cus" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="id_town_region" Type="int" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id_ct" />
+          </Key>
+          <Property Name="id_ct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id_cus" />
+          </Key>
+          <Property Name="id_cus" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name_cus" Type="nvarchar" MaxLength="255" />
+          <Property Name="email_cus" Type="varchar" MaxLength="50" />
+          <Property Name="phone_cus" Type="varchar" MaxLength="15" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="create_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="district">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" />
+          <Property Name="id_area" Type="int" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id_emp" />
+          </Key>
+          <Property Name="id_emp" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name_emp" Type="nvarchar" MaxLength="255" />
+          <Property Name="email_emp" Type="varchar" MaxLength="50" />
+          <Property Name="phone_emp" Type="varchar" MaxLength="15" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="account" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="id_proj" />
+          </Key>
+          <Property Name="id_proj" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name_project" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_real_estate_type" Type="int" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" />
+          <Property Name="license_number" Type="varchar" MaxLength="50" />
+          <Property Name="dateOfIssue" Type="date" />
+          <Property Name="PlaceOfIssue" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="id_prop" />
+          </Key>
+          <Property Name="id_prop" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_real_estate_type" Type="int" />
+          <Property Name="id_project" Type="varchar" MaxLength="10" />
+          <Property Name="floor" Type="int" />
+          <Property Name="room" Type="int" />
+          <Property Name="price" Type="float" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="id_town_region" Type="int" />
+          <Property Name="id_area" Type="int" />
+          <Property Name="id_district" Type="int" />
+          <Property Name="id_ad" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="realEstateType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="townRegion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="trannsaction">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="id_prop" Type="varchar" MaxLength="10" />
+          <Property Name="id_cus" Type="varchar" MaxLength="10" />
+          <Property Name="amount" Type="float" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="payment" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="typeAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfTypeAcc" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__account__type_ac__145C0A3F">
+          <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
+          <End Role="account" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeAccount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="type_ac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__appointme__id_cu__25869641">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__area__id_town_re__1CF15040">
+          <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+          <End Role="area" Type="Self.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__district__id_are__1FCDBCEB">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="district" Type="Self.district" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="district">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__employee__accoun__182C9B23">
+          <End Role="account" Type="Self.account" Multiplicity="0..1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__project__id_real__2B3F6F97">
+          <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
+          <End Role="project" Type="Self.project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="realEstateType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="id_real_estate_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_ad__35BCFE0A">
+          <End Role="advertisement" Type="Self.advertisement" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="advertisement">
+              <PropertyRef Name="id_ad" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_ad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_are__33D4B598">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_dis__34C8D9D1">
+          <End Role="district" Type="Self.district" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="district">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_district" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_rea__31EC6D26">
+          <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="realEstateType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_real_estate_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_tow__32E0915F">
+          <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_cu__3A81B327">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_pr__398D8EEE">
+          <End Role="property" Type="Self.property" Multiplicity="0..1" />
+          <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="id_prop" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_prop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="RealEstateEntityStoreContainer">
+          <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="district" EntityType="Self.district" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="property" EntityType="Self.property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="realEstateType" EntityType="Self.realEstateType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="townRegion" EntityType="Self.townRegion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trannsaction" EntityType="Self.trannsaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="typeAccount" EntityType="Self.typeAccount" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
+            <End Role="typeAccount" EntitySet="typeAccount" />
+            <End Role="account" EntitySet="account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
+            <End Role="townRegion" EntitySet="townRegion" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
+            <End Role="area" EntitySet="area" />
+            <End Role="district" EntitySet="district" />
+          </AssociationSet>
+          <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
+            <End Role="account" EntitySet="account" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__project__id_real__2B3F6F97" Association="Self.FK__project__id_real__2B3F6F97">
+            <End Role="realEstateType" EntitySet="realEstateType" />
+            <End Role="project" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_ad__35BCFE0A" Association="Self.FK__property__id_ad__35BCFE0A">
+            <End Role="advertisement" EntitySet="advertisement" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_are__33D4B598" Association="Self.FK__property__id_are__33D4B598">
+            <End Role="area" EntitySet="area" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_dis__34C8D9D1" Association="Self.FK__property__id_dis__34C8D9D1">
+            <End Role="district" EntitySet="district" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_rea__31EC6D26" Association="Self.FK__property__id_rea__31EC6D26">
+            <End Role="realEstateType" EntitySet="realEstateType" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_tow__32E0915F" Association="Self.FK__property__id_tow__32E0915F">
+            <End Role="townRegion" EntitySet="townRegion" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="trannsaction" EntitySet="trannsaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
+            <End Role="property" EntitySet="property" />
+            <End Role="trannsaction" EntitySet="trannsaction" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RealEstateEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="type_ac" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="typeAccount" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
+          <NavigationProperty Name="employees" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="advertisement">
+          <Key>
+            <PropertyRef Name="id_ad" />
+          </Key>
+          <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="properties" Relationship="Self.FK__property__id_ad__35BCFE0A" FromRole="advertisement" ToRole="property" />
+        </EntityType>
+        <EntityType Name="appointment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__appointme__id_cu__25869641" FromRole="appointment" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id_town_region" Type="Int32" />
+          <NavigationProperty Name="townRegion" Relationship="Self.FK__area__id_town_re__1CF15040" FromRole="area" ToRole="townRegion" />
+          <NavigationProperty Name="districts" Relationship="Self.FK__district__id_are__1FCDBCEB" FromRole="area" ToRole="district" />
+          <NavigationProperty Name="properties" Relationship="Self.FK__property__id_are__33D4B598" FromRole="area" ToRole="property" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id_ct" />
+          </Key>
+          <Property Name="id_ct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id_cus" />
+          </Key>
+          <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_cus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email_cus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone_cus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="appointments" Relationship="Self.FK__appointme__id_cu__25869641" FromRole="customer" ToRole="appointment" />
+          <NavigationProperty Name="trannsactions" Relationship="Self.FK__trannsact__id_cu__3A81B327" FromRole="customer" ToRole="trannsaction" />
+        </EntityType>
+        <EntityType Name="district">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="id_area" Type="Int32" />
+          <NavigationProperty Name="area" Relationship="Self.FK__district__id_are__1FCDBCEB" FromRole="district" ToRole="area" />
+          <NavigationProperty Name="properties" Relationship="Self.FK__property__id_dis__34C8D9D1" FromRole="district" ToRole="property" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="id_emp" />
+          </Key>
+          <Property Name="id_emp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_emp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone_emp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="account1" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="id_proj" />
+          </Key>
+          <Property Name="id_proj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_project" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_real_estate_type" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="license_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateOfIssue" Type="DateTime" Precision="0" />
+          <Property Name="PlaceOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="realEstateType" Relationship="Self.FK__project__id_real__2B3F6F97" FromRole="project" ToRole="realEstateType" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="id_prop" />
+          </Key>
+          <Property Name="id_prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_real_estate_type" Type="Int32" />
+          <Property Name="id_project" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="floor" Type="Int32" />
+          <Property Name="room" Type="Int32" />
+          <Property Name="price" Type="Double" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="id_town_region" Type="Int32" />
+          <Property Name="id_area" Type="Int32" />
+          <Property Name="id_district" Type="Int32" />
+          <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="advertisement" Relationship="Self.FK__property__id_ad__35BCFE0A" FromRole="property" ToRole="advertisement" />
+          <NavigationProperty Name="area" Relationship="Self.FK__property__id_are__33D4B598" FromRole="property" ToRole="area" />
+          <NavigationProperty Name="district" Relationship="Self.FK__property__id_dis__34C8D9D1" FromRole="property" ToRole="district" />
+          <NavigationProperty Name="realEstateType" Relationship="Self.FK__property__id_rea__31EC6D26" FromRole="property" ToRole="realEstateType" />
+          <NavigationProperty Name="townRegion" Relationship="Self.FK__property__id_tow__32E0915F" FromRole="property" ToRole="townRegion" />
+          <NavigationProperty Name="trannsactions" Relationship="Self.FK__trannsact__id_pr__398D8EEE" FromRole="property" ToRole="trannsaction" />
+        </EntityType>
+        <EntityType Name="realEstateType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="projects" Relationship="Self.FK__project__id_real__2B3F6F97" FromRole="realEstateType" ToRole="project" />
+          <NavigationProperty Name="properties" Relationship="Self.FK__property__id_rea__31EC6D26" FromRole="realEstateType" ToRole="property" />
+        </EntityType>
+        <EntityType Name="townRegion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="areas" Relationship="Self.FK__area__id_town_re__1CF15040" FromRole="townRegion" ToRole="area" />
+          <NavigationProperty Name="properties" Relationship="Self.FK__property__id_tow__32E0915F" FromRole="townRegion" ToRole="property" />
+        </EntityType>
+        <EntityType Name="trannsaction">
+          <Key>
+            <PropertyRef Name="id_trans" />
+          </Key>
+          <Property Name="id_trans" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Double" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK__trannsact__id_cu__3A81B327" FromRole="trannsaction" ToRole="customer" />
+          <NavigationProperty Name="property" Relationship="Self.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
+        </EntityType>
+        <EntityType Name="typeAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfTypeAcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="accounts" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
+        </EntityType>
+        <Association Name="FK__account__type_ac__145C0A3F">
+          <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
+          <End Role="account" Type="Self.account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeAccount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="type_ac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__employee__accoun__182C9B23">
+          <End Role="account" Type="Self.account" Multiplicity="0..1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_ad__35BCFE0A">
+          <End Role="advertisement" Type="Self.advertisement" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="advertisement">
+              <PropertyRef Name="id_ad" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_ad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__appointme__id_cu__25869641">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__area__id_town_re__1CF15040">
+          <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+          <End Role="area" Type="Self.area" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__district__id_are__1FCDBCEB">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="district" Type="Self.district" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="district">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_are__33D4B598">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_cu__3A81B327">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_dis__34C8D9D1">
+          <End Role="district" Type="Self.district" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="district">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_district" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__project__id_real__2B3F6F97">
+          <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
+          <End Role="project" Type="Self.project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="realEstateType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="id_real_estate_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_rea__31EC6D26">
+          <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="realEstateType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_real_estate_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__property__id_tow__32E0915F">
+          <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_pr__398D8EEE">
+          <End Role="property" Type="Self.property" Multiplicity="0..1" />
+          <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="id_prop" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_prop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="advertisements" EntityType="Self.advertisement" />
+          <EntitySet Name="appointments" EntityType="Self.appointment" />
+          <EntitySet Name="areas" EntityType="Self.area" />
+          <EntitySet Name="contacts" EntityType="Self.contact" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="districts" EntityType="Self.district" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="projects" EntityType="Self.project" />
+          <EntitySet Name="properties" EntityType="Self.property" />
+          <EntitySet Name="realEstateTypes" EntityType="Self.realEstateType" />
+          <EntitySet Name="townRegions" EntityType="Self.townRegion" />
+          <EntitySet Name="trannsactions" EntityType="Self.trannsaction" />
+          <EntitySet Name="typeAccounts" EntityType="Self.typeAccount" />
+          <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
+            <End Role="typeAccount" EntitySet="typeAccounts" />
+            <End Role="account" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
+            <End Role="account" EntitySet="accounts" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_ad__35BCFE0A" Association="Self.FK__property__id_ad__35BCFE0A">
+            <End Role="advertisement" EntitySet="advertisements" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
+            <End Role="townRegion" EntitySet="townRegions" />
+            <End Role="area" EntitySet="areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
+            <End Role="area" EntitySet="areas" />
+            <End Role="district" EntitySet="districts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_are__33D4B598" Association="Self.FK__property__id_are__33D4B598">
+            <End Role="area" EntitySet="areas" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="trannsaction" EntitySet="trannsactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_dis__34C8D9D1" Association="Self.FK__property__id_dis__34C8D9D1">
+            <End Role="district" EntitySet="districts" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__project__id_real__2B3F6F97" Association="Self.FK__project__id_real__2B3F6F97">
+            <End Role="realEstateType" EntitySet="realEstateTypes" />
+            <End Role="project" EntitySet="projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_rea__31EC6D26" Association="Self.FK__property__id_rea__31EC6D26">
+            <End Role="realEstateType" EntitySet="realEstateTypes" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_tow__32E0915F" Association="Self.FK__property__id_tow__32E0915F">
+            <End Role="townRegion" EntitySet="townRegions" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
+            <End Role="property" EntitySet="properties" />
+            <End Role="trannsaction" EntitySet="trannsactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RealEstateEntityStoreContainer" CdmEntityContainer="RealEstateEntities">
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="RealEstateEntity.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
+                <ScalarProperty Name="type_ac" ColumnName="type_ac" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="advertisements">
+            <EntityTypeMapping TypeName="RealEstateEntity.advertisement">
+              <MappingFragment StoreEntitySet="advertisement">
+                <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+                <ScalarProperty Name="name_ad" ColumnName="name_ad" />
+                <ScalarProperty Name="information" ColumnName="information" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="appointments">
+            <EntityTypeMapping TypeName="RealEstateEntity.appointment">
+              <MappingFragment StoreEntitySet="appointment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="areas">
+            <EntityTypeMapping TypeName="RealEstateEntity.area">
+              <MappingFragment StoreEntitySet="area">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="RealEstateEntity.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="id_ct" ColumnName="id_ct" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="RealEstateEntity.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+                <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="districts">
+            <EntityTypeMapping TypeName="RealEstateEntity.district">
+              <MappingFragment StoreEntitySet="district">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="RealEstateEntity.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="id_emp" ColumnName="id_emp" />
+                <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+                <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+                <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="account" ColumnName="account" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projects">
+            <EntityTypeMapping TypeName="RealEstateEntity.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="id_proj" ColumnName="id_proj" />
+                <ScalarProperty Name="name_project" ColumnName="name_project" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="license_number" ColumnName="license_number" />
+                <ScalarProperty Name="dateOfIssue" ColumnName="dateOfIssue" />
+                <ScalarProperty Name="PlaceOfIssue" ColumnName="PlaceOfIssue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="properties">
+            <EntityTypeMapping TypeName="RealEstateEntity.property">
+              <MappingFragment StoreEntitySet="property">
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="realEstateTypes">
+            <EntityTypeMapping TypeName="RealEstateEntity.realEstateType">
+              <MappingFragment StoreEntitySet="realEstateType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="townRegions">
+            <EntityTypeMapping TypeName="RealEstateEntity.townRegion">
+              <MappingFragment StoreEntitySet="townRegion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trannsactions">
+            <EntityTypeMapping TypeName="RealEstateEntity.trannsaction">
+              <MappingFragment StoreEntitySet="trannsaction">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="payment" ColumnName="payment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="typeAccounts">
+            <EntityTypeMapping TypeName="RealEstateEntity.typeAccount">
+              <MappingFragment StoreEntitySet="typeAccount">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
