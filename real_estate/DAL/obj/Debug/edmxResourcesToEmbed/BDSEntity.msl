@@ -11,16 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="advertisements">
-      <EntityTypeMapping TypeName="RealEstateEntity.advertisement">
-        <MappingFragment StoreEntitySet="advertisement">
-          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
-          <ScalarProperty Name="name_ad" ColumnName="name_ad" />
-          <ScalarProperty Name="information" ColumnName="information" />
-          <ScalarProperty Name="discount" ColumnName="discount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="appointments">
       <EntityTypeMapping TypeName="RealEstateEntity.appointment">
         <MappingFragment StoreEntitySet="appointment">
@@ -96,24 +86,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="properties">
-      <EntityTypeMapping TypeName="RealEstateEntity.property">
-        <MappingFragment StoreEntitySet="property">
-          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
-          <ScalarProperty Name="id_project" ColumnName="id_project" />
-          <ScalarProperty Name="floor" ColumnName="floor" />
-          <ScalarProperty Name="room" ColumnName="room" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-          <ScalarProperty Name="id_area" ColumnName="id_area" />
-          <ScalarProperty Name="id_district" ColumnName="id_district" />
-          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="realEstateTypes">
       <EntityTypeMapping TypeName="RealEstateEntity.realEstateType">
         <MappingFragment StoreEntitySet="realEstateType">
@@ -147,6 +119,36 @@
         <MappingFragment StoreEntitySet="typeAccount">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="advertisements">
+      <EntityTypeMapping TypeName="RealEstateEntity.advertisement">
+        <MappingFragment StoreEntitySet="advertisement">
+          <ScalarProperty Name="prop" ColumnName="prop" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="information" ColumnName="information" />
+          <ScalarProperty Name="name_ad" ColumnName="name_ad" />
+          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="properties">
+      <EntityTypeMapping TypeName="RealEstateEntity.property">
+        <MappingFragment StoreEntitySet="property">
+          <ScalarProperty Name="img2" ColumnName="img2" />
+          <ScalarProperty Name="img1" ColumnName="img1" />
+          <ScalarProperty Name="id_district" ColumnName="id_district" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -127,3 +127,7 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dl
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Bunifu_UI_v1.5.3.dll

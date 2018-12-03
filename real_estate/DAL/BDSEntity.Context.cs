@@ -26,7 +26,6 @@ namespace DAL
         }
     
         public virtual DbSet<account> accounts { get; set; }
-        public virtual DbSet<advertisement> advertisements { get; set; }
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<area> areas { get; set; }
         public virtual DbSet<contact> contacts { get; set; }
@@ -34,10 +33,11 @@ namespace DAL
         public virtual DbSet<district> districts { get; set; }
         public virtual DbSet<employee> employees { get; set; }
         public virtual DbSet<project> projects { get; set; }
-        public virtual DbSet<property> properties { get; set; }
         public virtual DbSet<realEstateType> realEstateTypes { get; set; }
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
+        public virtual DbSet<advertisement> advertisements { get; set; }
+        public virtual DbSet<property> properties { get; set; }
     }
 }

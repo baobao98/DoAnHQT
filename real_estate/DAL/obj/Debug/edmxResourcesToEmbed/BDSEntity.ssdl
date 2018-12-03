@@ -17,6 +17,7 @@
     <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
     <Property Name="information" Type="text" />
     <Property Name="discount" Type="varchar" MaxLength="10" />
+    <Property Name="prop" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -101,7 +102,8 @@
     <Property Name="id_town_region" Type="int" />
     <Property Name="id_area" Type="int" />
     <Property Name="id_district" Type="int" />
-    <Property Name="id_ad" Type="varchar" MaxLength="10" />
+    <Property Name="img1" Type="varchar" MaxLength="100" />
+    <Property Name="img2" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="realEstateType">
     <Key>
@@ -207,18 +209,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_ad__35BCFE0A">
-    <End Role="advertisement" Type="Self.advertisement" Multiplicity="0..1" />
-    <End Role="property" Type="Self.property" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="advertisement">
-        <PropertyRef Name="id_ad" />
-      </Principal>
-      <Dependent Role="property">
-        <PropertyRef Name="id_ad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__property__id_are__33D4B598">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
@@ -291,6 +281,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_advertisement_property">
+    <End Role="property" Type="Self.property" Multiplicity="0..1" />
+    <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property">
+        <PropertyRef Name="id_prop" />
+      </Principal>
+      <Dependent Role="advertisement">
+        <PropertyRef Name="prop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="Type" Type="varchar" Mode="In" />
   </Function>
@@ -333,10 +335,6 @@
       <End Role="realEstateType" EntitySet="realEstateType" />
       <End Role="project" EntitySet="project" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_ad__35BCFE0A" Association="Self.FK__property__id_ad__35BCFE0A">
-      <End Role="advertisement" EntitySet="advertisement" />
-      <End Role="property" EntitySet="property" />
-    </AssociationSet>
     <AssociationSet Name="FK__property__id_are__33D4B598" Association="Self.FK__property__id_are__33D4B598">
       <End Role="area" EntitySet="area" />
       <End Role="property" EntitySet="property" />
@@ -360,6 +358,10 @@
     <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
       <End Role="property" EntitySet="property" />
       <End Role="trannsaction" EntitySet="trannsaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_advertisement_property" Association="Self.FK_advertisement_property">
+      <End Role="property" EntitySet="property" />
+      <End Role="advertisement" EntitySet="advertisement" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
