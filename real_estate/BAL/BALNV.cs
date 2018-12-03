@@ -9,6 +9,6 @@ namespace BAL
 {
     public class BALNV
     {
-       
+       // đây là tuaans
     }
 }
