@@ -125,3 +125,5 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateR
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
