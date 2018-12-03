@@ -8,12 +8,12 @@ namespace BAL
 {
     public class TaiKhoanBAL
     {
-        public static List<account> LayTK()
+        RealEstateEntities dbs = new RealEstateEntities();
+        public System.Data.Entity.DbSet<account> LayTK()
         {
-            using (RealEstateEntities dbs = new RealEstateEntities() )
-            {
-                return dbs.accounts.ToList();
-            }
+           return dbs.accounts;
         }
+        public List<account> getAll() => dbs.accounts.ToList();
+
     }
 }

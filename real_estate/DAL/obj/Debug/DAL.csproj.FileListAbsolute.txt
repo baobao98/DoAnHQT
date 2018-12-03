@@ -16,3 +16,13 @@ D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
