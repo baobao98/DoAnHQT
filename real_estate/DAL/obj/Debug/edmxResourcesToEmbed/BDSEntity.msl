@@ -150,5 +150,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer" />
+    <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate" />
+    <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
   </EntityContainerMapping>
 </Mapping>

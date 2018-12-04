@@ -12,6 +12,8 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class RealEstateEntities : DbContext
     {
@@ -39,5 +41,91 @@ namespace DAL
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
+    
+        public virtual ObjectResult<customer> GetAllCustomer()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer");
+        }
+    
+        public virtual ObjectResult<customer> GetAllCustomer(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer", mergeOption);
+        }
+    
+        public virtual ObjectResult<customer> CustomerCreate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            var email_cusParameter = email_cus != null ?
+                new ObjectParameter("email_cus", email_cus) :
+                new ObjectParameter("email_cus", typeof(string));
+    
+            var phone_cusParameter = phone_cus != null ?
+                new ObjectParameter("phone_cus", phone_cus) :
+                new ObjectParameter("phone_cus", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var create_dateParameter = create_date.HasValue ?
+                new ObjectParameter("create_date", create_date) :
+                new ObjectParameter("create_date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerCreate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
+        }
+    
+        public virtual ObjectResult<customer> CustomerCreate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date, MergeOption mergeOption)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            var email_cusParameter = email_cus != null ?
+                new ObjectParameter("email_cus", email_cus) :
+                new ObjectParameter("email_cus", typeof(string));
+    
+            var phone_cusParameter = phone_cus != null ?
+                new ObjectParameter("phone_cus", phone_cus) :
+                new ObjectParameter("phone_cus", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var create_dateParameter = create_date.HasValue ?
+                new ObjectParameter("create_date", create_date) :
+                new ObjectParameter("create_date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerCreate", mergeOption, idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
+        }
+    
+        public virtual ObjectResult<customer> CustomerDelete(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerDelete", idParameter);
+        }
+    
+        public virtual ObjectResult<customer> CustomerDelete(string id, MergeOption mergeOption)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerDelete", mergeOption, idParameter);
+        }
     }
 }
