@@ -24,7 +24,9 @@ namespace DAL
         public string name_ad { get; set; }
         public string information { get; set; }
         public string discount { get; set; }
+        public string prop { get; set; }
     
+        public virtual property property { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<property> properties { get; set; }
     }

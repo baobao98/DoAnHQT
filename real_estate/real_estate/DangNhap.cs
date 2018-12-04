@@ -13,13 +13,13 @@ namespace real_estate
 {
     public partial class DangNhap : Form
     {
-        TaiKhoanBAL tk = new TaiKhoanBAL();
+        //TaiKhoanBAL tk = new TaiKhoanBAL();
         public DangNhap()
         {
             InitializeComponent();
             //var t = tk.LayTK();
             //dgv.DataSource = t.ToList();
-            dgv.DataSource = tk.getAll();
+            //dgv.DataSource = tk.getAll();
         }
         void loaddata()
         {

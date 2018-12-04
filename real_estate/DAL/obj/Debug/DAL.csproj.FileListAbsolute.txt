@@ -26,3 +26,6 @@ C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+D:\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.dll
+C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
