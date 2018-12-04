@@ -34,6 +34,7 @@ namespace DAL
         public Nullable<int> id_district { get; set; }
         public string img1 { get; set; }
         public string img2 { get; set; }
+        public string id_ad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<advertisement> advertisements { get; set; }
@@ -43,5 +44,6 @@ namespace DAL
         public virtual townRegion townRegion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trannsaction> trannsactions { get; set; }
+        public virtual advertisement advertisement { get; set; }
     }
 }

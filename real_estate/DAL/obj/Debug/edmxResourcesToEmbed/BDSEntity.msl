@@ -125,7 +125,6 @@
     <EntitySetMapping Name="advertisements">
       <EntityTypeMapping TypeName="RealEstateEntity.advertisement">
         <MappingFragment StoreEntitySet="advertisement">
-          <ScalarProperty Name="prop" ColumnName="prop" />
           <ScalarProperty Name="discount" ColumnName="discount" />
           <ScalarProperty Name="information" ColumnName="information" />
           <ScalarProperty Name="name_ad" ColumnName="name_ad" />
@@ -136,8 +135,7 @@
     <EntitySetMapping Name="properties">
       <EntityTypeMapping TypeName="RealEstateEntity.property">
         <MappingFragment StoreEntitySet="property">
-          <ScalarProperty Name="img2" ColumnName="img2" />
-          <ScalarProperty Name="img1" ColumnName="img1" />
+          <ScalarProperty Name="id_ad" ColumnName="id_ad" />
           <ScalarProperty Name="id_district" ColumnName="id_district" />
           <ScalarProperty Name="id_area" ColumnName="id_area" />
           <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
@@ -152,5 +150,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getTransaction" FunctionName="RealEstateEntity.Store.getTransaction">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateEntity.getTransaction_Result">
+          <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

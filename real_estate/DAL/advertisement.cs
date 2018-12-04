@@ -14,6 +14,12 @@ namespace DAL
     
     public partial class advertisement
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public advertisement()
+        {
+            this.properties = new HashSet<property>();
+        }
+    
         public string id_ad { get; set; }
         public string name_ad { get; set; }
         public string information { get; set; }
@@ -21,5 +27,7 @@ namespace DAL
         public string prop { get; set; }
     
         public virtual property property { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<property> properties { get; set; }
     }
 }

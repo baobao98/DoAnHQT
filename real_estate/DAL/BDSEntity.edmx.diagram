@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e68d2b81efd649d89094ff5454887e5f" Name="Diagram1" ZoomLevel="85">
+      <Diagram DiagramId="e68d2b81efd649d89094ff5454887e5f" Name="Diagram1" ZoomLevel="27">
         <EntityTypeShape EntityType="RealEstateEntity.account" Width="1.5" PointX="12" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.appointment" Width="1.5" PointX="9.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.area" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
@@ -32,6 +32,7 @@
         <AssociationConnector Association="RealEstateEntity.FK__property__id_rea__31EC6D26" />
         <AssociationConnector Association="RealEstateEntity.FK__property__id_tow__32E0915F" />
         <AssociationConnector Association="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" />
+        <AssociationConnector Association="RealEstateEntity.FK__property__id_ad__6EF57B66" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

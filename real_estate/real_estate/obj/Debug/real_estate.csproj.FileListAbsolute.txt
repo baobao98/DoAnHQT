@@ -112,7 +112,6 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAss
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
@@ -131,3 +130,7 @@ D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.dll
+C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
+C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources

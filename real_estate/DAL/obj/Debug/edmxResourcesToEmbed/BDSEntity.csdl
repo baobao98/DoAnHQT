@@ -279,6 +279,11 @@
       <End Role="property" EntitySet="properties" />
       <End Role="trannsaction" EntitySet="trannsactions" />
     </AssociationSet>
+    <AssociationSet Name="FK__property__id_ad__6EF57B66" Association="RealEstateEntity.FK__property__id_ad__6EF57B66">
+      <End Role="advertisement" EntitySet="advertisements" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result)" />
   </EntityContainer>
   <EntityType Name="advertisement">
     <Key>
@@ -290,6 +295,7 @@
     <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="property" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_ad__6EF57B66" FromRole="advertisement" ToRole="property" />
   </EntityType>
   <EntityType Name="property">
     <Key>
@@ -314,6 +320,8 @@
     <NavigationProperty Name="realEstateType" Relationship="RealEstateEntity.FK__property__id_rea__31EC6D26" FromRole="property" ToRole="realEstateType" />
     <NavigationProperty Name="townRegion" Relationship="RealEstateEntity.FK__property__id_tow__32E0915F" FromRole="property" ToRole="townRegion" />
     <NavigationProperty Name="trannsactions" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="property" ToRole="trannsaction" />
+    <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="advertisement" Relationship="RealEstateEntity.FK__property__id_ad__6EF57B66" FromRole="property" ToRole="advertisement" />
   </EntityType>
   <Association Name="FK_advertisement_property">
     <End Type="RealEstateEntity.property" Role="property" Multiplicity="0..1" />
@@ -387,4 +395,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__property__id_ad__6EF57B66">
+    <End Type="RealEstateEntity.advertisement" Role="advertisement" Multiplicity="0..1" />
+    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="advertisement">
+        <PropertyRef Name="id_ad" />
+      </Principal>
+      <Dependent Role="property">
+        <PropertyRef Name="id_ad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="getTransaction_Result">
+    <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="amount" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>

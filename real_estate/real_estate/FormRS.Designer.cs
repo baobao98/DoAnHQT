@@ -49,7 +49,7 @@
             this.marketing1 = new real_estate.user_control.Marketing();
             this.employee2 = new real_estate.user_control.Employee();
             this.customer2 = new real_estate.user_control.Customer();
-            this.bill1 = new real_estate.user_control.Bill();
+            this.bill1 = new real_estate.user_control.Transaction();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -480,7 +480,7 @@
         private user_control.Marketing marketing1;
         private user_control.Employee employee2;
         private user_control.Customer customer2;
-        private user_control.Bill bill1;
+        private user_control.Transaction bill1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
     }
 }
