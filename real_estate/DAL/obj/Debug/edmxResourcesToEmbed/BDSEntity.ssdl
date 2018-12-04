@@ -137,7 +137,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameOfTypeAcc" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__account__type_ac__145C0A3F">
+  <Association Name="FK__account__type_ac__3B75D760">
     <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
     <End Role="account" Type="Self.account" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__appointme__id_cu__25869641">
+  <Association Name="FK__appointme__id_cu__4CA06362">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -161,7 +161,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__area__id_town_re__1CF15040">
+  <Association Name="FK__area__id_town_re__440B1D61">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="area" Type="Self.area" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__district__id_are__1FCDBCEB">
+  <Association Name="FK__district__id_are__46E78A0C">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="district" Type="Self.district" Multiplicity="*" />
     <ReferentialConstraint>
@@ -185,7 +185,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__employee__accoun__182C9B23">
+  <Association Name="FK__employee__accoun__3F466844">
     <End Role="account" Type="Self.account" Multiplicity="0..1" />
     <End Role="employee" Type="Self.employee" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,7 +197,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__project__id_real__2B3F6F97">
+  <Association Name="FK__project__id_real__52593CB8">
     <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
     <End Role="project" Type="Self.project" Multiplicity="*" />
     <ReferentialConstraint>
@@ -221,7 +221,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_dis__34C8D9D1">
+  <Association Name="FK__property__id_dis__5BE2A6F2">
     <End Role="district" Type="Self.district" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -233,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_rea__31EC6D26">
+  <Association Name="FK__property__id_rea__59063A47">
     <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -245,7 +245,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_tow__32E0915F">
+  <Association Name="FK__property__id_tow__59FA5E80">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -257,7 +257,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__trannsact__id_cu__3A81B327">
+  <Association Name="FK__trannsact__id_cu__619B8048">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -269,7 +269,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__trannsact__id_pr__398D8EEE">
+  <Association Name="FK__trannsact__id_pr__60A75C0F">
     <End Role="property" Type="Self.property" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -293,6 +293,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+    <Parameter Name="email_cus" Type="varchar" Mode="In" />
+    <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CustomerCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+    <Parameter Name="email_cus" Type="varchar" Mode="In" />
+    <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="Type" Type="varchar" Mode="In" />
   </Function>
@@ -311,27 +331,27 @@
     <EntitySet Name="townRegion" EntityType="Self.townRegion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="trannsaction" EntityType="Self.trannsaction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="typeAccount" EntityType="Self.typeAccount" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
+    <AssociationSet Name="FK__account__type_ac__3B75D760" Association="Self.FK__account__type_ac__3B75D760">
       <End Role="typeAccount" EntitySet="typeAccount" />
       <End Role="account" EntitySet="account" />
     </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
+    <AssociationSet Name="FK__appointme__id_cu__4CA06362" Association="Self.FK__appointme__id_cu__4CA06362">
       <End Role="customer" EntitySet="customer" />
       <End Role="appointment" EntitySet="appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
+    <AssociationSet Name="FK__area__id_town_re__440B1D61" Association="Self.FK__area__id_town_re__440B1D61">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="area" EntitySet="area" />
     </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
+    <AssociationSet Name="FK__district__id_are__46E78A0C" Association="Self.FK__district__id_are__46E78A0C">
       <End Role="area" EntitySet="area" />
       <End Role="district" EntitySet="district" />
     </AssociationSet>
-    <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
+    <AssociationSet Name="FK__employee__accoun__3F466844" Association="Self.FK__employee__accoun__3F466844">
       <End Role="account" EntitySet="account" />
       <End Role="employee" EntitySet="employee" />
     </AssociationSet>
-    <AssociationSet Name="FK__project__id_real__2B3F6F97" Association="Self.FK__project__id_real__2B3F6F97">
+    <AssociationSet Name="FK__project__id_real__52593CB8" Association="Self.FK__project__id_real__52593CB8">
       <End Role="realEstateType" EntitySet="realEstateType" />
       <End Role="project" EntitySet="project" />
     </AssociationSet>
@@ -339,23 +359,23 @@
       <End Role="area" EntitySet="area" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_dis__34C8D9D1" Association="Self.FK__property__id_dis__34C8D9D1">
+    <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="Self.FK__property__id_dis__5BE2A6F2">
       <End Role="district" EntitySet="district" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_rea__31EC6D26" Association="Self.FK__property__id_rea__31EC6D26">
+    <AssociationSet Name="FK__property__id_rea__59063A47" Association="Self.FK__property__id_rea__59063A47">
       <End Role="realEstateType" EntitySet="realEstateType" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_tow__32E0915F" Association="Self.FK__property__id_tow__32E0915F">
+    <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="Self.FK__property__id_tow__59FA5E80">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
+    <AssociationSet Name="FK__trannsact__id_cu__619B8048" Association="Self.FK__trannsact__id_cu__619B8048">
       <End Role="customer" EntitySet="customer" />
       <End Role="trannsaction" EntitySet="trannsaction" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
+    <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="Self.FK__trannsact__id_pr__60A75C0F">
       <End Role="property" EntitySet="property" />
       <End Role="trannsaction" EntitySet="trannsaction" />
     </AssociationSet>

@@ -12,6 +12,8 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class RealEstateEntities : DbContext
     {
@@ -37,7 +39,5 @@ namespace DAL
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
-        public virtual DbSet<advertisement> advertisements { get; set; }
-        public virtual DbSet<property> properties { get; set; }
     }
 }

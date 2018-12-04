@@ -279,6 +279,26 @@
       <End Role="property" EntitySet="properties" />
       <End Role="trannsaction" EntitySet="trannsactions" />
     </AssociationSet>
+    <FunctionImport Name="GetAllCustomer" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)" />
+    <FunctionImport Name="CustomerCreate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name_cus" Mode="In" Type="String" />
+      <Parameter Name="email_cus" Mode="In" Type="String" />
+      <Parameter Name="phone_cus" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="CustomerDelete" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="cusp_CustomerUpdate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name_cus" Mode="In" Type="String" />
+      <Parameter Name="email_cus" Mode="In" Type="String" />
+      <Parameter Name="phone_cus" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="advertisement">
     <Key>
@@ -387,4 +407,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="GetAllCustomer_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="CustomerCreate_Result">
+    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
 </Schema>

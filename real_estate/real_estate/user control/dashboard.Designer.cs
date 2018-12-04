@@ -45,9 +45,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(76, 161);
+            this.pictureBox1.Location = new System.Drawing.Point(101, 198);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(497, 348);
+            this.pictureBox1.Size = new System.Drawing.Size(663, 428);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
@@ -57,9 +58,10 @@
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(92, 131);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(123, 161);
+            this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(125, 17);
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(153, 19);
             this.bunifuCustomLabel9.TabIndex = 27;
             this.bunifuCustomLabel9.Text = "Course\'s Lecturer:";
             // 
@@ -68,9 +70,10 @@
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(30, 22);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(40, 27);
+            this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(369, 79);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(462, 98);
             this.bunifuCustomLabel8.TabIndex = 26;
             this.bunifuCustomLabel8.Text = "Real Estate";
             // 
@@ -79,9 +82,10 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(681, 318);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(908, 391);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(127, 17);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(154, 19);
             this.bunifuCustomLabel3.TabIndex = 25;
             this.bunifuCustomLabel3.Text = "Lam Phuoc Bao - ";
             // 
@@ -90,20 +94,22 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(681, 352);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(908, 433);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(76, 17);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(172, 19);
             this.bunifuCustomLabel1.TabIndex = 24;
-            this.bunifuCustomLabel1.Text = "Khoa Le - ";
+            this.bunifuCustomLabel1.Text = "Khoa Le - 16110121";
             // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(601, 512);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(801, 630);
+            this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(162, 17);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(199, 19);
             this.bunifuCustomLabel7.TabIndex = 23;
             this.bunifuCustomLabel7.Text = "All rights reserved 2018";
             // 
@@ -112,20 +118,22 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(681, 392);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(908, 482);
+            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(113, 17);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(221, 19);
             this.bunifuCustomLabel6.TabIndex = 22;
-            this.bunifuCustomLabel6.Text = "Hua Van Lam - ";
+            this.bunifuCustomLabel6.Text = "Hua Van Lam -  16110133";
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(681, 463);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(908, 570);
+            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(207, 17);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(257, 19);
             this.bunifuCustomLabel5.TabIndex = 21;
             this.bunifuCustomLabel5.Text = "Nguyen Van Hung - 16110100";
             // 
@@ -134,9 +142,10 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(681, 427);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(908, 526);
+            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(198, 17);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(244, 19);
             this.bunifuCustomLabel4.TabIndex = 20;
             this.bunifuCustomLabel4.Text = "Dang Ngoc Tuan - 16110239";
             // 
@@ -145,15 +154,16 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(601, 288);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(801, 354);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(89, 17);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(107, 21);
             this.bunifuCustomLabel2.TabIndex = 19;
             this.bunifuCustomLabel2.Text = "Created by:";
             // 
             // dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuCustomLabel9);
@@ -165,8 +175,9 @@
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.bunifuCustomLabel4);
             this.Controls.Add(this.bunifuCustomLabel2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "dashboard";
-            this.Size = new System.Drawing.Size(964, 558);
+            this.Size = new System.Drawing.Size(1285, 687);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
