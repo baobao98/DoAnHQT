@@ -153,5 +153,6 @@
     <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer" />
     <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate" />
     <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
+    <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
   </EntityContainerMapping>
 </Mapping>

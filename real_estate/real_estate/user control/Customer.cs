@@ -30,7 +30,7 @@ namespace real_estate.user_control
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtID.Enabled = true;
+         
             cus.CreateCustomer(txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
             ShowCustomer();
             MessageBox.Show("Add thành công!!");
@@ -42,31 +42,51 @@ namespace real_estate.user_control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try { cus.DeleteCustomer(txtID.Text); }
+            try {
+                int r = dataGridView.CurrentCell.RowIndex;
+                 string strID =dataGridView.Rows[r].Cells[0].Value.ToString();
+                cus.DeleteCustomer(strID);
+            }
             catch
             {
               //  cus.DeleteCustomer(txtID.Text);
                 ShowCustomer();
                 MessageBox.Show("Delete thành công!!");
             }
-            txtID.ResetText();
+         
       
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            txtID.ResetText();
+          
             txtName.ResetText();
             txtEmail.ResetText();
             txtPhone.ResetText();
             dateTimeBirthDay.ResetText();
         }
 
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-        //    cus.UpdateCustomer(txtID.Text, txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
-        //    ShowCustomer();
-        //    MessageBox.Show("Update Thành công!!");
-        //}
+
+       
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            try {
+                int r = dataGridView.CurrentCell.RowIndex;
+                string strID = dataGridView.Rows[r].Cells[0].Value.ToString();
+                cus.UpdateCustomer(strID, txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
+            }
+            catch
+            {
+                ShowCustomer();
+                MessageBox.Show("Update thành công!!");
+
+            }
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

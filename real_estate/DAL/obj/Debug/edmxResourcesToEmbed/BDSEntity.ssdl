@@ -291,6 +291,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+    <Parameter Name="email_cus" Type="varchar" Mode="In" />
+    <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="CustomerCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="varchar" Mode="In" />
     <Parameter Name="name_cus" Type="nvarchar" Mode="In" />

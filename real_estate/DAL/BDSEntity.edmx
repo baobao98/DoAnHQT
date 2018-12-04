@@ -296,6 +296,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+          <Parameter Name="email_cus" Type="varchar" Mode="In" />
+          <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+          <Parameter Name="birthday" Type="date" Mode="In" />
+          <Parameter Name="create_date" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="CustomerCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
           <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
@@ -777,7 +785,15 @@
             <Parameter Name="create_date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="CustomerDelete" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="cusp_CustomerUpdate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
             <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="name_cus" Mode="In" Type="String" />
+            <Parameter Name="email_cus" Mode="In" Type="String" />
+            <Parameter Name="phone_cus" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="create_date" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetAllCustomer_Result">
@@ -956,6 +972,7 @@
           <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate">
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
+          <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -396,6 +396,14 @@
     <FunctionImport Name="CustomerDelete" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
       <Parameter Name="id" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="cusp_CustomerUpdate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name_cus" Mode="In" Type="String" />
+      <Parameter Name="email_cus" Mode="In" Type="String" />
+      <Parameter Name="phone_cus" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="create_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetAllCustomer_Result">
     <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />

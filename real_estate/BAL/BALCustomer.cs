@@ -21,17 +21,17 @@ namespace BAL
             using (RealEstateEntities dbs = new RealEstateEntities())
             {
                 dbs.CustomerCreate(null, name_cus, email_cus, phone_cus, birthday, null);
-            }
-
-        
+            }     
         }
-        //public void UpdateCustomer(string id_cus,string name_cus, string email_cus, string phone_cus, DateTime birthday)
-        //{
-        //    using (RealEstateEntities dbs = new RealEstateEntities())
-        //    {
-        //        dbs.UpdateCustomer(id_cus, name_cus, email_cus, phone_cus, birthday, null);
-        //    } 
-        //}
+        //
+        public void UpdateCustomer(string id_cus, string name_cus, string email_cus, string phone_cus, DateTime birthday)
+        {
+            using (RealEstateEntities dbs = new RealEstateEntities())
+            {
+                dbs.cusp_CustomerUpdate(id_cus, name_cus, email_cus, phone_cus, birthday, null);
+            }
+        }
+        //
         public void DeleteCustomer(string id_cus)
         {
             using (RealEstateEntities dbs = new RealEstateEntities())

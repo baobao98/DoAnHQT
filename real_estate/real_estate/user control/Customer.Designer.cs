@@ -35,7 +35,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.Cancel = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@
             this.SearchBoxx = new System.Windows.Forms.TextBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +74,7 @@
             this.panel4.Controls.Add(this.btnUpdate);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Location = new System.Drawing.Point(921, 292);
+            this.panel4.Location = new System.Drawing.Point(921, 350);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(349, 113);
             this.panel4.TabIndex = 109;
@@ -84,22 +83,23 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.SeaGreen;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(119, 22);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(105, 60);
             this.btnUpdate.TabIndex = 69;
-            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(8, 22);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(105, 60);
             this.btnAdd.TabIndex = 66;
-            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -107,20 +107,20 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.Location = new System.Drawing.Point(230, 22);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(105, 60);
             this.btnDelete.TabIndex = 68;
-            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ControlPanel
             // 
             this.ControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ControlPanel.Controls.Add(this.button1);
             this.ControlPanel.Controls.Add(this.Cancel);
-            this.ControlPanel.Controls.Add(this.Save);
-            this.ControlPanel.Location = new System.Drawing.Point(969, 488);
+            this.ControlPanel.Location = new System.Drawing.Point(956, 483);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(276, 100);
             this.ControlPanel.TabIndex = 108;
@@ -129,30 +129,19 @@
             // 
             this.Cancel.BackColor = System.Drawing.Color.SeaGreen;
             this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Cancel.Location = new System.Drawing.Point(153, 20);
+            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+            this.Cancel.Location = new System.Drawing.Point(153, 17);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(105, 60);
             this.Cancel.TabIndex = 74;
-            this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-            // 
-            // Save
-            // 
-            this.Save.BackColor = System.Drawing.Color.SeaGreen;
-            this.Save.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Save.Location = new System.Drawing.Point(15, 20);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(105, 60);
-            this.Save.TabIndex = 73;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(901, 108);
+            this.panel3.Location = new System.Drawing.Point(960, 160);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(269, 142);
             this.panel3.TabIndex = 107;
@@ -182,7 +171,7 @@
             // BirthDay
             // 
             this.BirthDay.AutoSize = true;
-            this.BirthDay.Location = new System.Drawing.Point(72, 102);
+            this.BirthDay.Location = new System.Drawing.Point(72, 153);
             this.BirthDay.Name = "BirthDay";
             this.BirthDay.Size = new System.Drawing.Size(62, 17);
             this.BirthDay.TabIndex = 103;
@@ -276,7 +265,7 @@
             // Name
             // 
             this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(72, 149);
+            this.Name.Location = new System.Drawing.Point(72, 108);
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(45, 17);
             this.Name.TabIndex = 97;
@@ -306,7 +295,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(140, 149);
+            this.txtName.Location = new System.Drawing.Point(140, 108);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(555, 22);
             this.txtName.TabIndex = 95;
@@ -351,23 +340,28 @@
             // 
             // dateTimeBirthDay
             // 
-            this.dateTimeBirthDay.Location = new System.Drawing.Point(140, 99);
+            this.dateTimeBirthDay.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeBirthDay.Location = new System.Drawing.Point(140, 150);
             this.dateTimeBirthDay.Name = "dateTimeBirthDay";
-            this.dateTimeBirthDay.Size = new System.Drawing.Size(230, 22);
+            this.dateTimeBirthDay.Size = new System.Drawing.Size(160, 22);
             this.dateTimeBirthDay.TabIndex = 110;
             // 
-            // txtID
+            // button1
             // 
-            this.txtID.Location = new System.Drawing.Point(986, 428);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(219, 22);
-            this.txtID.TabIndex = 111;
+            this.button1.BackColor = System.Drawing.Color.SeaGreen;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(19, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 60);
+            this.button1.TabIndex = 75;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtID);
             this.Controls.Add(this.dateTimeBirthDay);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.ControlPanel);
@@ -384,7 +378,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.PanelSearch);
             this.Margin = new System.Windows.Forms.Padding(4);
-            //this.Name = "Customer";
+           
             this.Size = new System.Drawing.Size(1285, 687);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel4.ResumeLayout(false);
@@ -409,7 +403,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel ControlPanel;
         private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -434,6 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DateTimePicker dateTimeBirthDay;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button button1;
     }
 }
