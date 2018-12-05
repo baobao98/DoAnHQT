@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BALAppointment.cs" />
     <Compile Include="BALCustomer.cs" />
     <Compile Include="BALNV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

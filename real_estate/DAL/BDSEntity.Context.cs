@@ -29,7 +29,6 @@ namespace DAL
     
         public virtual DbSet<account> accounts { get; set; }
         public virtual DbSet<advertisement> advertisements { get; set; }
-        public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<area> areas { get; set; }
         public virtual DbSet<contact> contacts { get; set; }
         public virtual DbSet<customer> customers { get; set; }
@@ -41,6 +40,7 @@ namespace DAL
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
+        public virtual DbSet<appointment> appointments { get; set; }
     
         public virtual ObjectResult<customer> GetAllCustomer()
         {
@@ -110,25 +110,16 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerCreate", mergeOption, idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
         }
     
-        public virtual ObjectResult<customer> CustomerDelete(string id)
+        public virtual int CustomerDelete(string id)
         {
             var idParameter = id != null ?
                 new ObjectParameter("id", id) :
                 new ObjectParameter("id", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerDelete", idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CustomerDelete", idParameter);
         }
     
-        public virtual ObjectResult<customer> CustomerDelete(string id, MergeOption mergeOption)
-        {
-            var idParameter = id != null ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerDelete", mergeOption, idParameter);
-        }
-    
-        public virtual ObjectResult<customer> cusp_CustomerUpdate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date)
+        public virtual int cusp_CustomerUpdate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date)
         {
             var idParameter = id != null ?
                 new ObjectParameter("id", id) :
@@ -154,36 +145,72 @@ namespace DAL
                 new ObjectParameter("create_date", create_date) :
                 new ObjectParameter("create_date", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("cusp_CustomerUpdate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("cusp_CustomerUpdate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
         }
     
-        public virtual ObjectResult<customer> cusp_CustomerUpdate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date, MergeOption mergeOption)
+        public virtual ObjectResult<appointment> appo_GetAllAppo()
         {
-            var idParameter = id != null ?
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo");
+        }
+    
+        public virtual ObjectResult<appointment> appo_GetAllAppo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo", mergeOption);
+        }
+    
+        public virtual int AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
+        {
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var appointment_dateParameter = appointment_date.HasValue ?
+                new ObjectParameter("appointment_date", appointment_date) :
+                new ObjectParameter("appointment_date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AppoCreate", descriptionParameter, statusParameter, id_cusParameter, appointment_dateParameter);
+        }
+    
+        public virtual int AppointmentUpdate(Nullable<int> id, string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
+        {
+            var idParameter = id.HasValue ?
                 new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(string));
+                new ObjectParameter("id", typeof(int));
     
-            var name_cusParameter = name_cus != null ?
-                new ObjectParameter("name_cus", name_cus) :
-                new ObjectParameter("name_cus", typeof(string));
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
     
-            var email_cusParameter = email_cus != null ?
-                new ObjectParameter("email_cus", email_cus) :
-                new ObjectParameter("email_cus", typeof(string));
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
     
-            var phone_cusParameter = phone_cus != null ?
-                new ObjectParameter("phone_cus", phone_cus) :
-                new ObjectParameter("phone_cus", typeof(string));
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
     
-            var birthdayParameter = birthday.HasValue ?
-                new ObjectParameter("birthday", birthday) :
-                new ObjectParameter("birthday", typeof(System.DateTime));
+            var appointment_dateParameter = appointment_date.HasValue ?
+                new ObjectParameter("appointment_date", appointment_date) :
+                new ObjectParameter("appointment_date", typeof(System.DateTime));
     
-            var create_dateParameter = create_date.HasValue ?
-                new ObjectParameter("create_date", create_date) :
-                new ObjectParameter("create_date", typeof(System.DateTime));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AppointmentUpdate", idParameter, descriptionParameter, statusParameter, id_cusParameter, appointment_dateParameter);
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("cusp_CustomerUpdate", mergeOption, idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
+        public virtual int DeleteAppo(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteAppo", idParameter);
         }
     }
 }

@@ -56,7 +56,16 @@
     <Compile Include="advertisement.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppoCreate_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppoCreate_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="appointment.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="appo_GetAllAppo_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="area.cs">

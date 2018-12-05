@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.ControlPanel = new System.Windows.Forms.Panel();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BirthDay = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namecusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailcusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonecusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Phone = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -55,15 +57,16 @@
             this.Information = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.PanelSearch = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SearchBoxx = new System.Windows.Forms.TextBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSetAppointment = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
-            this.ControlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.InformationPanel.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.SuspendLayout();
@@ -72,9 +75,10 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnUpdate);
+            this.panel4.Controls.Add(this.Cancel);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Location = new System.Drawing.Point(921, 350);
+            this.panel4.Location = new System.Drawing.Point(881, 424);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(349, 113);
             this.panel4.TabIndex = 109;
@@ -84,21 +88,33 @@
             this.btnUpdate.BackColor = System.Drawing.Color.SeaGreen;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(119, 22);
+            this.btnUpdate.Location = new System.Drawing.Point(99, 22);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(105, 60);
+            this.btnUpdate.Size = new System.Drawing.Size(65, 60);
             this.btnUpdate.TabIndex = 69;
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
+            // Cancel
+            // 
+            this.Cancel.BackColor = System.Drawing.Color.SeaGreen;
+            this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
+            this.Cancel.Location = new System.Drawing.Point(259, 22);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(65, 60);
+            this.Cancel.TabIndex = 74;
+            this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(8, 22);
+            this.btnAdd.Location = new System.Drawing.Point(20, 22);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(105, 60);
+            this.btnAdd.Size = new System.Drawing.Size(65, 60);
             this.btnAdd.TabIndex = 66;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -108,43 +124,12 @@
             this.btnDelete.BackColor = System.Drawing.Color.SeaGreen;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(230, 22);
+            this.btnDelete.Location = new System.Drawing.Point(180, 22);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(105, 60);
+            this.btnDelete.Size = new System.Drawing.Size(65, 60);
             this.btnDelete.TabIndex = 68;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // ControlPanel
-            // 
-            this.ControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ControlPanel.Controls.Add(this.button1);
-            this.ControlPanel.Controls.Add(this.Cancel);
-            this.ControlPanel.Location = new System.Drawing.Point(956, 483);
-            this.ControlPanel.Name = "ControlPanel";
-            this.ControlPanel.Size = new System.Drawing.Size(276, 100);
-            this.ControlPanel.TabIndex = 108;
-            // 
-            // Cancel
-            // 
-            this.Cancel.BackColor = System.Drawing.Color.SeaGreen;
-            this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-            this.Cancel.Location = new System.Drawing.Point(153, 17);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(105, 60);
-            this.Cancel.TabIndex = 74;
-            this.Cancel.UseVisualStyleBackColor = false;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(960, 160);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 142);
-            this.panel3.TabIndex = 107;
             // 
             // panel1
             // 
@@ -154,7 +139,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(43, 292);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(737, 10);
+            this.panel1.Size = new System.Drawing.Size(781, 10);
             this.panel1.TabIndex = 106;
             // 
             // label1
@@ -179,56 +164,76 @@
             // 
             // dataGridView
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.idcusDataGridViewTextBoxColumn,
+            this.namecusDataGridViewTextBoxColumn,
+            this.emailcusDataGridViewTextBoxColumn,
+            this.phonecusDataGridViewTextBoxColumn,
+            this.birthdayDataGridViewTextBoxColumn,
+            this.createdateDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.customerBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView.Location = new System.Drawing.Point(43, 326);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(849, 316);
+            this.dataGridView.Size = new System.Drawing.Size(779, 316);
             this.dataGridView.TabIndex = 102;
             // 
-            // Column1
+            // idcusDataGridViewTextBoxColumn
             // 
-            this.Column1.DataPropertyName = "id_cus";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
+            this.idcusDataGridViewTextBoxColumn.DataPropertyName = "id_cus";
+            this.idcusDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idcusDataGridViewTextBoxColumn.Name = "idcusDataGridViewTextBoxColumn";
             // 
-            // Column2
+            // namecusDataGridViewTextBoxColumn
             // 
-            this.Column2.DataPropertyName = "name_cus";
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
+            this.namecusDataGridViewTextBoxColumn.DataPropertyName = "name_cus";
+            this.namecusDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.namecusDataGridViewTextBoxColumn.Name = "namecusDataGridViewTextBoxColumn";
             // 
-            // Column3
+            // emailcusDataGridViewTextBoxColumn
             // 
-            this.Column3.DataPropertyName = "email_cus";
-            this.Column3.HeaderText = "Email";
-            this.Column3.Name = "Column3";
+            this.emailcusDataGridViewTextBoxColumn.DataPropertyName = "email_cus";
+            this.emailcusDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailcusDataGridViewTextBoxColumn.Name = "emailcusDataGridViewTextBoxColumn";
             // 
-            // Column4
+            // phonecusDataGridViewTextBoxColumn
             // 
-            this.Column4.DataPropertyName = "phone_cus";
-            this.Column4.HeaderText = "Phone";
-            this.Column4.Name = "Column4";
+            this.phonecusDataGridViewTextBoxColumn.DataPropertyName = "phone_cus";
+            this.phonecusDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phonecusDataGridViewTextBoxColumn.Name = "phonecusDataGridViewTextBoxColumn";
             // 
-            // Column5
+            // birthdayDataGridViewTextBoxColumn
             // 
-            this.Column5.DataPropertyName = "birthday";
-            this.Column5.HeaderText = "Birthday";
-            this.Column5.Name = "Column5";
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
             // 
-            // Column6
+            // createdateDataGridViewTextBoxColumn
             // 
-            this.Column6.DataPropertyName = "create_date";
-            this.Column6.HeaderText = "CreateDay";
-            this.Column6.Name = "Column6";
+            this.createdateDataGridViewTextBoxColumn.DataPropertyName = "create_date";
+            this.createdateDataGridViewTextBoxColumn.HeaderText = "CreateDay";
+            this.createdateDataGridViewTextBoxColumn.Name = "createdateDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(DAL.customer);
             // 
             // Phone
             // 
@@ -304,31 +309,31 @@
             // 
             this.PanelSearch.BackColor = System.Drawing.Color.SeaGreen;
             this.PanelSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelSearch.Controls.Add(this.panel2);
+            this.PanelSearch.Controls.Add(this.button2);
             this.PanelSearch.Controls.Add(this.SearchBoxx);
             this.PanelSearch.Controls.Add(this.SearchBox);
             this.PanelSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.PanelSearch.Location = new System.Drawing.Point(831, 39);
+            this.PanelSearch.Location = new System.Drawing.Point(805, 39);
             this.PanelSearch.Name = "PanelSearch";
-            this.PanelSearch.Size = new System.Drawing.Size(404, 57);
+            this.PanelSearch.Size = new System.Drawing.Size(364, 57);
             this.PanelSearch.TabIndex = 93;
             // 
-            // panel2
+            // button2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.panel2.Location = new System.Drawing.Point(338, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(61, 53);
-            this.panel2.TabIndex = 73;
+            this.button2.BackColor = System.Drawing.Color.SeaGreen;
+            this.button2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(292, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(67, 53);
+            this.button2.TabIndex = 111;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // SearchBoxx
             // 
             this.SearchBoxx.Location = new System.Drawing.Point(12, 17);
             this.SearchBoxx.Name = "SearchBoxx";
-            this.SearchBoxx.Size = new System.Drawing.Size(310, 22);
+            this.SearchBoxx.Size = new System.Drawing.Size(274, 22);
             this.SearchBoxx.TabIndex = 1;
             // 
             // SearchBox
@@ -340,31 +345,42 @@
             // 
             // dateTimeBirthDay
             // 
-            this.dateTimeBirthDay.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeBirthDay.CustomFormat = " dd  /  MM  /  yyyy";
             this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeBirthDay.Location = new System.Drawing.Point(140, 150);
             this.dateTimeBirthDay.Name = "dateTimeBirthDay";
             this.dateTimeBirthDay.Size = new System.Drawing.Size(160, 22);
             this.dateTimeBirthDay.TabIndex = 110;
             // 
-            // button1
+            // btnSetAppointment
             // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(19, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 60);
-            this.button1.TabIndex = 75;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSetAppointment.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSetAppointment.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSetAppointment.Image = ((System.Drawing.Image)(resources.GetObject("btnSetAppointment.Image")));
+            this.btnSetAppointment.Location = new System.Drawing.Point(1188, 38);
+            this.btnSetAppointment.Name = "btnSetAppointment";
+            this.btnSetAppointment.Size = new System.Drawing.Size(65, 60);
+            this.btnSetAppointment.TabIndex = 68;
+            this.btnSetAppointment.UseVisualStyleBackColor = false;
+            this.btnSetAppointment.Click += new System.EventHandler(this.btnSetAppointment_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(920, 160);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(269, 142);
+            this.panel3.TabIndex = 107;
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnSetAppointment);
             this.Controls.Add(this.dateTimeBirthDay);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.ControlPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BirthDay);
@@ -382,10 +398,10 @@
             this.Size = new System.Drawing.Size(1285, 687);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel4.ResumeLayout(false);
-            this.ControlPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.InformationPanel.ResumeLayout(false);
             this.InformationPanel.PerformLayout();
             this.PanelSearch.ResumeLayout(false);
@@ -401,7 +417,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Panel ControlPanel;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
@@ -417,16 +432,17 @@
         private System.Windows.Forms.Label Information;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Panel PanelSearch;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox SearchBoxx;
         private System.Windows.Forms.TextBox SearchBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DateTimePicker dateTimeBirthDay;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namecusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailcusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonecusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnSetAppointment;
     }
 }

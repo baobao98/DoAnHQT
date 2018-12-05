@@ -16,5 +16,10 @@ namespace real_estate.user_control
         {
             InitializeComponent();
         }
+
+        private void Projects_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

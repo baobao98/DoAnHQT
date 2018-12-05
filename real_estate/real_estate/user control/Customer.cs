@@ -17,7 +17,6 @@ namespace real_estate.user_control
         {
             InitializeComponent();
         }
-
         private void Customer_Load(object sender, EventArgs e)
         {
             ShowCustomer();
@@ -25,12 +24,10 @@ namespace real_estate.user_control
         void ShowCustomer()
         {
             dataGridView.DataSource = cus.GetCustomer();
+            dataGridView.AutoResizeColumns();
         }
-    
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-         
             cus.CreateCustomer(txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
             ShowCustomer();
             MessageBox.Show("Add thành công!!");
@@ -42,51 +39,35 @@ namespace real_estate.user_control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try {
-                int r = dataGridView.CurrentCell.RowIndex;
-                 string strID =dataGridView.Rows[r].Cells[0].Value.ToString();
-                cus.DeleteCustomer(strID);
-            }
-            catch
-            {
-              //  cus.DeleteCustomer(txtID.Text);
-                ShowCustomer();
-                MessageBox.Show("Delete thành công!!");
-            }
-         
-      
+            int r = dataGridView.CurrentCell.RowIndex;
+            string strID = dataGridView.Rows[r].Cells[0].Value.ToString();
+            cus.DeleteCustomer(strID);
+            ShowCustomer();
+            MessageBox.Show("Delete thành công!!");
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-          
+
             txtName.ResetText();
             txtEmail.ResetText();
             txtPhone.ResetText();
             dateTimeBirthDay.ResetText();
         }
 
-
-       
-
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            try {
-                int r = dataGridView.CurrentCell.RowIndex;
-                string strID = dataGridView.Rows[r].Cells[0].Value.ToString();
-                cus.UpdateCustomer(strID, txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
-            }
-            catch
-            {
-                ShowCustomer();
-                MessageBox.Show("Update thành công!!");
-
-            }
+            int r = dataGridView.CurrentCell.RowIndex;
+            string strID = dataGridView.Rows[r].Cells[0].Value.ToString();
+            cus.UpdateCustomer(strID, txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
+            ShowCustomer();
+            MessageBox.Show("Update thành công!!");
         }
 
-        private void Save_Click(object sender, EventArgs e)
+        private void btnSetAppointment_Click(object sender, EventArgs e)
         {
-
+            Form fm = new SetAppointment();
+            fm.ShowDialog();
         }
     }
 }

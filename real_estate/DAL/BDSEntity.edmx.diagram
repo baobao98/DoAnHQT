@@ -7,7 +7,6 @@
       <Diagram DiagramId="e68d2b81efd649d89094ff5454887e5f" Name="Diagram1">
         <EntityTypeShape EntityType="RealEstateEntity.account" Width="1.5" PointX="12" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.advertisement" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RealEstateEntity.appointment" Width="1.5" PointX="9.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.area" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.contact" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateEntity.customer" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
@@ -22,7 +21,6 @@
         <AssociationConnector Association="RealEstateEntity.FK__account__type_ac__145C0A3F" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__employee__accoun__182C9B23" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__property__id_ad__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="RealEstateEntity.FK__appointme__id_cu__25869641" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__area__id_town_re__1CF15040" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__district__id_are__1FCDBCEB" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__property__id_are__33D4B598" ManuallyRouted="false" />
@@ -32,6 +30,8 @@
         <AssociationConnector Association="RealEstateEntity.FK__property__id_rea__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__property__id_tow__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RealEstateEntity.appointment" Width="1.5" PointX="9.75" PointY="11" />
+        <AssociationConnector Association="RealEstateEntity.FK__appointme__id_cu__4CA06362" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

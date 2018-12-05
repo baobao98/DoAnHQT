@@ -26,6 +26,7 @@
     <Property Name="description" Type="varchar" MaxLength="255" />
     <Property Name="status" Type="varchar" MaxLength="50" />
     <Property Name="id_cus" Type="varchar" MaxLength="10" />
+    <Property Name="appointment_date" Type="datetime" />
   </EntityType>
   <EntityType Name="area">
     <Key>
@@ -291,6 +292,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="appo_GetAllAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="AppoCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AppointmentUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="varchar" Mode="In" />
     <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
@@ -310,10 +325,10 @@
   <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
-    <Parameter Name="Type" Type="varchar" Mode="In" />
+  <Function Name="DeleteAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
   </Function>
+  <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="RealEstateEntityStoreContainer">
     <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="dbo" store:Type="Tables" />

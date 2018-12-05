@@ -21,16 +21,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="appointments">
-      <EntityTypeMapping TypeName="RealEstateEntity.appointment">
-        <MappingFragment StoreEntitySet="appointment">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="areas">
       <EntityTypeMapping TypeName="RealEstateEntity.area">
         <MappingFragment StoreEntitySet="area">
@@ -154,5 +144,20 @@
     <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate" />
     <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
     <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
+    <EntitySetMapping Name="appointments">
+      <EntityTypeMapping TypeName="RealEstateEntity.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateEntity.Store.appo_GetAllAppo" />
+    <FunctionImportMapping FunctionImportName="AppoCreate" FunctionName="RealEstateEntity.Store.AppoCreate" />
+    <FunctionImportMapping FunctionImportName="AppointmentUpdate" FunctionName="RealEstateEntity.Store.AppointmentUpdate" />
+    <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateEntity.Store.DeleteAppo" />
   </EntityContainerMapping>
 </Mapping>

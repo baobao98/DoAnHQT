@@ -31,6 +31,7 @@
           <Property Name="description" Type="varchar" MaxLength="255" />
           <Property Name="status" Type="varchar" MaxLength="50" />
           <Property Name="id_cus" Type="varchar" MaxLength="10" />
+          <Property Name="appointment_date" Type="datetime" />
         </EntityType>
         <EntityType Name="area">
           <Key>
@@ -296,6 +297,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="appo_GetAllAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="AppoCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="id_cus" Type="varchar" Mode="In" />
+          <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="AppointmentUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="id_cus" Type="varchar" Mode="In" />
+          <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
           <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
@@ -315,10 +330,10 @@
         <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
-          <Parameter Name="Type" Type="varchar" Mode="In" />
+        <Function Name="DeleteAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
         </Function>
+        <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="RealEstateEntityStoreContainer">
           <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="dbo" store:Type="Tables" />
@@ -412,16 +427,6 @@
           <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="properties" Relationship="Self.FK__property__id_ad__35BCFE0A" FromRole="advertisement" ToRole="property" />
         </EntityType>
-        <EntityType Name="appointment">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="customer" Relationship="Self.FK__appointme__id_cu__25869641" FromRole="appointment" ToRole="customer" />
-        </EntityType>
         <EntityType Name="area">
           <Key>
             <PropertyRef Name="id" />
@@ -451,8 +456,8 @@
           <Property Name="phone_cus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="create_date" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="appointments" Relationship="Self.FK__appointme__id_cu__25869641" FromRole="customer" ToRole="appointment" />
           <NavigationProperty Name="trannsactions" Relationship="Self.FK__trannsact__id_cu__3A81B327" FromRole="customer" ToRole="trannsaction" />
+          <NavigationProperty Name="appointments" Relationship="RealEstateEntity.FK__appointme__id_cu__4CA06362" FromRole="customer" ToRole="appointment" />
         </EntityType>
         <EntityType Name="district">
           <Key>
@@ -588,18 +593,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__appointme__id_cu__25869641">
-          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="customer">
-              <PropertyRef Name="id_cus" />
-            </Principal>
-            <Dependent Role="appointment">
-              <PropertyRef Name="id_cus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__area__id_town_re__1CF15040">
           <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
           <End Role="area" Type="Self.area" Multiplicity="*" />
@@ -711,7 +704,6 @@
         <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="accounts" EntityType="Self.account" />
           <EntitySet Name="advertisements" EntityType="Self.advertisement" />
-          <EntitySet Name="appointments" EntityType="Self.appointment" />
           <EntitySet Name="areas" EntityType="Self.area" />
           <EntitySet Name="contacts" EntityType="Self.contact" />
           <EntitySet Name="customers" EntityType="Self.customer" />
@@ -734,10 +726,6 @@
           <AssociationSet Name="FK__property__id_ad__35BCFE0A" Association="Self.FK__property__id_ad__35BCFE0A">
             <End Role="advertisement" EntitySet="advertisements" />
             <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
-            <End Role="customer" EntitySet="customers" />
-            <End Role="appointment" EntitySet="appointments" />
           </AssociationSet>
           <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
             <End Role="townRegion" EntitySet="townRegions" />
@@ -784,16 +772,38 @@
             <Parameter Name="birthday" Mode="In" Type="DateTime" />
             <Parameter Name="create_date" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="CustomerDelete" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+          <FunctionImport Name="CustomerDelete">
           <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="cusp_CustomerUpdate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
+          <FunctionImport Name="cusp_CustomerUpdate">
             <Parameter Name="id" Mode="In" Type="String" />
             <Parameter Name="name_cus" Mode="In" Type="String" />
             <Parameter Name="email_cus" Mode="In" Type="String" />
             <Parameter Name="phone_cus" Mode="In" Type="String" />
             <Parameter Name="birthday" Mode="In" Type="DateTime" />
             <Parameter Name="create_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="appointments" EntityType="RealEstateEntity.appointment" />
+          <AssociationSet Name="FK__appointme__id_cu__4CA06362" Association="RealEstateEntity.FK__appointme__id_cu__4CA06362">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)" />
+          <FunctionImport Name="AppoCreate">
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AppointmentUpdate">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteAppo">
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetAllCustomer_Result">
@@ -811,6 +821,48 @@
           <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
           <Property Type="DateTime" Name="birthday" Nullable="true" />
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="appointment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="appointment_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__appointme__id_cu__4CA06362" FromRole="appointment" ToRole="customer" />
+        </EntityType>
+        <Association Name="FK__appointme__id_cu__4CA06362">
+          <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.appointment" Role="appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="appo_GetAllAppo_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="AppoCreate_Result">
+          <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="AppoCreate_Result1">
+          <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -835,16 +887,6 @@
                 <ScalarProperty Name="name_ad" ColumnName="name_ad" />
                 <ScalarProperty Name="information" ColumnName="information" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="appointments">
-            <EntityTypeMapping TypeName="RealEstateEntity.appointment">
-              <MappingFragment StoreEntitySet="appointment">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -973,6 +1015,23 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
           <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
+          <EntitySetMapping Name="appointments">
+            <EntityTypeMapping TypeName="RealEstateEntity.appointment">
+              <MappingFragment StoreEntitySet="appointment">
+                <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateEntity.Store.appo_GetAllAppo">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AppoCreate" FunctionName="RealEstateEntity.Store.AppoCreate">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AppointmentUpdate" FunctionName="RealEstateEntity.Store.AppointmentUpdate" />
+          <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateEntity.Store.DeleteAppo" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
