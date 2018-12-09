@@ -71,7 +71,6 @@ D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyRe
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
@@ -134,3 +133,5 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.dll
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
