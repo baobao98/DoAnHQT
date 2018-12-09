@@ -21,7 +21,6 @@ namespace DAL
         }
     
         public string id_prop { get; set; }
-        public string name { get; set; }
         public Nullable<int> id_real_estate_type { get; set; }
         public string id_project { get; set; }
         public Nullable<int> floor { get; set; }
@@ -31,11 +30,13 @@ namespace DAL
         public Nullable<int> id_town_region { get; set; }
         public Nullable<int> id_area { get; set; }
         public Nullable<int> id_district { get; set; }
-        public string id_ad { get; set; }
+        public string status { get; set; }
+        public string name { get; set; }
+        public byte[] avatar { get; set; }
     
-        public virtual advertisement advertisement { get; set; }
         public virtual area area { get; set; }
         public virtual district district { get; set; }
+        public virtual project project { get; set; }
         public virtual realEstateType realEstateType { get; set; }
         public virtual townRegion townRegion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
