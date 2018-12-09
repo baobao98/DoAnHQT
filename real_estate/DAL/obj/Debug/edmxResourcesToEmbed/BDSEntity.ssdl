@@ -35,14 +35,6 @@
     <Property Name="name" Type="nvarchar" MaxLength="50" />
     <Property Name="id_town_region" Type="int" />
   </EntityType>
-  <EntityType Name="contact">
-    <Key>
-      <PropertyRef Name="id_ct" />
-    </Key>
-    <Property Name="id_ct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="phone" Type="varchar" MaxLength="15" />
-    <Property Name="status" Type="int" />
-  </EntityType>
   <EntityType Name="customer">
     <Key>
       <PropertyRef Name="id_cus" />
@@ -80,11 +72,11 @@
     </Key>
     <Property Name="id_proj" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="name_project" Type="nvarchar" MaxLength="255" />
-    <Property Name="id_real_estate_type" Type="int" />
     <Property Name="address" Type="nvarchar" MaxLength="255" />
     <Property Name="license_number" Type="varchar" MaxLength="50" />
     <Property Name="dateOfIssue" Type="date" />
     <Property Name="PlaceOfIssue" Type="varchar" MaxLength="50" />
+    <Property Name="information" Type="text" />
   </EntityType>
   <EntityType Name="property">
     <Key>
@@ -195,18 +187,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__project__id_real__2B3F6F97">
-    <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
-    <End Role="project" Type="Self.project" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="realEstateType">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="project">
-        <PropertyRef Name="id_real_estate_type" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__property__id_ad__35BCFE0A">
     <End Role="advertisement" Type="Self.advertisement" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
@@ -291,6 +271,60 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_property_project">
+    <End Role="project" Type="Self.project" Multiplicity="0..1" />
+    <End Role="property" Type="Self.property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="id_proj" />
+      </Principal>
+      <Dependent Role="property">
+        <PropertyRef Name="id_project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="addEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="acc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="addProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name_project" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="license_number" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfIssue" Type="date" Mode="In" />
+    <Parameter Name="PlaceOfIssue" Type="varchar" Mode="In" />
+    <Parameter Name="information" Type="text" Mode="In" />
+  </Function>
+  <Function Name="deleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="deleteProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="editEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+  </Function>
+  <Function Name="editProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_project" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="license_number" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfIssue" Type="date" Mode="In" />
+    <Parameter Name="PlaceOfIssue" Type="varchar" Mode="In" />
+    <Parameter Name="information" Type="text" Mode="In" />
+  </Function>
+  <Function Name="getEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="searchEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_name" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="Type" Type="varchar" Mode="In" />
   </Function>
@@ -299,7 +333,6 @@
     <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="district" EntityType="Self.district" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
@@ -329,10 +362,6 @@
       <End Role="account" EntitySet="account" />
       <End Role="employee" EntitySet="employee" />
     </AssociationSet>
-    <AssociationSet Name="FK__project__id_real__2B3F6F97" Association="Self.FK__project__id_real__2B3F6F97">
-      <End Role="realEstateType" EntitySet="realEstateType" />
-      <End Role="project" EntitySet="project" />
-    </AssociationSet>
     <AssociationSet Name="FK__property__id_ad__35BCFE0A" Association="Self.FK__property__id_ad__35BCFE0A">
       <End Role="advertisement" EntitySet="advertisement" />
       <End Role="property" EntitySet="property" />
@@ -360,6 +389,10 @@
     <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
       <End Role="property" EntitySet="property" />
       <End Role="trannsaction" EntitySet="trannsaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_property_project" Association="Self.FK_property_project">
+      <End Role="project" EntitySet="project" />
+      <End Role="property" EntitySet="property" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
