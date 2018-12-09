@@ -89,6 +89,12 @@
     <Compile Include="employee.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getEmployees_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getProject_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="project.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -102,6 +108,12 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="realEstateType.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="seachEmployee_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="searchEmployee_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="townRegion.cs">

@@ -26,3 +26,13 @@ C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

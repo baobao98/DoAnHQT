@@ -12,6 +12,8 @@ namespace DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class RealEstateEntities : DbContext
     {
@@ -26,18 +28,196 @@ namespace DAL
         }
     
         public virtual DbSet<account> accounts { get; set; }
-        public virtual DbSet<advertisement> advertisements { get; set; }
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<area> areas { get; set; }
         public virtual DbSet<contact> contacts { get; set; }
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<district> districts { get; set; }
-        public virtual DbSet<employee> employees { get; set; }
-        public virtual DbSet<project> projects { get; set; }
         public virtual DbSet<property> properties { get; set; }
         public virtual DbSet<realEstateType> realEstateTypes { get; set; }
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
+        public virtual DbSet<project> projects { get; set; }
+        public virtual DbSet<advertisement> advertisements { get; set; }
+        public virtual DbSet<employee> employees { get; set; }
+    
+        public virtual ObjectResult<getEmployees_Result> getEmployees()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployees_Result>("getEmployees");
+        }
+    
+        public virtual int aditEmployee(string id, string name, string email, string phone, Nullable<System.DateTime> birthday)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("aditEmployee", idParameter, nameParameter, emailParameter, phoneParameter, birthdayParameter);
+        }
+    
+        public virtual int deleteEmployee(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteEmployee", idParameter);
+        }
+    
+        public virtual ObjectResult<getProject_Result> getProject()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProject_Result>("getProject");
+        }
+    
+        public virtual int deleteProject(string id)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("deleteProject", idParameter);
+        }
+    
+        public virtual int editProject(string id, string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string placeOfIssue, string information)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var name_projectParameter = name_project != null ?
+                new ObjectParameter("name_project", name_project) :
+                new ObjectParameter("name_project", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var license_numberParameter = license_number != null ?
+                new ObjectParameter("license_number", license_number) :
+                new ObjectParameter("license_number", typeof(string));
+    
+            var dateOfIssueParameter = dateOfIssue.HasValue ?
+                new ObjectParameter("dateOfIssue", dateOfIssue) :
+                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
+    
+            var placeOfIssueParameter = placeOfIssue != null ?
+                new ObjectParameter("PlaceOfIssue", placeOfIssue) :
+                new ObjectParameter("PlaceOfIssue", typeof(string));
+    
+            var informationParameter = information != null ?
+                new ObjectParameter("information", information) :
+                new ObjectParameter("information", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editProject", idParameter, name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, placeOfIssueParameter, informationParameter);
+        }
+    
+        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string placeOfIssue, string information)
+        {
+            var name_projectParameter = name_project != null ?
+                new ObjectParameter("name_project", name_project) :
+                new ObjectParameter("name_project", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var license_numberParameter = license_number != null ?
+                new ObjectParameter("license_number", license_number) :
+                new ObjectParameter("license_number", typeof(string));
+    
+            var dateOfIssueParameter = dateOfIssue.HasValue ?
+                new ObjectParameter("dateOfIssue", dateOfIssue) :
+                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
+    
+            var placeOfIssueParameter = placeOfIssue != null ?
+                new ObjectParameter("PlaceOfIssue", placeOfIssue) :
+                new ObjectParameter("PlaceOfIssue", typeof(string));
+    
+            var informationParameter = information != null ?
+                new ObjectParameter("information", information) :
+                new ObjectParameter("information", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, placeOfIssueParameter, informationParameter);
+        }
+    
+        public virtual ObjectResult<seachEmployee_Result> seachEmployee(string id, string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var accParameter = acc != null ?
+                new ObjectParameter("acc", acc) :
+                new ObjectParameter("acc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<seachEmployee_Result>("seachEmployee", idParameter, nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
+        }
+    
+        public virtual ObjectResult<searchEmployee_Result> searchEmployee(string id_name)
+        {
+            var id_nameParameter = id_name != null ?
+                new ObjectParameter("id_name", id_name) :
+                new ObjectParameter("id_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result>("searchEmployee", id_nameParameter);
+        }
+    
+        public virtual int addEmployee(string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var accParameter = acc != null ?
+                new ObjectParameter("acc", acc) :
+                new ObjectParameter("acc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addEmployee", nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
+        }
     }
 }

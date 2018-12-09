@@ -32,13 +32,15 @@ namespace DAL
         public Nullable<int> id_area { get; set; }
         public Nullable<int> id_district { get; set; }
         public string id_ad { get; set; }
+        public string id_ad1 { get; set; }
     
-        public virtual advertisement advertisement { get; set; }
         public virtual area area { get; set; }
         public virtual district district { get; set; }
         public virtual realEstateType realEstateType { get; set; }
         public virtual townRegion townRegion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trannsaction> trannsactions { get; set; }
+        public virtual project project { get; set; }
+        public virtual advertisement advertisement { get; set; }
     }
 }

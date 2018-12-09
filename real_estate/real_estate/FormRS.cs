@@ -51,7 +51,7 @@ namespace real_estate
 
         private void btnProject_Click(object sender, EventArgs e)
         {
-            products1.BringToFront();
+           projects1.BringToFront();
         }
 
     }

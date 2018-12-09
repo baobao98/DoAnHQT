@@ -152,6 +152,9 @@
     <EmbeddedResource Include="FormRS.resx">
       <DependentUpon>FormRS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\appointment.resx">
+      <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
