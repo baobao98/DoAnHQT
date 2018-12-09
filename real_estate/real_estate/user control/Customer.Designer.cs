@@ -37,6 +37,7 @@
             this.Cancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BirthDay = new System.Windows.Forms.Label();
@@ -63,12 +64,16 @@
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.btnSetAppointment = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnMail = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVip = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.InformationPanel.SuspendLayout();
             this.PanelSearch.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -78,7 +83,7 @@
             this.panel4.Controls.Add(this.Cancel);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Location = new System.Drawing.Point(881, 424);
+            this.panel4.Location = new System.Drawing.Point(881, 367);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(349, 113);
             this.panel4.TabIndex = 109;
@@ -100,7 +105,7 @@
             this.Cancel.BackColor = System.Drawing.Color.SeaGreen;
             this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Cancel.Image = ((System.Drawing.Image)(resources.GetObject("Cancel.Image")));
-            this.Cancel.Location = new System.Drawing.Point(259, 22);
+            this.Cancel.Location = new System.Drawing.Point(262, 22);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(65, 60);
             this.Cancel.TabIndex = 74;
@@ -130,6 +135,19 @@
             this.btnDelete.TabIndex = 68;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExport.BackgroundImage")));
+            this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExport.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExport.Location = new System.Drawing.Point(262, 28);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(65, 60);
+            this.btnExport.TabIndex = 113;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // panel1
             // 
@@ -313,7 +331,7 @@
             this.PanelSearch.Controls.Add(this.SearchBoxx);
             this.PanelSearch.Controls.Add(this.SearchBox);
             this.PanelSearch.ForeColor = System.Drawing.Color.SeaGreen;
-            this.PanelSearch.Location = new System.Drawing.Point(805, 39);
+            this.PanelSearch.Location = new System.Drawing.Point(866, 39);
             this.PanelSearch.Name = "PanelSearch";
             this.PanelSearch.Size = new System.Drawing.Size(364, 57);
             this.PanelSearch.TabIndex = 93;
@@ -357,7 +375,7 @@
             this.btnSetAppointment.BackColor = System.Drawing.Color.SeaGreen;
             this.btnSetAppointment.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSetAppointment.Image = ((System.Drawing.Image)(resources.GetObject("btnSetAppointment.Image")));
-            this.btnSetAppointment.Location = new System.Drawing.Point(1188, 38);
+            this.btnSetAppointment.Location = new System.Drawing.Point(20, 28);
             this.btnSetAppointment.Name = "btnSetAppointment";
             this.btnSetAppointment.Size = new System.Drawing.Size(65, 60);
             this.btnSetAppointment.TabIndex = 68;
@@ -373,12 +391,49 @@
             this.panel3.Size = new System.Drawing.Size(269, 142);
             this.panel3.TabIndex = 107;
             // 
+            // btnMail
+            // 
+            this.btnMail.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnMail.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMail.Image = ((System.Drawing.Image)(resources.GetObject("btnMail.Image")));
+            this.btnMail.Location = new System.Drawing.Point(99, 28);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(65, 60);
+            this.btnMail.TabIndex = 111;
+            this.btnMail.UseVisualStyleBackColor = false;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnExport);
+            this.panel2.Controls.Add(this.btnVip);
+            this.panel2.Controls.Add(this.btnMail);
+            this.panel2.Controls.Add(this.btnSetAppointment);
+            this.panel2.Location = new System.Drawing.Point(881, 505);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(349, 113);
+            this.panel2.TabIndex = 112;
+            // 
+            // btnVip
+            // 
+            this.btnVip.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnVip.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVip.Image = ((System.Drawing.Image)(resources.GetObject("btnVip.Image")));
+            this.btnVip.Location = new System.Drawing.Point(180, 28);
+            this.btnVip.Name = "btnVip";
+            this.btnVip.Size = new System.Drawing.Size(65, 60);
+            this.btnVip.TabIndex = 112;
+            this.btnVip.UseVisualStyleBackColor = false;
+            this.btnVip.Click += new System.EventHandler(this.btnVip_Click);
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.btnSetAppointment);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimeBirthDay);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -394,7 +449,6 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.PanelSearch);
             this.Margin = new System.Windows.Forms.Padding(4);
-           
             this.Size = new System.Drawing.Size(1285, 687);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel4.ResumeLayout(false);
@@ -406,6 +460,7 @@
             this.InformationPanel.PerformLayout();
             this.PanelSearch.ResumeLayout(false);
             this.PanelSearch.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +499,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnSetAppointment;
+        private System.Windows.Forms.Button btnMail;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnVip;
+        private System.Windows.Forms.Button btnExport;
     }
 }

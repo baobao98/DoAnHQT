@@ -13,7 +13,6 @@ namespace real_estate
     public partial class SetAppointment : Form
     {
         BALAppointment appo = new BALAppointment();
-
         private void panel4_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -22,7 +21,6 @@ namespace real_estate
         {
             InitializeComponent();
         }
-
         public void SetAppointment_Load(object sender, EventArgs e)
         {
             ShowAppo();
@@ -54,16 +52,14 @@ namespace real_estate
             ShowAppo();
 
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int r = dgvSetAppo.CurrentCell.RowIndex;
             int strID = Int32.Parse(dgvSetAppo.Rows[r].Cells[0].Value.ToString());
             appo.DeleteAppo(strID);
             ShowAppo();
-            MessageBox.Show("Delete Thành công!"); 
+            MessageBox.Show("Delete Thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); 
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Appointmentt fm = new Appointmentt();
@@ -71,7 +67,5 @@ namespace real_estate
             fm.ShowDialog();
             ShowAppo();
         }
-
-       
     }
 }

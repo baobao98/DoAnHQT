@@ -32,7 +32,6 @@ namespace real_estate
             Loadcombo();
            
         }
-
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -63,13 +62,13 @@ namespace real_estate
             {
                 //create
                 appo.CreateAppo(txtDes.Text, txtStatus.Text, comboBoxIDCus.SelectedValue.ToString(), dateTimeAppo.Value.Date);
-                MessageBox.Show("Create Thành Công !!");
+                MessageBox.Show("Add Thành Công !", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {//update
                 SetAppointment set = new SetAppointment();
                 appo.UpdateAppo(id_app, txtDes.Text, txtStatus.Text, comboBoxIDCus.SelectedValue.ToString(), dateTimeAppo.Value.Date);
-                MessageBox.Show("Update thành công!!");
+                MessageBox.Show("Update thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
         private void btnCancel_Click(object sender, EventArgs e)

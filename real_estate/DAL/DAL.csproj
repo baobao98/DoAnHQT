@@ -95,6 +95,9 @@
     <Compile Include="CustomerCreate_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerVip_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="district.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>

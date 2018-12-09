@@ -162,3 +162,6 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll.config
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
+D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
+D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache

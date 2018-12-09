@@ -212,5 +212,10 @@ namespace DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteAppo", idParameter);
         }
+    
+        public virtual ObjectResult<CustomerVip_Result> CustomerVip()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustomerVip_Result>("CustomerVip");
+        }
     }
 }

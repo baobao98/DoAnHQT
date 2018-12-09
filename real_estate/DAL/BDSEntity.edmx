@@ -330,6 +330,7 @@
         <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="CustomerVip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="DeleteAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -803,8 +804,9 @@
             <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="DeleteAppo">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateEntity.CustomerVip_Result)" />
         </EntityContainer>
         <ComplexType Name="GetAllCustomer_Result">
           <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
@@ -863,6 +865,11 @@
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
           <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CustomerVip_Result">
+          <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="amount" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1032,6 +1039,15 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="AppointmentUpdate" FunctionName="RealEstateEntity.Store.AppointmentUpdate" />
           <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateEntity.Store.DeleteAppo" />
+          <FunctionImportMapping FunctionImportName="CustomerVip" FunctionName="RealEstateEntity.Store.CustomerVip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.CustomerVip_Result">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -52,6 +52,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\BAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MyLibDummy, Version=0.9.4345.22792, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Package.1.0\lib\net40\MyLibDummy.dll</HintPath>
@@ -95,6 +98,12 @@
     </Compile>
     <Compile Include="Forms\appointment.Designer.cs">
       <DependentUpon>appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mail.Designer.cs">
+      <DependentUpon>Mail.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +172,12 @@
     <Compile Include="user control\RealEstate.Designer.cs">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIP.Designer.cs">
+      <DependentUpon>VIP.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Appointmentt.resx">
       <DependentUpon>Appointmentt.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\appointment.resx">
       <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail.resx">
+      <DependentUpon>Mail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -210,9 +228,13 @@
     <EmbeddedResource Include="user control\RealEstate.resx">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIP.resx">
+      <DependentUpon>VIP.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DAL.appointment.datasource" />
     <None Include="Properties\DataSources\DAL.customer.datasource" />
+    <None Include="Properties\DataSources\DAL.trannsaction.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -233,6 +255,17 @@
     <None Include="img\logo-RS.png" />
     <None Include="img\house.png" />
     <Content Include="img\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

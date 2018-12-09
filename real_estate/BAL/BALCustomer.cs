@@ -14,7 +14,12 @@ namespace BAL
             using(RealEstateEntities dbs = new RealEstateEntities())
             return dbs.GetAllCustomer().ToList();
         }
-       
+
+        public List<CustomerVip_Result> GetCustomerVip()
+        {
+            using (RealEstateEntities dbs = new RealEstateEntities())
+                return dbs.CustomerVip().ToList();
+        }
 
         public void CreateCustomer(string name_cus, string email_cus, string phone_cus, DateTime birthday )
         {

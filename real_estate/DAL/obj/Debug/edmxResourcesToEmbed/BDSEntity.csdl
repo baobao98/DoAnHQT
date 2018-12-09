@@ -399,6 +399,7 @@
     <FunctionImport Name="DeleteAppo">
       <Parameter Name="id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateEntity.CustomerVip_Result)" />
   </EntityContainer>
   <ComplexType Name="GetAllCustomer_Result">
     <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
@@ -457,5 +458,10 @@
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
     <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="CustomerVip_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="amount" Nullable="true" />
   </ComplexType>
 </Schema>
