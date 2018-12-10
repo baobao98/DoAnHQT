@@ -10,16 +10,13 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class getContact_Result
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
-        public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-    
-        public virtual property property { get; set; }
+        public int id_ct { get; set; }
+        public string phone { get; set; }
+        public Nullable<int> status { get; set; }
+        public string id_prop { get; set; }
+        public string name { get; set; }
     }
 }

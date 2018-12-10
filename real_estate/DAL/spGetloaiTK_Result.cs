@@ -11,11 +11,9 @@ namespace DAL
 {
     using System;
     
-    public partial class AppoCreate_Result
+    public partial class spGetloaiTK_Result
     {
-        public string description { get; set; }
-        public string status { get; set; }
-        public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
+        public int id { get; set; }
+        public string NameOfTypeAcc { get; set; }
     }
 }

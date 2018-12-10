@@ -118,6 +118,12 @@
     <Compile Include="SetAppointment.Designer.cs">
       <DependentUpon>SetAppointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="TypeAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeAccount.Designer.cs">
+      <DependentUpon>TypeAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="user control\Bill.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SetAppointment.resx">
       <DependentUpon>SetAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeAccount.resx">
+      <DependentUpon>TypeAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>

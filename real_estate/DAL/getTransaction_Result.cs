@@ -11,11 +11,13 @@ namespace DAL
 {
     using System;
     
-    public partial class AppoCreate_Result1
+    public partial class getTransaction_Result
     {
-        public string description { get; set; }
-        public string status { get; set; }
+        public string id_trans { get; set; }
+        public string id_prop { get; set; }
         public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
+        public Nullable<double> amount { get; set; }
+        public string status { get; set; }
+        public string payment { get; set; }
     }
 }

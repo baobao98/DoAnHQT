@@ -87,10 +87,7 @@ D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll.config
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
@@ -125,7 +122,6 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateR
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
@@ -165,3 +161,13 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlSer
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
