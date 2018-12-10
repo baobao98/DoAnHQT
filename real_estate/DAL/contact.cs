@@ -17,5 +17,7 @@ namespace DAL
         public int id_ct { get; set; }
         public string phone { get; set; }
         public Nullable<int> status { get; set; }
+        public string id_prop { get; set; }
+        public string name { get; set; }
     }
 }

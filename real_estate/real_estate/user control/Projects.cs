@@ -30,7 +30,7 @@ namespace real_estate.user_control
             }
             catch
             {
-                MessageBox.Show("Không lấy được nội dung trong table Employee. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong table project. Lỗi rồi!!!");
             }
         }
         void textreset()
@@ -47,8 +47,8 @@ namespace real_estate.user_control
         }
         void addrich(int r)
         {
-            int[] x=new int[7];
-            for (int ii = 0; ii < 7; ii++)
+            int[] x=new int[6];
+            for (int ii = 0; ii < 6; ii++)
                 if (dataGridView1.Rows[r].Cells[ii].Value == null)
                 {
                     dataGridView1.Rows[r].Cells[ii].Value = "";
@@ -59,7 +59,7 @@ namespace real_estate.user_control
             //text of richtextbox
             richTextBox1.Text = dataGridView1.Rows[r].Cells[1].Value.ToString()+"\n"+ "License Number: " + dataGridView1.Rows[r].Cells[3].Value.ToString()+"\n";
             richTextBox1.Text += "Address: " + dataGridView1.Rows[r].Cells[2].Value.ToString()+"\n"+ "Date: "+dataGridView1.Rows[r].Cells[4].Value.ToString()+"\n\n";
-            richTextBox1.Text += dataGridView1.Rows[r].Cells[6].Value.ToString();
+            richTextBox1.Text += dataGridView1.Rows[r].Cells[5].Value.ToString();
 
             //design tital
             richTextBox1.SelectionStart = 0;
@@ -89,7 +89,7 @@ namespace real_estate.user_control
         {
             int r = dataGridView1.CurrentCell.RowIndex;
             id = dataGridView1.Rows[r].Cells[0].Value.ToString();
-            for (int ii = 0; ii < 7; ii++)
+            for (int ii = 0; ii < 6; ii++)
                 if (dataGridView1.Rows[r].Cells[ii].Value == null)
                     dataGridView1.Rows[r].Cells[ii].Value = "";
             txtName.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
@@ -97,7 +97,7 @@ namespace real_estate.user_control
             txtLicense.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
             if (dataGridView1.Rows[r].Cells[4].Value.ToString() != "")
                 dtpkDateOfIssue.Value =Convert.ToDateTime(dataGridView1.Rows[r].Cells[4].Value);
-            rtbInfor.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
+            rtbInfor.Text = dataGridView1.Rows[r].Cells[5].Value.ToString();
             richTextBox1.Clear();
             addrich(r);
         }
@@ -152,7 +152,7 @@ namespace real_estate.user_control
             {
                 try
                 {
-                    prj.addProject(txtName.Text, txtAddress.Text, txtLicense.Text, Convert.ToDateTime(dtpkDateOfIssue.Text),"???",rtbInfor.Text);
+                    prj.addProject(txtName.Text, txtAddress.Text, txtLicense.Text, Convert.ToDateTime(dtpkDateOfIssue.Text),rtbInfor.Text);
                     load();
                 }
                 catch (Exception ex)
@@ -164,7 +164,7 @@ namespace real_estate.user_control
             {
                 try
                 {
-                    prj.updateProject(id, txtName.Text, txtAddress.Text, txtLicense.Text, Convert.ToDateTime(dtpkDateOfIssue.Text), null, rtbInfor.Text);
+                    prj.updateProject(id, txtName.Text, txtAddress.Text, txtLicense.Text, Convert.ToDateTime(dtpkDateOfIssue.Text), rtbInfor.Text);
                     load();
                 }
                 catch (Exception ex)

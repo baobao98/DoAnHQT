@@ -10,17 +10,13 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class appointment
+    public partial class getContact_Result
     {
-        public int id { get; set; }
-        public string description { get; set; }
-        public string status { get; set; }
-        public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
-    
-        public virtual customer customer { get; set; }
-        public virtual customer customer1 { get; set; }
+        public int id_ct { get; set; }
+        public string phone { get; set; }
+        public Nullable<int> status { get; set; }
+        public string id_prop { get; set; }
+        public string name { get; set; }
     }
 }

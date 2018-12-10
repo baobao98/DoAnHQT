@@ -10,17 +10,10 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class appointment
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int id { get; set; }
-        public string description { get; set; }
-        public string status { get; set; }
-        public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
-    
-        public virtual customer customer { get; set; }
-        public virtual customer customer1 { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

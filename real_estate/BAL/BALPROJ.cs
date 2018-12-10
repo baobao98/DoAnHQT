@@ -16,13 +16,13 @@ namespace BAL
         {
             return dbs.getProject();
         }
-        public void addProject(string name_project, string address, string license_number, DateTime dateOfIssue, string placeOfIssue, string information)
+        public void addProject(string name_project, string address, string license_number, DateTime dateOfIssue, string information)
         {
-            dbs.addProject(name_project, address, license_number, dateOfIssue, placeOfIssue, information);
+            dbs.addProject(name_project, address, license_number, dateOfIssue, information);
         }
-        public void updateProject(string id, string name_project, string address, string license_number, DateTime dateOfIssue,string placeOfIssue, string information)
+        public void updateProject(string id, string name_project, string address, string license_number, DateTime dateOfIssue, string information)
         {
-            dbs.editProject(id, name_project, address, license_number, dateOfIssue, placeOfIssue, information);
+            dbs.editProject(id, name_project, address, license_number, dateOfIssue, information);
         }
         public void deleteProject(string id)
         {

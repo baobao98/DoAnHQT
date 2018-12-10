@@ -48,8 +48,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,13 +93,12 @@
             this.pnThuocTinh.Name = "pnThuocTinh";
             this.pnThuocTinh.Size = new System.Drawing.Size(257, 178);
             this.pnThuocTinh.TabIndex = 26;
-            this.pnThuocTinh.Paint += new System.Windows.Forms.PaintEventHandler(this.pnThuocTinh_Paint);
             // 
             // txtacc
             // 
             this.txtacc.Location = new System.Drawing.Point(89, 146);
             this.txtacc.Name = "txtacc";
-            this.txtacc.Size = new System.Drawing.Size(100, 20);
+            this.txtacc.Size = new System.Drawing.Size(136, 20);
             this.txtacc.TabIndex = 17;
             // 
             // account
@@ -127,7 +125,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(87, 13);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(138, 20);
             this.txtName.TabIndex = 4;
             // 
             // label7
@@ -145,7 +143,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(87, 48);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(138, 20);
             this.txtEmail.TabIndex = 5;
             // 
             // label5
@@ -163,7 +161,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(87, 81);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.Size = new System.Drawing.Size(138, 20);
             this.txtPhone.TabIndex = 6;
             // 
             // label4
@@ -285,8 +283,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtsearch);
             this.panel1.Controls.Add(this.pnCRUD);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -298,36 +295,22 @@
             this.panel1.Size = new System.Drawing.Size(923, 508);
             this.panel1.TabIndex = 27;
             // 
-            // comboBox1
+            // btnSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "id",
-            "name",
-            "account"});
-            this.comboBox1.Location = new System.Drawing.Point(24, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(71, 21);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(206, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.Location = new System.Drawing.Point(206, 118);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 20);
+            this.btnSearch.TabIndex = 30;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(100, 104);
+            this.txtsearch.Location = new System.Drawing.Point(24, 118);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(100, 20);
+            this.txtsearch.Size = new System.Drawing.Size(176, 20);
             this.txtsearch.TabIndex = 29;
-            this.txtsearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -345,6 +328,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(608, 380);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -430,8 +414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtsearch;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

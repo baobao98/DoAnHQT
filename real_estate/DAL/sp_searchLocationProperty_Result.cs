@@ -10,17 +10,9 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class property
+    public partial class sp_searchLocationProperty_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public property()
-        {
-            this.advertisements = new HashSet<advertisement>();
-            this.trannsactions = new HashSet<trannsaction>();
-        }
-    
         public string id_prop { get; set; }
         public string name { get; set; }
         public Nullable<int> id_real_estate_type { get; set; }
@@ -34,15 +26,5 @@ namespace DAL
         public Nullable<int> id_district { get; set; }
         public byte[] avatar { get; set; }
         public string status { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<advertisement> advertisements { get; set; }
-        public virtual area area { get; set; }
-        public virtual district district { get; set; }
-        public virtual project project { get; set; }
-        public virtual realEstateType realEstateType { get; set; }
-        public virtual townRegion townRegion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<trannsaction> trannsactions { get; set; }
     }
 }

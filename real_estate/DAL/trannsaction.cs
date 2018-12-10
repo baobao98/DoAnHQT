@@ -22,6 +22,7 @@ namespace DAL
         public string payment { get; set; }
     
         public virtual customer customer { get; set; }
+        public virtual customer customer1 { get; set; }
         public virtual property property { get; set; }
     }
 }

@@ -10,19 +10,14 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class employee
+    public partial class CustomerCreate_Result
     {
-        public string id_emp { get; set; }
-        public string name_emp { get; set; }
-        public string email_emp { get; set; }
-        public string phone_emp { get; set; }
+        public string id_cus { get; set; }
+        public string name_cus { get; set; }
+        public string email_cus { get; set; }
+        public string phone_cus { get; set; }
         public Nullable<System.DateTime> birthday { get; set; }
         public Nullable<System.DateTime> create_date { get; set; }
-        public string account { get; set; }
-    
-        public virtual account account1 { get; set; }
-        public virtual account account2 { get; set; }
     }
 }

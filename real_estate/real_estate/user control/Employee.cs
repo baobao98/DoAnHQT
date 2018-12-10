@@ -58,32 +58,6 @@ namespace real_estate.user_control
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int r = dataGridView1.CurrentCell.RowIndex;
-            id= dataGridView1.Rows[r].Cells[0].Value.ToString();
-            //txtId.Text = dataGridView1.Rows[r].Cells[0].Value.ToString();
-            txtName.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
-            if (dataGridView1.Rows[r].Cells[2].Value == null)
-                txtEmail.Text = "";
-            else
-                txtEmail.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
-            if (dataGridView1.Rows[r].Cells[3].Value == null)
-                txtPhone.Text = "";
-            else
-                txtPhone.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
-            //MessageBox.Show(dataGridView1.Rows[r].Cells[4].Value.ToString());
-            //if (dataGridView1.Rows[r].Cells[5].Value == null)
-            //    dateTimePicker1.Value = Convert.ToDateTime("00/00/0000 00/00");
-            //else
-            //    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[r].Cells[5].Value);
-            txtacc.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
-            if (id != "")
-                btnDelete.Enabled = true;
-            else
-                btnDelete.Enabled = false;
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (add)
@@ -166,11 +140,6 @@ namespace real_estate.user_control
             load();
         }
 
-        private void pnThuocTinh_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int r = dataGridView1.CurrentCell.RowIndex;
@@ -196,19 +165,14 @@ namespace real_estate.user_control
                 btnDelete.Enabled = false;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show(comboBox1.SelectedIndex.ToString());
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = nv.searchEmployee(txtsearch.Text);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
