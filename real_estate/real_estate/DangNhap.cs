@@ -19,7 +19,7 @@ namespace real_estate
             InitializeComponent();
             //var t = tk.LayTK();
             //dgv.DataSource = t.ToList();
-            //dgv.DataSource = tk.getAll();
+            //dgv.DataSource = TaiKhoanBAL.getAll();
         }
         void loaddata()
         {

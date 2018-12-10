@@ -346,5 +346,6 @@
     <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateEntity.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateEntity.Store.updateStatusContact" />
+    <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateEntity.Store.spGetloaiTK" />
   </EntityContainerMapping>
 </Mapping>

@@ -469,6 +469,7 @@
           <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetloaiTK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="Type" Type="varchar" Mode="In" />
         </Function>
@@ -664,17 +665,17 @@
             <Parameter Name="create_date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="CustomerDelete">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateEntity.CustomerVip_Result)" />
           <FunctionImport Name="DeleteAppo">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="deleteEmployee">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="deleteProject">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="editEmployee">
             <Parameter Name="id" Mode="In" Type="String" />
@@ -699,7 +700,7 @@
           </FunctionImport>
           <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result)" />
           <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateEntity.getProperty_Result)">
-            <Parameter Name="id_prop" Mode="In" Type="String" />
+          <Parameter Name="id_prop" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="insertTransaction">
             <Parameter Name="id_prop" Mode="In" Type="String" />
@@ -708,7 +709,7 @@
             <Parameter Name="payment" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result)">
-            <Parameter Name="id_name" Mode="In" Type="String" />
+          <Parameter Name="id_name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -723,7 +724,7 @@
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteProperty">
-            <Parameter Name="Id" Mode="In" Type="String" />
+          <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_dropdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -779,6 +780,7 @@
             <Parameter Name="id_prop" Mode="In" Type="String" />
             <Parameter Name="phone" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spGetloaiTK" EntitySet="typeAccounts" ReturnType="Collection(RealEstateEntity.typeAccount)" />
         </EntityContainer>
         <ComplexType Name="getTransaction_Result">
           <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
@@ -1219,6 +1221,14 @@
           <Property Type="Binary" Name="avatar" Nullable="true" />
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="spGetloaiTK_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spGetloaiTK_Result1">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1570,6 +1580,8 @@
           <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateEntity.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateEntity.Store.updateStatusContact" />
+          <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateEntity.Store.spGetloaiTK">
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

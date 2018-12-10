@@ -11,9 +11,22 @@ namespace BAL
         RealEstateEntities dbs = new RealEstateEntities();
         public System.Data.Entity.DbSet<account> LayTK()
         {
-           return dbs.accounts;
+            return dbs.accounts;
         }
-        public List<account> getAll() => dbs.accounts.ToList();
-
+        //public List<account> getAll()
+        //{
+        //    return dbs.typeAccounts.ToList();
+        //    //nay do account giong hoi nay~
+        //}
+        //m dua list type nay len dgv a. uk
+        public  List<typeAccount> GetLoaiTK()
+        {
+            using (RealEstateEntities db = new RealEstateEntities())
+            {
+                return db.spGetloaiTK().ToList();
+            }
+               
+        }
+       
     }
 }

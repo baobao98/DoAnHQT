@@ -616,5 +616,15 @@ namespace DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
         }
+    
+        public virtual ObjectResult<typeAccount> spGetloaiTK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK");
+        }
+    
+        public virtual ObjectResult<typeAccount> spGetloaiTK(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK", mergeOption);
+        }
     }
 }

@@ -135,3 +135,4 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resourc
 C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.LoaiTK.resources

@@ -230,6 +230,7 @@
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="phone" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spGetloaiTK" EntitySet="typeAccounts" ReturnType="Collection(RealEstateEntity.typeAccount)" />
   </EntityContainer>
   <ComplexType Name="getTransaction_Result">
     <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
@@ -669,5 +670,13 @@
     <Property Type="Int32" Name="id_district" Nullable="true" />
     <Property Type="Binary" Name="avatar" Nullable="true" />
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spGetloaiTK_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spGetloaiTK_Result1">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>
