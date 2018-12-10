@@ -171,3 +171,4 @@ D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
