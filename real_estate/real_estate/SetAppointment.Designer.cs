@@ -38,17 +38,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvSetAppo = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.appointmentdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.appointmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointmentdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSetAppo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -108,7 +108,7 @@
             this.dgvSetAppo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSetAppo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSetAppo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
+            this.id,
             this.descriptionDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
             this.idcusDataGridViewTextBoxColumn,
@@ -128,36 +128,6 @@
             this.dgvSetAppo.Size = new System.Drawing.Size(696, 598);
             this.dgvSetAppo.TabIndex = 4;
             this.dgvSetAppo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSetAppo_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // idcusDataGridViewTextBoxColumn
-            // 
-            this.idcusDataGridViewTextBoxColumn.DataPropertyName = "id_cus";
-            this.idcusDataGridViewTextBoxColumn.HeaderText = "IDCustomer";
-            this.idcusDataGridViewTextBoxColumn.Name = "idcusDataGridViewTextBoxColumn";
-            // 
-            // appointmentdateDataGridViewTextBoxColumn
-            // 
-            this.appointmentdateDataGridViewTextBoxColumn.DataPropertyName = "appointment_date";
-            this.appointmentdateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.appointmentdateDataGridViewTextBoxColumn.Name = "appointmentdateDataGridViewTextBoxColumn";
             // 
             // appointmentBindingSource
             // 
@@ -214,6 +184,36 @@
             // 
             this.appointmentBindingSource1.DataSource = typeof(DAL.appointment);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // idcusDataGridViewTextBoxColumn
+            // 
+            this.idcusDataGridViewTextBoxColumn.DataPropertyName = "id_cus";
+            this.idcusDataGridViewTextBoxColumn.HeaderText = "IDCustomer";
+            this.idcusDataGridViewTextBoxColumn.Name = "idcusDataGridViewTextBoxColumn";
+            // 
+            // appointmentdateDataGridViewTextBoxColumn
+            // 
+            this.appointmentdateDataGridViewTextBoxColumn.DataPropertyName = "appointment_date";
+            this.appointmentdateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.appointmentdateDataGridViewTextBoxColumn.Name = "appointmentdateDataGridViewTextBoxColumn";
+            // 
             // SetAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,14 +248,14 @@
         private System.Windows.Forms.BindingSource appointmentBindingSource;
         private System.Windows.Forms.BindingSource appointmentBindingSource1;
         private System.Windows.Forms.DataGridView dgvSetAppo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn appointmentdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appointmentdateDataGridViewTextBoxColumn;
     }
 }

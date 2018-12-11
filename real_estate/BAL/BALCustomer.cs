@@ -48,7 +48,7 @@ namespace BAL
         {
             using (RealEstateEntities dbs = new RealEstateEntities())
             {
-               return dbs.SearchByName(name_cus).ToList();
+                return dbs.SearchByName(name_cus).ToList();
             }
         }
     }

@@ -178,7 +178,7 @@
     <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer" />
     <FunctionImportMapping FunctionImportName="getContact" FunctionName="RealEstateEntity.Store.getContact">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getContact_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.getContact_Result2">
           <ScalarProperty Name="id_ct" ColumnName="id_ct" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="status" ColumnName="status" />
@@ -189,7 +189,7 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="getInforTrans" FunctionName="RealEstateEntity.Store.getInforTrans">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getInforTrans_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.getInforTrans_Result2">
           <ScalarProperty Name="name_cus" ColumnName="name_cus" />
           <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
           <ScalarProperty Name="create_date" ColumnName="create_date" />
@@ -200,7 +200,7 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="getProject" FunctionName="RealEstateEntity.Store.getProject">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getProject_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.getProject_Result2">
           <ScalarProperty Name="id_proj" ColumnName="id_proj" />
           <ScalarProperty Name="name_project" ColumnName="name_project" />
           <ScalarProperty Name="address" ColumnName="address" />
@@ -212,7 +212,7 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="getProperty" FunctionName="RealEstateEntity.Store.getProperty">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getProperty_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.getProperty_Result2">
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
@@ -231,7 +231,7 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="getTransaction" FunctionName="RealEstateEntity.Store.getTransaction">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getTransaction_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.getTransaction_Result2">
           <ScalarProperty Name="id_trans" ColumnName="id_trans" />
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
@@ -244,7 +244,7 @@
     <FunctionImportMapping FunctionImportName="insertTransaction" FunctionName="RealEstateEntity.Store.insertTransaction" />
     <FunctionImportMapping FunctionImportName="searchEmployee" FunctionName="RealEstateEntity.Store.searchEmployee">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.searchEmployee_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.searchEmployee_Result2">
           <ScalarProperty Name="id_emp" ColumnName="id_emp" />
           <ScalarProperty Name="name_emp" ColumnName="name_emp" />
           <ScalarProperty Name="email_emp" ColumnName="email_emp" />
@@ -259,7 +259,7 @@
     <FunctionImportMapping FunctionImportName="sp_InsertProperty" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
     <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result1">
+        <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result2">
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />

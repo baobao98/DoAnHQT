@@ -27,7 +27,7 @@ namespace real_estate.user_control
         void ShowCustomer()
         {
             dataGridView.DataSource = cus.GetCustomer();
-            dataGridView.AutoResizeColumns();
+            //
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -35,7 +35,7 @@ namespace real_estate.user_control
             {
                 cus.CreateCustomer(txtName.Text, txtEmail.Text, txtPhone.Text, dateTimeBirthDay.Value.Date);
                 ShowCustomer();
-                MessageBox.Show("Add thành công !", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Add success !", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 txtName.ResetText();
                 txtEmail.ResetText();
                 txtPhone.ResetText();
@@ -44,6 +44,7 @@ namespace real_estate.user_control
             catch
             {
                 MessageBox.Show("Khách hàng không được trùng nhau!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              //  MessageBox.Show(ex.Message);
             }
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace real_estate.user_control
                 string strID = dataGridView.Rows[r].Cells[0].Value.ToString();
                 cus.DeleteCustomer(strID);
                 ShowCustomer();
-                MessageBox.Show("Delete thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Delete success!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch
             {
@@ -69,6 +70,8 @@ namespace real_estate.user_control
             txtEmail.ResetText();
             txtPhone.ResetText();
             dateTimeBirthDay.ResetText();
+            //
+            ShowCustomer();
         }
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
@@ -128,9 +131,15 @@ namespace real_estate.user_control
             objexcelapp.ActiveWorkbook.SaveCopyAs("D:\\Customer.xlsx");
             objexcelapp.ActiveWorkbook.Saved = true;
         }
-        private void btnSearch_Click(object sender, EventArgs e)
+       
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           // cus.SearchCustomer(txtSearch.Text);
+
+        }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            cus.SearchCustomer(txtSearch.Text);
             dataGridView.DataSource = cus.SearchCustomer(txtSearch.Text);
             dataGridView.AutoResizeColumns();
             txtSearch.ResetText();

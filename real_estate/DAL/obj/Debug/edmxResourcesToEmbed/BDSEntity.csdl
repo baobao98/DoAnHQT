@@ -75,7 +75,7 @@
       <Parameter Name="acc" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)" />
-    <FunctionImport Name="AppoCreate" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)">
+    <FunctionImport Name="AppoCreate">
       <Parameter Name="description" Mode="In" Type="String" />
       <Parameter Name="status" Mode="In" Type="String" />
       <Parameter Name="id_cus" Mode="In" Type="String" />
@@ -96,7 +96,7 @@
       <Parameter Name="birthday" Mode="In" Type="DateTime" />
       <Parameter Name="create_date" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <FunctionImport Name="CustomerCreate" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)">
+    <FunctionImport Name="CustomerCreate" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)">
       <Parameter Name="id" Mode="In" Type="String" />
       <Parameter Name="name_cus" Mode="In" Type="String" />
       <Parameter Name="email_cus" Mode="In" Type="String" />
@@ -133,23 +133,23 @@
       <Parameter Name="information" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="GetAllCustomer" EntitySet="customers" ReturnType="Collection(RealEstateEntity.customer)" />
-    <FunctionImport Name="getContact" ReturnType="Collection(RealEstateEntity.getContact_Result1)" />
-    <FunctionImport Name="getInforTrans" ReturnType="Collection(RealEstateEntity.getInforTrans_Result1)">
+    <FunctionImport Name="getContact" ReturnType="Collection(RealEstateEntity.getContact_Result2)" />
+    <FunctionImport Name="getInforTrans" ReturnType="Collection(RealEstateEntity.getInforTrans_Result2)">
       <Parameter Name="id_cus" Mode="In" Type="String" />
       <Parameter Name="id_prop" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result1)" />
-    <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateEntity.getProperty_Result1)">
+    <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result2)" />
+    <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateEntity.getProperty_Result2)">
       <Parameter Name="id_prop" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result1)" />
+    <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result2)" />
     <FunctionImport Name="insertTransaction">
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="id_cus" Mode="In" Type="String" />
       <Parameter Name="amount" Mode="In" Type="Double" />
       <Parameter Name="payment" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result1)">
+    <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result2)">
       <Parameter Name="id_name" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_DeleteProperty">
@@ -168,7 +168,7 @@
       <Parameter Name="name" Mode="In" Type="String" />
       <Parameter Name="avatar" Mode="In" Type="Binary" />
     </FunctionImport>
-    <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateEntity.sp_searchLocationProperty_Result1)">
+    <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateEntity.sp_searchLocationProperty_Result2)">
       <Parameter Name="id_town" Mode="In" Type="Int32" />
       <Parameter Name="id_area" Mode="In" Type="Int32" />
       <Parameter Name="id_district" Mode="In" Type="Int32" />
@@ -219,12 +219,6 @@
     <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
   </ComplexType>
   <ComplexType Name="AppoCreate_Result">
-    <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
-    <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
-  </ComplexType>
-  <ComplexType Name="AppoCreate_Result1">
     <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
@@ -303,6 +297,104 @@
     <Property Type="Int32" Name="id_district" Nullable="true" />
     <Property Type="Binary" Name="avatar" Nullable="true" />
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="CustomerCreate_Result1">
+    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="CustomerVip_Result1">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="amount" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAllCustomer_Result1">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="getContact_Result1">
+    <Property Type="Int32" Name="id_ct" Nullable="false" />
+    <Property Type="String" Name="phone" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="status" Nullable="true" />
+    <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="getInforTrans_Result1">
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getProject_Result1">
+    <Property Type="String" Name="id_proj" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_project" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="license_number" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dateOfIssue" Nullable="true" />
+    <Property Type="String" Name="information" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="getProperty_Result1">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getTransaction_Result1">
+    <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="amount" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="searchEmployee_Result1">
+    <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_emp" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="sp_searchLocationProperty_Result1">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SearchByName_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
   </ComplexType>
   <EntityType Name="account">
     <Key>
@@ -625,27 +717,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="appo_GetAllAppo_Result1">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
-    <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
-  </ComplexType>
-  <ComplexType Name="CustomerCreate_Result1">
-    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
-    <Property Type="DateTime" Name="birthday" Nullable="true" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-  </ComplexType>
-  <ComplexType Name="CustomerVip_Result1">
+  <ComplexType Name="CustomerVip_Result2">
     <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
     <Property Type="Double" Name="amount" Nullable="true" />
   </ComplexType>
-  <ComplexType Name="GetAllCustomer_Result1">
+  <ComplexType Name="GetAllCustomer_Result2">
     <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
@@ -653,21 +730,21 @@
     <Property Type="DateTime" Name="birthday" Nullable="true" />
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
   </ComplexType>
-  <ComplexType Name="getContact_Result1">
+  <ComplexType Name="getContact_Result2">
     <Property Type="Int32" Name="id_ct" Nullable="false" />
     <Property Type="String" Name="phone" Nullable="true" MaxLength="15" />
     <Property Type="Int32" Name="status" Nullable="true" />
     <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
   </ComplexType>
-  <ComplexType Name="getInforTrans_Result1">
+  <ComplexType Name="getInforTrans_Result2">
     <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
     <Property Type="Double" Name="price" Nullable="true" />
     <Property Type="Int32" Name="room" Nullable="true" />
   </ComplexType>
-  <ComplexType Name="getProject_Result1">
+  <ComplexType Name="getProject_Result2">
     <Property Type="String" Name="id_proj" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_project" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="address" Nullable="true" MaxLength="255" />
@@ -675,7 +752,7 @@
     <Property Type="DateTime" Name="dateOfIssue" Nullable="true" />
     <Property Type="String" Name="information" Nullable="true" MaxLength="Max" />
   </ComplexType>
-  <ComplexType Name="getProperty_Result1">
+  <ComplexType Name="getProperty_Result2">
     <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
     <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -690,7 +767,7 @@
     <Property Type="Binary" Name="avatar" Nullable="true" />
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="getTransaction_Result1">
+  <ComplexType Name="getTransaction_Result2">
     <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
     <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
@@ -698,7 +775,7 @@
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="searchEmployee_Result1">
+  <ComplexType Name="searchEmployee_Result2">
     <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
@@ -707,7 +784,7 @@
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
     <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
   </ComplexType>
-  <ComplexType Name="sp_searchLocationProperty_Result1">
+  <ComplexType Name="sp_searchLocationProperty_Result2">
     <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
     <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -722,7 +799,15 @@
     <Property Type="Binary" Name="avatar" Nullable="true" />
     <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="SearchByName_Result">
+  <ComplexType Name="SearchCustomer_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SearchByName_Result1">
     <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
     <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />

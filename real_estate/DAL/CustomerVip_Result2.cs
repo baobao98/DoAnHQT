@@ -11,12 +11,10 @@ namespace DAL
 {
     using System;
     
-    public partial class appo_GetAllAppo_Result1
+    public partial class CustomerVip_Result2
     {
-        public int id { get; set; }
-        public string description { get; set; }
-        public string status { get; set; }
         public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
+        public string name_cus { get; set; }
+        public Nullable<double> amount { get; set; }
     }
 }

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
@@ -182,11 +182,11 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -198,20 +198,21 @@
             this.birthdayDataGridViewTextBoxColumn,
             this.createdateDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.customerBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView.Location = new System.Drawing.Point(43, 326);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(779, 316);
             this.dataGridView.TabIndex = 102;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // idcusDataGridViewTextBoxColumn
             // 
@@ -346,13 +347,14 @@
             this.btnSearch.Size = new System.Drawing.Size(67, 53);
             this.btnSearch.TabIndex = 111;
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 17);
+            this.txtSearch.Location = new System.Drawing.Point(10, 16);
+            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(274, 22);
+            this.txtSearch.Size = new System.Drawing.Size(273, 22);
             this.txtSearch.TabIndex = 1;
             // 
             // SearchBox
@@ -387,9 +389,9 @@
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(920, 160);
+            this.panel3.Location = new System.Drawing.Point(966, 153);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(269, 142);
+            this.panel3.Size = new System.Drawing.Size(195, 142);
             this.panel3.TabIndex = 107;
             // 
             // btnMail
@@ -433,7 +435,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dateTimeBirthDay);
             this.Controls.Add(this.panel4);
@@ -450,7 +452,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.PanelSearch);
             this.Margin = new System.Windows.Forms.Padding(4);
-           
+            
             this.Size = new System.Drawing.Size(1285, 687);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel4.ResumeLayout(false);

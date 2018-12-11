@@ -11,11 +11,13 @@ namespace DAL
 {
     using System;
     
-    public partial class AppoCreate_Result1
+    public partial class SearchByName_Result1
     {
-        public string description { get; set; }
-        public string status { get; set; }
         public string id_cus { get; set; }
-        public Nullable<System.DateTime> appointment_date { get; set; }
+        public string name_cus { get; set; }
+        public string email_cus { get; set; }
+        public string phone_cus { get; set; }
+        public Nullable<System.DateTime> birthday { get; set; }
+        public Nullable<System.DateTime> create_date { get; set; }
     }
 }
