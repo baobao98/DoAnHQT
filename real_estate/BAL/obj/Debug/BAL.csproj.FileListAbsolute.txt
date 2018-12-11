@@ -35,3 +35,17 @@ D:\DoAnHQT\real_estate\BAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\GITHUB\DoAnHQT\real_estate\BAL\bin\Debug\Microsoft.VisualBasic.dll
 C:\GITHUB\DoAnHQT\real_estate\BAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\GITHUB\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\BAL.dll.config
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\BAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\BAL.pdb
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\DAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\EntityFramework.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\Microsoft.VisualBasic.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\DAL.pdb
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\EntityFramework.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\obj\Debug\BAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\BAL\obj\Debug\BAL.pdb

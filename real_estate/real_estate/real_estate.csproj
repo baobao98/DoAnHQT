@@ -89,11 +89,35 @@
     <Compile Include="FormRS.Designer.cs">
       <DependentUpon>FormRS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\acceptContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\acceptContact.Designer.cs">
+      <DependentUpon>acceptContact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\appointment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\appointment.Designer.cs">
       <DependentUpon>appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerAccept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerAccept.Designer.cs">
+      <DependentUpon>CustomerAccept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTransaction.Designer.cs">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProperty.Designer.cs">
+      <DependentUpon>FormProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -103,6 +127,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="user control\bell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user control\bell.Designer.cs">
+      <DependentUpon>bell.cs</DependentUpon>
+    </Compile>
     <Compile Include="user control\Transaction.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,12 +198,28 @@
     <EmbeddedResource Include="FormRS.resx">
       <DependentUpon>FormRS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\acceptContact.resx">
+      <DependentUpon>acceptContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerAccept.resx">
+      <DependentUpon>CustomerAccept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTransaction.resx">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProperty.resx">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user control\bell.resx">
+      <DependentUpon>bell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Transaction.resx">
       <DependentUpon>Transaction.cs</DependentUpon>

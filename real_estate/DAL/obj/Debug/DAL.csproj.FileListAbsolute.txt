@@ -29,3 +29,15 @@ C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
 D:\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.dll
 C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb

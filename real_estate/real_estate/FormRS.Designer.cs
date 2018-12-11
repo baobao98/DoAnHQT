@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRS));
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -41,7 +42,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dashboard1 = new real_estate.user_control.dashboard();
+            this.picBell = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbBellNumber = new System.Windows.Forms.Label();
+            this.bell1 = new real_estate.user_control.bell();
+            this.dashboard = new real_estate.user_control.dashboard();
+            this.transaction = new real_estate.user_control.Transaction();
             this.realEstate1 = new real_estate.user_control.RealEstate();
             this.projectType1 = new real_estate.user_control.ProjectType();
             this.projects1 = new real_estate.user_control.Projects();
@@ -49,10 +55,10 @@
             this.marketing1 = new real_estate.user_control.Marketing();
             this.employee2 = new real_estate.user_control.Employee();
             this.customer2 = new real_estate.user_control.Customer();
-            this.bill1 = new real_estate.user_control.Transaction();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBell)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -71,6 +77,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(206, 590);
             this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // bunifuFlatButton2
             // 
@@ -106,6 +113,7 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // label3
             // 
@@ -337,12 +345,15 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel3.Controls.Add(this.lbBellNumber);
+            this.panel3.Controls.Add(this.picBell);
             this.panel3.Controls.Add(this.tbExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(206, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(964, 32);
             this.panel3.TabIndex = 3;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // tbExit
             // 
@@ -359,7 +370,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dashboard1);
+            this.panel1.Controls.Add(this.bell1);
+            this.panel1.Controls.Add(this.dashboard);
+            this.panel1.Controls.Add(this.transaction);
             this.panel1.Controls.Add(this.realEstate1);
             this.panel1.Controls.Add(this.projectType1);
             this.panel1.Controls.Add(this.projects1);
@@ -367,19 +380,59 @@
             this.panel1.Controls.Add(this.marketing1);
             this.panel1.Controls.Add(this.employee2);
             this.panel1.Controls.Add(this.customer2);
-            this.panel1.Controls.Add(this.bill1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(206, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 558);
             this.panel1.TabIndex = 4;
             // 
-            // dashboard1
+            // picBell
             // 
-            this.dashboard1.Location = new System.Drawing.Point(0, -1);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(964, 558);
-            this.dashboard1.TabIndex = 8;
+            this.picBell.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBell.Image = ((System.Drawing.Image)(resources.GetObject("picBell.Image")));
+            this.picBell.Location = new System.Drawing.Point(887, 4);
+            this.picBell.Name = "picBell";
+            this.picBell.Size = new System.Drawing.Size(28, 25);
+            this.picBell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBell.TabIndex = 10;
+            this.picBell.TabStop = false;
+            this.picBell.Click += new System.EventHandler(this.picBell_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 10000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lbBellNumber
+            // 
+            this.lbBellNumber.AutoSize = true;
+            this.lbBellNumber.ForeColor = System.Drawing.Color.White;
+            this.lbBellNumber.Location = new System.Drawing.Point(914, 4);
+            this.lbBellNumber.Name = "lbBellNumber";
+            this.lbBellNumber.Size = new System.Drawing.Size(13, 13);
+            this.lbBellNumber.TabIndex = 11;
+            this.lbBellNumber.Text = "0";
+            // 
+            // bell1
+            // 
+            this.bell1.Location = new System.Drawing.Point(612, 6);
+            this.bell1.Name = "bell1";
+            this.bell1.Size = new System.Drawing.Size(303, 156);
+            this.bell1.TabIndex = 10;
+            // 
+            // dashboard
+            // 
+            this.dashboard.Location = new System.Drawing.Point(0, -1);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(964, 558);
+            this.dashboard.TabIndex = 9;
+            // 
+            // transaction
+            // 
+            this.transaction.Location = new System.Drawing.Point(0, 0);
+            this.transaction.Name = "transaction";
+            this.transaction.Size = new System.Drawing.Size(964, 558);
+            this.transaction.TabIndex = 8;
             // 
             // realEstate1
             // 
@@ -430,13 +483,6 @@
             this.customer2.Size = new System.Drawing.Size(964, 558);
             this.customer2.TabIndex = 1;
             // 
-            // bill1
-            // 
-            this.bill1.Location = new System.Drawing.Point(0, 0);
-            this.bill1.Name = "bill1";
-            this.bill1.Size = new System.Drawing.Size(964, 558);
-            this.bill1.TabIndex = 0;
-            // 
             // FormRS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,6 +500,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBell)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +519,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnSale;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private user_control.dashboard dashboard1;
         private user_control.RealEstate realEstate1;
         private user_control.ProjectType projectType1;
         private user_control.Projects projects1;
@@ -480,8 +526,13 @@
         private user_control.Marketing marketing1;
         private user_control.Employee employee2;
         private user_control.Customer customer2;
-        private user_control.Transaction bill1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private user_control.Transaction transaction;
+        private user_control.dashboard dashboard;
+        private System.Windows.Forms.PictureBox picBell;
+        private user_control.bell bell1;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lbBellNumber;
     }
 }
 
