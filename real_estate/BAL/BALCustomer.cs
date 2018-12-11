@@ -44,5 +44,12 @@ namespace BAL
                 dbs.CustomerDelete(id_cus);
             }
         }
+        public List<customer> SearchCustomer(string name_cus)
+        {
+            using (RealEstateEntities dbs = new RealEstateEntities())
+            {
+               return dbs.SearchByName(name_cus).ToList();
+            }
+        }
     }
 }

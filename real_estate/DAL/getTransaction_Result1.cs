@@ -10,16 +10,14 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class getTransaction_Result1
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
-        public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-    
-        public virtual property property { get; set; }
+        public string id_trans { get; set; }
+        public string id_prop { get; set; }
+        public string id_cus { get; set; }
+        public Nullable<double> amount { get; set; }
+        public string status { get; set; }
+        public string payment { get; set; }
     }
 }

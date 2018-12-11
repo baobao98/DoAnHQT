@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
@@ -58,8 +58,8 @@
             this.Information = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.PanelSearch = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SearchBoxx = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.btnSetAppointment = new System.Windows.Forms.Button();
@@ -182,11 +182,11 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -198,14 +198,14 @@
             this.birthdayDataGridViewTextBoxColumn,
             this.createdateDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.customerBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView.Location = new System.Drawing.Point(43, 326);
             this.dataGridView.Name = "dataGridView";
@@ -327,8 +327,8 @@
             // 
             this.PanelSearch.BackColor = System.Drawing.Color.SeaGreen;
             this.PanelSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelSearch.Controls.Add(this.button2);
-            this.PanelSearch.Controls.Add(this.SearchBoxx);
+            this.PanelSearch.Controls.Add(this.btnSearch);
+            this.PanelSearch.Controls.Add(this.txtSearch);
             this.PanelSearch.Controls.Add(this.SearchBox);
             this.PanelSearch.ForeColor = System.Drawing.Color.SeaGreen;
             this.PanelSearch.Location = new System.Drawing.Point(866, 39);
@@ -336,23 +336,24 @@
             this.PanelSearch.Size = new System.Drawing.Size(364, 57);
             this.PanelSearch.TabIndex = 93;
             // 
-            // button2
+            // btnSearch
             // 
-            this.button2.BackColor = System.Drawing.Color.SeaGreen;
-            this.button2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(292, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 53);
-            this.button2.TabIndex = 111;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnSearch.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(292, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(67, 53);
+            this.btnSearch.TabIndex = 111;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // SearchBoxx
+            // txtSearch
             // 
-            this.SearchBoxx.Location = new System.Drawing.Point(12, 17);
-            this.SearchBoxx.Name = "SearchBoxx";
-            this.SearchBoxx.Size = new System.Drawing.Size(274, 22);
-            this.SearchBoxx.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(12, 17);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(274, 22);
+            this.txtSearch.TabIndex = 1;
             // 
             // SearchBox
             // 
@@ -449,6 +450,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.PanelSearch);
             this.Margin = new System.Windows.Forms.Padding(4);
+           
             this.Size = new System.Drawing.Size(1285, 687);
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panel4.ResumeLayout(false);
@@ -487,10 +489,10 @@
         private System.Windows.Forms.Label Information;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Panel PanelSearch;
-        private System.Windows.Forms.TextBox SearchBoxx;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.DateTimePicker dateTimeBirthDay;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namecusDataGridViewTextBoxColumn;

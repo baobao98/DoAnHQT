@@ -131,6 +131,13 @@ namespace real_estate.user_control
             objexcelapp.ActiveWorkbook.SaveCopyAs("D:\\Customer.xlsx");
             objexcelapp.ActiveWorkbook.Saved = true;
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+           // cus.SearchCustomer(txtSearch.Text);
+            dataGridView.DataSource = cus.SearchCustomer(txtSearch.Text);
+            dataGridView.AutoResizeColumns();
+        }
     }
 }
 

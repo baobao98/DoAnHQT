@@ -10,27 +10,14 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class customer
+    public partial class GetAllCustomer_Result1
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public customer()
-        {
-            this.appointments = new HashSet<appointment>();
-            this.trannsactions = new HashSet<trannsaction>();
-        }
-    
         public string id_cus { get; set; }
         public string name_cus { get; set; }
         public string email_cus { get; set; }
         public string phone_cus { get; set; }
         public Nullable<System.DateTime> birthday { get; set; }
         public Nullable<System.DateTime> create_date { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointment> appointments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<trannsaction> trannsactions { get; set; }
     }
 }

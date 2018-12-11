@@ -10,24 +10,14 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class project
+    public partial class getProject_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public project()
-        {
-            this.properties = new HashSet<property>();
-        }
-    
         public string id_proj { get; set; }
         public string name_project { get; set; }
         public string address { get; set; }
         public string license_number { get; set; }
         public Nullable<System.DateTime> dateOfIssue { get; set; }
         public string information { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<property> properties { get; set; }
     }
 }
