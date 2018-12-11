@@ -61,7 +61,6 @@ namespace real_estate.user_control
 
                 MessageBox.Show("Không thể Xóa Vì Đang có cuộc hẹn với Khách Hàng!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-
         }
         private void Cancel_Click(object sender, EventArgs e)
         {
@@ -100,13 +99,11 @@ namespace real_estate.user_control
             fm.mailtxt = mail;
             fm.ShowDialog();
         }
-
         private void btnVip_Click(object sender, EventArgs e)
         {
             Form fm = new VIP();
             fm.ShowDialog();
         }
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             Microsoft.Office.Interop.Excel.Application objexcelapp = new Microsoft.Office.Interop.Excel.Application();
@@ -131,12 +128,12 @@ namespace real_estate.user_control
             objexcelapp.ActiveWorkbook.SaveCopyAs("D:\\Customer.xlsx");
             objexcelapp.ActiveWorkbook.Saved = true;
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
            // cus.SearchCustomer(txtSearch.Text);
             dataGridView.DataSource = cus.SearchCustomer(txtSearch.Text);
             dataGridView.AutoResizeColumns();
+            txtSearch.ResetText();
         }
     }
 }
