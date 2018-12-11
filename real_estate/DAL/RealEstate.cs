@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -105,9 +106,10 @@ namespace DAL
             {
                 using (RealEstateEntities db = new RealEstateEntities())
                 {
-                    db.properties.Add(new property {id_prop=id_prop,id_real_estate_type=id_realestate_type,id_project=id_project,floor=floor,room=room,price=price,id_town_region=id_town,id_area=id_area,id_district=id_district,name=ten,status=status,avatar=avatar });
+                    // db.properties.Add(new property {id_prop=id_prop,id_real_estate_type=id_realestate_type,id_project=id_project,floor=floor,room=room,price=price,id_town_region=id_town,id_area=id_area,id_district=id_district,name=ten,status=status,avatar=avatar });
+                  db.sp_InsertProperty2(id_prop,id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, status, ten, avatar);
+                 
                     db.SaveChanges();
-
                    
                     //db.sp_InsertProperty(id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, status, ten, avatar);
                     //db.SaveChanges();
@@ -128,6 +130,43 @@ namespace DAL
                 }
             }
             return f;
+        }
+        public bool InsertProp(ref string err, ref string pro, int id_realestate_type, string id_project, int floor, int room, float price, int id_town, int id_area, int id_district, string ten, string status, byte[] avatar)
+        {   
+            bool f = false;
+
+            try
+            {
+                using (RealEstateEntities db = new RealEstateEntities())
+                {
+                    // db.properties.Add(new property {id_prop=id_prop,id_real_estate_type=id_realestate_type,id_project=id_project,floor=floor,room=room,price=price,id_town_region=id_town,id_area=id_area,id_district=id_district,name=ten,status=status,avatar=avatar });
+                    db.sp_InsertProp(id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, status, ten, avatar);
+
+                    db.SaveChanges();
+
+                    //db.sp_InsertProperty(id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, status, ten, avatar);
+                    //db.SaveChanges();
+                    f = true;
+
+
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        pro += validationError.PropertyName;
+                        err += validationError.ErrorMessage;
+                    }
+                }
+            }
+            return f;
+        }
+        public ObjectResult<sp_searchLocationProperty_Result> searchPropertyByPlace(int id_town, int id_area, int id_district)
+        {
+            return db.sp_searchLocationProperty(id_town, id_area, id_district);
         }
     }
 }

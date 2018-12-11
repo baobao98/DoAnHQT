@@ -91,6 +91,9 @@
     <Compile Include="employee.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getAllProp_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="IProperty.cs" />
     <Compile Include="project.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
@@ -115,6 +118,9 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_InsertProperty1_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_searchLocationProperty_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">

@@ -295,6 +295,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -322,8 +323,20 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_InsertProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
+          <Parameter Name="id_project" Type="varchar" Mode="In" />
+          <Parameter Name="floor" Type="int" Mode="In" />
+          <Parameter Name="room" Type="int" Mode="In" />
+          <Parameter Name="price" Type="float" Mode="In" />
+          <Parameter Name="id_town_region" Type="int" Mode="In" />
+          <Parameter Name="id_area" Type="int" Mode="In" />
+          <Parameter Name="id_district" Type="int" Mode="In" />
+          <Parameter Name="status" Type="nvarchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
+        </Function>
         <Function Name="sp_InsertProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id_prop" Type="varchar" Mode="In" />
           <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
           <Parameter Name="id_project" Type="varchar" Mode="In" />
           <Parameter Name="floor" Type="int" Mode="In" />
@@ -340,6 +353,11 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_searchLocationProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_town" Type="int" Mode="In" />
+          <Parameter Name="id_area" Type="int" Mode="In" />
+          <Parameter Name="id_district" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_updateProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_prop" Type="varchar" Mode="In" />
@@ -656,31 +674,6 @@
           <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="projects" EntityType="RealEstateEntity.project" />
-          <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
-          <AssociationSet Name="FK__property__id_are__5AEE82B9" Association="RealEstateEntity.FK__property__id_are__5AEE82B9">
-            <End Role="area" EntitySet="areas" />
-            <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="RealEstateEntity.FK__property__id_dis__5BE2A6F2">
-            <End Role="district" EntitySet="districts" />
-            <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK_property_project" Association="RealEstateEntity.FK_property_project">
-            <End Role="project" EntitySet="projects" />
-            <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK__property__id_rea__59063A47" Association="RealEstateEntity.FK__property__id_rea__59063A47">
-            <End Role="realEstateType" EntitySet="realEstateTypes" />
-            <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="RealEstateEntity.FK__property__id_tow__59FA5E80">
-            <End Role="townRegion" EntitySet="townRegions" />
-            <End Role="property" EntitySet="properties" />
-          </AssociationSet>
-          <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="RealEstateEntity.FK__trannsact__id_pr__60A75C0F">
-            <End Role="property" EntitySet="properties" />
-            <End Role="trannsaction" EntitySet="trannsactions" />
-          </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -758,6 +751,77 @@
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="avatar" Mode="In" Type="Binary" />
           </FunctionImport>
+          <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
+          <AssociationSet Name="FK__property__id_are__5AEE82B9" Association="RealEstateEntity.FK__property__id_are__5AEE82B9">
+            <End Role="area" EntitySet="areas" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="RealEstateEntity.FK__property__id_dis__5BE2A6F2">
+            <End Role="district" EntitySet="districts" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_property_project" Association="RealEstateEntity.FK_property_project">
+            <End Role="project" EntitySet="projects" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_rea__59063A47" Association="RealEstateEntity.FK__property__id_rea__59063A47">
+            <End Role="realEstateType" EntitySet="realEstateTypes" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="RealEstateEntity.FK__property__id_tow__59FA5E80">
+            <End Role="townRegion" EntitySet="townRegions" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="RealEstateEntity.FK__trannsact__id_pr__60A75C0F">
+            <End Role="property" EntitySet="properties" />
+            <End Role="trannsaction" EntitySet="trannsactions" />
+          </AssociationSet>
+          <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateEntity.sp_searchLocationProperty_Result)">
+            <Parameter Name="id_town" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertProperty2">
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+            <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+            <Parameter Name="id_project" Mode="In" Type="String" />
+            <Parameter Name="floor" Mode="In" Type="Int32" />
+            <Parameter Name="room" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="avatar" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertProperty3">
+            <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+            <Parameter Name="id_project" Mode="In" Type="String" />
+            <Parameter Name="floor" Mode="In" Type="Int32" />
+            <Parameter Name="room" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="avatar" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertProp">
+            <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+            <Parameter Name="id_project" Mode="In" Type="String" />
+            <Parameter Name="floor" Mode="In" Type="Int32" />
+            <Parameter Name="room" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="avatar" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateEntity.getAllProp_Result)" />
         </EntityContainer>
         <EntityType Name="advertisement">
           <Key>
@@ -790,6 +854,32 @@
           <Property Name="PlaceOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK_property_project" FromRole="project" ToRole="property" />
         </EntityType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_InsertProperty1_Result">
+          <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+          <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="floor" Nullable="true" />
+          <Property Type="Int32" Name="room" Nullable="true" />
+          <Property Type="Double" Name="price" Nullable="true" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="id_town_region" Nullable="true" />
+          <Property Type="Int32" Name="id_area" Nullable="true" />
+          <Property Type="Int32" Name="id_district" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="avatar" Nullable="true" />
+        </ComplexType>
         <EntityType Name="property">
           <Key>
             <PropertyRef Name="id_prop" />
@@ -886,18 +976,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
+        <ComplexType Name="sp_searchLocationProperty_Result">
+          <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+          <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="floor" Nullable="true" />
+          <Property Type="Int32" Name="room" Nullable="true" />
+          <Property Type="Double" Name="price" Nullable="true" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="id_town_region" Nullable="true" />
+          <Property Type="Int32" Name="id_area" Nullable="true" />
+          <Property Type="Int32" Name="id_district" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="avatar" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="sp_InsertProperty1_Result">
+        <ComplexType Name="getAllProp_Result">
           <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
           <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
           <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
@@ -1060,46 +1154,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="properties">
-            <EntityTypeMapping TypeName="RealEstateEntity.property">
-              <MappingFragment StoreEntitySet="property">
-                <ScalarProperty Name="avatar" ColumnName="avatar" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="id_district" ColumnName="id_district" />
-                <ScalarProperty Name="id_area" ColumnName="id_area" />
-                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-                <ScalarProperty Name="create_date" ColumnName="create_date" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="room" ColumnName="room" />
-                <ScalarProperty Name="floor" ColumnName="floor" />
-                <ScalarProperty Name="id_project" ColumnName="id_project" />
-                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
-                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="RealEstateEntity.property">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="RealEstateEntity.Store.sp_InsertProperty">
-                  <ScalarProperty Name="id_prop" ParameterName="id_prop" />
-                  <ScalarProperty Name="avatar" ParameterName="avatar" />
-                  <ScalarProperty Name="name" ParameterName="name" />
-                  <ScalarProperty Name="status" ParameterName="status" />
-                  <ScalarProperty Name="id_district" ParameterName="id_district" />
-                  <ScalarProperty Name="id_area" ParameterName="id_area" />
-                  <ScalarProperty Name="id_town_region" ParameterName="id_town_region" />
-                  <ScalarProperty Name="price" ParameterName="price" />
-                  <ScalarProperty Name="room" ParameterName="room" />
-                  <ScalarProperty Name="floor" ParameterName="floor" />
-                  <ScalarProperty Name="id_project" ParameterName="id_project" />
-                  <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" />
-                </InsertFunction>
-                <DeleteFunction FunctionName="RealEstateEntity.Store.sp_DeleteProperty" >
-                  <ScalarProperty Name="id_prop" ParameterName="Id" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RealEstateEntity.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RealEstateEntity.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RealEstateEntity.Store.sp_helpdiagramdefinition">
@@ -1124,9 +1178,63 @@
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RealEstateEntity.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateEntity.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram1" FunctionName="RealEstateEntity.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_InsertProperty1" FunctionName="RealEstateEntity.Store.sp_InsertProperty">
+          <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
+          <EntitySetMapping Name="properties">
+            <EntityTypeMapping TypeName="RealEstateEntity.property">
+              <MappingFragment StoreEntitySet="property">
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="RealEstateEntity.property">
+              <ModificationFunctionMapping>
+                <UpdateFunction FunctionName="RealEstateEntity.Store.sp_updateProperty">
+                  <ScalarProperty Name="avatar" ParameterName="avatar" Version="Current" />
+                  <ScalarProperty Name="name" ParameterName="name" Version="Current" />
+                  <ScalarProperty Name="status" ParameterName="status" Version="Current" />
+                  <ScalarProperty Name="id_district" ParameterName="id_district" Version="Current" />
+                  <ScalarProperty Name="id_area" ParameterName="id_area" Version="Current" />
+                  <ScalarProperty Name="id_town_region" ParameterName="id_town_region" Version="Current" />
+                  <ScalarProperty Name="price" ParameterName="price" Version="Current" />
+                  <ScalarProperty Name="room" ParameterName="room" Version="Current" />
+                  <ScalarProperty Name="floor" ParameterName="floor" Version="Current" />
+                  <ScalarProperty Name="id_project" ParameterName="id_project" Version="Current" />
+                  <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" Version="Current" />
+                  <ScalarProperty Name="id_prop" ParameterName="id_prop" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="RealEstateEntity.Store.sp_DeleteProperty" >
+                  <ScalarProperty Name="id_prop" ParameterName="Id" />
+                </DeleteFunction>
+                <InsertFunction FunctionName="RealEstateEntity.Store.sp_InsertProperty">
+                  <ScalarProperty Name="avatar" ParameterName="avatar" />
+                  <ScalarProperty Name="name" ParameterName="name" />
+                  <ScalarProperty Name="status" ParameterName="status" />
+                  <ScalarProperty Name="id_district" ParameterName="id_district" />
+                  <ScalarProperty Name="id_area" ParameterName="id_area" />
+                  <ScalarProperty Name="id_town_region" ParameterName="id_town_region" />
+                  <ScalarProperty Name="price" ParameterName="price" />
+                  <ScalarProperty Name="room" ParameterName="room" />
+                  <ScalarProperty Name="floor" ParameterName="floor" />
+                  <ScalarProperty Name="id_project" ParameterName="id_project" />
+                  <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" />
+                </InsertFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateEntity.sp_InsertProperty1_Result">
+              <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result">
                 <ScalarProperty Name="id_prop" ColumnName="id_prop" />
                 <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
                 <ScalarProperty Name="id_project" ColumnName="id_project" />
@@ -1143,7 +1251,27 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
+          <FunctionImportMapping FunctionImportName="sp_InsertProperty3" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
+          <FunctionImportMapping FunctionImportName="sp_InsertProp" FunctionName="RealEstateEntity.Store.sp_InsertProp" />
+          <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateEntity.Store.getAllProp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getAllProp_Result">
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

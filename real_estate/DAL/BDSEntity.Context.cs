@@ -330,5 +330,178 @@ namespace DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateProperty", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
         }
+    
+        public virtual ObjectResult<sp_searchLocationProperty_Result> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
+        {
+            var id_townParameter = id_town.HasValue ?
+                new ObjectParameter("id_town", id_town) :
+                new ObjectParameter("id_town", typeof(int));
+    
+            var id_areaParameter = id_area.HasValue ?
+                new ObjectParameter("id_area", id_area) :
+                new ObjectParameter("id_area", typeof(int));
+    
+            var id_districtParameter = id_district.HasValue ?
+                new ObjectParameter("id_district", id_district) :
+                new ObjectParameter("id_district", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchLocationProperty_Result>("sp_searchLocationProperty", id_townParameter, id_areaParameter, id_districtParameter);
+        }
+    
+        public virtual int sp_InsertProperty2(string id_prop, Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            var id_real_estate_typeParameter = id_real_estate_type.HasValue ?
+                new ObjectParameter("id_real_estate_type", id_real_estate_type) :
+                new ObjectParameter("id_real_estate_type", typeof(int));
+    
+            var id_projectParameter = id_project != null ?
+                new ObjectParameter("id_project", id_project) :
+                new ObjectParameter("id_project", typeof(string));
+    
+            var floorParameter = floor.HasValue ?
+                new ObjectParameter("floor", floor) :
+                new ObjectParameter("floor", typeof(int));
+    
+            var roomParameter = room.HasValue ?
+                new ObjectParameter("room", room) :
+                new ObjectParameter("room", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(double));
+    
+            var id_town_regionParameter = id_town_region.HasValue ?
+                new ObjectParameter("id_town_region", id_town_region) :
+                new ObjectParameter("id_town_region", typeof(int));
+    
+            var id_areaParameter = id_area.HasValue ?
+                new ObjectParameter("id_area", id_area) :
+                new ObjectParameter("id_area", typeof(int));
+    
+            var id_districtParameter = id_district.HasValue ?
+                new ObjectParameter("id_district", id_district) :
+                new ObjectParameter("id_district", typeof(int));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var avatarParameter = avatar != null ?
+                new ObjectParameter("avatar", avatar) :
+                new ObjectParameter("avatar", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertProperty2", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
+        }
+    
+        public virtual int sp_InsertProperty3(Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
+        {
+            var id_real_estate_typeParameter = id_real_estate_type.HasValue ?
+                new ObjectParameter("id_real_estate_type", id_real_estate_type) :
+                new ObjectParameter("id_real_estate_type", typeof(int));
+    
+            var id_projectParameter = id_project != null ?
+                new ObjectParameter("id_project", id_project) :
+                new ObjectParameter("id_project", typeof(string));
+    
+            var floorParameter = floor.HasValue ?
+                new ObjectParameter("floor", floor) :
+                new ObjectParameter("floor", typeof(int));
+    
+            var roomParameter = room.HasValue ?
+                new ObjectParameter("room", room) :
+                new ObjectParameter("room", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(double));
+    
+            var id_town_regionParameter = id_town_region.HasValue ?
+                new ObjectParameter("id_town_region", id_town_region) :
+                new ObjectParameter("id_town_region", typeof(int));
+    
+            var id_areaParameter = id_area.HasValue ?
+                new ObjectParameter("id_area", id_area) :
+                new ObjectParameter("id_area", typeof(int));
+    
+            var id_districtParameter = id_district.HasValue ?
+                new ObjectParameter("id_district", id_district) :
+                new ObjectParameter("id_district", typeof(int));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var avatarParameter = avatar != null ?
+                new ObjectParameter("avatar", avatar) :
+                new ObjectParameter("avatar", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertProperty3", id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
+        }
+    
+        public virtual int sp_InsertProp(Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
+        {
+            var id_real_estate_typeParameter = id_real_estate_type.HasValue ?
+                new ObjectParameter("id_real_estate_type", id_real_estate_type) :
+                new ObjectParameter("id_real_estate_type", typeof(int));
+    
+            var id_projectParameter = id_project != null ?
+                new ObjectParameter("id_project", id_project) :
+                new ObjectParameter("id_project", typeof(string));
+    
+            var floorParameter = floor.HasValue ?
+                new ObjectParameter("floor", floor) :
+                new ObjectParameter("floor", typeof(int));
+    
+            var roomParameter = room.HasValue ?
+                new ObjectParameter("room", room) :
+                new ObjectParameter("room", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(double));
+    
+            var id_town_regionParameter = id_town_region.HasValue ?
+                new ObjectParameter("id_town_region", id_town_region) :
+                new ObjectParameter("id_town_region", typeof(int));
+    
+            var id_areaParameter = id_area.HasValue ?
+                new ObjectParameter("id_area", id_area) :
+                new ObjectParameter("id_area", typeof(int));
+    
+            var id_districtParameter = id_district.HasValue ?
+                new ObjectParameter("id_district", id_district) :
+                new ObjectParameter("id_district", typeof(int));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var avatarParameter = avatar != null ?
+                new ObjectParameter("avatar", avatar) :
+                new ObjectParameter("avatar", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertProp", id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
+        }
+    
+        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
+        }
     }
 }

@@ -290,6 +290,7 @@
     </ReferentialConstraint>
   </Association>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -317,8 +318,20 @@
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_InsertProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
+    <Parameter Name="id_project" Type="varchar" Mode="In" />
+    <Parameter Name="floor" Type="int" Mode="In" />
+    <Parameter Name="room" Type="int" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+    <Parameter Name="id_town_region" Type="int" Mode="In" />
+    <Parameter Name="id_area" Type="int" Mode="In" />
+    <Parameter Name="id_district" Type="int" Mode="In" />
+    <Parameter Name="status" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
+  </Function>
   <Function Name="sp_InsertProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id_prop" Type="varchar" Mode="In" />
     <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
     <Parameter Name="id_project" Type="varchar" Mode="In" />
     <Parameter Name="floor" Type="int" Mode="In" />
@@ -335,6 +348,11 @@
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_searchLocationProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_town" Type="int" Mode="In" />
+    <Parameter Name="id_area" Type="int" Mode="In" />
+    <Parameter Name="id_district" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_updateProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_prop" Type="varchar" Mode="In" />

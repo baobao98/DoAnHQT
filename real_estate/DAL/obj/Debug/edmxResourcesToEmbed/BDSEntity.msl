@@ -143,46 +143,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="properties">
-      <EntityTypeMapping TypeName="RealEstateEntity.property">
-        <MappingFragment StoreEntitySet="property">
-          <ScalarProperty Name="avatar" ColumnName="avatar" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="id_district" ColumnName="id_district" />
-          <ScalarProperty Name="id_area" ColumnName="id_area" />
-          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="room" ColumnName="room" />
-          <ScalarProperty Name="floor" ColumnName="floor" />
-          <ScalarProperty Name="id_project" ColumnName="id_project" />
-          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
-          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="RealEstateEntity.property">
-        <ModificationFunctionMapping>
-          <InsertFunction FunctionName="RealEstateEntity.Store.sp_InsertProperty">
-            <ScalarProperty Name="id_prop" ParameterName="id_prop" />
-            <ScalarProperty Name="avatar" ParameterName="avatar" />
-            <ScalarProperty Name="name" ParameterName="name" />
-            <ScalarProperty Name="status" ParameterName="status" />
-            <ScalarProperty Name="id_district" ParameterName="id_district" />
-            <ScalarProperty Name="id_area" ParameterName="id_area" />
-            <ScalarProperty Name="id_town_region" ParameterName="id_town_region" />
-            <ScalarProperty Name="price" ParameterName="price" />
-            <ScalarProperty Name="room" ParameterName="room" />
-            <ScalarProperty Name="floor" ParameterName="floor" />
-            <ScalarProperty Name="id_project" ParameterName="id_project" />
-            <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" />
-          </InsertFunction>
-          <DeleteFunction FunctionName="RealEstateEntity.Store.sp_DeleteProperty">
-            <ScalarProperty Name="id_prop" ParameterName="Id" />
-          </DeleteFunction>
-        </ModificationFunctionMapping>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RealEstateEntity.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RealEstateEntity.Store.sp_dropdiagram" />
     <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RealEstateEntity.Store.sp_helpdiagramdefinition">
@@ -207,9 +167,63 @@
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RealEstateEntity.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateEntity.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram1" FunctionName="RealEstateEntity.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_InsertProperty1" FunctionName="RealEstateEntity.Store.sp_InsertProperty">
+    <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
+    <EntitySetMapping Name="properties">
+      <EntityTypeMapping TypeName="RealEstateEntity.property">
+        <MappingFragment StoreEntitySet="property">
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_district" ColumnName="id_district" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="RealEstateEntity.property">
+        <ModificationFunctionMapping>
+          <UpdateFunction FunctionName="RealEstateEntity.Store.sp_updateProperty">
+            <ScalarProperty Name="avatar" ParameterName="avatar" Version="Current" />
+            <ScalarProperty Name="name" ParameterName="name" Version="Current" />
+            <ScalarProperty Name="status" ParameterName="status" Version="Current" />
+            <ScalarProperty Name="id_district" ParameterName="id_district" Version="Current" />
+            <ScalarProperty Name="id_area" ParameterName="id_area" Version="Current" />
+            <ScalarProperty Name="id_town_region" ParameterName="id_town_region" Version="Current" />
+            <ScalarProperty Name="price" ParameterName="price" Version="Current" />
+            <ScalarProperty Name="room" ParameterName="room" Version="Current" />
+            <ScalarProperty Name="floor" ParameterName="floor" Version="Current" />
+            <ScalarProperty Name="id_project" ParameterName="id_project" Version="Current" />
+            <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" Version="Current" />
+            <ScalarProperty Name="id_prop" ParameterName="id_prop" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="RealEstateEntity.Store.sp_DeleteProperty">
+            <ScalarProperty Name="id_prop" ParameterName="Id" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="RealEstateEntity.Store.sp_InsertProperty">
+            <ScalarProperty Name="avatar" ParameterName="avatar" />
+            <ScalarProperty Name="name" ParameterName="name" />
+            <ScalarProperty Name="status" ParameterName="status" />
+            <ScalarProperty Name="id_district" ParameterName="id_district" />
+            <ScalarProperty Name="id_area" ParameterName="id_area" />
+            <ScalarProperty Name="id_town_region" ParameterName="id_town_region" />
+            <ScalarProperty Name="price" ParameterName="price" />
+            <ScalarProperty Name="room" ParameterName="room" />
+            <ScalarProperty Name="floor" ParameterName="floor" />
+            <ScalarProperty Name="id_project" ParameterName="id_project" />
+            <ScalarProperty Name="id_real_estate_type" ParameterName="id_real_estate_type" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.sp_InsertProperty1_Result">
+        <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result">
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
           <ScalarProperty Name="id_project" ColumnName="id_project" />
@@ -226,6 +240,26 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
+    <FunctionImportMapping FunctionImportName="sp_InsertProperty3" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
+    <FunctionImportMapping FunctionImportName="sp_InsertProp" FunctionName="RealEstateEntity.Store.sp_InsertProp" />
+    <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateEntity.Store.getAllProp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateEntity.getAllProp_Result">
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="id_district" ColumnName="id_district" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

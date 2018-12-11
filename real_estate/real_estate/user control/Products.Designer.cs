@@ -31,7 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products));
             this.dgvRealEstate = new System.Windows.Forms.DataGridView();
+            this.id_prop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.create_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbProject = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbTypeProp = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbTown = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.propertyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbArea = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbDistrict = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -52,6 +66,15 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbSearchDistrict = new System.Windows.Forms.ComboBox();
+            this.cbSearchArea = new System.Windows.Forms.ComboBox();
+            this.cbSearchTown = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,24 +88,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_prop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.create_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbProject = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbTypeProp = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbTown = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbArea = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbDistrict = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRealEstate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcImage)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvRealEstate
@@ -115,9 +125,113 @@
             this.dgvRealEstate.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRealEstate_CellValueChanged);
             this.dgvRealEstate.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvRealEstate_CurrentCellDirtyStateChanged);
             // 
+            // id_prop
+            // 
+            this.id_prop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id_prop.DataPropertyName = "id_prop";
+            this.id_prop.HeaderText = "ID";
+            this.id_prop.Name = "id_prop";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // floor
+            // 
+            this.floor.DataPropertyName = "floor";
+            this.floor.HeaderText = "Floor";
+            this.floor.Name = "floor";
+            this.floor.Width = 50;
+            // 
+            // room
+            // 
+            this.room.DataPropertyName = "room";
+            this.room.HeaderText = "Room";
+            this.room.Name = "room";
+            this.room.Width = 50;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            // 
+            // create_date
+            // 
+            this.create_date.DataPropertyName = "create_date";
+            this.create_date.HeaderText = "Create_date";
+            this.create_date.Name = "create_date";
+            // 
+            // cbProject
+            // 
+            this.cbProject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cbProject.DataPropertyName = "id_project";
+            this.cbProject.HeaderText = "Project";
+            this.cbProject.Name = "cbProject";
+            this.cbProject.Width = 58;
+            // 
+            // cbTypeProp
+            // 
+            this.cbTypeProp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.cbTypeProp.DataPropertyName = "id_real_estate_type";
+            this.cbTypeProp.HeaderText = "RealEstateType";
+            this.cbTypeProp.Name = "cbTypeProp";
+            this.cbTypeProp.Width = 115;
+            // 
+            // cbTown
+            // 
+            this.cbTown.DataPropertyName = "id_town_region";
+            this.cbTown.DataSource = this.propertyBindingSource;
+            this.cbTown.HeaderText = "TownRegion";
+            this.cbTown.Name = "cbTown";
+            this.cbTown.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbTown.Visible = false;
+            this.cbTown.Width = 150;
+            // 
             // propertyBindingSource
             // 
             this.propertyBindingSource.DataSource = typeof(DAL.property);
+            // 
+            // cbArea
+            // 
+            this.cbArea.DataPropertyName = "id_area";
+            this.cbArea.DataSource = this.propertyBindingSource;
+            this.cbArea.HeaderText = "Area";
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbArea.Visible = false;
+            this.cbArea.Width = 150;
+            // 
+            // cbDistrict
+            // 
+            this.cbDistrict.DataPropertyName = "id_district";
+            this.cbDistrict.DataSource = this.propertyBindingSource;
+            this.cbDistrict.HeaderText = "District";
+            this.cbDistrict.Name = "cbDistrict";
+            this.cbDistrict.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbDistrict.Visible = false;
+            this.cbDistrict.Width = 130;
+            // 
+            // avatar
+            // 
+            this.avatar.DataPropertyName = "avatar";
+            this.avatar.HeaderText = "Image";
+            this.avatar.Name = "avatar";
+            this.avatar.Visible = false;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
+            // Selected
+            // 
+            this.Selected.HeaderText = "Selected";
+            this.Selected.Name = "Selected";
+            this.Selected.Visible = false;
             // 
             // btnAdd
             // 
@@ -164,7 +278,7 @@
             // pcImage
             // 
             this.pcImage.Image = ((System.Drawing.Image)(resources.GetObject("pcImage.Image")));
-            this.pcImage.Location = new System.Drawing.Point(621, 20);
+            this.pcImage.Location = new System.Drawing.Point(588, 20);
             this.pcImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcImage.Name = "pcImage";
             this.pcImage.Size = new System.Drawing.Size(349, 261);
@@ -272,7 +386,7 @@
             this.btnBrowser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(173)))), ((int)(((byte)(127)))));
             this.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowser.ForeColor = System.Drawing.Color.White;
-            this.btnBrowser.Location = new System.Drawing.Point(744, 286);
+            this.btnBrowser.Location = new System.Drawing.Point(697, 286);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(124, 47);
             this.btnBrowser.TabIndex = 19;
@@ -316,6 +430,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnExport);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -350,10 +467,105 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(3, 258);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1279, 424);
+            this.groupBox1.Size = new System.Drawing.Size(1279, 425);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Row";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(173)))), ((int)(((byte)(127)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(697, 342);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 47);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Load";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(173)))), ((int)(((byte)(127)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1057, 286);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(124, 47);
+            this.btnSearch.TabIndex = 30;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cbSearchDistrict);
+            this.groupBox2.Controls.Add(this.cbSearchArea);
+            this.groupBox2.Controls.Add(this.cbSearchTown);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Location = new System.Drawing.Point(964, 20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(314, 260);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
+            // 
+            // cbSearchDistrict
+            // 
+            this.cbSearchDistrict.FormattingEnabled = true;
+            this.cbSearchDistrict.Location = new System.Drawing.Point(131, 129);
+            this.cbSearchDistrict.Name = "cbSearchDistrict";
+            this.cbSearchDistrict.Size = new System.Drawing.Size(167, 24);
+            this.cbSearchDistrict.TabIndex = 5;
+            // 
+            // cbSearchArea
+            // 
+            this.cbSearchArea.FormattingEnabled = true;
+            this.cbSearchArea.Location = new System.Drawing.Point(131, 83);
+            this.cbSearchArea.Name = "cbSearchArea";
+            this.cbSearchArea.Size = new System.Drawing.Size(167, 24);
+            this.cbSearchArea.TabIndex = 4;
+            this.cbSearchArea.SelectedIndexChanged += new System.EventHandler(this.cbSearchArea_SelectedIndexChanged);
+            // 
+            // cbSearchTown
+            // 
+            this.cbSearchTown.FormattingEnabled = true;
+            this.cbSearchTown.Location = new System.Drawing.Point(131, 37);
+            this.cbSearchTown.Name = "cbSearchTown";
+            this.cbSearchTown.Size = new System.Drawing.Size(167, 24);
+            this.cbSearchTown.TabIndex = 3;
+            this.cbSearchTown.SelectedIndexChanged += new System.EventHandler(this.cbSearchTown_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 132);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 17);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "District :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(51, 86);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Area :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 40);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 17);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "TownRegion:";
             // 
             // btnExport
             // 
@@ -476,110 +688,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // id_prop
-            // 
-            this.id_prop.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id_prop.DataPropertyName = "id_prop";
-            this.id_prop.HeaderText = "ID";
-            this.id_prop.Name = "id_prop";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // floor
-            // 
-            this.floor.DataPropertyName = "floor";
-            this.floor.HeaderText = "Floor";
-            this.floor.Name = "floor";
-            this.floor.Width = 50;
-            // 
-            // room
-            // 
-            this.room.DataPropertyName = "room";
-            this.room.HeaderText = "Room";
-            this.room.Name = "room";
-            this.room.Width = 50;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "price";
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            // 
-            // create_date
-            // 
-            this.create_date.DataPropertyName = "create_date";
-            this.create_date.HeaderText = "Create_date";
-            this.create_date.Name = "create_date";
-            // 
-            // cbProject
-            // 
-            this.cbProject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cbProject.DataPropertyName = "id_project";
-            this.cbProject.HeaderText = "Project";
-            this.cbProject.Name = "cbProject";
-            this.cbProject.Width = 58;
-            // 
-            // cbTypeProp
-            // 
-            this.cbTypeProp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.cbTypeProp.DataPropertyName = "id_real_estate_type";
-            this.cbTypeProp.HeaderText = "RealEstateType";
-            this.cbTypeProp.Name = "cbTypeProp";
-            this.cbTypeProp.Width = 115;
-            // 
-            // cbTown
-            // 
-            this.cbTown.DataPropertyName = "id_town_region";
-            this.cbTown.DataSource = this.propertyBindingSource;
-            this.cbTown.HeaderText = "TownRegion";
-            this.cbTown.Name = "cbTown";
-            this.cbTown.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbTown.Visible = false;
-            this.cbTown.Width = 150;
-            // 
-            // cbArea
-            // 
-            this.cbArea.DataPropertyName = "id_area";
-            this.cbArea.DataSource = this.propertyBindingSource;
-            this.cbArea.HeaderText = "Area";
-            this.cbArea.Name = "cbArea";
-            this.cbArea.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbArea.Visible = false;
-            this.cbArea.Width = 150;
-            // 
-            // cbDistrict
-            // 
-            this.cbDistrict.DataPropertyName = "id_district";
-            this.cbDistrict.DataSource = this.propertyBindingSource;
-            this.cbDistrict.HeaderText = "District";
-            this.cbDistrict.Name = "cbDistrict";
-            this.cbDistrict.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbDistrict.Visible = false;
-            this.cbDistrict.Width = 130;
-            // 
-            // avatar
-            // 
-            this.avatar.DataPropertyName = "avatar";
-            this.avatar.HeaderText = "Image";
-            this.avatar.Name = "avatar";
-            this.avatar.Visible = false;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            // 
-            // Selected
-            // 
-            this.Selected.HeaderText = "Selected";
-            this.Selected.Name = "Selected";
-            this.Selected.Visible = false;
-            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -595,6 +703,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -650,5 +760,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn avatar;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cbSearchDistrict;
+        private System.Windows.Forms.ComboBox cbSearchArea;
+        private System.Windows.Forms.ComboBox cbSearchTown;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }

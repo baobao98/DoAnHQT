@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,14 @@ namespace BAL
         RealEstateEntities db = new RealEstateEntities();
         public List<property> getProperty()
         {
-            return prop.getProperty();
+            //return prop.getProperty();
+            return db.properties.ToList();
         }
+        public System.Collections.Generic.List<getAllProp_Result> getAllProp()
+        {
+            return db.getAllProp().ToList();
+        }
+       
         public List<townRegion> getTown()
         {
             return prop.getTown();
@@ -55,6 +62,14 @@ namespace BAL
         {
             return prop.Update(ref err, ref pro,id_prop, id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, ten, status, avatar);
         }
-      
+        public ObjectResult<sp_searchLocationProperty_Result> searchPropertyByPlace(int id_town, int id_area, int id_district)
+        {
+            return prop.searchPropertyByPlace(id_town, id_area, id_district);
+        }
+
+        public bool insertProp(ref string err, ref string pro, int id_realestate_type, string id_project, int floor, int room, float price, int id_town, int id_area, int id_district, string ten, string status, byte[] avatar)
+        {
+            return prop.InsertProp(ref err, ref pro, id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, ten, status, avatar);
+        }
     }
-}
+}       

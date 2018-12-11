@@ -228,31 +228,6 @@
       <Parameter Name="Id" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="projects" EntityType="RealEstateEntity.project" />
-    <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
-    <AssociationSet Name="FK__property__id_are__5AEE82B9" Association="RealEstateEntity.FK__property__id_are__5AEE82B9">
-      <End Role="area" EntitySet="areas" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="RealEstateEntity.FK__property__id_dis__5BE2A6F2">
-      <End Role="district" EntitySet="districts" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK_property_project" Association="RealEstateEntity.FK_property_project">
-      <End Role="project" EntitySet="projects" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_rea__59063A47" Association="RealEstateEntity.FK__property__id_rea__59063A47">
-      <End Role="realEstateType" EntitySet="realEstateTypes" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="RealEstateEntity.FK__property__id_tow__59FA5E80">
-      <End Role="townRegion" EntitySet="townRegions" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="RealEstateEntity.FK__trannsact__id_pr__60A75C0F">
-      <End Role="property" EntitySet="properties" />
-      <End Role="trannsaction" EntitySet="trannsactions" />
-    </AssociationSet>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -330,6 +305,77 @@
       <Parameter Name="name" Mode="In" Type="String" />
       <Parameter Name="avatar" Mode="In" Type="Binary" />
     </FunctionImport>
+    <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
+    <AssociationSet Name="FK__property__id_are__5AEE82B9" Association="RealEstateEntity.FK__property__id_are__5AEE82B9">
+      <End Role="area" EntitySet="areas" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="RealEstateEntity.FK__property__id_dis__5BE2A6F2">
+      <End Role="district" EntitySet="districts" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_property_project" Association="RealEstateEntity.FK_property_project">
+      <End Role="project" EntitySet="projects" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__property__id_rea__59063A47" Association="RealEstateEntity.FK__property__id_rea__59063A47">
+      <End Role="realEstateType" EntitySet="realEstateTypes" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="RealEstateEntity.FK__property__id_tow__59FA5E80">
+      <End Role="townRegion" EntitySet="townRegions" />
+      <End Role="property" EntitySet="properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="RealEstateEntity.FK__trannsact__id_pr__60A75C0F">
+      <End Role="property" EntitySet="properties" />
+      <End Role="trannsaction" EntitySet="trannsactions" />
+    </AssociationSet>
+    <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateEntity.sp_searchLocationProperty_Result)">
+      <Parameter Name="id_town" Mode="In" Type="Int32" />
+      <Parameter Name="id_area" Mode="In" Type="Int32" />
+      <Parameter Name="id_district" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertProperty2">
+      <Parameter Name="id_prop" Mode="In" Type="String" />
+      <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+      <Parameter Name="id_project" Mode="In" Type="String" />
+      <Parameter Name="floor" Mode="In" Type="Int32" />
+      <Parameter Name="room" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+      <Parameter Name="id_area" Mode="In" Type="Int32" />
+      <Parameter Name="id_district" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="avatar" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertProperty3">
+      <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+      <Parameter Name="id_project" Mode="In" Type="String" />
+      <Parameter Name="floor" Mode="In" Type="Int32" />
+      <Parameter Name="room" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+      <Parameter Name="id_area" Mode="In" Type="Int32" />
+      <Parameter Name="id_district" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="avatar" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertProp">
+      <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+      <Parameter Name="id_project" Mode="In" Type="String" />
+      <Parameter Name="floor" Mode="In" Type="Int32" />
+      <Parameter Name="room" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+      <Parameter Name="id_area" Mode="In" Type="Int32" />
+      <Parameter Name="id_district" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="avatar" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateEntity.getAllProp_Result)" />
   </EntityContainer>
   <EntityType Name="advertisement">
     <Key>
@@ -362,6 +408,32 @@
     <Property Name="PlaceOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK_property_project" FromRole="project" ToRole="property" />
   </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_InsertProperty1_Result">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+  </ComplexType>
   <EntityType Name="property">
     <Key>
       <PropertyRef Name="id_prop" />
@@ -458,18 +530,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
+  <ComplexType Name="sp_searchLocationProperty_Result">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
   </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="sp_InsertProperty1_Result">
+  <ComplexType Name="getAllProp_Result">
     <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
     <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
     <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
