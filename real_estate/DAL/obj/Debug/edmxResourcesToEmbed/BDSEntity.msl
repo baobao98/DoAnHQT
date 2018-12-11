@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
-    <EntitySetMapping Name="accounts">
-      <EntityTypeMapping TypeName="RealEstateModel.account">
-        <MappingFragment StoreEntitySet="account">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
-          <ScalarProperty Name="type_ac" ColumnName="type_ac" />
-          <ScalarProperty Name="password" ColumnName="password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="advertisements">
       <EntityTypeMapping TypeName="RealEstateModel.advertisement">
         <MappingFragment StoreEntitySet="advertisement">
@@ -324,14 +314,23 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateModel.Store.sp_updateProperty" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateModel.Store.sp_upgraddiagrams" />
-    <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateModel.Store.spGetloaiTK">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateModel.spGetloaiTK_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateModel.Store.updateStatusContact" />
+    <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateModel.Store.spGetAllTypeAcc" />
+    <FunctionImportMapping FunctionImportName="spDelTypeAcc" FunctionName="RealEstateModel.Store.spDelTypeAcc" />
+    <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateModel.Store.spGetloaiTK" />
+    <FunctionImportMapping FunctionImportName="spInsertTypeAcc" FunctionName="RealEstateModel.Store.spInsertTypeAcc" />
+    <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateModel.Store.spUpdateTypeAcc" />
+    <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateModel.Store.spLegit" />
+    <FunctionImportMapping FunctionImportName="spInsertAcc" FunctionName="RealEstateModel.Store.spInsertAcc" />
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="RealEstateModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="type_ac" ColumnName="type_ac" />
+          <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

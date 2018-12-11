@@ -27,7 +27,6 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<account> accounts { get; set; }
         public virtual DbSet<advertisement> advertisements { get; set; }
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<area> areas { get; set; }
@@ -42,6 +41,7 @@ namespace DAL
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
+        public virtual DbSet<account> accounts { get; set; }
     
         public virtual int addEmployee(string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
         {
@@ -614,11 +614,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual ObjectResult<spGetloaiTK_Result> spGetloaiTK()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetloaiTK_Result>("spGetloaiTK");
-        }
-    
         public virtual int updateStatusContact(string id_prop, string phone)
         {
             var id_propParameter = id_prop != null ?
@@ -630,6 +625,87 @@ namespace DAL
                 new ObjectParameter("phone", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
+        }
+    
+        public virtual ObjectResult<typeAccount> spGetAllTypeAcc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetAllTypeAcc");
+        }
+    
+        public virtual ObjectResult<typeAccount> spGetAllTypeAcc(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetAllTypeAcc", mergeOption);
+        }
+    
+        public virtual int spDelTypeAcc(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelTypeAcc", idParameter);
+        }
+    
+        public virtual ObjectResult<typeAccount> spGetloaiTK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK");
+        }
+    
+        public virtual ObjectResult<typeAccount> spGetloaiTK(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK", mergeOption);
+        }
+    
+        public virtual int spInsertTypeAcc(string nameoftype)
+        {
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertTypeAcc", nameoftypeParameter);
+        }
+    
+        public virtual int spUpdateTypeAcc(Nullable<int> id, string nameoftype)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
+        }
+    
+        public virtual int spLegit(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spLegit", nameParameter, passParameter);
+        }
+    
+        public virtual int spInsertAcc(string nameacc, Nullable<int> type, string pass)
+        {
+            var nameaccParameter = nameacc != null ?
+                new ObjectParameter("nameacc", nameacc) :
+                new ObjectParameter("nameacc", typeof(string));
+    
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertAcc", nameaccParameter, typeParameter, passParameter);
         }
     }
 }

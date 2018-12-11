@@ -23,7 +23,7 @@ namespace DAL
         public string id { get; set; }
         public string nameAcc { get; set; }
         public Nullable<int> type_ac { get; set; }
-        public string password { get; set; }
+        public byte[] pass { get; set; }
     
         public virtual typeAccount typeAccount { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

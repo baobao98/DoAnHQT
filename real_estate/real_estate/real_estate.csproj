@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -103,7 +105,7 @@
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Mail.cs">
@@ -124,6 +126,12 @@
     </Compile>
     <Compile Include="SetAppointment.Designer.cs">
       <DependentUpon>SetAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeAccount.cs">
       <SubType>Form</SubType>
@@ -203,6 +211,9 @@
     <EmbeddedResource Include="Forms\appointment.resx">
       <DependentUpon>appointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mail.resx">
       <DependentUpon>Mail.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SetAppointment.resx">
       <DependentUpon>SetAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TypeAccount.resx">
       <DependentUpon>TypeAccount.cs</DependentUpon>
@@ -248,9 +262,11 @@
       <DependentUpon>VIP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DAL.account.datasource" />
     <None Include="Properties\DataSources\DAL.appointment.datasource" />
     <None Include="Properties\DataSources\DAL.customer.datasource" />
     <None Include="Properties\DataSources\DAL.trannsaction.datasource" />
+    <None Include="Properties\DataSources\DAL.typeAccount.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

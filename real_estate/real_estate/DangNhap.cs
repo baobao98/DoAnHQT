@@ -17,9 +17,7 @@ namespace real_estate
         public DangNhap()
         {
             InitializeComponent();
-            //var t = tk.LayTK();
-            //dgv.DataSource = t.ToList();
-            dgv.DataSource = tk.getAll();
+           
         }
         void loaddata()
         {

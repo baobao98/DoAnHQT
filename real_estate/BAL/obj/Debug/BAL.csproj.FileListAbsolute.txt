@@ -5,7 +5,6 @@ C:\GITHUB\realEstate\real_estate\BAL\bin\Debug\DAL.pdb
 C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.dll
 C:\GITHUB\realEstate\real_estate\BAL\obj\Debug\BAL.pdb
-D:\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 D:\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csproj.CoreCompileInputs.cache
 D:\DoAnHQT\real_estate\BAL\obj\Debug\BAL.dll
 D:\DoAnHQT\real_estate\BAL\obj\Debug\BAL.pdb
@@ -46,3 +45,4 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csproj.CopyComplete
 D:\DBMS\PROJECT\DoAnHQT\real_estate\BAL\obj\Debug\BAL.dll
 D:\DBMS\PROJECT\DoAnHQT\real_estate\BAL\obj\Debug\BAL.pdb
 D:\DBMS\PROJECT\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csprojAssemblyReference.cache
+D:\DoAnHQT\real_estate\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache

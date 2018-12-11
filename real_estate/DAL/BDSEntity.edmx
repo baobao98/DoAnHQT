@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="account">
           <Key>
             <PropertyRef Name="id" />
@@ -12,7 +12,7 @@
           <Property Name="id" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="nameAcc" Type="nvarchar" MaxLength="150" />
           <Property Name="type_ac" Type="int" />
-          <Property Name="password" Type="varchar" MaxLength="15" />
+          <Property Name="pass" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="advertisement">
           <Key>
@@ -384,6 +384,10 @@
           <Parameter Name="information" Type="text" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="fnXacNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+        </Function>
         <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -469,7 +473,27 @@
           <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spDelTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAllTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spGetloaiTK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spInsertAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nameacc" Type="varchar" Mode="In" />
+          <Parameter Name="type" Type="int" Mode="In" />
+          <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spInsertTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spLegit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spUpdateTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="Type" Type="varchar" Mode="In" />
         </Function>
@@ -546,22 +570,10 @@
             <End Role="property" EntitySet="property" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="account">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="type_ac" Type="Int32" />
-          <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="typeAccount" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
-          <NavigationProperty Name="employees" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
-        </EntityType>
         <EntityType Name="advertisement">
           <Key>
             <PropertyRef Name="id_ad" />
@@ -639,7 +651,7 @@
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="create_date" Type="DateTime" Precision="3" />
           <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="account1" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
+          <NavigationProperty Name="account1" Relationship="RealEstateModel.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
         </EntityType>
         <EntityType Name="project">
           <Key>
@@ -724,32 +736,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameOfTypeAcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="accounts" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
+          <NavigationProperty Name="accounts" Relationship="RealEstateModel.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
         </EntityType>
-        <Association Name="FK__account__type_ac__145C0A3F">
-          <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
-          <End Role="account" Type="Self.account" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="typeAccount">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="account">
-              <PropertyRef Name="type_ac" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__employee__accoun__182C9B23">
-          <End Role="account" Type="Self.account" Multiplicity="0..1" />
-          <End Role="employee" Type="Self.employee" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="account">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="employee">
-              <PropertyRef Name="account" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_advertisement_property">
           <End Role="property" Type="Self.property" Multiplicity="0..1" />
           <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
@@ -883,7 +871,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="accounts" EntityType="Self.account" />
           <EntitySet Name="advertisements" EntityType="Self.advertisement" />
           <EntitySet Name="appointments" EntityType="Self.appointment" />
           <EntitySet Name="areas" EntityType="Self.area" />
@@ -898,14 +885,6 @@
           <EntitySet Name="townRegions" EntityType="Self.townRegion" />
           <EntitySet Name="trannsactions" EntityType="Self.trannsaction" />
           <EntitySet Name="typeAccounts" EntityType="Self.typeAccount" />
-          <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
-            <End Role="typeAccount" EntitySet="typeAccounts" />
-            <End Role="account" EntitySet="accounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
-            <End Role="account" EntitySet="accounts" />
-            <End Role="employee" EntitySet="employees" />
-          </AssociationSet>
           <AssociationSet Name="FK_advertisement_property" Association="Self.FK_advertisement_property">
             <End Role="property" EntitySet="properties" />
             <End Role="advertisement" EntitySet="advertisements" />
@@ -996,17 +975,17 @@
             <Parameter Name="create_date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="CustomerDelete">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateModel.CustomerVip_Result)" />
           <FunctionImport Name="DeleteAppo">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="deleteEmployee">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="deleteProject">
-            <Parameter Name="id" Mode="In" Type="String" />
+          <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="editEmployee">
             <Parameter Name="id" Mode="In" Type="String" />
@@ -1031,7 +1010,7 @@
           </FunctionImport>
           <FunctionImport Name="getProject" ReturnType="Collection(RealEstateModel.getProject_Result)" />
           <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateModel.getProperty_Result)">
-            <Parameter Name="id_prop" Mode="In" Type="String" />
+          <Parameter Name="id_prop" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateModel.getTransaction_Result)" />
           <FunctionImport Name="insertTransaction">
@@ -1041,7 +1020,7 @@
             <Parameter Name="payment" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateModel.searchEmployee_Result)">
-            <Parameter Name="id_name" Mode="In" Type="String" />
+          <Parameter Name="id_name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1056,7 +1035,7 @@
             <Parameter Name="definition" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_DeleteProperty">
-            <Parameter Name="Id" Mode="In" Type="String" />
+          <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_dropdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1108,11 +1087,40 @@
             <Parameter Name="avatar" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateModel.spGetloaiTK_Result)" />
           <FunctionImport Name="updateStatusContact">
             <Parameter Name="id_prop" Mode="In" Type="String" />
             <Parameter Name="phone" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spGetAllTypeAcc" EntitySet="typeAccounts" ReturnType="Collection(RealEstateModel.typeAccount)" />
+          <FunctionImport Name="spDelTypeAcc">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetloaiTK" EntitySet="typeAccounts" ReturnType="Collection(RealEstateModel.typeAccount)" />
+          <FunctionImport Name="spInsertTypeAcc">
+          <Parameter Name="nameoftype" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateTypeAcc">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="nameoftype" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spLegit">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertAcc">
+            <Parameter Name="nameacc" Mode="In" Type="String" />
+            <Parameter Name="type" Mode="In" Type="Int32" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="accounts" EntityType="RealEstateModel.account" />
+          <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="RealEstateModel.FK__account__type_ac__145C0A3F">
+            <End Role="typeAccount" EntitySet="typeAccounts" />
+            <End Role="account" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__employee__accoun__182C9B23" Association="RealEstateModel.FK__employee__accoun__182C9B23">
+            <End Role="account" EntitySet="accounts" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="appo_GetAllAppo_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -1226,22 +1234,55 @@
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="spGetAllTypeAcc_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spGetloaiTK_Result1">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="type_ac" Type="Int32" />
+          <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="typeAccount" Relationship="RealEstateModel.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
+          <NavigationProperty Name="employees" Relationship="RealEstateModel.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
+        </EntityType>
+        <Association Name="FK__account__type_ac__145C0A3F">
+          <End Type="RealEstateModel.typeAccount" Role="typeAccount" Multiplicity="0..1" />
+          <End Type="RealEstateModel.account" Role="account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeAccount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="type_ac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__employee__accoun__182C9B23">
+          <End Type="RealEstateModel.account" Role="account" Multiplicity="0..1" />
+          <End Type="RealEstateModel.employee" Role="employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
-          <EntitySetMapping Name="accounts">
-            <EntityTypeMapping TypeName="RealEstateModel.account">
-              <MappingFragment StoreEntitySet="account">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
-                <ScalarProperty Name="type_ac" ColumnName="type_ac" />
-                <ScalarProperty Name="password" ColumnName="password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="advertisements">
             <EntityTypeMapping TypeName="RealEstateModel.advertisement">
               <MappingFragment StoreEntitySet="advertisement">
@@ -1557,15 +1598,26 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateModel.Store.sp_updateProperty" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateModel.Store.spGetloaiTK">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.spGetloaiTK_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateModel.Store.updateStatusContact" />
+          <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateModel.Store.spGetAllTypeAcc">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spDelTypeAcc" FunctionName="RealEstateModel.Store.spDelTypeAcc" />
+          <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateModel.Store.spGetloaiTK">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spInsertTypeAcc" FunctionName="RealEstateModel.Store.spInsertTypeAcc" />
+          <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateModel.Store.spUpdateTypeAcc" />
+          <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateModel.Store.spLegit" />
+          <FunctionImportMapping FunctionImportName="spInsertAcc" FunctionName="RealEstateModel.Store.spInsertAcc" />
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="RealEstateModel.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="type_ac" ColumnName="type_ac" />
+                <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

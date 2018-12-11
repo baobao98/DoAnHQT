@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="account">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="type_ac" Type="Int32" />
-    <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="typeAccount" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
-    <NavigationProperty Name="employees" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
-  </EntityType>
   <EntityType Name="advertisement">
     <Key>
       <PropertyRef Name="id_ad" />
@@ -88,7 +77,7 @@
     <Property Name="birthday" Type="DateTime" Precision="0" />
     <Property Name="create_date" Type="DateTime" Precision="3" />
     <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="account1" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
+    <NavigationProperty Name="account1" Relationship="RealEstateModel.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
   </EntityType>
   <EntityType Name="project">
     <Key>
@@ -173,32 +162,8 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NameOfTypeAcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="accounts" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
+    <NavigationProperty Name="accounts" Relationship="RealEstateModel.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
   </EntityType>
-  <Association Name="FK__account__type_ac__145C0A3F">
-    <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
-    <End Role="account" Type="Self.account" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="typeAccount">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="account">
-        <PropertyRef Name="type_ac" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__employee__accoun__182C9B23">
-    <End Role="account" Type="Self.account" Multiplicity="0..1" />
-    <End Role="employee" Type="Self.employee" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="account">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="employee">
-        <PropertyRef Name="account" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_advertisement_property">
     <End Role="property" Type="Self.property" Multiplicity="0..1" />
     <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
@@ -332,7 +297,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="accounts" EntityType="Self.account" />
     <EntitySet Name="advertisements" EntityType="Self.advertisement" />
     <EntitySet Name="appointments" EntityType="Self.appointment" />
     <EntitySet Name="areas" EntityType="Self.area" />
@@ -347,14 +311,6 @@
     <EntitySet Name="townRegions" EntityType="Self.townRegion" />
     <EntitySet Name="trannsactions" EntityType="Self.trannsaction" />
     <EntitySet Name="typeAccounts" EntityType="Self.typeAccount" />
-    <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
-      <End Role="typeAccount" EntitySet="typeAccounts" />
-      <End Role="account" EntitySet="accounts" />
-    </AssociationSet>
-    <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
-      <End Role="account" EntitySet="accounts" />
-      <End Role="employee" EntitySet="employees" />
-    </AssociationSet>
     <AssociationSet Name="FK_advertisement_property" Association="Self.FK_advertisement_property">
       <End Role="property" EntitySet="properties" />
       <End Role="advertisement" EntitySet="advertisements" />
@@ -557,11 +513,40 @@
       <Parameter Name="avatar" Mode="In" Type="Binary" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateModel.spGetloaiTK_Result)" />
     <FunctionImport Name="updateStatusContact">
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="phone" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spGetAllTypeAcc" EntitySet="typeAccounts" ReturnType="Collection(RealEstateModel.typeAccount)" />
+    <FunctionImport Name="spDelTypeAcc">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spGetloaiTK" EntitySet="typeAccounts" ReturnType="Collection(RealEstateModel.typeAccount)" />
+    <FunctionImport Name="spInsertTypeAcc">
+      <Parameter Name="nameoftype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateTypeAcc">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nameoftype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spLegit">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertAcc">
+      <Parameter Name="nameacc" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="Int32" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="accounts" EntityType="RealEstateModel.account" />
+    <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="RealEstateModel.FK__account__type_ac__145C0A3F">
+      <End Role="typeAccount" EntitySet="typeAccounts" />
+      <End Role="account" EntitySet="accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__employee__accoun__182C9B23" Association="RealEstateModel.FK__employee__accoun__182C9B23">
+      <End Role="account" EntitySet="accounts" />
+      <End Role="employee" EntitySet="employees" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="appo_GetAllAppo_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
@@ -675,4 +660,47 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
   </ComplexType>
+  <ComplexType Name="spGetAllTypeAcc_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spGetloaiTK_Result1">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="type_ac" Type="Int32" />
+    <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="typeAccount" Relationship="RealEstateModel.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
+    <NavigationProperty Name="employees" Relationship="RealEstateModel.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
+  </EntityType>
+  <Association Name="FK__account__type_ac__145C0A3F">
+    <End Type="RealEstateModel.typeAccount" Role="typeAccount" Multiplicity="0..1" />
+    <End Type="RealEstateModel.account" Role="account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeAccount">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="account">
+        <PropertyRef Name="type_ac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__employee__accoun__182C9B23">
+    <End Type="RealEstateModel.account" Role="account" Multiplicity="0..1" />
+    <End Type="RealEstateModel.employee" Role="employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="employee">
+        <PropertyRef Name="account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -67,7 +67,6 @@ C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.us
 C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
 C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
 C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
@@ -172,3 +171,8 @@ D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
