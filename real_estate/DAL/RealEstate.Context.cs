@@ -27,6 +27,7 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<account> accounts { get; set; }
         public virtual DbSet<advertisement> advertisements { get; set; }
         public virtual DbSet<appointment> appointments { get; set; }
         public virtual DbSet<area> areas { get; set; }
@@ -37,11 +38,9 @@ namespace DAL
         public virtual DbSet<project> projects { get; set; }
         public virtual DbSet<property> properties { get; set; }
         public virtual DbSet<realEstateType> realEstateTypes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<townRegion> townRegions { get; set; }
         public virtual DbSet<trannsaction> trannsactions { get; set; }
         public virtual DbSet<typeAccount> typeAccounts { get; set; }
-        public virtual DbSet<account> accounts { get; set; }
     
         public virtual int addEmployee(string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
         {
@@ -93,14 +92,9 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
-        public virtual ObjectResult<appointment> appo_GetAllAppo()
+        public virtual ObjectResult<appo_GetAllAppo_Result> appo_GetAllAppo()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo");
-        }
-    
-        public virtual ObjectResult<appointment> appo_GetAllAppo(MergeOption mergeOption)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo", mergeOption);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appo_GetAllAppo_Result>("appo_GetAllAppo");
         }
     
         public virtual int AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
@@ -302,19 +296,37 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editProject", idParameter, name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
-        public virtual ObjectResult<customer> GetAllCustomer()
+        public virtual ObjectResult<getAddressProp_Result> getAddressProp(string id_prop)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer");
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAddressProp_Result>("getAddressProp", id_propParameter);
         }
     
-        public virtual ObjectResult<customer> GetAllCustomer(MergeOption mergeOption)
+        public virtual ObjectResult<GetAllCustomer_Result> GetAllCustomer()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer", mergeOption);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllCustomer_Result>("GetAllCustomer");
+        }
+    
+        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
         }
     
         public virtual ObjectResult<getContact_Result> getContact()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getContact_Result>("getContact");
+        }
+    
+        public virtual ObjectResult<getCustomer_Result> getCustomer(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getCustomer_Result>("getCustomer", id_cusParameter);
         }
     
         public virtual ObjectResult<getInforTrans_Result> getInforTrans(string id_cus, string id_prop)
@@ -349,27 +361,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTransaction_Result>("getTransaction");
         }
     
-        public virtual int insertTransaction(string id_prop, string id_cus, Nullable<double> amount, string payment)
-        {
-            var id_propParameter = id_prop != null ?
-                new ObjectParameter("id_prop", id_prop) :
-                new ObjectParameter("id_prop", typeof(string));
-    
-            var id_cusParameter = id_cus != null ?
-                new ObjectParameter("id_cus", id_cus) :
-                new ObjectParameter("id_cus", typeof(string));
-    
-            var amountParameter = amount.HasValue ?
-                new ObjectParameter("amount", amount) :
-                new ObjectParameter("amount", typeof(double));
-    
-            var paymentParameter = payment != null ?
-                new ObjectParameter("payment", payment) :
-                new ObjectParameter("payment", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertTransaction", id_propParameter, id_cusParameter, amountParameter, paymentParameter);
-        }
-    
         public virtual ObjectResult<searchEmployee_Result> searchEmployee(string id_name)
         {
             var id_nameParameter = id_name != null ?
@@ -379,46 +370,17 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result>("searchEmployee", id_nameParameter);
         }
     
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
     
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
         }
     
         public virtual int sp_DeleteProperty(string id)
@@ -428,45 +390,6 @@ namespace DAL
                 new ObjectParameter("Id", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteProperty", idParameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_InsertProperty(Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
@@ -518,21 +441,38 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertProperty", id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
         }
     
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        public virtual int sp_InsertTrans(string id_prop, string id_cus, Nullable<double> amount, string status, string payment)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
     
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var paymentParameter = payment != null ?
+                new ObjectParameter("payment", payment) :
+                new ObjectParameter("payment", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
+        }
+    
+        public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result>("sp_searchCusTrans", id_cusParameter);
         }
     
         public virtual ObjectResult<sp_searchLocationProperty_Result> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
@@ -605,22 +545,13 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateProperty", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
         }
     
-        public virtual int sp_upgraddiagrams()
+        public virtual int spDelTypeAcc(Nullable<int> id)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
     
-        public virtual int updateStatusContact(string id_prop, string phone)
-        {
-            var id_propParameter = id_prop != null ?
-                new ObjectParameter("id_prop", id_prop) :
-                new ObjectParameter("id_prop", typeof(string));
-    
-            var phoneParameter = phone != null ?
-                new ObjectParameter("phone", phone) :
-                new ObjectParameter("phone", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelTypeAcc", idParameter);
         }
     
         public virtual ObjectResult<typeAccount> spGetAllTypeAcc()
@@ -633,45 +564,9 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetAllTypeAcc", mergeOption);
         }
     
-        public virtual int spDelTypeAcc(Nullable<int> id)
+        public virtual ObjectResult<spGetloaiTK_Result> spGetloaiTK()
         {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelTypeAcc", idParameter);
-        }
-    
-        public virtual ObjectResult<typeAccount> spGetloaiTK()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK");
-        }
-    
-        public virtual ObjectResult<typeAccount> spGetloaiTK(MergeOption mergeOption)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<typeAccount>("spGetloaiTK", mergeOption);
-        }
-    
-        public virtual int spInsertTypeAcc(string nameoftype)
-        {
-            var nameoftypeParameter = nameoftype != null ?
-                new ObjectParameter("nameoftype", nameoftype) :
-                new ObjectParameter("nameoftype", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertTypeAcc", nameoftypeParameter);
-        }
-    
-        public virtual int spUpdateTypeAcc(Nullable<int> id, string nameoftype)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            var nameoftypeParameter = nameoftype != null ?
-                new ObjectParameter("nameoftype", nameoftype) :
-                new ObjectParameter("nameoftype", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetloaiTK_Result>("spGetloaiTK");
         }
     
         public virtual int spInsertAcc(string nameacc, Nullable<int> type, string pass)
@@ -691,17 +586,30 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertAcc", nameaccParameter, typeParameter, passParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
+        public virtual int spInsertContact(string fone, string idprop, string name)
         {
+            var foneParameter = fone != null ?
+                new ObjectParameter("fone", fone) :
+                new ObjectParameter("fone", typeof(string));
+    
+            var idpropParameter = idprop != null ?
+                new ObjectParameter("idprop", idprop) :
+                new ObjectParameter("idprop", typeof(string));
+    
             var nameParameter = name != null ?
                 new ObjectParameter("name", name) :
                 new ObjectParameter("name", typeof(string));
     
-            var passParameter = pass != null ?
-                new ObjectParameter("pass", pass) :
-                new ObjectParameter("pass", typeof(string));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertContact", foneParameter, idpropParameter, nameParameter);
+        }
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
+        public virtual int spInsertTypeAcc(string nameoftype)
+        {
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertTypeAcc", nameoftypeParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> spLegit(string name, string pass)
@@ -717,43 +625,43 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spLegit", nameParameter, passParameter);
         }
     
-        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        public virtual int spUdateAcc(string name, string pass)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUdateAcc", nameParameter, passParameter);
         }
     
-        public virtual int sp_InsertTrans(string id_prop, string id_cus, Nullable<double> amount, string status, string payment)
+        public virtual int spUpdateTypeAcc(Nullable<int> id, string nameoftype)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
+        }
+    
+        public virtual int updateStatusContact(string id_prop, string phone)
         {
             var id_propParameter = id_prop != null ?
                 new ObjectParameter("id_prop", id_prop) :
                 new ObjectParameter("id_prop", typeof(string));
     
-            var id_cusParameter = id_cus != null ?
-                new ObjectParameter("id_cus", id_cus) :
-                new ObjectParameter("id_cus", typeof(string));
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
     
-            var amountParameter = amount.HasValue ?
-                new ObjectParameter("amount", amount) :
-                new ObjectParameter("amount", typeof(double));
-    
-            var statusParameter = status != null ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(string));
-    
-            var paymentParameter = payment != null ?
-                new ObjectParameter("payment", payment) :
-                new ObjectParameter("payment", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
-        }
-    
-        public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
-        {
-            var id_cusParameter = id_cus != null ?
-                new ObjectParameter("id_cus", id_cus) :
-                new ObjectParameter("id_cus", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result>("sp_searchCusTrans", id_cusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
         }
     }
 }

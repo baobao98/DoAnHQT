@@ -1,48 +1,3 @@
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll.config
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.pdb
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.dll
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.pdb
-D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
-D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
-D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
-D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
-D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
-D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
-D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
-D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
-D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
-D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
-<<<<<<< HEAD
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-=======
-D:\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.dll
-C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
@@ -55,4 +10,3 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xm
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
->>>>>>> Oggy

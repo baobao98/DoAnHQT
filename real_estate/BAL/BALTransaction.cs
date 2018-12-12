@@ -21,7 +21,7 @@ namespace BAL
         }
         public int updateContact(string id_prop, string phone)
         {
-            return dbs.updateStatusContact(id_prop,phone);
+            return dbs.updateStatusContact(id_prop, phone);
         }
         public System.Data.Entity.Core.Objects.ObjectResult<getAddressProp_Result> getAdress(string id_prop)
         {
@@ -41,7 +41,7 @@ namespace BAL
         //}
         public int spinsertTrans(string id_prop, string id_cus, float amount, string payment)
         {
-            return dbs.sp_InsertTrans(id_prop, id_cus, amount,"1", payment);
+            return dbs.sp_InsertTrans(id_prop, id_cus, amount, "1", payment);
         }
         public System.Data.Entity.Core.Objects.ObjectResult<getContact_Result> getContact()
         {

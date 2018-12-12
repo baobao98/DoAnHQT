@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="278e6a98af65471c80a953a369205784" Name="Diagram1">
+        <EntityTypeShape EntityType="RealEstateModel.account" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.advertisement" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.appointment" Width="1.5" PointX="9.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.area" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.contact" Width="1.5" PointX="7.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.customer" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.district" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.employee" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.project" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.property" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.realEstateType" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.townRegion" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.trannsaction" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.typeAccount" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="RealEstateModel.FK__account__type_ac__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__employee__accoun__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__appointme__id_cu__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__appointme__id_cu__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__area__id_town_re__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__area__id_town_re__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__district__id_are__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__district__id_are__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__property__id_are__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__trannsact__id_cu__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__trannsact__id_cu__4C6B5938" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__property__id_dis__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_property_project" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__property__id_rea__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__property__id_tow__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__trannsact__id_pr__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

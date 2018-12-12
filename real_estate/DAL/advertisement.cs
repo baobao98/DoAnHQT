@@ -18,9 +18,5 @@ namespace DAL
         public string name_ad { get; set; }
         public string information { get; set; }
         public string discount { get; set; }
-        public string prop { get; set; }
-        public string img { get; set; }
-    
-        public virtual property property { get; set; }
     }
 }
