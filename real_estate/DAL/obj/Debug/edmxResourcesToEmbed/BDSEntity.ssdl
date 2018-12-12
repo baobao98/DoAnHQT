@@ -15,9 +15,10 @@
     </Key>
     <Property Name="id_ad" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
-    <Property Name="information" Type="text" />
+    <Property Name="information" Type="nvarchar(max)" />
     <Property Name="discount" Type="varchar" MaxLength="10" />
     <Property Name="prop" Type="varchar" MaxLength="10" />
+    <Property Name="img" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -317,7 +318,6 @@
     <Parameter Name="address" Type="nvarchar" Mode="In" />
     <Parameter Name="license_number" Type="varchar" Mode="In" />
     <Parameter Name="dateOfIssue" Type="date" Mode="In" />
-    <Parameter Name="PlaceOfIssue" Type="varchar" Mode="In" />
     <Parameter Name="information" Type="text" Mode="In" />
   </Function>
   <Function Name="appo_GetAllAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -384,6 +384,7 @@
     <Parameter Name="pass" Type="varchar(max)" Mode="In" />
   </Function>
   <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="getContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_cus" Type="varchar" Mode="In" />
@@ -408,6 +409,10 @@
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_checktaikhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="pass" Type="varchar(max)" Mode="In" />
   </Function>
   <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

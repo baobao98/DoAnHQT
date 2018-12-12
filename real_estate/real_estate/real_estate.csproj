@@ -102,6 +102,12 @@
     <Compile Include="Forms\appointment.Designer.cs">
       <DependentUpon>appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGetAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetAcc.Designer.cs">
+      <DependentUpon>frmGetAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\appointment.resx">
       <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetAcc.resx">
+      <DependentUpon>frmGetAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

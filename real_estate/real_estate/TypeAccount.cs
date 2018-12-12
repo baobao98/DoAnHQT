@@ -33,7 +33,7 @@ namespace real_estate
             // Không cho thao tác trên các nút Lưu / Hủy 
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
-            panel.Enabled = false;
+            //panel.Enabled = false;
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
             btnThem.Enabled = true;
             btnSua.Enabled = true;
@@ -93,7 +93,7 @@ namespace real_estate
             // Cho thao tác trên các nút Lưu / Hủy / Panel 
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
-            panel.Enabled = true;
+            //panel.Enabled = true;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát 
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -109,7 +109,7 @@ namespace real_estate
             dgvTypeAcc_CellClick(null, null);
             //dgvKH_CellClick(null, null);
             // Cho phép thao tác trên Panel 
-            panel.Enabled = true;
+            //panel.Enabled = true;
             // Cho thao tác trên các nút Lưu / Hủy / Panel 
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
@@ -159,7 +159,7 @@ namespace real_estate
             // Không cho thao tác trên các nút Lưu / Hủy / Panel 
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
-            panel.Enabled = false;
+            //panel.Enabled = false;
         }
     }
 }

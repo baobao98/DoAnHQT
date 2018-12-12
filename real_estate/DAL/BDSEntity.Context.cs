@@ -68,7 +68,7 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addEmployee", nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
         }
     
-        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string placeOfIssue, string information)
+        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
         {
             var name_projectParameter = name_project != null ?
                 new ObjectParameter("name_project", name_project) :
@@ -86,15 +86,11 @@ namespace DAL
                 new ObjectParameter("dateOfIssue", dateOfIssue) :
                 new ObjectParameter("dateOfIssue", typeof(System.DateTime));
     
-            var placeOfIssueParameter = placeOfIssue != null ?
-                new ObjectParameter("PlaceOfIssue", placeOfIssue) :
-                new ObjectParameter("PlaceOfIssue", typeof(string));
-    
             var informationParameter = information != null ?
                 new ObjectParameter("information", information) :
                 new ObjectParameter("information", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, placeOfIssueParameter, informationParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
         public virtual ObjectResult<appointment> appo_GetAllAppo()
@@ -678,19 +674,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
         }
     
-        public virtual int spLegit(string name, string pass)
-        {
-            var nameParameter = name != null ?
-                new ObjectParameter("name", name) :
-                new ObjectParameter("name", typeof(string));
-    
-            var passParameter = pass != null ?
-                new ObjectParameter("pass", pass) :
-                new ObjectParameter("pass", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spLegit", nameParameter, passParameter);
-        }
-    
         public virtual int spInsertAcc(string nameacc, Nullable<int> type, string pass)
         {
             var nameaccParameter = nameacc != null ?
@@ -706,6 +689,71 @@ namespace DAL
                 new ObjectParameter("pass", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertAcc", nameaccParameter, typeParameter, passParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spLegit(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spLegit", nameParameter, passParameter);
+        }
+    
+        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
+        }
+    
+        public virtual int sp_InsertTrans(string id_prop, string id_cus, Nullable<double> amount, string status, string payment)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var paymentParameter = payment != null ?
+                new ObjectParameter("payment", payment) :
+                new ObjectParameter("payment", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
+        }
+    
+        public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result>("sp_searchCusTrans", id_cusParameter);
         }
     }
 }

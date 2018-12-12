@@ -20,9 +20,10 @@
           </Key>
           <Property Name="id_ad" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
-          <Property Name="information" Type="text" />
+          <Property Name="information" Type="nvarchar(max)" />
           <Property Name="discount" Type="varchar" MaxLength="10" />
           <Property Name="prop" Type="varchar" MaxLength="10" />
+          <Property Name="img" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="appointment">
           <Key>
@@ -146,6 +147,7 @@
           <Property Name="amount" Type="float" />
           <Property Name="status" Type="varchar" MaxLength="50" />
           <Property Name="payment" Type="varchar" MaxLength="50" />
+          <Property Name="create_date" Type="datetime" />
         </EntityType>
         <EntityType Name="typeAccount">
           <Key>
@@ -322,7 +324,6 @@
           <Parameter Name="address" Type="nvarchar" Mode="In" />
           <Parameter Name="license_number" Type="varchar" Mode="In" />
           <Parameter Name="dateOfIssue" Type="date" Mode="In" />
-          <Parameter Name="PlaceOfIssue" Type="varchar" Mode="In" />
           <Parameter Name="information" Type="text" Mode="In" />
         </Function>
         <Function Name="appo_GetAllAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -389,6 +390,7 @@
           <Parameter Name="pass" Type="varchar(max)" Mode="In" />
         </Function>
         <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_cus" Type="varchar" Mode="In" />
@@ -413,6 +415,10 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_checktaikhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="pass" Type="varchar(max)" Mode="In" />
         </Function>
         <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -448,10 +454,20 @@
           <Parameter Name="name" Type="nvarchar" Mode="In" />
           <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="sp_InsertTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_prop" Type="varchar" Mode="In" />
+          <Parameter Name="id_cus" Type="varchar" Mode="In" />
+          <Parameter Name="amount" Type="float" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="payment" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_searchCusTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_cus" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_searchLocationProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_town" Type="int" Mode="In" />
@@ -580,10 +596,11 @@
           </Key>
           <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="property" Relationship="Self.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="appointment">
           <Key>
@@ -729,6 +746,7 @@
           <Property Name="payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="customer" Relationship="Self.FK__trannsact__id_cu__3A81B327" FromRole="trannsaction" ToRole="customer" />
           <NavigationProperty Name="property" Relationship="Self.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="typeAccount">
           <Key>
@@ -941,7 +959,6 @@
             <Parameter Name="address" Mode="In" Type="String" />
             <Parameter Name="license_number" Mode="In" Type="String" />
             <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-            <Parameter Name="PlaceOfIssue" Mode="In" Type="String" />
             <Parameter Name="information" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateModel.appointment)" />
@@ -1103,10 +1120,6 @@
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="nameoftype" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="spLegit">
-            <Parameter Name="name" Mode="In" Type="String" />
-            <Parameter Name="pass" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="spInsertAcc">
             <Parameter Name="nameacc" Mode="In" Type="String" />
             <Parameter Name="type" Mode="In" Type="Int32" />
@@ -1121,6 +1134,25 @@
             <End Role="account" EntitySet="accounts" />
             <End Role="employee" EntitySet="employees" />
           </AssociationSet>
+          <FunctionImport Name="sp_checktaikhoan" ReturnType="Collection(Int32)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spLegit" ReturnType="Collection(Int32)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateModel.getAllProp_Result)" />
+          <FunctionImport Name="sp_InsertTrans">
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="Double" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="payment" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateModel.sp_searchCusTrans_Result)">
+          <Parameter Name="id_cus" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="appo_GetAllAppo_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
@@ -1277,6 +1309,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="getAllProp_Result">
+          <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+          <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="floor" Nullable="true" />
+          <Property Type="Int32" Name="room" Nullable="true" />
+          <Property Type="Double" Name="price" Nullable="true" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="id_town_region" Nullable="true" />
+          <Property Type="Int32" Name="id_area" Nullable="true" />
+          <Property Type="Int32" Name="id_district" Nullable="true" />
+          <Property Type="Binary" Name="avatar" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_searchCusTrans_Result">
+          <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+          <Property Type="Double" Name="amount" Nullable="true" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1286,6 +1342,7 @@
           <EntitySetMapping Name="advertisements">
             <EntityTypeMapping TypeName="RealEstateModel.advertisement">
               <MappingFragment StoreEntitySet="advertisement">
+                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="id_ad" ColumnName="id_ad" />
                 <ScalarProperty Name="name_ad" ColumnName="name_ad" />
                 <ScalarProperty Name="information" ColumnName="information" />
@@ -1420,6 +1477,7 @@
           <EntitySetMapping Name="trannsactions">
             <EntityTypeMapping TypeName="RealEstateModel.trannsaction">
               <MappingFragment StoreEntitySet="trannsaction">
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
                 <ScalarProperty Name="id_trans" ColumnName="id_trans" />
                 <ScalarProperty Name="id_prop" ColumnName="id_prop" />
                 <ScalarProperty Name="id_cus" ColumnName="id_cus" />
@@ -1606,7 +1664,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spInsertTypeAcc" FunctionName="RealEstateModel.Store.spInsertTypeAcc" />
           <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateModel.Store.spUpdateTypeAcc" />
-          <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateModel.Store.spLegit" />
           <FunctionImportMapping FunctionImportName="spInsertAcc" FunctionName="RealEstateModel.Store.spInsertAcc" />
           <EntitySetMapping Name="accounts">
             <EntityTypeMapping TypeName="RealEstateModel.account">
@@ -1618,6 +1675,41 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_checktaikhoan" FunctionName="RealEstateModel.Store.sp_checktaikhoan" />
+          <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateModel.Store.spLegit" />
+          <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateModel.Store.getAllProp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.getAllProp_Result">
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_InsertTrans" FunctionName="RealEstateModel.Store.sp_InsertTrans" />
+          <FunctionImportMapping FunctionImportName="sp_searchCusTrans" FunctionName="RealEstateModel.Store.sp_searchCusTrans">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.sp_searchCusTrans_Result">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="payment" ColumnName="payment" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

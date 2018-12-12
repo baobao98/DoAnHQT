@@ -37,3 +37,4 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
 D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

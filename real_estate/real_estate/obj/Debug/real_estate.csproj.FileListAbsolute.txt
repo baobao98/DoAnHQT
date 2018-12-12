@@ -179,3 +179,4 @@ D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmGetAcc.resources

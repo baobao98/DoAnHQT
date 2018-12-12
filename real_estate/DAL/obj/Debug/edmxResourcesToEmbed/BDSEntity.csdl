@@ -6,10 +6,11 @@
     </Key>
     <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="property" Relationship="Self.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -367,7 +368,6 @@
       <Parameter Name="address" Mode="In" Type="String" />
       <Parameter Name="license_number" Mode="In" Type="String" />
       <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-      <Parameter Name="PlaceOfIssue" Mode="In" Type="String" />
       <Parameter Name="information" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateModel.appointment)" />
@@ -529,10 +529,6 @@
       <Parameter Name="id" Mode="In" Type="Int32" />
       <Parameter Name="nameoftype" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="spLegit">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="spInsertAcc">
       <Parameter Name="nameacc" Mode="In" Type="String" />
       <Parameter Name="type" Mode="In" Type="Int32" />
@@ -547,6 +543,15 @@
       <End Role="account" EntitySet="accounts" />
       <End Role="employee" EntitySet="employees" />
     </AssociationSet>
+    <FunctionImport Name="sp_checktaikhoan" ReturnType="Collection(Int32)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spLegit" ReturnType="Collection(Int32)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateModel.getAllProp_Result)" />
   </EntityContainer>
   <ComplexType Name="appo_GetAllAppo_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
@@ -703,4 +708,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="getAllProp_Result">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>

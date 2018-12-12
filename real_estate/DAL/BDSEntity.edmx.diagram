@@ -23,7 +23,10 @@
         <AssociationConnector Association="RealEstateModel.FK__appointme__id_cu__25869641" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK__area__id_town_re__1CF15040" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK__district__id_are__1FCDBCEB" ManuallyRouted="false" />
-        <AssociationConnector Association="RealEstateModel.FK__property__id_are__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK__property__id_are__33D4B598" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.5" PointY="4.03125" />
+          <ConnectorPoint PointX="7.5" PointY="4.03125" />
+        </AssociationConnector>
         <AssociationConnector Association="RealEstateModel.FK__trannsact__id_cu__3A81B327" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK__property__id_dis__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK_property_project" ManuallyRouted="false" />
