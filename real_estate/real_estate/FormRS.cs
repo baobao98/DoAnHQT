@@ -34,27 +34,27 @@ namespace real_estate
 
         private void btnEmp_Click(object sender, EventArgs e)
         {
-            employee2.BringToFront();
+
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            customer2.BringToFront();
+
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            products1.BringToFront();
+
         }
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            transaction.BringToFront();
+
         }
 
         private void btnProject_Click(object sender, EventArgs e)
         {
-            products1.BringToFront();
+
         }
         private void panel3_MouseDown(object sender, MouseEventArgs e)
         {
@@ -94,14 +94,14 @@ namespace real_estate
         {
             if (check == true)
             {
-                bell1.Visible = true;
-                bell1.BringToFront();
+                //bell1.Visible = true;
+                //bell1.BringToFront();
 
                 check = false;
             }
             else
             {
-                bell1.Visible = false;
+               // bell1.Visible = false;
                 check = true;
             }
         }
@@ -122,9 +122,5 @@ namespace real_estate
             }
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            dashboard.BringToFront();
-        }
     }
 }

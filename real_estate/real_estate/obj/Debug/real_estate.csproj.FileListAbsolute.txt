@@ -26,3 +26,46 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_con
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.acceptContact.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormProperty.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormTransaction.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmGetAcc.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.bell.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CoreCompileInputs.cache
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll.config
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll.config
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CopyComplete
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb

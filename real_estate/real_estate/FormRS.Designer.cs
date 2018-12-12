@@ -45,15 +45,7 @@
             this.tbExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bell1 = new real_estate.user_control.bell();
-            this.dashboard = new real_estate.user_control.dashboard();
-            this.transaction = new real_estate.user_control.Transaction();
-            this.realEstate1 = new real_estate.user_control.RealEstate();
-            this.projectType1 = new real_estate.user_control.ProjectType();
-            this.projects1 = new real_estate.user_control.Projects();
-            this.products1 = new real_estate.user_control.Products();
-            this.marketing1 = new real_estate.user_control.Marketing();
-            this.employee2 = new real_estate.user_control.Employee();
-            this.customer2 = new real_estate.user_control.Customer();
+            
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,7 +105,6 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // label3
             // 
@@ -398,77 +389,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 558);
             this.panel1.TabIndex = 4;
-            // 
-            // bell1
-            // 
-            this.bell1.Location = new System.Drawing.Point(612, 6);
-            this.bell1.Name = "bell1";
-            this.bell1.Size = new System.Drawing.Size(303, 156);
-            this.bell1.TabIndex = 10;
-            // 
-            // dashboard
-            // 
-            this.dashboard.Location = new System.Drawing.Point(0, -1);
-            this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(964, 558);
-            this.dashboard.TabIndex = 9;
-            // 
-            // transaction
-            // 
-            this.transaction.BackColor = System.Drawing.Color.White;
-            this.transaction.Location = new System.Drawing.Point(0, 0);
-            this.transaction.Name = "transaction";
-            this.transaction.Size = new System.Drawing.Size(964, 558);
-            this.transaction.TabIndex = 8;
-            // 
-            // realEstate1
-            // 
-            this.realEstate1.Location = new System.Drawing.Point(0, -3);
-            this.realEstate1.Name = "realEstate1";
-            this.realEstate1.Size = new System.Drawing.Size(964, 558);
-            this.realEstate1.TabIndex = 7;
-            // 
-            // projectType1
-            // 
-            this.projectType1.Location = new System.Drawing.Point(0, 0);
-            this.projectType1.Name = "projectType1";
-            this.projectType1.Size = new System.Drawing.Size(964, 558);
-            this.projectType1.TabIndex = 6;
-            // 
-            // projects1
-            // 
-            this.projects1.Location = new System.Drawing.Point(0, 0);
-            this.projects1.Name = "projects1";
-            this.projects1.Size = new System.Drawing.Size(964, 558);
-            this.projects1.TabIndex = 5;
-            // 
-            // products1
-            // 
-            this.products1.Location = new System.Drawing.Point(0, 0);
-            this.products1.Name = "products1";
-            this.products1.Size = new System.Drawing.Size(964, 558);
-            this.products1.TabIndex = 4;
-            // 
-            // marketing1
-            // 
-            this.marketing1.Location = new System.Drawing.Point(0, 0);
-            this.marketing1.Name = "marketing1";
-            this.marketing1.Size = new System.Drawing.Size(964, 558);
-            this.marketing1.TabIndex = 3;
-            // 
-            // employee2
-            // 
-            this.employee2.Location = new System.Drawing.Point(0, 0);
-            this.employee2.Name = "employee2";
-            this.employee2.Size = new System.Drawing.Size(964, 558);
-            this.employee2.TabIndex = 2;
-            // 
-            // customer2
-            // 
-            this.customer2.Location = new System.Drawing.Point(0, -1);
-            this.customer2.Name = "customer2";
-            this.customer2.Size = new System.Drawing.Size(964, 558);
-            this.customer2.TabIndex = 1;
             // 
             // timer
             // 
