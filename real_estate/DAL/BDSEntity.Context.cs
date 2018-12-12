@@ -92,9 +92,14 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
-        public virtual ObjectResult<appo_GetAllAppo_Result> appo_GetAllAppo()
+        public virtual ObjectResult<appointment> appo_GetAllAppo()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appo_GetAllAppo_Result>("appo_GetAllAppo");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo");
+        }
+    
+        public virtual ObjectResult<appointment> appo_GetAllAppo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo", mergeOption);
         }
     
         public virtual int AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
@@ -305,9 +310,14 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAddressProp_Result>("getAddressProp", id_propParameter);
         }
     
-        public virtual ObjectResult<GetAllCustomer_Result> GetAllCustomer()
+        public virtual ObjectResult<customer> GetAllCustomer()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllCustomer_Result>("GetAllCustomer");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer");
+        }
+    
+        public virtual ObjectResult<customer> GetAllCustomer(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer", mergeOption);
         }
     
         public virtual ObjectResult<getAllProp_Result> getAllProp()
@@ -382,13 +392,22 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertTransaction", id_propParameter, id_cusParameter, amountParameter, paymentParameter);
         }
     
-        public virtual ObjectResult<SearchByName_Result> SearchByName(string name_cus)
+        public virtual ObjectResult<customer> SearchByName(string name_cus)
         {
             var name_cusParameter = name_cus != null ?
                 new ObjectParameter("name_cus", name_cus) :
                 new ObjectParameter("name_cus", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SearchByName_Result>("SearchByName", name_cusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", name_cusParameter);
+        }
+    
+        public virtual ObjectResult<customer> SearchByName(string name_cus, MergeOption mergeOption)
+        {
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", mergeOption, name_cusParameter);
         }
     
         public virtual ObjectResult<searchEmployee_Result> searchEmployee(string id_name)
@@ -790,6 +809,11 @@ namespace DAL
                 new ObjectParameter("phone", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
+        }
+    
+        public virtual ObjectResult<getEmployee_Result> getEmployee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployee_Result>("getEmployee");
         }
     }
 }

@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ad2058d4b36b489bb83d9f4b057ab4dd" Name="Diagram1">
-        <EntityTypeShape EntityType="RealEstateModel.account" Width="1.5" PointX="10" PointY="10.125" IsExpanded="true" />
+      <Diagram DiagramId="ad2058d4b36b489bb83d9f4b057ab4dd" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="RealEstateModel.account" Width="1.5" PointX="9.375" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateModel.advertisement" Width="1.5" PointX="9.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateModel.appointment" Width="1.5" PointX="12.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateModel.area" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
@@ -18,7 +18,7 @@
         <EntityTypeShape EntityType="RealEstateModel.realEstateType" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateModel.townRegion" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RealEstateModel.trannsaction" Width="1.5" PointX="12.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RealEstateModel.typeAccount" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.typeAccount" Width="1.5" PointX="4.625" PointY="10.875" IsExpanded="true" />
         <AssociationConnector Association="RealEstateModel.FK__account__type_ac__145C0A3F" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK__employee__accoun__182C9B23" ManuallyRouted="false" />
         <AssociationConnector Association="RealEstateModel.FK_advertisement_property" ManuallyRouted="false" />

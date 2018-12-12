@@ -10,3 +10,15 @@ D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb

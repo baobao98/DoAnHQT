@@ -113,6 +113,9 @@
     <Compile Include="getCustomer_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getEmployee_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="getInforTrans_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>

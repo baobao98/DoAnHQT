@@ -404,7 +404,7 @@
       <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
       <Parameter Name="information" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="appo_GetAllAppo" ReturnType="Collection(RealEstateModel.appo_GetAllAppo_Result)" />
+    <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateModel.appointment)" />
     <FunctionImport Name="AppoCreate">
       <Parameter Name="description" Mode="In" Type="String" />
       <Parameter Name="status" Mode="In" Type="String" />
@@ -465,7 +465,7 @@
     <FunctionImport Name="getAddressProp" ReturnType="Collection(RealEstateModel.getAddressProp_Result)">
       <Parameter Name="id_prop" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="GetAllCustomer" ReturnType="Collection(RealEstateModel.GetAllCustomer_Result)" />
+    <FunctionImport Name="GetAllCustomer" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)" />
     <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateModel.getAllProp_Result)" />
     <FunctionImport Name="getContact" ReturnType="Collection(RealEstateModel.getContact_Result)" />
     <FunctionImport Name="getCustomer" ReturnType="Collection(RealEstateModel.getCustomer_Result)">
@@ -486,7 +486,7 @@
       <Parameter Name="amount" Mode="In" Type="Double" />
       <Parameter Name="payment" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="SearchByName" ReturnType="Collection(RealEstateModel.SearchByName_Result)">
+    <FunctionImport Name="SearchByName" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)">
       <Parameter Name="name_cus" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateModel.searchEmployee_Result)">
@@ -605,6 +605,7 @@
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="phone" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="getEmployee" ReturnType="Collection(RealEstateModel.getEmployee_Result)" />
   </EntityContainer>
   <ComplexType Name="appo_GetAllAppo_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
@@ -768,5 +769,14 @@
   <ComplexType Name="spGetloaiTK_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getEmployee_Result">
+    <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_emp" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
   </ComplexType>
 </Schema>
