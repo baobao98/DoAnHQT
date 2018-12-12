@@ -145,6 +145,12 @@
     <Compile Include="TypeAccount.Designer.cs">
       <DependentUpon>TypeAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="user control\bell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user control\bell.Designer.cs">
+      <DependentUpon>bell.cs</DependentUpon>
+    </Compile>
     <Compile Include="user control\Customer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     <Compile Include="user control\RealEstate.Designer.cs">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </Compile>
+    <Compile Include="user control\Transaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user control\Transaction.Designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +228,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Mail.resx">
       <DependentUpon>Mail.cs</DependentUpon>
@@ -233,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TypeAccount.resx">
       <DependentUpon>TypeAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user control\bell.resx">
+      <DependentUpon>bell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
@@ -257,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user control\RealEstate.resx">
       <DependentUpon>RealEstate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user control\Transaction.resx">
+      <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIP.resx">
       <DependentUpon>VIP.cs</DependentUpon>
