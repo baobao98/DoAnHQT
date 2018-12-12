@@ -392,16 +392,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bell1);
-            this.panel1.Controls.Add(this.dashboard);
-            this.panel1.Controls.Add(this.transaction);
-            this.panel1.Controls.Add(this.realEstate1);
-            this.panel1.Controls.Add(this.projectType1);
-            this.panel1.Controls.Add(this.projects1);
-            this.panel1.Controls.Add(this.products1);
-            this.panel1.Controls.Add(this.marketing1);
-            this.panel1.Controls.Add(this.employee2);
-            this.panel1.Controls.Add(this.customer2);
+          
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(206, 32);
             this.panel1.Name = "panel1";

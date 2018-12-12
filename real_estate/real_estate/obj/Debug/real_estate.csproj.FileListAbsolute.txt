@@ -1,214 +1,20 @@
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\real_estate.exe.config
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\real_estate.exe
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\real_estate.pdb
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.exe
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.pdb
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\BAL.pdb
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\DAL.pdb
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\BAL.dll
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\DAL.dll
-C:\GITHUB\realEstate\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
-C:\GITHUB\realEstate\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-D:\RealEstate\real_estate\real_estate\bin\Debug\real_estate.exe.config
-D:\RealEstate\real_estate\real_estate\bin\Debug\real_estate.exe
-D:\RealEstate\real_estate\real_estate\bin\Debug\real_estate.pdb
-D:\RealEstate\real_estate\real_estate\bin\Debug\BAL.dll
-D:\RealEstate\real_estate\real_estate\bin\Debug\DAL.dll
-D:\RealEstate\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-D:\RealEstate\real_estate\real_estate\bin\Debug\BAL.pdb
-D:\RealEstate\real_estate\real_estate\bin\Debug\DAL.pdb
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.cache
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.CoreCompileInputs.cache
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.CopyComplete
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.exe
-D:\RealEstate\real_estate\real_estate\obj\Debug\real_estate.pdb
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\real_estate.exe.config
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.exe
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.pdb
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\real_estate.exe
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\real_estate.pdb
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\BAL.dll
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\DAL.dll
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\BAL.pdb
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\bin\Debug\DAL.pdb
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
-C:\GITHUB\realEstate\RealEstate\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.cache
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CoreCompileInputs.cache
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll.config
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll.config
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CopyComplete
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
-<<<<<<< HEAD
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.cache
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CoreCompileInputs.cache
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CopyComplete
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojAssemblyReference.cache
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll.config
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll.config
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
-D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmGetAcc.resources
-=======
-D:\DoAnHQT\real_estate\real_estate\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.dll
-C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
-C:\GITHUB\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.acceptContact.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormProperty.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormTransaction.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmGetAcc.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmLogin.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.bell.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
@@ -217,20 +23,6 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_con
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.bell.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.acceptContact.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.CustomerAccept.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormProperty.resources
->>>>>>> Oggy
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.bell.resources
-D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.frmGetAcc.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TaiKhoan.resources
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.TypeAccount.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Transaction.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
