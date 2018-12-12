@@ -92,9 +92,20 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
+<<<<<<< HEAD
         public virtual ObjectResult<appo_GetAllAppo_Result> appo_GetAllAppo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appo_GetAllAppo_Result>("appo_GetAllAppo");
+=======
+        public virtual ObjectResult<appointment> appo_GetAllAppo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo");
+        }
+    
+        public virtual ObjectResult<appointment> appo_GetAllAppo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo", mergeOption);
+>>>>>>> Khoa_Lam
         }
     
         public virtual int AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
@@ -305,6 +316,7 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAddressProp_Result>("getAddressProp", id_propParameter);
         }
     
+<<<<<<< HEAD
         public virtual ObjectResult<GetAllCustomer_Result> GetAllCustomer()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllCustomer_Result>("GetAllCustomer");
@@ -318,6 +330,21 @@ namespace DAL
         public virtual ObjectResult<property> getAllProp(MergeOption mergeOption)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<property>("getAllProp", mergeOption);
+=======
+        public virtual ObjectResult<customer> GetAllCustomer()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer");
+        }
+    
+        public virtual ObjectResult<customer> GetAllCustomer(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer", mergeOption);
+        }
+    
+        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
+>>>>>>> Khoa_Lam
         }
     
         public virtual ObjectResult<getContact_Result> getContact()
@@ -366,6 +393,48 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTransaction_Result>("getTransaction");
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int insertTransaction(string id_prop, string id_cus, Nullable<double> amount, string payment)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var paymentParameter = payment != null ?
+                new ObjectParameter("payment", payment) :
+                new ObjectParameter("payment", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertTransaction", id_propParameter, id_cusParameter, amountParameter, paymentParameter);
+        }
+    
+        public virtual ObjectResult<customer> SearchByName(string name_cus)
+        {
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", name_cusParameter);
+        }
+    
+        public virtual ObjectResult<customer> SearchByName(string name_cus, MergeOption mergeOption)
+        {
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", mergeOption, name_cusParameter);
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual ObjectResult<searchEmployee_Result> searchEmployee(string id_name)
         {
             var id_nameParameter = id_name != null ?
@@ -375,6 +444,30 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result>("searchEmployee", id_nameParameter);
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
         {
             var nameParameter = name != null ?
@@ -388,6 +481,30 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual int sp_DeleteProperty(string id)
         {
             var idParameter = id != null ?
@@ -397,6 +514,48 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteProperty", idParameter);
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual int sp_InsertProperty(Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
         {
             var id_real_estate_typeParameter = id_real_estate_type.HasValue ?
@@ -471,6 +630,26 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
         {
             var id_cusParameter = id_cus != null ?
@@ -480,7 +659,11 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result>("sp_searchCusTrans", id_cusParameter);
         }
     
+<<<<<<< HEAD
         public virtual ObjectResult<property> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
+=======
+        public virtual ObjectResult<sp_searchLocationProperty_Result> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
+>>>>>>> Khoa_Lam
         {
             var id_townParameter = id_town.HasValue ?
                 new ObjectParameter("id_town", id_town) :
@@ -494,6 +677,7 @@ namespace DAL
                 new ObjectParameter("id_district", id_district) :
                 new ObjectParameter("id_district", typeof(int));
     
+<<<<<<< HEAD
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<property>("sp_searchLocationProperty", id_townParameter, id_areaParameter, id_districtParameter);
         }
     
@@ -512,6 +696,9 @@ namespace DAL
                 new ObjectParameter("id_district", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<property>("sp_searchLocationProperty", mergeOption, id_townParameter, id_areaParameter, id_districtParameter);
+=======
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchLocationProperty_Result>("sp_searchLocationProperty", id_townParameter, id_areaParameter, id_districtParameter);
+>>>>>>> Khoa_Lam
         }
     
         public virtual int sp_updateProperty(string id_prop, Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
@@ -567,6 +754,14 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateProperty", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
         }
     
+<<<<<<< HEAD
+=======
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+>>>>>>> Khoa_Lam
         public virtual int spDelTypeAcc(Nullable<int> id)
         {
             var idParameter = id.HasValue ?
@@ -680,5 +875,13 @@ namespace DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
         }
+<<<<<<< HEAD
+=======
+    
+        public virtual ObjectResult<getEmployee_Result> getEmployee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployee_Result>("getEmployee");
+        }
+>>>>>>> Khoa_Lam
     }
 }

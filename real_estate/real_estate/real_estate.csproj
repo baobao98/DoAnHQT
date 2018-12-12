@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointmentt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointmentt.Designer.cs">
+      <DependentUpon>Appointmentt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,12 +102,24 @@
     <Compile Include="Forms\appointment.Designer.cs">
       <DependentUpon>appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mail.Designer.cs">
+      <DependentUpon>Mail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SetAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetAppointment.Designer.cs">
+      <DependentUpon>SetAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="user control\Bill.cs">
       <SubType>UserControl</SubType>
@@ -157,16 +175,34 @@
     <Compile Include="user control\RealEstate.Designer.cs">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIP.Designer.cs">
+      <DependentUpon>VIP.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Appointmentt.resx">
+      <DependentUpon>Appointmentt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRS.resx">
       <DependentUpon>FormRS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\appointment.resx">
+      <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mail.resx">
+      <DependentUpon>Mail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetAppointment.resx">
+      <DependentUpon>SetAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
@@ -195,8 +231,14 @@
     <EmbeddedResource Include="user control\RealEstate.resx">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIP.resx">
+      <DependentUpon>VIP.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DAL.property.datasource" />
+    <None Include="Properties\DataSources\DAL.appointment.datasource" />
+    <None Include="Properties\DataSources\DAL.customer.datasource" />
+    <None Include="Properties\DataSources\DAL.trannsaction.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -217,6 +259,17 @@
     <None Include="img\logo-RS.png" />
     <None Include="img\house.png" />
     <Content Include="img\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

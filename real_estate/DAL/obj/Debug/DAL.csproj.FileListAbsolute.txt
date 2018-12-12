@@ -1,9 +1,3 @@
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll.config
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.dll
-C:\GITHUB\realEstate\real_estate\DAL\bin\Debug\DAL.pdb
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.dll
-C:\GITHUB\realEstate\real_estate\DAL\obj\Debug\DAL.pdb
 D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
 D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
 D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
@@ -16,6 +10,7 @@ D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
 C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
 C:\GITHUB\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
@@ -38,3 +33,17 @@ C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.Cop
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+=======
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+>>>>>>> Khoa_Lam
