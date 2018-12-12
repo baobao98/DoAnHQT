@@ -25,7 +25,7 @@ namespace real_estate.user_control
             {
                 dataGridView1.DataSource = prj.getpro();
                 pnRich.Visible = true;
-                pnThuocTinh.Visible = false;
+                groupBox1.Visible = false;
                 dataGridView1_CellClick(null, null);
             }
             catch
@@ -107,7 +107,8 @@ namespace real_estate.user_control
             add = true;
             btnSave.Enabled = true;
             btnAdd.Enabled = false;
-            pnThuocTinh.Visible = true;
+            //pnThuocTinh.Visible = true;
+            groupBox1.Visible = true;  
             textreset();
         }
 
@@ -116,7 +117,8 @@ namespace real_estate.user_control
             add = false;
             btnSave.Enabled = true;
             btnEdit.Enabled = false;
-            pnThuocTinh.Visible = true;
+            //pnThuocTinh.Visible = true;
+            groupBox1.Visible = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -187,6 +189,11 @@ namespace real_estate.user_control
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

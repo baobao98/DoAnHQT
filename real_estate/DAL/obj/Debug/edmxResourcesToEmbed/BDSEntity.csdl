@@ -25,28 +25,6 @@
     <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result)">
       <Parameter Name="id_name" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="addEmployee">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="email" Mode="In" Type="String" />
-      <Parameter Name="phone" Mode="In" Type="String" />
-      <Parameter Name="birthday" Mode="In" Type="DateTime" />
-      <Parameter Name="acc" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="addProject">
-      <Parameter Name="name_project" Mode="In" Type="String" />
-      <Parameter Name="address" Mode="In" Type="String" />
-      <Parameter Name="license_number" Mode="In" Type="String" />
-      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-      <Parameter Name="information" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="editProject">
-      <Parameter Name="id" Mode="In" Type="String" />
-      <Parameter Name="name_project" Mode="In" Type="String" />
-      <Parameter Name="address" Mode="In" Type="String" />
-      <Parameter Name="license_number" Mode="In" Type="String" />
-      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-      <Parameter Name="information" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="appo_GetAllAppo" ReturnType="Collection(RealEstateEntity.appo_GetAllAppo_Result)" />
     <FunctionImport Name="AppoCreate">
       <Parameter Name="description" Mode="In" Type="String" />
@@ -260,8 +238,95 @@
       <End Role="property" EntitySet="properties" />
       <End Role="trannsaction" EntitySet="trannsactions" />
     </AssociationSet>
-    <FunctionImport Name="getEmployees" ReturnType="Collection(RealEstateEntity.getEmployees_Result)" />
     <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result)" />
+    <FunctionImport Name="editEmployee">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="editEmployee1">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="addProject">
+      <Parameter Name="name_project" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="license_number" Mode="In" Type="String" />
+      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
+      <Parameter Name="information" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="editProject">
+      <Parameter Name="id" Mode="In" Type="String" />
+      <Parameter Name="name_project" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="license_number" Mode="In" Type="String" />
+      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
+      <Parameter Name="information" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="addEmployee">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="birthday" Mode="In" Type="DateTime" />
+      <Parameter Name="acc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getAddressProp" ReturnType="Collection(RealEstateEntity.getAddressProp_Result)">
+      <Parameter Name="id_prop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateEntity.getAllProp_Result)" />
+    <FunctionImport Name="getCustomer" ReturnType="Collection(RealEstateEntity.getCustomer_Result)">
+      <Parameter Name="id_cus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_checktaikhoan" ReturnType="Collection(Int32)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_InsertTrans">
+      <Parameter Name="id_prop" Mode="In" Type="String" />
+      <Parameter Name="id_cus" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Double" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="payment" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateEntity.sp_searchCusTrans_Result)">
+      <Parameter Name="id_cus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spDelTypeAcc">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spGetAllTypeAcc" ReturnType="Collection(RealEstateEntity.spGetAllTypeAcc_Result)" />
+    <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateEntity.spGetloaiTK_Result)" />
+    <FunctionImport Name="spInsertAcc">
+      <Parameter Name="nameacc" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="Int32" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertContact">
+      <Parameter Name="fone" Mode="In" Type="String" />
+      <Parameter Name="idprop" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertTypeAcc">
+      <Parameter Name="nameoftype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spLegit" ReturnType="Collection(Int32)">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUdateAcc">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateTypeAcc">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nameoftype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getEmployee" ReturnType="Collection(RealEstateEntity.getEmployee_Result)" />
   </EntityContainer>
   <ComplexType Name="seachEmployee_Result">
     <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
@@ -384,6 +449,7 @@
     <NavigationProperty Name="typeAccount1" Relationship="RealEstateEntity.FK__account__type_ac__693CA210" FromRole="account" ToRole="typeAccount" />
     <NavigationProperty Name="employees" Relationship="RealEstateEntity.FK__employee__accoun__36B12243" FromRole="account" ToRole="employee" />
     <NavigationProperty Name="employees1" Relationship="RealEstateEntity.FK__employee__accoun__6D0D32F4" FromRole="account" ToRole="employee" />
+    <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="advertisement">
     <Key>
@@ -391,10 +457,11 @@
     </Key>
     <Property Name="id_ad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="property" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -549,6 +616,7 @@
     <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__trannsact__id_cu__3C69FB99" FromRole="trannsaction" ToRole="customer" />
     <NavigationProperty Name="customer1" Relationship="RealEstateEntity.FK__trannsact__id_cu__6E01572D" FromRole="trannsaction" ToRole="customer" />
     <NavigationProperty Name="property" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="typeAccount">
     <Key>
@@ -787,15 +855,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="getEmployees_Result">
-    <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="phone_emp" Nullable="true" MaxLength="15" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="birthday" Nullable="true" />
-    <Property Type="String" Name="nameAcc" Nullable="true" MaxLength="150" />
-  </ComplexType>
   <ComplexType Name="getProject_Result">
     <Property Type="String" Name="id_proj" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_project" Nullable="true" MaxLength="255" />
@@ -803,5 +862,60 @@
     <Property Type="String" Name="license_number" Nullable="true" MaxLength="50" />
     <Property Type="DateTime" Name="dateOfIssue" Nullable="true" />
     <Property Type="String" Name="information" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="getAddressProp_Result">
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+    <Property Type="String" Name="name_district" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="name_area" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name_town" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="getAllProp_Result">
+    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
+    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="floor" Nullable="true" />
+    <Property Type="Int32" Name="room" Nullable="true" />
+    <Property Type="Double" Name="price" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="id_town_region" Nullable="true" />
+    <Property Type="Int32" Name="id_area" Nullable="true" />
+    <Property Type="Int32" Name="id_district" Nullable="true" />
+    <Property Type="Binary" Name="avatar" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getCustomer_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_searchCusTrans_Result">
+    <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="amount" Nullable="true" />
+    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="spGetAllTypeAcc_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spGetloaiTK_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="getEmployee_Result">
+    <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_emp" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
   </ComplexType>
 </Schema>

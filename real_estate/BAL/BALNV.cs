@@ -10,9 +10,9 @@ namespace BAL
     public class BALNV
     {
         RealEstateEntities dbs = new RealEstateEntities();
-        public System.Data.Entity.Core.Objects.ObjectResult<getEmployees_Result> getAll()
+        public System.Data.Entity.Core.Objects.ObjectResult<getEmployee_Result> getEmployees()
         {
-            return dbs.getEmployees();
+            return dbs.getEmployee();
         }
         public void addEmployee(string name, string email, string phone, DateTime birthday, string acc)
         {
@@ -20,7 +20,7 @@ namespace BAL
         }
         public void updateEmployee(string id, string name, string email, string phone, DateTime birthday)
         {
-            dbs.aditEmployee(id, name, email, phone, birthday);
+            dbs.editEmployee(id, name, email, phone, birthday);
         }
         public void deleteEmployee(string id)
         {

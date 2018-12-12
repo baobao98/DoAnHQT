@@ -25,6 +25,7 @@ namespace DAL
         public string nameAcc { get; set; }
         public Nullable<int> type_ac { get; set; }
         public string password { get; set; }
+        public byte[] pass { get; set; }
     
         public virtual typeAccount typeAccount { get; set; }
         public virtual typeAccount typeAccount1 { get; set; }

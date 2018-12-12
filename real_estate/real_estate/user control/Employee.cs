@@ -25,9 +25,9 @@ namespace real_estate.user_control
             try
             {
                 //dataGridView1.DataSource = nv.getEmployee();
-                dataGridView1.DataSource = nv.getAll();
+                dataGridView1.DataSource = nv.getEmployees();
                 dataGridView1.AutoResizeColumns();
-                pnThuocTinh.Enabled = false;
+                //pnThuocTinh.Enabled = false;
                 btnSave.Enabled = false;
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
@@ -44,7 +44,7 @@ namespace real_estate.user_control
             txtName.ResetText();
             txtEmail.ResetText();
             txtPhone.ResetText();
-            //txtBirthday.ResetText();
+            textBox1.ResetText();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace real_estate.user_control
             add = true;
             textreset();
            // txtId.Enabled = false   ;
-            pnThuocTinh.Enabled = true;
+            //pnThuocTinh.Enabled = true;
             btnSave.Enabled = true;
             btnAdd.Enabled = false;
 
@@ -66,7 +66,10 @@ namespace real_estate.user_control
                 {
                     //BALNV nv = new BALNV();
                     //string date = DateTime.Now.ToString();
-                    nv.addEmployee(txtName.Text, txtEmail.Text, txtPhone.Text,Convert.ToDateTime(dateTimePicker1.Text), txtacc.Text);
+                    if (txtName.Text == "")
+                        txtName.Text = null;
+                    //MessageBox.Show(txtName.Text);
+                    nv.addEmployee(txtName.Text, txtEmail.Text, txtPhone.Text,Convert.ToDateTime(dateTimePicker1.Text), textBox1.Text);
                     load();
                 }
                 catch (Exception ex)
@@ -93,7 +96,7 @@ namespace real_estate.user_control
         private void btnEdit_Click(object sender, EventArgs e)
         {
             add = false;
-            pnThuocTinh.Enabled = true;
+            //pnThuocTinh.Enabled = true;
             btnSave.Enabled = true;
             btnEdit.Enabled = false;
         }
@@ -144,21 +147,17 @@ namespace real_estate.user_control
         {
             int r = dataGridView1.CurrentCell.RowIndex;
             id = dataGridView1.Rows[r].Cells[0].Value.ToString();
+            for (int i = 0; i < 7; i++)
+                if (dataGridView1.Rows[r].Cells[i].Value == null)
+                {
+                    dataGridView1.Rows[r].Cells[i].Value = "";
+                }
             txtName.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
-            if (dataGridView1.Rows[r].Cells[2].Value == null)
-                txtEmail.Text = "";
-            else
-                txtEmail.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
-            if (dataGridView1.Rows[r].Cells[3].Value == null)
-                txtPhone.Text = "";
-            else
-                txtPhone.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
-            //MessageBox.Show(dataGridView1.Rows[r].Cells[4].Value.ToString());
-            //if (dataGridView1.Rows[r].Cells[5].Value == null)
-            //    dateTimePicker1.Value = Convert.ToDateTime("00/00/0000 00/00");
-            //else
-            //    dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[r].Cells[5].Value);
-            txtacc.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
+            txtEmail.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
+            txtPhone.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
+            if(dataGridView1.Rows[r].Cells[4].Value !=null)
+                dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.Rows[r].Cells[4].Value.ToString());
             if (id != "")
                 btnDelete.Enabled = true;
             else
@@ -171,6 +170,16 @@ namespace real_estate.user_control
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnThuocTinh_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

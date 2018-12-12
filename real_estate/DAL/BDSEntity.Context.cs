@@ -124,85 +124,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result>("searchEmployee", id_nameParameter);
         }
     
-        public virtual int addEmployee(string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
-        {
-            var nameParameter = name != null ?
-                new ObjectParameter("name", name) :
-                new ObjectParameter("name", typeof(string));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("email", email) :
-                new ObjectParameter("email", typeof(string));
-    
-            var phoneParameter = phone != null ?
-                new ObjectParameter("phone", phone) :
-                new ObjectParameter("phone", typeof(string));
-    
-            var birthdayParameter = birthday.HasValue ?
-                new ObjectParameter("birthday", birthday) :
-                new ObjectParameter("birthday", typeof(System.DateTime));
-    
-            var accParameter = acc != null ?
-                new ObjectParameter("acc", acc) :
-                new ObjectParameter("acc", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addEmployee", nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
-        }
-    
-        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
-        {
-            var name_projectParameter = name_project != null ?
-                new ObjectParameter("name_project", name_project) :
-                new ObjectParameter("name_project", typeof(string));
-    
-            var addressParameter = address != null ?
-                new ObjectParameter("address", address) :
-                new ObjectParameter("address", typeof(string));
-    
-            var license_numberParameter = license_number != null ?
-                new ObjectParameter("license_number", license_number) :
-                new ObjectParameter("license_number", typeof(string));
-    
-            var dateOfIssueParameter = dateOfIssue.HasValue ?
-                new ObjectParameter("dateOfIssue", dateOfIssue) :
-                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
-    
-            var informationParameter = information != null ?
-                new ObjectParameter("information", information) :
-                new ObjectParameter("information", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
-        }
-    
-        public virtual int editProject(string id, string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
-        {
-            var idParameter = id != null ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(string));
-    
-            var name_projectParameter = name_project != null ?
-                new ObjectParameter("name_project", name_project) :
-                new ObjectParameter("name_project", typeof(string));
-    
-            var addressParameter = address != null ?
-                new ObjectParameter("address", address) :
-                new ObjectParameter("address", typeof(string));
-    
-            var license_numberParameter = license_number != null ?
-                new ObjectParameter("license_number", license_number) :
-                new ObjectParameter("license_number", typeof(string));
-    
-            var dateOfIssueParameter = dateOfIssue.HasValue ?
-                new ObjectParameter("dateOfIssue", dateOfIssue) :
-                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
-    
-            var informationParameter = information != null ?
-                new ObjectParameter("information", information) :
-                new ObjectParameter("information", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editProject", idParameter, name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
-        }
-    
         public virtual ObjectResult<appo_GetAllAppo_Result> appo_GetAllAppo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appo_GetAllAppo_Result>("appo_GetAllAppo");
@@ -637,14 +558,314 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
         }
     
-        public virtual ObjectResult<getEmployees_Result> getEmployees()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployees_Result>("getEmployees");
-        }
-    
         public virtual ObjectResult<getProject_Result> getProject()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProject_Result>("getProject");
+        }
+    
+        public virtual int editEmployee(string id, string name, string email, string phone, Nullable<System.DateTime> birthday)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editEmployee", idParameter, nameParameter, emailParameter, phoneParameter, birthdayParameter);
+        }
+    
+        public virtual int editEmployee1(string id, string name, string email, string phone, Nullable<System.DateTime> birthday)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editEmployee1", idParameter, nameParameter, emailParameter, phoneParameter, birthdayParameter);
+        }
+    
+        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
+        {
+            var name_projectParameter = name_project != null ?
+                new ObjectParameter("name_project", name_project) :
+                new ObjectParameter("name_project", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var license_numberParameter = license_number != null ?
+                new ObjectParameter("license_number", license_number) :
+                new ObjectParameter("license_number", typeof(string));
+    
+            var dateOfIssueParameter = dateOfIssue.HasValue ?
+                new ObjectParameter("dateOfIssue", dateOfIssue) :
+                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
+    
+            var informationParameter = information != null ?
+                new ObjectParameter("information", information) :
+                new ObjectParameter("information", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
+        }
+    
+        public virtual int editProject(string id, string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
+        {
+            var idParameter = id != null ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(string));
+    
+            var name_projectParameter = name_project != null ?
+                new ObjectParameter("name_project", name_project) :
+                new ObjectParameter("name_project", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var license_numberParameter = license_number != null ?
+                new ObjectParameter("license_number", license_number) :
+                new ObjectParameter("license_number", typeof(string));
+    
+            var dateOfIssueParameter = dateOfIssue.HasValue ?
+                new ObjectParameter("dateOfIssue", dateOfIssue) :
+                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
+    
+            var informationParameter = information != null ?
+                new ObjectParameter("information", information) :
+                new ObjectParameter("information", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editProject", idParameter, name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
+        }
+    
+        public virtual int addEmployee(string name, string email, string phone, Nullable<System.DateTime> birthday, string acc)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var accParameter = acc != null ?
+                new ObjectParameter("acc", acc) :
+                new ObjectParameter("acc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addEmployee", nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
+        }
+    
+        public virtual ObjectResult<getAddressProp_Result> getAddressProp(string id_prop)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAddressProp_Result>("getAddressProp", id_propParameter);
+        }
+    
+        public virtual ObjectResult<getAllProp_Result> getAllProp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result>("getAllProp");
+        }
+    
+        public virtual ObjectResult<getCustomer_Result> getCustomer(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getCustomer_Result>("getCustomer", id_cusParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
+        }
+    
+        public virtual int sp_InsertTrans(string id_prop, string id_cus, Nullable<double> amount, string status, string payment)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var paymentParameter = payment != null ?
+                new ObjectParameter("payment", payment) :
+                new ObjectParameter("payment", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
+        }
+    
+        public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result>("sp_searchCusTrans", id_cusParameter);
+        }
+    
+        public virtual int spDelTypeAcc(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelTypeAcc", idParameter);
+        }
+    
+        public virtual ObjectResult<spGetAllTypeAcc_Result> spGetAllTypeAcc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetAllTypeAcc_Result>("spGetAllTypeAcc");
+        }
+    
+        public virtual ObjectResult<spGetloaiTK_Result> spGetloaiTK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetloaiTK_Result>("spGetloaiTK");
+        }
+    
+        public virtual int spInsertAcc(string nameacc, Nullable<int> type, string pass)
+        {
+            var nameaccParameter = nameacc != null ?
+                new ObjectParameter("nameacc", nameacc) :
+                new ObjectParameter("nameacc", typeof(string));
+    
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertAcc", nameaccParameter, typeParameter, passParameter);
+        }
+    
+        public virtual int spInsertContact(string fone, string idprop, string name)
+        {
+            var foneParameter = fone != null ?
+                new ObjectParameter("fone", fone) :
+                new ObjectParameter("fone", typeof(string));
+    
+            var idpropParameter = idprop != null ?
+                new ObjectParameter("idprop", idprop) :
+                new ObjectParameter("idprop", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertContact", foneParameter, idpropParameter, nameParameter);
+        }
+    
+        public virtual int spInsertTypeAcc(string nameoftype)
+        {
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertTypeAcc", nameoftypeParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spLegit(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spLegit", nameParameter, passParameter);
+        }
+    
+        public virtual int spUdateAcc(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUdateAcc", nameParameter, passParameter);
+        }
+    
+        public virtual int spUpdateTypeAcc(Nullable<int> id, string nameoftype)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
+        }
+    
+        public virtual ObjectResult<getEmployee_Result> getEmployee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployee_Result>("getEmployee");
         }
     }
 }
