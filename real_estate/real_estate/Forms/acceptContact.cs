@@ -37,9 +37,9 @@ namespace real_estate.Forms
             
             lbName.Text = name;
             lbPhone.Text = phone;
-
+            
             var address = trans.getAdress(id_prop).ToList();
-
+           // picProperty.Image = Image.Equals(address[0].avatar);
             lbCity.Text = address[0].name_town;
             lbDistrict.Text = address[0].name_district;
             lbArea.Text = address[0].name_area;
@@ -72,5 +72,6 @@ namespace real_estate.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

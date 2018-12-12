@@ -20,8 +20,10 @@ namespace DAL
         public Nullable<double> amount { get; set; }
         public string status { get; set; }
         public string payment { get; set; }
+        public Nullable<System.DateTime> create_date { get; set; }
     
         public virtual customer customer { get; set; }
+        public virtual customer customer1 { get; set; }
         public virtual property property { get; set; }
     }
 }

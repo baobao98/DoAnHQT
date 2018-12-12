@@ -11,12 +11,9 @@ namespace DAL
 {
     using System;
     
-    public partial class getAllContact_Result
+    public partial class spGetAllTypeAcc_Result
     {
-        public int id_ct { get; set; }
-        public string phone { get; set; }
-        public Nullable<int> status { get; set; }
-        public string id_prop { get; set; }
-        public string name { get; set; }
+        public int id { get; set; }
+        public string NameOfTypeAcc { get; set; }
     }
 }

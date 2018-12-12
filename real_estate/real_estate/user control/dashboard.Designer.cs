@@ -81,9 +81,9 @@
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(681, 318);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(127, 17);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(191, 17);
             this.bunifuCustomLabel3.TabIndex = 25;
-            this.bunifuCustomLabel3.Text = "Lam Phuoc Bao - ";
+            this.bunifuCustomLabel3.Text = "Lam Phuoc Bao - 16110016";
             // 
             // bunifuCustomLabel1
             // 
@@ -92,9 +92,9 @@
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(681, 352);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(76, 17);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(220, 17);
             this.bunifuCustomLabel1.TabIndex = 24;
-            this.bunifuCustomLabel1.Text = "Khoa Le - ";
+            this.bunifuCustomLabel1.Text = "Le Dang Dang Khoa - 16110121";
             // 
             // bunifuCustomLabel7
             // 
@@ -114,9 +114,9 @@
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomLabel6.Location = new System.Drawing.Point(681, 392);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(113, 17);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(177, 17);
             this.bunifuCustomLabel6.TabIndex = 22;
-            this.bunifuCustomLabel6.Text = "Hua Van Lam - ";
+            this.bunifuCustomLabel6.Text = "Hua Van Lam - 16110133";
             // 
             // bunifuCustomLabel5
             // 

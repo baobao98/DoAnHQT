@@ -15,6 +15,7 @@ namespace real_estate.Forms
     {
         public string id_cus { get; set; }
         public string id_prop { get; set; }
+        public string create_date { get; set; }
 
         BALTransaction tran = new BALTransaction();
         //public FormTransaction()
@@ -22,11 +23,12 @@ namespace real_estate.Forms
         //    InitializeComponent();
         //    //load();
         //}
-        public FormTransaction(string id_cus, string id_prop)
+        public FormTransaction(string id_cus, string id_prop,string date)
         {
             InitializeComponent();
             this.id_cus = id_cus;
             this.id_prop = id_prop;
+            this.create_date = date;
             load();
         }
 
@@ -41,7 +43,7 @@ namespace real_estate.Forms
             var prop = tran.getProperty(id_prop).ToList();
 
             this.lbName.Text = cus[0].name_cus;
-            this.lbDate.Text = cus[0].create_date.ToString();
+            this.lbDate.Text = create_date.ToString();
             this.lbPhone.Text = cus[0].phone_cus;
             lbRoom.Text = prop[0].room.ToString();
             lbPrice.Text = prop[0].price.ToString();

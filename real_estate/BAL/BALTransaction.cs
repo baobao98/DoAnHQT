@@ -35,17 +35,17 @@ namespace BAL
         {
             return dbs.getProperty(id_prop);
         }
-        public int insertTrans(string id_prop, string id_cus, float amount, string payment)
-        {
-            return dbs.insertTransaction(id_prop, id_cus, amount, payment);
-        }
+        //public int insertTrans(string id_prop, string id_cus, float amount, string payment)
+        //{
+        //    return dbs.insertTransaction(id_prop, id_cus, amount, payment);
+        //}
         public int spinsertTrans(string id_prop, string id_cus, float amount, string payment)
         {
             return dbs.sp_InsertTrans(id_prop, id_cus, amount,"1", payment);
         }
-        public System.Data.Entity.Core.Objects.ObjectResult<getAllContact_Result> getContact()
+        public System.Data.Entity.Core.Objects.ObjectResult<getContact_Result> getContact()
         {
-            return dbs.getAllContact();
+            return dbs.getContact();
         }
         public System.Data.Entity.Core.Objects.ObjectResult<sp_searchCusTrans_Result> searcCusTrans(string id_cus)
         {

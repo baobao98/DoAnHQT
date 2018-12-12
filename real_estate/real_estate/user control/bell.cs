@@ -36,7 +36,7 @@ namespace real_estate.user_control
                 //         select cus);
 
                 //dgvContacts.DataSource = c.ToList();
-                dgvContacts.DataSource = tran.getContact().ToList();
+               // dgvContacts.DataSource = tran.getContact().ToList();
                 timer.Start();
             }
             catch (Exception)

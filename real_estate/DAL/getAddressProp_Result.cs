@@ -13,8 +13,9 @@ namespace DAL
     
     public partial class getAddressProp_Result
     {
-        public string name_town { get; set; }
+        public byte[] avatar { get; set; }
         public string name_district { get; set; }
         public string name_area { get; set; }
+        public string name_town { get; set; }
     }
 }

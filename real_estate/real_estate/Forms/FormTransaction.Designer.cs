@@ -149,6 +149,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.SeaGreen;
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -157,6 +158,7 @@
             this.groupBox1.Controls.Add(this.lbName);
             this.groupBox1.Controls.Add(this.lbPhone);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
@@ -179,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(31, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 16);
@@ -190,7 +192,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(31, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
@@ -201,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(31, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
@@ -212,7 +214,7 @@
             // 
             this.lbIdCus.AutoSize = true;
             this.lbIdCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIdCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(83)))), ((int)(((byte)(13)))));
+            this.lbIdCus.ForeColor = System.Drawing.Color.White;
             this.lbIdCus.Location = new System.Drawing.Point(83, 31);
             this.lbIdCus.Name = "lbIdCus";
             this.lbIdCus.Size = new System.Drawing.Size(39, 15);
@@ -223,7 +225,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(83)))), ((int)(((byte)(13)))));
+            this.lbName.ForeColor = System.Drawing.Color.White;
             this.lbName.Location = new System.Drawing.Point(114, 62);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(39, 15);
@@ -234,7 +236,7 @@
             // 
             this.lbPhone.AutoSize = true;
             this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(83)))), ((int)(((byte)(13)))));
+            this.lbPhone.ForeColor = System.Drawing.Color.White;
             this.lbPhone.Location = new System.Drawing.Point(103, 93);
             this.lbPhone.Name = "lbPhone";
             this.lbPhone.Size = new System.Drawing.Size(39, 15);
@@ -245,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(389, 397);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

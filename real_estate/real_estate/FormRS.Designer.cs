@@ -40,11 +40,10 @@
             this.btnCustomer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEmp = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbBellNumber = new System.Windows.Forms.Label();
+            this.picBell = new System.Windows.Forms.PictureBox();
             this.tbExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picBell = new System.Windows.Forms.PictureBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbBellNumber = new System.Windows.Forms.Label();
             this.bell1 = new real_estate.user_control.bell();
             this.dashboard = new real_estate.user_control.dashboard();
             this.transaction = new real_estate.user_control.Transaction();
@@ -55,10 +54,11 @@
             this.marketing1 = new real_estate.user_control.Marketing();
             this.employee2 = new real_estate.user_control.Employee();
             this.customer2 = new real_estate.user_control.Customer();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBell)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -355,6 +355,28 @@
             this.panel3.TabIndex = 3;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
+            // lbBellNumber
+            // 
+            this.lbBellNumber.AutoSize = true;
+            this.lbBellNumber.ForeColor = System.Drawing.Color.White;
+            this.lbBellNumber.Location = new System.Drawing.Point(914, 4);
+            this.lbBellNumber.Name = "lbBellNumber";
+            this.lbBellNumber.Size = new System.Drawing.Size(13, 13);
+            this.lbBellNumber.TabIndex = 11;
+            this.lbBellNumber.Text = "0";
+            // 
+            // picBell
+            // 
+            this.picBell.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBell.Image = ((System.Drawing.Image)(resources.GetObject("picBell.Image")));
+            this.picBell.Location = new System.Drawing.Point(887, 4);
+            this.picBell.Name = "picBell";
+            this.picBell.Size = new System.Drawing.Size(28, 25);
+            this.picBell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBell.TabIndex = 10;
+            this.picBell.TabStop = false;
+            this.picBell.Click += new System.EventHandler(this.picBell_Click);
+            // 
             // tbExit
             // 
             this.tbExit.AutoSize = true;
@@ -386,33 +408,6 @@
             this.panel1.Size = new System.Drawing.Size(964, 558);
             this.panel1.TabIndex = 4;
             // 
-            // picBell
-            // 
-            this.picBell.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBell.Image = ((System.Drawing.Image)(resources.GetObject("picBell.Image")));
-            this.picBell.Location = new System.Drawing.Point(887, 4);
-            this.picBell.Name = "picBell";
-            this.picBell.Size = new System.Drawing.Size(28, 25);
-            this.picBell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBell.TabIndex = 10;
-            this.picBell.TabStop = false;
-            this.picBell.Click += new System.EventHandler(this.picBell_Click);
-            // 
-            // timer
-            // 
-            this.timer.Interval = 10000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // lbBellNumber
-            // 
-            this.lbBellNumber.AutoSize = true;
-            this.lbBellNumber.ForeColor = System.Drawing.Color.White;
-            this.lbBellNumber.Location = new System.Drawing.Point(914, 4);
-            this.lbBellNumber.Name = "lbBellNumber";
-            this.lbBellNumber.Size = new System.Drawing.Size(13, 13);
-            this.lbBellNumber.TabIndex = 11;
-            this.lbBellNumber.Text = "0";
-            // 
             // bell1
             // 
             this.bell1.Location = new System.Drawing.Point(612, 6);
@@ -429,6 +424,7 @@
             // 
             // transaction
             // 
+            this.transaction.BackColor = System.Drawing.Color.White;
             this.transaction.Location = new System.Drawing.Point(0, 0);
             this.transaction.Name = "transaction";
             this.transaction.Size = new System.Drawing.Size(964, 558);
@@ -483,6 +479,11 @@
             this.customer2.Size = new System.Drawing.Size(964, 558);
             this.customer2.TabIndex = 1;
             // 
+            // timer
+            // 
+            this.timer.Interval = 10000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // FormRS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,8 +500,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBell)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

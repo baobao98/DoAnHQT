@@ -108,10 +108,10 @@
     <Compile Include="getAddressProp_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="getAllContact_Result.cs">
+    <Compile Include="GetAllCustomer_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="GetAllCustomer_Result.cs">
+    <Compile Include="getAllProp_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getContact_Result.cs">
@@ -150,10 +150,10 @@
     <Compile Include="searchEmployee_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+    <Compile Include="spGetAllTypeAcc_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
+    <Compile Include="spGetloaiTK_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_searchCusTrans_Result.cs">

@@ -50,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(49, 17);
+            this.label1.Location = new System.Drawing.Point(63, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 48);
+            this.label2.Location = new System.Drawing.Point(63, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 1;
@@ -70,22 +70,22 @@
             // lbPhone
             // 
             this.lbPhone.AutoSize = true;
-            this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhone.ForeColor = System.Drawing.Color.White;
-            this.lbPhone.Location = new System.Drawing.Point(139, 48);
+            this.lbPhone.Location = new System.Drawing.Point(153, 48);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(38, 16);
+            this.lbPhone.Size = new System.Drawing.Size(41, 18);
             this.lbPhone.TabIndex = 3;
             this.lbPhone.Text = "none";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(139, 17);
+            this.lbName.Location = new System.Drawing.Point(153, 17);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(38, 16);
+            this.lbName.Size = new System.Drawing.Size(41, 18);
             this.lbName.TabIndex = 2;
             this.lbName.Text = "none";
             // 
@@ -174,7 +174,8 @@
             this.btnAcc.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAcc.FlatAppearance.BorderSize = 0;
             this.btnAcc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAcc.Location = new System.Drawing.Point(141, 370);
+            this.btnAcc.ForeColor = System.Drawing.Color.White;
+            this.btnAcc.Location = new System.Drawing.Point(148, 371);
             this.btnAcc.Name = "btnAcc";
             this.btnAcc.Size = new System.Drawing.Size(119, 36);
             this.btnAcc.TabIndex = 11;
@@ -196,6 +197,7 @@
             this.Controls.Add(this.lbDistrict);
             this.Controls.Add(this.picProperty);
             this.Controls.Add(this.lbCity);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "acceptContact";
             this.Text = "Accept Contact";
