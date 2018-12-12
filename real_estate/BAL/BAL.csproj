@@ -55,6 +55,7 @@
     <Compile Include="BALAppointment.cs" />
     <Compile Include="BALCustomer.cs" />
     <Compile Include="BALNV.cs" />
+    <Compile Include="BALPROJ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBAL.cs" />
   </ItemGroup>

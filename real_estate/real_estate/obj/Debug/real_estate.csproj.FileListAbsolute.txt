@@ -127,6 +127,7 @@ C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dl
 C:\GITHUB\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
 D:\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+<<<<<<< HEAD
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
@@ -165,3 +166,34 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlSer
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+=======
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe.config
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.exe
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\real_estate.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Properties.Resources.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Bill.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Customer.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.dashboard.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Employee.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Marketing.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Products.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.Projects.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.ProjectType.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_control.RealEstate.resources
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
+F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
+>>>>>>> LamHua

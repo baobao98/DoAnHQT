@@ -12,17 +12,12 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class employee
+    public partial class sysdiagram
     {
-        public string id_emp { get; set; }
-        public string name_emp { get; set; }
-        public string email_emp { get; set; }
-        public string phone_emp { get; set; }
-        public Nullable<System.DateTime> birthday { get; set; }
-        public Nullable<System.DateTime> create_date { get; set; }
-        public string account { get; set; }
-    
-        public virtual account account1 { get; set; }
-        public virtual account account2 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

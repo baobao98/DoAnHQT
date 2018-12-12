@@ -158,7 +158,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__appointme__id_cu__5BE2A6F2">
+=======
+        <Association Name="FK__appointme__id_cu__34C8D9D1">
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
           <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -170,7 +173,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__appointme__id_cu__7D439ABD">
+>>>>>>> LamHua
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+<<<<<<< HEAD
         <Association Name="FK__area__id_town_re__5CD6CB2B">
+=======
+        <Association Name="FK__area__id_town_re__35BCFE0A">
+>>>>>>> LamHua
           <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
           <End Role="area" Type="Self.area" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +202,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__district__id_are__5DCAEF64">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="district" Type="Self.district" Multiplicity="*" />
+=======
+        <Association Name="FK__area__id_town_re__7E37BEF6">
+          <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+          <End Role="area" Type="Self.area" Multiplicity="*" />
+>>>>>>> LamHua
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__district__id_are__36B12243">
+          <End Role="area" Type="Self.area" Multiplicity="0..1" />
+          <End Role="district" Type="Self.district" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="district">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+<<<<<<< HEAD
+=======
+        <Association Name="FK__district__id_are__7F2BE32F">
           <End Role="area" Type="Self.area" Multiplicity="0..1" />
           <End Role="district" Type="Self.district" Multiplicity="*" />
           <ReferentialConstraint>
@@ -206,6 +258,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+>>>>>>> LamHua
         <Association Name="FK__property__id_are__33D4B598">
           <End Role="area" Type="Self.area" Multiplicity="0..1" />
           <End Role="property" Type="Self.property" Multiplicity="*" />
@@ -254,7 +307,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__trannsact__id_cu__6477ECF3">
+=======
+        <Association Name="FK__trannsact__id_cu__00200768">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_cu__3D5E1FD2">
+>>>>>>> LamHua
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
           <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
           <ReferentialConstraint>
@@ -387,6 +456,10 @@
         <Function Name="getCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_cus" Type="varchar" Mode="In" />
         </Function>
+<<<<<<< HEAD
+=======
+        <Function Name="getEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+>>>>>>> LamHua
         <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_cus" Type="varchar" Mode="In" />
           <Parameter Name="id_prop" Type="varchar" Mode="In" />
@@ -396,9 +469,12 @@
           <Parameter Name="id_prop" Type="varchar" Mode="In" />
         </Function>
         <Function Name="getTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+<<<<<<< HEAD
         <Function Name="SearchByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="name_cus" Type="varchar" Mode="In" />
         </Function>
+=======
+>>>>>>> LamHua
         <Function Name="searchEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_name" Type="varchar" Mode="In" />
         </Function>
@@ -481,6 +557,15 @@
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
         </Function>
+<<<<<<< HEAD
+        <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_prop" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+=======
+        <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="Type" Type="varchar" Mode="In" />
+>>>>>>> LamHua
+        </Function>
         <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_prop" Type="varchar" Mode="In" />
           <Parameter Name="phone" Type="varchar" Mode="In" />
@@ -504,6 +589,7 @@
             <End Role="typeAccount" EntitySet="typeAccount" />
             <End Role="account" EntitySet="account" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="Self.FK__appointme__id_cu__5BE2A6F2">
             <End Role="customer" EntitySet="customer" />
             <End Role="appointment" EntitySet="appointment" />
@@ -513,6 +599,29 @@
             <End Role="area" EntitySet="area" />
           </AssociationSet>
           <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="Self.FK__district__id_are__5DCAEF64">
+=======
+          <AssociationSet Name="FK__appointme__id_cu__34C8D9D1" Association="Self.FK__appointme__id_cu__34C8D9D1">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__appointme__id_cu__7D439ABD" Association="Self.FK__appointme__id_cu__7D439ABD">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__35BCFE0A" Association="Self.FK__area__id_town_re__35BCFE0A">
+            <End Role="townRegion" EntitySet="townRegion" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__7E37BEF6" Association="Self.FK__area__id_town_re__7E37BEF6">
+            <End Role="townRegion" EntitySet="townRegion" />
+            <End Role="area" EntitySet="area" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__36B12243" Association="Self.FK__district__id_are__36B12243">
+            <End Role="area" EntitySet="area" />
+            <End Role="district" EntitySet="district" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__7F2BE32F" Association="Self.FK__district__id_are__7F2BE32F">
+>>>>>>> LamHua
             <End Role="area" EntitySet="area" />
             <End Role="district" EntitySet="district" />
           </AssociationSet>
@@ -536,7 +645,15 @@
             <End Role="townRegion" EntitySet="townRegion" />
             <End Role="property" EntitySet="property" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="Self.FK__trannsact__id_cu__6477ECF3">
+=======
+          <AssociationSet Name="FK__trannsact__id_cu__00200768" Association="Self.FK__trannsact__id_cu__00200768">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="trannsaction" EntitySet="trannsaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_cu__3D5E1FD2" Association="Self.FK__trannsact__id_cu__3D5E1FD2">
+>>>>>>> LamHua
             <End Role="customer" EntitySet="customer" />
             <End Role="trannsaction" EntitySet="trannsaction" />
           </AssociationSet>
@@ -558,6 +675,155 @@
     <edmx:ConceptualModels>
       <Schema Namespace="RealEstateEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
+<<<<<<< HEAD
+=======
+          <FunctionImport Name="aditEmployee">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="deleteEmployee">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="deleteProject">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="seachEmployee" ReturnType="Collection(RealEstateEntity.seachEmployee_Result)">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="acc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result)">
+          <Parameter Name="id_name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="appo_GetAllAppo" ReturnType="Collection(RealEstateEntity.appo_GetAllAppo_Result)" />
+          <FunctionImport Name="AppoCreate">
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AppointmentUpdate">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="cusp_CustomerUpdate">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="name_cus" Mode="In" Type="String" />
+            <Parameter Name="email_cus" Mode="In" Type="String" />
+            <Parameter Name="phone_cus" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="create_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CustomerCreate" ReturnType="Collection(RealEstateEntity.CustomerCreate_Result)">
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="name_cus" Mode="In" Type="String" />
+            <Parameter Name="email_cus" Mode="In" Type="String" />
+            <Parameter Name="phone_cus" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="create_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CustomerDelete">
+          <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateEntity.CustomerVip_Result)" />
+          <FunctionImport Name="DeleteAppo">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllCustomer" ReturnType="Collection(RealEstateEntity.GetAllCustomer_Result)" />
+          <FunctionImport Name="getContact" ReturnType="Collection(RealEstateEntity.getContact_Result)" />
+          <FunctionImport Name="getInforTrans" ReturnType="Collection(RealEstateEntity.getInforTrans_Result)">
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateEntity.getProperty_Result)">
+          <Parameter Name="id_prop" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result)" />
+          <FunctionImport Name="insertTransaction">
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+            <Parameter Name="id_cus" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="Double" />
+            <Parameter Name="payment" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DeleteProperty">
+          <Parameter Name="Id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(RealEstateEntity.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(RealEstateEntity.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertProperty">
+            <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+            <Parameter Name="id_project" Mode="In" Type="String" />
+            <Parameter Name="floor" Mode="In" Type="Int32" />
+            <Parameter Name="room" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="avatar" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateEntity.sp_searchLocationProperty_Result)">
+            <Parameter Name="id_town" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updateProperty">
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+            <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
+            <Parameter Name="id_project" Mode="In" Type="String" />
+            <Parameter Name="floor" Mode="In" Type="Int32" />
+            <Parameter Name="room" Mode="In" Type="Int32" />
+            <Parameter Name="price" Mode="In" Type="Double" />
+            <Parameter Name="id_town_region" Mode="In" Type="Int32" />
+            <Parameter Name="id_area" Mode="In" Type="Int32" />
+            <Parameter Name="id_district" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="avatar" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="updateStatusContact">
+            <Parameter Name="id_prop" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+          </FunctionImport>
+>>>>>>> LamHua
           <EntitySet Name="accounts" EntityType="RealEstateEntity.account" />
           <EntitySet Name="advertisements" EntityType="RealEstateEntity.advertisement" />
           <EntitySet Name="appointments" EntityType="RealEstateEntity.appointment" />
@@ -569,6 +835,7 @@
           <EntitySet Name="projects" EntityType="RealEstateEntity.project" />
           <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
           <EntitySet Name="realEstateTypes" EntityType="RealEstateEntity.realEstateType" />
+<<<<<<< HEAD
           <EntitySet Name="townRegions" EntityType="RealEstateEntity.townRegion" />
           <EntitySet Name="trannsactions" EntityType="RealEstateEntity.trannsaction" />
           <EntitySet Name="typeAccounts" EntityType="RealEstateEntity.typeAccount" />
@@ -577,6 +844,25 @@
             <End Role="account" EntitySet="accounts" />
           </AssociationSet>
           <AssociationSet Name="FK__employee__accoun__182C9B23" Association="RealEstateEntity.FK__employee__accoun__182C9B23">
+=======
+          <EntitySet Name="sysdiagrams" EntityType="RealEstateEntity.sysdiagram" />
+          <EntitySet Name="townRegions" EntityType="RealEstateEntity.townRegion" />
+          <EntitySet Name="trannsactions" EntityType="RealEstateEntity.trannsaction" />
+          <EntitySet Name="typeAccounts" EntityType="RealEstateEntity.typeAccount" />
+          <AssociationSet Name="FK__account__type_ac__31EC6D26" Association="RealEstateEntity.FK__account__type_ac__31EC6D26">
+            <End Role="typeAccount" EntitySet="typeAccounts" />
+            <End Role="account" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__account__type_ac__693CA210" Association="RealEstateEntity.FK__account__type_ac__693CA210">
+            <End Role="typeAccount" EntitySet="typeAccounts" />
+            <End Role="account" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__employee__accoun__36B12243" Association="RealEstateEntity.FK__employee__accoun__36B12243">
+            <End Role="account" EntitySet="accounts" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__employee__accoun__6D0D32F4" Association="RealEstateEntity.FK__employee__accoun__6D0D32F4">
+>>>>>>> LamHua
             <End Role="account" EntitySet="accounts" />
             <End Role="employee" EntitySet="employees" />
           </AssociationSet>
@@ -584,6 +870,7 @@
             <End Role="property" EntitySet="properties" />
             <End Role="advertisement" EntitySet="advertisements" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2">
             <End Role="customer" EntitySet="customers" />
             <End Role="appointment" EntitySet="appointments" />
@@ -593,6 +880,29 @@
             <End Role="area" EntitySet="areas" />
           </AssociationSet>
           <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="RealEstateEntity.FK__district__id_are__5DCAEF64">
+=======
+          <AssociationSet Name="FK__appointme__id_cu__33D4B598" Association="RealEstateEntity.FK__appointme__id_cu__33D4B598">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__appointme__id_cu__6A30C649" Association="RealEstateEntity.FK__appointme__id_cu__6A30C649">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__34C8D9D1" Association="RealEstateEntity.FK__area__id_town_re__34C8D9D1">
+            <End Role="townRegion" EntitySet="townRegions" />
+            <End Role="area" EntitySet="areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__area__id_town_re__6B24EA82" Association="RealEstateEntity.FK__area__id_town_re__6B24EA82">
+            <End Role="townRegion" EntitySet="townRegions" />
+            <End Role="area" EntitySet="areas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__35BCFE0A" Association="RealEstateEntity.FK__district__id_are__35BCFE0A">
+            <End Role="area" EntitySet="areas" />
+            <End Role="district" EntitySet="districts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__district__id_are__6C190EBB" Association="RealEstateEntity.FK__district__id_are__6C190EBB">
+>>>>>>> LamHua
             <End Role="area" EntitySet="areas" />
             <End Role="district" EntitySet="districts" />
           </AssociationSet>
@@ -600,7 +910,15 @@
             <End Role="area" EntitySet="areas" />
             <End Role="property" EntitySet="properties" />
           </AssociationSet>
+<<<<<<< HEAD
           <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="RealEstateEntity.FK__trannsact__id_cu__6477ECF3">
+=======
+          <AssociationSet Name="FK__trannsact__id_cu__3C69FB99" Association="RealEstateEntity.FK__trannsact__id_cu__3C69FB99">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="trannsaction" EntitySet="trannsactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__trannsact__id_cu__6E01572D" Association="RealEstateEntity.FK__trannsact__id_cu__6E01572D">
+>>>>>>> LamHua
             <End Role="customer" EntitySet="customers" />
             <End Role="trannsaction" EntitySet="trannsactions" />
           </AssociationSet>
@@ -624,12 +942,28 @@
             <End Role="property" EntitySet="properties" />
             <End Role="trannsaction" EntitySet="trannsactions" />
           </AssociationSet>
+<<<<<<< HEAD
           <FunctionImport Name="addEmployee">
+=======
+          <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result)" />
+          <FunctionImport Name="editEmployee">
+            <Parameter Name="id" Mode="In" Type="String" />
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="email" Mode="In" Type="String" />
             <Parameter Name="phone" Mode="In" Type="String" />
             <Parameter Name="birthday" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="editEmployee1">
+            <Parameter Name="id" Mode="In" Type="String" />
+>>>>>>> LamHua
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+<<<<<<< HEAD
             <Parameter Name="acc" Mode="In" Type="String" />
+=======
+>>>>>>> LamHua
           </FunctionImport>
           <FunctionImport Name="addProject">
             <Parameter Name="name_project" Mode="In" Type="String" />
@@ -638,6 +972,7 @@
             <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
             <Parameter Name="information" Mode="In" Type="String" />
           </FunctionImport>
+<<<<<<< HEAD
           <FunctionImport Name="appo_GetAllAppo" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)" />
           <FunctionImport Name="AppoCreate" EntitySet="appointments" ReturnType="Collection(RealEstateEntity.appointment)">
             <Parameter Name="description" Mode="In" Type="String" />
@@ -688,6 +1023,8 @@
             <Parameter Name="phone" Mode="In" Type="String" />
             <Parameter Name="birthday" Mode="In" Type="DateTime" />
           </FunctionImport>
+=======
+>>>>>>> LamHua
           <FunctionImport Name="editProject">
             <Parameter Name="id" Mode="In" Type="String" />
             <Parameter Name="name_project" Mode="In" Type="String" />
@@ -696,6 +1033,7 @@
             <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
             <Parameter Name="information" Mode="In" Type="String" />
           </FunctionImport>
+<<<<<<< HEAD
           <FunctionImport Name="getAddressProp" ReturnType="Collection(RealEstateEntity.getAddressProp_Result1)">
           <Parameter Name="id_prop" Mode="In" Type="String" />
           </FunctionImport>
@@ -716,11 +1054,27 @@
           <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result3)" />
           <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result3)">
           <Parameter Name="id_name" Mode="In" Type="String" />
+=======
+          <FunctionImport Name="addEmployee">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="acc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getAddressProp" ReturnType="Collection(RealEstateEntity.getAddressProp_Result)">
+          <Parameter Name="id_prop" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateEntity.getAllProp_Result)" />
+          <FunctionImport Name="getCustomer" ReturnType="Collection(RealEstateEntity.getCustomer_Result)">
+          <Parameter Name="id_cus" Mode="In" Type="String" />
+>>>>>>> LamHua
           </FunctionImport>
           <FunctionImport Name="sp_checktaikhoan" ReturnType="Collection(Int32)">
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="pass" Mode="In" Type="String" />
           </FunctionImport>
+<<<<<<< HEAD
           <FunctionImport Name="sp_DeleteProperty">
           <Parameter Name="Id" Mode="In" Type="String" />
           </FunctionImport>
@@ -737,6 +1091,8 @@
             <Parameter Name="name" Mode="In" Type="String" />
             <Parameter Name="avatar" Mode="In" Type="Binary" />
           </FunctionImport>
+=======
+>>>>>>> LamHua
           <FunctionImport Name="sp_InsertTrans">
             <Parameter Name="id_prop" Mode="In" Type="String" />
             <Parameter Name="id_cus" Mode="In" Type="String" />
@@ -744,6 +1100,7 @@
             <Parameter Name="status" Mode="In" Type="String" />
             <Parameter Name="payment" Mode="In" Type="String" />
           </FunctionImport>
+<<<<<<< HEAD
           <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateEntity.sp_searchCusTrans_Result1)">
           <Parameter Name="id_cus" Mode="In" Type="String" />
           </FunctionImport>
@@ -771,6 +1128,16 @@
           </FunctionImport>
           <FunctionImport Name="spGetAllTypeAcc" ReturnType="Collection(RealEstateEntity.spGetAllTypeAcc_Result1)" />
           <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateEntity.spGetloaiTK_Result1)" />
+=======
+          <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateEntity.sp_searchCusTrans_Result)">
+          <Parameter Name="id_cus" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelTypeAcc">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAllTypeAcc" ReturnType="Collection(RealEstateEntity.spGetAllTypeAcc_Result)" />
+          <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateEntity.spGetloaiTK_Result)" />
+>>>>>>> LamHua
           <FunctionImport Name="spInsertAcc">
             <Parameter Name="nameacc" Mode="In" Type="String" />
             <Parameter Name="type" Mode="In" Type="Int32" />
@@ -796,6 +1163,7 @@
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="nameoftype" Mode="In" Type="String" />
           </FunctionImport>
+<<<<<<< HEAD
           <FunctionImport Name="updateStatusContact">
             <Parameter Name="id_prop" Mode="In" Type="String" />
             <Parameter Name="phone" Mode="In" Type="String" />
@@ -882,6 +1250,18 @@
           <Property Type="Double" Name="amount" Nullable="true" />
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
+=======
+          <FunctionImport Name="getEmployee" ReturnType="Collection(RealEstateEntity.getEmployee_Result)" />
+          </EntityContainer>
+        <ComplexType Name="seachEmployee_Result">
+          <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="phone_emp" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="birthday" Nullable="true" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
+>>>>>>> LamHua
         </ComplexType>
         <ComplexType Name="searchEmployee_Result">
           <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
@@ -892,6 +1272,7 @@
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
           <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="sp_searchLocationProperty_Result">
           <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
@@ -908,6 +1289,16 @@
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="CustomerCreate_Result1">
+=======
+        <ComplexType Name="appo_GetAllAppo_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="appointment_date" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="CustomerCreate_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
@@ -915,6 +1306,7 @@
           <Property Type="DateTime" Name="birthday" Nullable="true" />
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="GetAllCustomer_Result1">
           <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
@@ -1001,6 +1393,14 @@
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
         <ComplexType Name="GetAllCustomer_Result2">
+=======
+        <ComplexType Name="CustomerVip_Result">
+          <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+          <Property Type="Double" Name="amount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetAllCustomer_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
@@ -1008,20 +1408,29 @@
           <Property Type="DateTime" Name="birthday" Nullable="true" />
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="getContact_Result2">
+=======
+        <ComplexType Name="getContact_Result">
+>>>>>>> LamHua
           <Property Type="Int32" Name="id_ct" Nullable="false" />
           <Property Type="String" Name="phone" Nullable="true" MaxLength="15" />
           <Property Type="Int32" Name="status" Nullable="true" />
           <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="getInforTrans_Result2">
+=======
+        <ComplexType Name="getInforTrans_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
           <Property Type="Double" Name="price" Nullable="true" />
           <Property Type="Int32" Name="room" Nullable="true" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="getProject_Result2">
           <Property Type="String" Name="id_proj" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_project" Nullable="true" MaxLength="255" />
@@ -1031,6 +1440,9 @@
           <Property Type="String" Name="information" Nullable="true" MaxLength="Max" />
         </ComplexType>
         <ComplexType Name="getProperty_Result2">
+=======
+        <ComplexType Name="getProperty_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
           <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -1045,7 +1457,11 @@
           <Property Type="Binary" Name="avatar" Nullable="true" />
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="getTransaction_Result2">
+=======
+        <ComplexType Name="getTransaction_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
@@ -1053,6 +1469,7 @@
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="searchEmployee_Result2">
           <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
@@ -1063,6 +1480,20 @@
           <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
         </ComplexType>
         <ComplexType Name="sp_searchLocationProperty_Result2">
+=======
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_searchLocationProperty_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
           <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -1077,6 +1508,7 @@
           <Property Type="Binary" Name="avatar" Nullable="true" />
           <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="SearchCustomer_Result">
           <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
@@ -1093,6 +1525,8 @@
           <Property Type="DateTime" Name="birthday" Nullable="true" />
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
+=======
+>>>>>>> LamHua
         <EntityType Name="account">
           <Key>
             <PropertyRef Name="id" />
@@ -1100,9 +1534,18 @@
           <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="type_ac" Type="Int32" />
+<<<<<<< HEAD
           <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="typeAccount" Relationship="RealEstateEntity.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
           <NavigationProperty Name="employees" Relationship="RealEstateEntity.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
+=======
+          <Property Name="password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="typeAccount" Relationship="RealEstateEntity.FK__account__type_ac__31EC6D26" FromRole="account" ToRole="typeAccount" />
+          <NavigationProperty Name="typeAccount1" Relationship="RealEstateEntity.FK__account__type_ac__693CA210" FromRole="account" ToRole="typeAccount" />
+          <NavigationProperty Name="employees" Relationship="RealEstateEntity.FK__employee__accoun__36B12243" FromRole="account" ToRole="employee" />
+          <NavigationProperty Name="employees1" Relationship="RealEstateEntity.FK__employee__accoun__6D0D32F4" FromRole="account" ToRole="employee" />
+          <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="advertisement">
           <Key>
@@ -1113,8 +1556,13 @@
           <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="property" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+=======
+          <NavigationProperty Name="property" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
+          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="appointment">
           <Key>
@@ -1125,7 +1573,12 @@
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="appointment_date" Type="DateTime" Precision="3" />
+<<<<<<< HEAD
           <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2" FromRole="appointment" ToRole="customer" />
+=======
+          <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__appointme__id_cu__33D4B598" FromRole="appointment" ToRole="customer" />
+          <NavigationProperty Name="customer1" Relationship="RealEstateEntity.FK__appointme__id_cu__6A30C649" FromRole="appointment" ToRole="customer" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="area">
           <Key>
@@ -1134,8 +1587,15 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="id_town_region" Type="Int32" />
+<<<<<<< HEAD
           <NavigationProperty Name="townRegion" Relationship="RealEstateEntity.FK__area__id_town_re__5CD6CB2B" FromRole="area" ToRole="townRegion" />
           <NavigationProperty Name="districts" Relationship="RealEstateEntity.FK__district__id_are__5DCAEF64" FromRole="area" ToRole="district" />
+=======
+          <NavigationProperty Name="townRegion" Relationship="RealEstateEntity.FK__area__id_town_re__34C8D9D1" FromRole="area" ToRole="townRegion" />
+          <NavigationProperty Name="townRegion1" Relationship="RealEstateEntity.FK__area__id_town_re__6B24EA82" FromRole="area" ToRole="townRegion" />
+          <NavigationProperty Name="districts" Relationship="RealEstateEntity.FK__district__id_are__35BCFE0A" FromRole="area" ToRole="district" />
+          <NavigationProperty Name="districts1" Relationship="RealEstateEntity.FK__district__id_are__6C190EBB" FromRole="area" ToRole="district" />
+>>>>>>> LamHua
           <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_are__33D4B598" FromRole="area" ToRole="property" />
         </EntityType>
         <EntityType Name="contact">
@@ -1158,8 +1618,15 @@
           <Property Name="phone_cus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="create_date" Type="DateTime" Precision="3" />
+<<<<<<< HEAD
           <NavigationProperty Name="appointments" Relationship="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2" FromRole="customer" ToRole="appointment" />
           <NavigationProperty Name="trannsactions" Relationship="RealEstateEntity.FK__trannsact__id_cu__6477ECF3" FromRole="customer" ToRole="trannsaction" />
+=======
+          <NavigationProperty Name="appointments" Relationship="RealEstateEntity.FK__appointme__id_cu__33D4B598" FromRole="customer" ToRole="appointment" />
+          <NavigationProperty Name="appointments1" Relationship="RealEstateEntity.FK__appointme__id_cu__6A30C649" FromRole="customer" ToRole="appointment" />
+          <NavigationProperty Name="trannsactions" Relationship="RealEstateEntity.FK__trannsact__id_cu__3C69FB99" FromRole="customer" ToRole="trannsaction" />
+          <NavigationProperty Name="trannsactions1" Relationship="RealEstateEntity.FK__trannsact__id_cu__6E01572D" FromRole="customer" ToRole="trannsaction" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="district">
           <Key>
@@ -1168,7 +1635,12 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="id_area" Type="Int32" />
+<<<<<<< HEAD
           <NavigationProperty Name="area" Relationship="RealEstateEntity.FK__district__id_are__5DCAEF64" FromRole="district" ToRole="area" />
+=======
+          <NavigationProperty Name="area" Relationship="RealEstateEntity.FK__district__id_are__35BCFE0A" FromRole="district" ToRole="area" />
+          <NavigationProperty Name="area1" Relationship="RealEstateEntity.FK__district__id_are__6C190EBB" FromRole="district" ToRole="area" />
+>>>>>>> LamHua
           <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_dis__34C8D9D1" FromRole="district" ToRole="property" />
         </EntityType>
         <EntityType Name="employee">
@@ -1182,7 +1654,12 @@
           <Property Name="birthday" Type="DateTime" Precision="0" />
           <Property Name="create_date" Type="DateTime" Precision="3" />
           <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="account1" Relationship="RealEstateEntity.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
+=======
+          <NavigationProperty Name="account1" Relationship="RealEstateEntity.FK__employee__accoun__36B12243" FromRole="employee" ToRole="account" />
+          <NavigationProperty Name="account2" Relationship="RealEstateEntity.FK__employee__accoun__6D0D32F4" FromRole="employee" ToRole="account" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="project">
           <Key>
@@ -1228,6 +1705,19 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_rea__31EC6D26" FromRole="realEstateType" ToRole="property" />
+<<<<<<< HEAD
+=======
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="townRegion">
           <Key>
@@ -1235,7 +1725,12 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+<<<<<<< HEAD
           <NavigationProperty Name="areas" Relationship="RealEstateEntity.FK__area__id_town_re__5CD6CB2B" FromRole="townRegion" ToRole="area" />
+=======
+          <NavigationProperty Name="areas" Relationship="RealEstateEntity.FK__area__id_town_re__34C8D9D1" FromRole="townRegion" ToRole="area" />
+          <NavigationProperty Name="areas1" Relationship="RealEstateEntity.FK__area__id_town_re__6B24EA82" FromRole="townRegion" ToRole="area" />
+>>>>>>> LamHua
           <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_tow__32E0915F" FromRole="townRegion" ToRole="property" />
         </EntityType>
         <EntityType Name="trannsaction">
@@ -1248,9 +1743,16 @@
           <Property Name="amount" Type="Double" />
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <Property Name="create_date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__trannsact__id_cu__6477ECF3" FromRole="trannsaction" ToRole="customer" />
           <NavigationProperty Name="property" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
+=======
+          <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__trannsact__id_cu__3C69FB99" FromRole="trannsaction" ToRole="customer" />
+          <NavigationProperty Name="customer1" Relationship="RealEstateEntity.FK__trannsact__id_cu__6E01572D" FromRole="trannsaction" ToRole="customer" />
+          <NavigationProperty Name="property" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+>>>>>>> LamHua
         </EntityType>
         <EntityType Name="typeAccount">
           <Key>
@@ -1258,9 +1760,16 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameOfTypeAcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+<<<<<<< HEAD
           <NavigationProperty Name="accounts" Relationship="RealEstateEntity.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
         </EntityType>
         <Association Name="FK__account__type_ac__145C0A3F">
+=======
+          <NavigationProperty Name="accounts" Relationship="RealEstateEntity.FK__account__type_ac__31EC6D26" FromRole="typeAccount" ToRole="account" />
+          <NavigationProperty Name="accounts1" Relationship="RealEstateEntity.FK__account__type_ac__693CA210" FromRole="typeAccount" ToRole="account" />
+        </EntityType>
+        <Association Name="FK__account__type_ac__31EC6D26">
+>>>>>>> LamHua
           <End Type="RealEstateEntity.typeAccount" Role="typeAccount" Multiplicity="0..1" />
           <End Type="RealEstateEntity.account" Role="account" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1272,7 +1781,50 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__employee__accoun__182C9B23">
+=======
+        <Association Name="FK__account__type_ac__693CA210">
+          <End Type="RealEstateEntity.typeAccount" Role="typeAccount" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.account" Role="account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeAccount">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="account">
+              <PropertyRef Name="type_ac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__employee__accoun__36B12243">
+>>>>>>> LamHua
+          <End Type="RealEstateEntity.account" Role="account" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.employee" Role="employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+<<<<<<< HEAD
+        <Association Name="FK_advertisement_property">
+          <End Type="RealEstateEntity.property" Role="property" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.advertisement" Role="advertisement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="id_prop" />
+            </Principal>
+            <Dependent Role="advertisement">
+              <PropertyRef Name="prop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__appointme__id_cu__5BE2A6F2">
+=======
+        <Association Name="FK__employee__accoun__6D0D32F4">
           <End Type="RealEstateEntity.account" Role="account" Multiplicity="0..1" />
           <End Type="RealEstateEntity.employee" Role="employee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1296,7 +1848,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__appointme__id_cu__5BE2A6F2">
+        <Association Name="FK__appointme__id_cu__33D4B598">
+>>>>>>> LamHua
           <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
           <End Type="RealEstateEntity.appointment" Role="appointment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1308,7 +1861,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__area__id_town_re__5CD6CB2B">
+=======
+        <Association Name="FK__appointme__id_cu__6A30C649">
+          <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.appointment" Role="appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__area__id_town_re__34C8D9D1">
+>>>>>>> LamHua
           <End Type="RealEstateEntity.townRegion" Role="townRegion" Multiplicity="0..1" />
           <End Type="RealEstateEntity.area" Role="area" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1320,7 +1889,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__district__id_are__5DCAEF64">
+          <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.district" Role="district" Multiplicity="*" />
+=======
+        <Association Name="FK__area__id_town_re__6B24EA82">
+          <End Type="RealEstateEntity.townRegion" Role="townRegion" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.area" Role="area" Multiplicity="*" />
+>>>>>>> LamHua
+          <ReferentialConstraint>
+            <Principal Role="townRegion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="area">
+              <PropertyRef Name="id_town_region" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+<<<<<<< HEAD
+=======
+        <Association Name="FK__district__id_are__35BCFE0A">
           <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
           <End Type="RealEstateEntity.district" Role="district" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1332,6 +1921,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__district__id_are__6C190EBB">
+          <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.district" Role="district" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="district">
+              <PropertyRef Name="id_area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+>>>>>>> LamHua
         <Association Name="FK__property__id_are__33D4B598">
           <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
           <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
@@ -1344,7 +1946,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
         <Association Name="FK__trannsact__id_cu__6477ECF3">
+=======
+        <Association Name="FK__trannsact__id_cu__3C69FB99">
+          <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
+          <End Type="RealEstateEntity.trannsaction" Role="trannsaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="id_cus" />
+            </Principal>
+            <Dependent Role="trannsaction">
+              <PropertyRef Name="id_cus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__trannsact__id_cu__6E01572D">
+>>>>>>> LamHua
           <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
           <End Type="RealEstateEntity.trannsaction" Role="trannsaction" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1416,6 +2034,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+<<<<<<< HEAD
+=======
+        <ComplexType Name="getProject_Result">
+          <Property Type="String" Name="id_proj" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="name_project" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="address" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="license_number" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="dateOfIssue" Nullable="true" />
+          <Property Type="String" Name="information" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+>>>>>>> LamHua
         <ComplexType Name="getAddressProp_Result">
           <Property Type="Binary" Name="avatar" Nullable="true" />
           <Property Type="String" Name="name_district" Nullable="true" MaxLength="150" />
@@ -1462,6 +2091,7 @@
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="CustomerCreate_Result2">
           <Property Type="String" Name="id_cus" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
@@ -1554,6 +2184,9 @@
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
         <ComplexType Name="searchEmployee_Result3">
+=======
+        <ComplexType Name="getEmployee_Result">
+>>>>>>> LamHua
           <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="email_emp" Nullable="true" MaxLength="50" />
@@ -1562,6 +2195,7 @@
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
           <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="sp_searchCusTrans_Result1">
           <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
@@ -1603,11 +2237,154 @@
           <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
         </ComplexType>
       </Schema>
+=======
+        </Schema>
+>>>>>>> LamHua
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RealEstateEntityStoreContainer" CdmEntityContainer="RealEstateEntities">
+          <FunctionImportMapping FunctionImportName="deleteEmployee" FunctionName="RealEstateEntity.Store.deleteEmployee" />
+          <FunctionImportMapping FunctionImportName="deleteProject" FunctionName="RealEstateEntity.Store.deleteProject" />
+          <FunctionImportMapping FunctionImportName="searchEmployee" FunctionName="RealEstateEntity.Store.searchEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.searchEmployee_Result">
+                <ScalarProperty Name="id_emp" ColumnName="id_emp" />
+                <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+                <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+                <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="account" ColumnName="account" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateEntity.Store.appo_GetAllAppo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.appo_GetAllAppo_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AppoCreate" FunctionName="RealEstateEntity.Store.AppoCreate" />
+          <FunctionImportMapping FunctionImportName="AppointmentUpdate" FunctionName="RealEstateEntity.Store.AppointmentUpdate" />
+          <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
+          <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.CustomerCreate_Result">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+                <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
+          <FunctionImportMapping FunctionImportName="CustomerVip" FunctionName="RealEstateEntity.Store.CustomerVip">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.CustomerVip_Result">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateEntity.Store.DeleteAppo" />
+          <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.GetAllCustomer_Result">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+                <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getContact" FunctionName="RealEstateEntity.Store.getContact">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getContact_Result">
+                <ScalarProperty Name="id_ct" ColumnName="id_ct" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getInforTrans" FunctionName="RealEstateEntity.Store.getInforTrans">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getInforTrans_Result">
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="room" ColumnName="room" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getProperty" FunctionName="RealEstateEntity.Store.getProperty">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getProperty_Result">
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getTransaction" FunctionName="RealEstateEntity.Store.getTransaction">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getTransaction_Result">
+                <ScalarProperty Name="id_trans" ColumnName="id_trans" />
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="payment" ColumnName="payment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_DeleteProperty" FunctionName="RealEstateEntity.Store.sp_DeleteProperty" />
+          <FunctionImportMapping FunctionImportName="sp_InsertProperty" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
+          <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result">
+                <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
+                <ScalarProperty Name="id_district" ColumnName="id_district" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
+          <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateEntity.Store.updateStatusContact" />
           <EntitySetMapping Name="accounts">
             <EntityTypeMapping TypeName="RealEstateEntity.account">
               <MappingFragment StoreEntitySet="account">
@@ -1763,6 +2540,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="addEmployee" FunctionName="RealEstateEntity.Store.addEmployee" />
           <FunctionImportMapping FunctionImportName="addProject" FunctionName="RealEstateEntity.Store.addProject" />
           <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateEntity.Store.appo_GetAllAppo">
@@ -1800,6 +2578,27 @@
           <FunctionImportMapping FunctionImportName="getAddressProp" FunctionName="RealEstateEntity.Store.getAddressProp">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.getAddressProp_Result1">
+=======
+          <FunctionImportMapping FunctionImportName="getProject" FunctionName="RealEstateEntity.Store.getProject">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getProject_Result">
+                <ScalarProperty Name="id_proj" ColumnName="id_proj" />
+                <ScalarProperty Name="name_project" ColumnName="name_project" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="license_number" ColumnName="license_number" />
+                <ScalarProperty Name="dateOfIssue" ColumnName="dateOfIssue" />
+                <ScalarProperty Name="information" ColumnName="information" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="editEmployee1" FunctionName="RealEstateEntity.Store.editEmployee" />
+          <FunctionImportMapping FunctionImportName="addProject" FunctionName="RealEstateEntity.Store.addProject" />
+          <FunctionImportMapping FunctionImportName="editProject" FunctionName="RealEstateEntity.Store.editProject" />
+          <FunctionImportMapping FunctionImportName="addEmployee" FunctionName="RealEstateEntity.Store.addEmployee" />
+          <FunctionImportMapping FunctionImportName="getAddressProp" FunctionName="RealEstateEntity.Store.getAddressProp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getAddressProp_Result">
+>>>>>>> LamHua
                 <ScalarProperty Name="avatar" ColumnName="avatar" />
                 <ScalarProperty Name="name_district" ColumnName="name_district" />
                 <ScalarProperty Name="name_area" ColumnName="name_area" />
@@ -1807,11 +2606,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer">
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateEntity.Store.getAllProp">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.getAllProp_Result1">
+=======
+          <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateEntity.Store.getAllProp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getAllProp_Result">
+>>>>>>> LamHua
                 <ScalarProperty Name="id_prop" ColumnName="id_prop" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
@@ -1828,6 +2633,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="getContact" FunctionName="RealEstateEntity.Store.getContact">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.getContact_Result3">
@@ -1906,16 +2712,34 @@
                 <ScalarProperty Name="birthday" ColumnName="birthday" />
                 <ScalarProperty Name="create_date" ColumnName="create_date" />
                 <ScalarProperty Name="account" ColumnName="account" />
+=======
+          <FunctionImportMapping FunctionImportName="getCustomer" FunctionName="RealEstateEntity.Store.getCustomer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getCustomer_Result">
+                <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+                <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+                <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+                <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+>>>>>>> LamHua
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_checktaikhoan" FunctionName="RealEstateEntity.Store.sp_checktaikhoan" />
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="sp_DeleteProperty" FunctionName="RealEstateEntity.Store.sp_DeleteProperty" />
           <FunctionImportMapping FunctionImportName="sp_InsertProperty" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
           <FunctionImportMapping FunctionImportName="sp_InsertTrans" FunctionName="RealEstateEntity.Store.sp_InsertTrans" />
           <FunctionImportMapping FunctionImportName="sp_searchCusTrans" FunctionName="RealEstateEntity.Store.sp_searchCusTrans">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchCusTrans_Result1">
+=======
+          <FunctionImportMapping FunctionImportName="sp_InsertTrans" FunctionName="RealEstateEntity.Store.sp_InsertTrans" />
+          <FunctionImportMapping FunctionImportName="sp_searchCusTrans" FunctionName="RealEstateEntity.Store.sp_searchCusTrans">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchCusTrans_Result">
+>>>>>>> LamHua
                 <ScalarProperty Name="id_trans" ColumnName="id_trans" />
                 <ScalarProperty Name="id_prop" ColumnName="id_prop" />
                 <ScalarProperty Name="id_cus" ColumnName="id_cus" />
@@ -1926,6 +2750,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchLocationProperty_Result3">
@@ -1950,6 +2775,12 @@
           <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateEntity.Store.spGetAllTypeAcc">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateEntity.spGetAllTypeAcc_Result1">
+=======
+          <FunctionImportMapping FunctionImportName="spDelTypeAcc" FunctionName="RealEstateEntity.Store.spDelTypeAcc" />
+          <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateEntity.Store.spGetAllTypeAcc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.spGetAllTypeAcc_Result">
+>>>>>>> LamHua
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
               </ComplexTypeMapping>
@@ -1957,7 +2788,11 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateEntity.Store.spGetloaiTK">
             <ResultMapping>
+<<<<<<< HEAD
               <ComplexTypeMapping TypeName="RealEstateEntity.spGetloaiTK_Result1">
+=======
+              <ComplexTypeMapping TypeName="RealEstateEntity.spGetloaiTK_Result">
+>>>>>>> LamHua
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
               </ComplexTypeMapping>
@@ -1969,10 +2804,27 @@
           <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateEntity.Store.spLegit" />
           <FunctionImportMapping FunctionImportName="spUdateAcc" FunctionName="RealEstateEntity.Store.spUdateAcc" />
           <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateEntity.Store.spUpdateTypeAcc" />
+<<<<<<< HEAD
           <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateEntity.Store.updateStatusContact" />
           <FunctionImportMapping FunctionImportName="SearchByName" FunctionName="RealEstateEntity.Store.SearchByName">
           </FunctionImportMapping>
         </EntityContainerMapping>
+=======
+          <FunctionImportMapping FunctionImportName="getEmployee" FunctionName="RealEstateEntity.Store.getEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateEntity.getEmployee_Result">
+                <ScalarProperty Name="id_emp" ColumnName="id_emp" />
+                <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+                <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+                <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="account" ColumnName="account" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
+>>>>>>> LamHua
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
