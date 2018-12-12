@@ -10,17 +10,14 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class getProject_Result
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
+        public string id_proj { get; set; }
+        public string name_project { get; set; }
+        public string address { get; set; }
+        public string license_number { get; set; }
+        public Nullable<System.DateTime> dateOfIssue { get; set; }
         public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-        public string img { get; set; }
-    
-        public virtual property property { get; set; }
     }
 }

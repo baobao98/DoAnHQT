@@ -10,17 +10,10 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class spGetloaiTK_Result
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
-        public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-        public string img { get; set; }
-    
-        public virtual property property { get; set; }
+        public int id { get; set; }
+        public string NameOfTypeAcc { get; set; }
     }
 }

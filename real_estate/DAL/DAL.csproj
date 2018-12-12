@@ -61,6 +61,9 @@
     <Compile Include="appointment.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="appo_GetAllAppo_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="area.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -85,13 +88,46 @@
     <Compile Include="customer.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerCreate_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerVip_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="district.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="employee.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getAddressProp_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllCustomer_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="getAllProp_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllProp_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getContact_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getCustomer_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getInforTrans_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getProject_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getProperty_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getTransaction_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="IProperty.cs" />
@@ -111,6 +147,15 @@
     <Compile Include="realEstateType.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="searchEmployee_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetAllTypeAcc_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetloaiTK_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -120,10 +165,13 @@
     <Compile Include="sp_InsertProperty1_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_searchCusTrans_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_searchLocationProperty_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="sp_searchLocationProperty_Result1.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="townRegion.cs">

@@ -17,7 +17,7 @@ namespace BAL
             //return prop.getProperty();
             return db.properties.ToList();
         }
-        public System.Collections.Generic.List<getAllProp_Result> getAllProp()
+        public System.Collections.Generic.List<DAL.property> getAllProp()
         {
             return db.getAllProp().ToList();
         }
@@ -54,15 +54,15 @@ namespace BAL
         {
             return prop.getDistrictByIdArea(id);
         }
-        public bool Insert(ref string err, ref string pro, string id_prop, int id_realestate_type, string id_project, int floor, int room, float price, int id_town, int id_area, int id_district, string ten, string status, byte[] avatar)
-        {
-            return prop.Insert( ref err,ref pro, id_prop,id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, ten, status, avatar);
-        }
+        //public bool Insert(ref string err, ref string pro, string id_prop, int id_realestate_type, string id_project, int floor, int room, float price, int id_town, int id_area, int id_district, string ten, string status, byte[] avatar)
+        //{
+        //    return prop.Insert( ref err,ref pro, id_prop,id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, ten, status, avatar);
+        //}
         public bool Update(ref string err, ref string pro, string id_prop, int id_realestate_type, string id_project, int floor, int room, float price, int id_town, int id_area, int id_district, string ten, string status, byte[] avatar)
         {
             return prop.Update(ref err, ref pro,id_prop, id_realestate_type, id_project, floor, room, price, id_town, id_area, id_district, ten, status, avatar);
         }
-        public ObjectResult<sp_searchLocationProperty_Result> searchPropertyByPlace(int id_town, int id_area, int id_district)
+        public ObjectResult<DAL.property> searchPropertyByPlace(int id_town, int id_area, int id_district)
         {
             return prop.searchPropertyByPlace(id_town, id_area, id_district);
         }

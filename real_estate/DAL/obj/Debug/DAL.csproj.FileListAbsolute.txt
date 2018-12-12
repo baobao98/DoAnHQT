@@ -37,3 +37,4 @@ C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.Cor
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

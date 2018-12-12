@@ -7,7 +7,7 @@
     <Property Name="id" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="nameAcc" Type="nvarchar" MaxLength="150" />
     <Property Name="type_ac" Type="int" />
-    <Property Name="password" Type="varchar" MaxLength="15" />
+    <Property Name="pass" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="advertisement">
     <Key>
@@ -15,8 +15,10 @@
     </Key>
     <Property Name="id_ad" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
-    <Property Name="information" Type="text" />
+    <Property Name="information" Type="nvarchar(max)" />
     <Property Name="discount" Type="varchar" MaxLength="10" />
+    <Property Name="prop" Type="varchar" MaxLength="10" />
+    <Property Name="img" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -26,6 +28,7 @@
     <Property Name="description" Type="varchar" MaxLength="255" />
     <Property Name="status" Type="varchar" MaxLength="50" />
     <Property Name="id_cus" Type="varchar" MaxLength="10" />
+    <Property Name="appointment_date" Type="datetime" />
   </EntityType>
   <EntityType Name="area">
     <Key>
@@ -42,6 +45,8 @@
     <Property Name="id_ct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="phone" Type="varchar" MaxLength="15" />
     <Property Name="status" Type="int" />
+    <Property Name="id_prop" Type="varchar" MaxLength="10" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
@@ -83,13 +88,14 @@
     <Property Name="address" Type="nvarchar" MaxLength="255" />
     <Property Name="license_number" Type="varchar" MaxLength="50" />
     <Property Name="dateOfIssue" Type="date" />
-    <Property Name="PlaceOfIssue" Type="varchar" MaxLength="50" />
+    <Property Name="information" Type="text" />
   </EntityType>
   <EntityType Name="property">
     <Key>
       <PropertyRef Name="id_prop" />
     </Key>
     <Property Name="id_prop" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
     <Property Name="id_real_estate_type" Type="int" />
     <Property Name="id_project" Type="varchar" MaxLength="10" />
     <Property Name="floor" Type="int" />
@@ -99,9 +105,8 @@
     <Property Name="id_town_region" Type="int" />
     <Property Name="id_area" Type="int" />
     <Property Name="id_district" Type="int" />
-    <Property Name="status" Type="nvarchar" MaxLength="50" />
-    <Property Name="name" Type="nvarchar" MaxLength="255" />
     <Property Name="avatar" Type="varbinary(max)" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="realEstateType">
     <Key>
@@ -109,16 +114,6 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar" MaxLength="255" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="townRegion">
     <Key>
@@ -137,6 +132,7 @@
     <Property Name="amount" Type="float" />
     <Property Name="status" Type="varchar" MaxLength="50" />
     <Property Name="payment" Type="varchar" MaxLength="50" />
+    <Property Name="create_date" Type="datetime" />
   </EntityType>
   <EntityType Name="typeAccount">
     <Key>
@@ -145,7 +141,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameOfTypeAcc" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__account__type_ac__3B75D760">
+  <Association Name="FK__account__type_ac__145C0A3F">
     <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
     <End Role="account" Type="Self.account" Multiplicity="*" />
     <ReferentialConstraint>
@@ -157,7 +153,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__appointme__id_cu__4CA06362">
+  <Association Name="FK__appointme__id_cu__5BE2A6F2">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -169,7 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__area__id_town_re__440B1D61">
+  <Association Name="FK__area__id_town_re__5CD6CB2B">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="area" Type="Self.area" Multiplicity="*" />
     <ReferentialConstraint>
@@ -181,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__district__id_are__46E78A0C">
+  <Association Name="FK__district__id_are__5DCAEF64">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="district" Type="Self.district" Multiplicity="*" />
     <ReferentialConstraint>
@@ -193,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__employee__accoun__3F466844">
+  <Association Name="FK__employee__accoun__182C9B23">
     <End Role="account" Type="Self.account" Multiplicity="0..1" />
     <End Role="employee" Type="Self.employee" Multiplicity="*" />
     <ReferentialConstraint>
@@ -205,7 +201,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_are__5AEE82B9">
+  <Association Name="FK__property__id_are__33D4B598">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -217,7 +213,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_dis__5BE2A6F2">
+  <Association Name="FK__property__id_dis__34C8D9D1">
     <End Role="district" Type="Self.district" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -229,7 +225,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_rea__59063A47">
+  <Association Name="FK__property__id_rea__31EC6D26">
     <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -241,7 +237,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__property__id_tow__59FA5E80">
+  <Association Name="FK__property__id_tow__32E0915F">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
@@ -253,7 +249,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__trannsact__id_cu__619B8048">
+  <Association Name="FK__trannsact__id_cu__6477ECF3">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -265,7 +261,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__trannsact__id_pr__60A75C0F">
+  <Association Name="FK__trannsact__id_pr__398D8EEE">
     <End Role="property" Type="Self.property" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -274,6 +270,18 @@
       </Principal>
       <Dependent Role="trannsaction">
         <PropertyRef Name="id_prop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_advertisement_property">
+    <End Role="property" Type="Self.property" Multiplicity="0..1" />
+    <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property">
+        <PropertyRef Name="id_prop" />
+      </Principal>
+      <Dependent Role="advertisement">
+        <PropertyRef Name="prop" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -289,47 +297,109 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  <Function Name="addEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="acc" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  <Function Name="addProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name_project" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="license_number" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfIssue" Type="date" Mode="In" />
+    <Parameter Name="information" Type="text" Mode="In" />
+  </Function>
+  <Function Name="appo_GetAllAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="AppoCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AppointmentUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="appointment_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="cusp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+    <Parameter Name="email_cus" Type="varchar" Mode="In" />
+    <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CustomerCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_cus" Type="nvarchar" Mode="In" />
+    <Parameter Name="email_cus" Type="varchar" Mode="In" />
+    <Parameter Name="phone_cus" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="create_date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="CustomerVip" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DeleteAppo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="deleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="deleteProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="editEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+  </Function>
+  <Function Name="editProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="name_project" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="license_number" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfIssue" Type="date" Mode="In" />
+    <Parameter Name="information" Type="text" Mode="In" />
+  </Function>
+  <Function Name="fnXacNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="getAddressProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getAllProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="searchEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_checktaikhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="pass" Type="varchar(max)" Mode="In" />
   </Function>
   <Function Name="sp_DeleteProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Id" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_InsertProp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
-    <Parameter Name="id_project" Type="varchar" Mode="In" />
-    <Parameter Name="floor" Type="int" Mode="In" />
-    <Parameter Name="room" Type="int" Mode="In" />
-    <Parameter Name="price" Type="float" Mode="In" />
-    <Parameter Name="id_town_region" Type="int" Mode="In" />
-    <Parameter Name="id_area" Type="int" Mode="In" />
-    <Parameter Name="id_district" Type="int" Mode="In" />
-    <Parameter Name="status" Type="nvarchar" Mode="In" />
-    <Parameter Name="name" Type="nvarchar" Mode="In" />
-    <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
   </Function>
   <Function Name="sp_InsertProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
@@ -344,10 +414,15 @@
     <Parameter Name="name" Type="nvarchar" Mode="In" />
     <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
   </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  <Function Name="sp_InsertTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="float" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="payment" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_searchCusTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
   </Function>
   <Function Name="sp_searchLocationProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_town" Type="int" Mode="In" />
@@ -368,9 +443,39 @@
     <Parameter Name="name" Type="nvarchar" Mode="In" />
     <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
   </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
-    <Parameter Name="Type" Type="varchar" Mode="In" />
+  <Function Name="spDelTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spGetAllTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spGetloaiTK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spInsertAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nameacc" Type="varchar" Mode="In" />
+    <Parameter Name="type" Type="int" Mode="In" />
+    <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="spInsertContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fone" Type="varchar" Mode="In" />
+    <Parameter Name="idprop" Type="varchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spLegit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="pass" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="spUdateAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
   </Function>
   <EntityContainer Name="RealEstateEntityStoreContainer">
     <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
@@ -384,53 +489,56 @@
     <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="property" EntityType="Self.property" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="realEstateType" EntityType="Self.realEstateType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="townRegion" EntityType="Self.townRegion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="trannsaction" EntityType="Self.trannsaction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="typeAccount" EntityType="Self.typeAccount" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__account__type_ac__3B75D760" Association="Self.FK__account__type_ac__3B75D760">
+    <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="Self.FK__account__type_ac__145C0A3F">
       <End Role="typeAccount" EntitySet="typeAccount" />
       <End Role="account" EntitySet="account" />
     </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__4CA06362" Association="Self.FK__appointme__id_cu__4CA06362">
+    <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="Self.FK__appointme__id_cu__5BE2A6F2">
       <End Role="customer" EntitySet="customer" />
       <End Role="appointment" EntitySet="appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__440B1D61" Association="Self.FK__area__id_town_re__440B1D61">
+    <AssociationSet Name="FK__area__id_town_re__5CD6CB2B" Association="Self.FK__area__id_town_re__5CD6CB2B">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="area" EntitySet="area" />
     </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__46E78A0C" Association="Self.FK__district__id_are__46E78A0C">
+    <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="Self.FK__district__id_are__5DCAEF64">
       <End Role="area" EntitySet="area" />
       <End Role="district" EntitySet="district" />
     </AssociationSet>
-    <AssociationSet Name="FK__employee__accoun__3F466844" Association="Self.FK__employee__accoun__3F466844">
+    <AssociationSet Name="FK__employee__accoun__182C9B23" Association="Self.FK__employee__accoun__182C9B23">
       <End Role="account" EntitySet="account" />
       <End Role="employee" EntitySet="employee" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_are__5AEE82B9" Association="Self.FK__property__id_are__5AEE82B9">
+    <AssociationSet Name="FK__property__id_are__33D4B598" Association="Self.FK__property__id_are__33D4B598">
       <End Role="area" EntitySet="area" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_dis__5BE2A6F2" Association="Self.FK__property__id_dis__5BE2A6F2">
+    <AssociationSet Name="FK__property__id_dis__34C8D9D1" Association="Self.FK__property__id_dis__34C8D9D1">
       <End Role="district" EntitySet="district" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_rea__59063A47" Association="Self.FK__property__id_rea__59063A47">
+    <AssociationSet Name="FK__property__id_rea__31EC6D26" Association="Self.FK__property__id_rea__31EC6D26">
       <End Role="realEstateType" EntitySet="realEstateType" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__property__id_tow__59FA5E80" Association="Self.FK__property__id_tow__59FA5E80">
+    <AssociationSet Name="FK__property__id_tow__32E0915F" Association="Self.FK__property__id_tow__32E0915F">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__619B8048" Association="Self.FK__trannsact__id_cu__619B8048">
+    <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="Self.FK__trannsact__id_cu__6477ECF3">
       <End Role="customer" EntitySet="customer" />
       <End Role="trannsaction" EntitySet="trannsaction" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_pr__60A75C0F" Association="Self.FK__trannsact__id_pr__60A75C0F">
+    <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
       <End Role="property" EntitySet="property" />
       <End Role="trannsaction" EntitySet="trannsaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_advertisement_property" Association="Self.FK_advertisement_property">
+      <End Role="property" EntitySet="property" />
+      <End Role="advertisement" EntitySet="advertisement" />
     </AssociationSet>
     <AssociationSet Name="FK_property_project" Association="Self.FK_property_project">
       <End Role="project" EntitySet="project" />

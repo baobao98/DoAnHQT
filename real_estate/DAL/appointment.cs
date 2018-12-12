@@ -18,6 +18,7 @@ namespace DAL
         public string description { get; set; }
         public string status { get; set; }
         public string id_cus { get; set; }
+        public Nullable<System.DateTime> appointment_date { get; set; }
     
         public virtual customer customer { get; set; }
     }
