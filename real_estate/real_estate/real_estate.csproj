@@ -145,12 +145,6 @@
     <Compile Include="TypeAccount.Designer.cs">
       <DependentUpon>TypeAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="user control\Bill.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="user control\Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
-    </Compile>
     <Compile Include="user control\Customer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TypeAccount.resx">
       <DependentUpon>TypeAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="user control\Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
