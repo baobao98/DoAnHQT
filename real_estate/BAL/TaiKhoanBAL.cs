@@ -83,14 +83,14 @@ namespace BAL
                 dbs.accounts.Remove(acc);
             }
         }
-        public static List< CheckAcc(string acc, string pass)
-        {
-            using (RealEstateEntities dbs = new RealEstateEntities())
-            {
-                int a = Convert.ToInt32(dbs.sp_checktaikhoan(acc, pass));
-                return a;
-            }
-        }
+        //public static List< CheckAcc(string acc, string pass)
+        //{
+        //    using (RealEstateEntities dbs = new RealEstateEntities())
+        //    {
+        //        int a = Convert.ToInt32(dbs.sp_checktaikhoan(acc, pass));
+        //        return a;
+        //    }
+        //}
         public static account GetAccountByAcc(string acc)
         {
             using (RealEstateEntities dbs = new RealEstateEntities())
