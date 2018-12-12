@@ -56,9 +56,6 @@
     <Compile Include="advertisement.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppoCreate_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="appointment.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -92,15 +89,6 @@
     <Compile Include="CustomerCreate_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="CustomerCreate_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerCreate_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-=======
->>>>>>> LamHua
     <Compile Include="CustomerVip_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -113,45 +101,6 @@
     <Compile Include="getAddressProp_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="getAddressProp_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetAllCustomer_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetAllCustomer_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetAllCustomer_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetAllCustomer_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getAllProp_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getAllProp_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getContact_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getContact_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getContact_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getContact_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getCustomer_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getCustomer_Result1.cs">
-=======
     <Compile Include="GetAllCustomer_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -162,62 +111,11 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getCustomer_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getEmployee_Result.cs">
->>>>>>> LamHua
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getInforTrans_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="getInforTrans_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getInforTrans_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getInforTrans_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProject_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProject_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProject_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProject_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProperty_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProperty_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProperty_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getProperty_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getTransaction_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getTransaction_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getTransaction_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="getTransaction_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-=======
     <Compile Include="getProject_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -227,11 +125,9 @@
     <Compile Include="getTransaction_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
->>>>>>> LamHua
     <Compile Include="project.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -243,52 +139,12 @@
     <Compile Include="realEstateType.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="SearchByName_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SearchByName_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SearchByName_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SearchCustomer_Result.cs">
-=======
-    <Compile Include="seachEmployee_Result.cs">
->>>>>>> LamHua
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="searchEmployee_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="searchEmployee_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="searchEmployee_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="searchEmployee_Result3.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="spGetAllTypeAcc_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="spGetAllTypeAcc_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="spGetloaiTK_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="spGetloaiTK_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_searchCusTrans_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_searchCusTrans_Result1.cs">
-=======
     <Compile Include="spGetAllTypeAcc_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -302,23 +158,9 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_searchCusTrans_Result.cs">
->>>>>>> LamHua
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_searchLocationProperty_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-<<<<<<< HEAD
-    <Compile Include="sp_searchLocationProperty_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_searchLocationProperty_Result2.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_searchLocationProperty_Result3.cs">
-=======
-    <Compile Include="sysdiagram.cs">
->>>>>>> LamHua
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="townRegion.cs">
@@ -340,6 +182,7 @@
     <None Include="BDSEntity.edmx.diagram">
       <DependentUpon>BDSEntity.edmx</DependentUpon>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

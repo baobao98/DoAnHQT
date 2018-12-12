@@ -197,3 +197,9 @@ F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real
 F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.GenerateResource.Cache
 F:\DHSPKT_L\N3HKI\HeQTCSDL\github\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
 >>>>>>> LamHua
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
+D:\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources

@@ -19,5 +19,6 @@ namespace DAL
         public Nullable<double> amount { get; set; }
         public string status { get; set; }
         public string payment { get; set; }
+        public Nullable<System.DateTime> create_date { get; set; }
     }
 }

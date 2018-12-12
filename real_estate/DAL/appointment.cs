@@ -21,6 +21,5 @@ namespace DAL
         public Nullable<System.DateTime> appointment_date { get; set; }
     
         public virtual customer customer { get; set; }
-        public virtual customer customer1 { get; set; }
     }
 }

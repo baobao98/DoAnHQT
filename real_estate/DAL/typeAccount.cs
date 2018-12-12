@@ -18,7 +18,6 @@ namespace DAL
         public typeAccount()
         {
             this.accounts = new HashSet<account>();
-            this.accounts1 = new HashSet<account>();
         }
     
         public int id { get; set; }
@@ -26,7 +25,5 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<account> accounts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<account> accounts1 { get; set; }
     }
 }

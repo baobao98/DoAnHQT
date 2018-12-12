@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="RealEstateEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="account">
     <Key>
       <PropertyRef Name="id" />
@@ -153,10 +153,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-<<<<<<< HEAD
-  <Association Name="FK__appointme__id_cu__5BE2A6F2">
-=======
-  <Association Name="FK__appointme__id_cu__34C8D9D1">
+  <Association Name="FK__appointme__id_cu__25869641">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -168,24 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__appointme__id_cu__7D439ABD">
->>>>>>> LamHua
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="customer">
-        <PropertyRef Name="id_cus" />
-      </Principal>
-      <Dependent Role="appointment">
-        <PropertyRef Name="id_cus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-<<<<<<< HEAD
-  <Association Name="FK__area__id_town_re__5CD6CB2B">
-=======
-  <Association Name="FK__area__id_town_re__35BCFE0A">
->>>>>>> LamHua
+  <Association Name="FK__area__id_town_re__1CF15040">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="area" Type="Self.area" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,39 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-<<<<<<< HEAD
-  <Association Name="FK__district__id_are__5DCAEF64">
-    <End Role="area" Type="Self.area" Multiplicity="0..1" />
-    <End Role="district" Type="Self.district" Multiplicity="*" />
-=======
-  <Association Name="FK__area__id_town_re__7E37BEF6">
-    <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
-    <End Role="area" Type="Self.area" Multiplicity="*" />
->>>>>>> LamHua
-    <ReferentialConstraint>
-      <Principal Role="townRegion">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="area">
-        <PropertyRef Name="id_town_region" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__district__id_are__36B12243">
-    <End Role="area" Type="Self.area" Multiplicity="0..1" />
-    <End Role="district" Type="Self.district" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="area">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="district">
-        <PropertyRef Name="id_area" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-<<<<<<< HEAD
-=======
-  <Association Name="FK__district__id_are__7F2BE32F">
+  <Association Name="FK__district__id_are__1FCDBCEB">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="district" Type="Self.district" Multiplicity="*" />
     <ReferentialConstraint>
@@ -253,7 +201,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
->>>>>>> LamHua
   <Association Name="FK__property__id_are__33D4B598">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
@@ -302,23 +249,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-<<<<<<< HEAD
-  <Association Name="FK__trannsact__id_cu__6477ECF3">
-=======
-  <Association Name="FK__trannsact__id_cu__00200768">
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-    <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="customer">
-        <PropertyRef Name="id_cus" />
-      </Principal>
-      <Dependent Role="trannsaction">
-        <PropertyRef Name="id_cus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__trannsact__id_cu__3D5E1FD2">
->>>>>>> LamHua
+  <Association Name="FK__trannsact__id_cu__3A81B327">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -438,6 +369,7 @@
     <Parameter Name="dateOfIssue" Type="date" Mode="In" />
     <Parameter Name="information" Type="text" Mode="In" />
   </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="fnXacNhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
     <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="pass" Type="varchar(max)" Mode="In" />
@@ -451,10 +383,6 @@
   <Function Name="getCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_cus" Type="varchar" Mode="In" />
   </Function>
-<<<<<<< HEAD
-=======
-  <Function Name="getEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
->>>>>>> LamHua
   <Function Name="getInforTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_cus" Type="varchar" Mode="In" />
     <Parameter Name="id_prop" Type="varchar" Mode="In" />
@@ -464,21 +392,48 @@
     <Parameter Name="id_prop" Type="varchar" Mode="In" />
   </Function>
   <Function Name="getTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-<<<<<<< HEAD
+  <Function Name="insertTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_prop" Type="varchar" Mode="In" />
+    <Parameter Name="id_cus" Type="varchar" Mode="In" />
+    <Parameter Name="amount" Type="float" Mode="In" />
+    <Parameter Name="payment" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="SearchByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name_cus" Type="varchar" Mode="In" />
   </Function>
-=======
->>>>>>> LamHua
   <Function Name="searchEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
   <Function Name="sp_checktaikhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
     <Parameter Name="pass" Type="varchar(max)" Mode="In" />
   </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
   <Function Name="sp_DeleteProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_InsertProperty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_real_estate_type" Type="int" Mode="In" />
@@ -499,6 +454,11 @@
     <Parameter Name="amount" Type="float" Mode="In" />
     <Parameter Name="status" Type="varchar" Mode="In" />
     <Parameter Name="payment" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_searchCusTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_cus" Type="varchar" Mode="In" />
@@ -522,6 +482,7 @@
     <Parameter Name="name" Type="nvarchar" Mode="In" />
     <Parameter Name="avatar" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="spDelTypeAcc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
   </Function>
@@ -552,20 +513,14 @@
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
   </Function>
-<<<<<<< HEAD
-  <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="id_prop" Type="varchar" Mode="In" />
-    <Parameter Name="phone" Type="varchar" Mode="In" />
-=======
   <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
     <Parameter Name="Type" Type="varchar" Mode="In" />
->>>>>>> LamHua
   </Function>
   <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_prop" Type="varchar" Mode="In" />
     <Parameter Name="phone" Type="varchar" Mode="In" />
   </Function>
-  <EntityContainer Name="RealEstateEntityStoreContainer">
+  <EntityContainer Name="RealEstateModelStoreContainer">
     <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
@@ -584,39 +539,15 @@
       <End Role="typeAccount" EntitySet="typeAccount" />
       <End Role="account" EntitySet="account" />
     </AssociationSet>
-<<<<<<< HEAD
-    <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="Self.FK__appointme__id_cu__5BE2A6F2">
+    <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
       <End Role="customer" EntitySet="customer" />
       <End Role="appointment" EntitySet="appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__5CD6CB2B" Association="Self.FK__area__id_town_re__5CD6CB2B">
+    <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="area" EntitySet="area" />
     </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="Self.FK__district__id_are__5DCAEF64">
-=======
-    <AssociationSet Name="FK__appointme__id_cu__34C8D9D1" Association="Self.FK__appointme__id_cu__34C8D9D1">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="appointment" EntitySet="appointment" />
-    </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__7D439ABD" Association="Self.FK__appointme__id_cu__7D439ABD">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="appointment" EntitySet="appointment" />
-    </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__35BCFE0A" Association="Self.FK__area__id_town_re__35BCFE0A">
-      <End Role="townRegion" EntitySet="townRegion" />
-      <End Role="area" EntitySet="area" />
-    </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__7E37BEF6" Association="Self.FK__area__id_town_re__7E37BEF6">
-      <End Role="townRegion" EntitySet="townRegion" />
-      <End Role="area" EntitySet="area" />
-    </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__36B12243" Association="Self.FK__district__id_are__36B12243">
-      <End Role="area" EntitySet="area" />
-      <End Role="district" EntitySet="district" />
-    </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__7F2BE32F" Association="Self.FK__district__id_are__7F2BE32F">
->>>>>>> LamHua
+    <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
       <End Role="area" EntitySet="area" />
       <End Role="district" EntitySet="district" />
     </AssociationSet>
@@ -640,15 +571,7 @@
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-<<<<<<< HEAD
-    <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="Self.FK__trannsact__id_cu__6477ECF3">
-=======
-    <AssociationSet Name="FK__trannsact__id_cu__00200768" Association="Self.FK__trannsact__id_cu__00200768">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="trannsaction" EntitySet="trannsaction" />
-    </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__3D5E1FD2" Association="Self.FK__trannsact__id_cu__3D5E1FD2">
->>>>>>> LamHua
+    <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
       <End Role="customer" EntitySet="customer" />
       <End Role="trannsaction" EntitySet="trannsaction" />
     </AssociationSet>

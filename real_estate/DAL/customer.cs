@@ -18,9 +18,7 @@ namespace DAL
         public customer()
         {
             this.appointments = new HashSet<appointment>();
-            this.appointments1 = new HashSet<appointment>();
             this.trannsactions = new HashSet<trannsaction>();
-            this.trannsactions1 = new HashSet<trannsaction>();
         }
     
         public string id_cus { get; set; }
@@ -33,10 +31,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<appointment> appointments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<appointment> appointments1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trannsaction> trannsactions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<trannsaction> trannsactions1 { get; set; }
     }
 }
