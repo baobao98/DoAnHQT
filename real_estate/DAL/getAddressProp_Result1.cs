@@ -10,17 +10,12 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class getAddressProp_Result1
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
-        public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-        public string img { get; set; }
-    
-        public virtual property property { get; set; }
+        public byte[] avatar { get; set; }
+        public string name_district { get; set; }
+        public string name_area { get; set; }
+        public string name_town { get; set; }
     }
 }

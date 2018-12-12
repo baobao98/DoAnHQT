@@ -10,17 +10,15 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class advertisement
+    public partial class searchEmployee_Result3
     {
-        public string id_ad { get; set; }
-        public string name_ad { get; set; }
-        public string information { get; set; }
-        public string discount { get; set; }
-        public string prop { get; set; }
-        public string img { get; set; }
-    
-        public virtual property property { get; set; }
+        public string id_emp { get; set; }
+        public string name_emp { get; set; }
+        public string email_emp { get; set; }
+        public string phone_emp { get; set; }
+        public Nullable<System.DateTime> birthday { get; set; }
+        public Nullable<System.DateTime> create_date { get; set; }
+        public string account { get; set; }
     }
 }

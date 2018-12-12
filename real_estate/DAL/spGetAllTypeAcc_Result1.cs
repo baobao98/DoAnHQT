@@ -11,10 +11,9 @@ namespace DAL
 {
     using System;
     
-    public partial class CustomerVip_Result2
+    public partial class spGetAllTypeAcc_Result1
     {
-        public string id_cus { get; set; }
-        public string name_cus { get; set; }
-        public Nullable<double> amount { get; set; }
+        public int id { get; set; }
+        public string NameOfTypeAcc { get; set; }
     }
 }

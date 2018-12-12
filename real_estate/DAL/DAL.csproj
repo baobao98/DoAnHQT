@@ -95,19 +95,22 @@
     <Compile Include="CustomerCreate_Result1.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerCreate_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomerVip_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerVip_Result1.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerVip_Result2.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="district.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="employee.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAddressProp_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAddressProp_Result1.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="GetAllCustomer_Result.cs">
@@ -119,6 +122,15 @@
     <Compile Include="GetAllCustomer_Result2.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetAllCustomer_Result3.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllProp_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getAllProp_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="getContact_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -126,6 +138,15 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getContact_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getContact_Result3.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getCustomer_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getCustomer_Result1.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getInforTrans_Result.cs">
@@ -137,6 +158,9 @@
     <Compile Include="getInforTrans_Result2.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getInforTrans_Result3.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="getProject_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -144,6 +168,9 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getProject_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getProject_Result3.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getProperty_Result.cs">
@@ -155,6 +182,9 @@
     <Compile Include="getProperty_Result2.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="getProperty_Result3.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="getTransaction_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -162,6 +192,9 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="getTransaction_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getTransaction_Result3.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="project.cs">
@@ -185,6 +218,9 @@
     <Compile Include="SearchByName_Result1.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="SearchByName_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="SearchCustomer_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -197,6 +233,27 @@
     <Compile Include="searchEmployee_Result2.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="searchEmployee_Result3.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetAllTypeAcc_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetAllTypeAcc_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetloaiTK_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetloaiTK_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_searchCusTrans_Result.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_searchCusTrans_Result1.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_searchLocationProperty_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
@@ -204,6 +261,9 @@
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_searchLocationProperty_Result2.cs">
+      <DependentUpon>BDSEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_searchLocationProperty_Result3.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="townRegion.cs">

@@ -67,6 +67,31 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addEmployee", nameParameter, emailParameter, phoneParameter, birthdayParameter, accParameter);
         }
     
+        public virtual int addProject(string name_project, string address, string license_number, Nullable<System.DateTime> dateOfIssue, string information)
+        {
+            var name_projectParameter = name_project != null ?
+                new ObjectParameter("name_project", name_project) :
+                new ObjectParameter("name_project", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var license_numberParameter = license_number != null ?
+                new ObjectParameter("license_number", license_number) :
+                new ObjectParameter("license_number", typeof(string));
+    
+            var dateOfIssueParameter = dateOfIssue.HasValue ?
+                new ObjectParameter("dateOfIssue", dateOfIssue) :
+                new ObjectParameter("dateOfIssue", typeof(System.DateTime));
+    
+            var informationParameter = information != null ?
+                new ObjectParameter("information", information) :
+                new ObjectParameter("information", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addProject", name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
+        }
+    
         public virtual ObjectResult<appointment> appo_GetAllAppo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo");
@@ -77,7 +102,7 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("appo_GetAllAppo", mergeOption);
         }
     
-        public virtual int AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
+        public virtual ObjectResult<appointment> AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
         {
             var descriptionParameter = description != null ?
                 new ObjectParameter("description", description) :
@@ -95,7 +120,28 @@ namespace DAL
                 new ObjectParameter("appointment_date", appointment_date) :
                 new ObjectParameter("appointment_date", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AppoCreate", descriptionParameter, statusParameter, id_cusParameter, appointment_dateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("AppoCreate", descriptionParameter, statusParameter, id_cusParameter, appointment_dateParameter);
+        }
+    
+        public virtual ObjectResult<appointment> AppoCreate(string description, string status, string id_cus, Nullable<System.DateTime> appointment_date, MergeOption mergeOption)
+        {
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var appointment_dateParameter = appointment_date.HasValue ?
+                new ObjectParameter("appointment_date", appointment_date) :
+                new ObjectParameter("appointment_date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<appointment>("AppoCreate", mergeOption, descriptionParameter, statusParameter, id_cusParameter, appointment_dateParameter);
         }
     
         public virtual int AppointmentUpdate(Nullable<int> id, string description, string status, string id_cus, Nullable<System.DateTime> appointment_date)
@@ -152,7 +198,7 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("cusp_CustomerUpdate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
         }
     
-        public virtual ObjectResult<customer> CustomerCreate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date)
+        public virtual ObjectResult<CustomerCreate_Result2> CustomerCreate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date)
         {
             var idParameter = id != null ?
                 new ObjectParameter("id", id) :
@@ -178,36 +224,7 @@ namespace DAL
                 new ObjectParameter("create_date", create_date) :
                 new ObjectParameter("create_date", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerCreate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
-        }
-    
-        public virtual ObjectResult<customer> CustomerCreate(string id, string name_cus, string email_cus, string phone_cus, Nullable<System.DateTime> birthday, Nullable<System.DateTime> create_date, MergeOption mergeOption)
-        {
-            var idParameter = id != null ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(string));
-    
-            var name_cusParameter = name_cus != null ?
-                new ObjectParameter("name_cus", name_cus) :
-                new ObjectParameter("name_cus", typeof(string));
-    
-            var email_cusParameter = email_cus != null ?
-                new ObjectParameter("email_cus", email_cus) :
-                new ObjectParameter("email_cus", typeof(string));
-    
-            var phone_cusParameter = phone_cus != null ?
-                new ObjectParameter("phone_cus", phone_cus) :
-                new ObjectParameter("phone_cus", typeof(string));
-    
-            var birthdayParameter = birthday.HasValue ?
-                new ObjectParameter("birthday", birthday) :
-                new ObjectParameter("birthday", typeof(System.DateTime));
-    
-            var create_dateParameter = create_date.HasValue ?
-                new ObjectParameter("create_date", create_date) :
-                new ObjectParameter("create_date", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("CustomerCreate", mergeOption, idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustomerCreate_Result2>("CustomerCreate", idParameter, name_cusParameter, email_cusParameter, phone_cusParameter, birthdayParameter, create_dateParameter);
         }
     
         public virtual int CustomerDelete(string id)
@@ -305,6 +322,15 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editProject", idParameter, name_projectParameter, addressParameter, license_numberParameter, dateOfIssueParameter, informationParameter);
         }
     
+        public virtual ObjectResult<getAddressProp_Result1> getAddressProp(string id_prop)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAddressProp_Result1>("getAddressProp", id_propParameter);
+        }
+    
         public virtual ObjectResult<customer> GetAllCustomer()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer");
@@ -315,12 +341,35 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("GetAllCustomer", mergeOption);
         }
     
-        public virtual ObjectResult<getContact_Result2> getContact()
+        public virtual ObjectResult<getAllProp_Result1> getAllProp()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getContact_Result2>("getContact");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getAllProp_Result1>("getAllProp");
         }
     
-        public virtual ObjectResult<getInforTrans_Result2> getInforTrans(string id_cus, string id_prop)
+        public virtual ObjectResult<getContact_Result3> getContact()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getContact_Result3>("getContact");
+        }
+    
+        public virtual ObjectResult<customer> getCustomer(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("getCustomer", id_cusParameter);
+        }
+    
+        public virtual ObjectResult<customer> getCustomer(string id_cus, MergeOption mergeOption)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("getCustomer", mergeOption, id_cusParameter);
+        }
+    
+        public virtual ObjectResult<getInforTrans_Result3> getInforTrans(string id_cus, string id_prop)
         {
             var id_cusParameter = id_cus != null ?
                 new ObjectParameter("id_cus", id_cus) :
@@ -330,56 +379,48 @@ namespace DAL
                 new ObjectParameter("id_prop", id_prop) :
                 new ObjectParameter("id_prop", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getInforTrans_Result2>("getInforTrans", id_cusParameter, id_propParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getInforTrans_Result3>("getInforTrans", id_cusParameter, id_propParameter);
         }
     
-        public virtual ObjectResult<getProject_Result2> getProject()
+        public virtual ObjectResult<getProject_Result3> getProject()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProject_Result2>("getProject");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProject_Result3>("getProject");
         }
     
-        public virtual ObjectResult<getProperty_Result2> getProperty(string id_prop)
-        {
-            var id_propParameter = id_prop != null ?
-                new ObjectParameter("id_prop", id_prop) :
-                new ObjectParameter("id_prop", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProperty_Result2>("getProperty", id_propParameter);
-        }
-    
-        public virtual ObjectResult<getTransaction_Result2> getTransaction()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTransaction_Result2>("getTransaction");
-        }
-    
-        public virtual int insertTransaction(string id_prop, string id_cus, Nullable<double> amount, string payment)
+        public virtual ObjectResult<getProperty_Result3> getProperty(string id_prop)
         {
             var id_propParameter = id_prop != null ?
                 new ObjectParameter("id_prop", id_prop) :
                 new ObjectParameter("id_prop", typeof(string));
     
-            var id_cusParameter = id_cus != null ?
-                new ObjectParameter("id_cus", id_cus) :
-                new ObjectParameter("id_cus", typeof(string));
-    
-            var amountParameter = amount.HasValue ?
-                new ObjectParameter("amount", amount) :
-                new ObjectParameter("amount", typeof(double));
-    
-            var paymentParameter = payment != null ?
-                new ObjectParameter("payment", payment) :
-                new ObjectParameter("payment", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertTransaction", id_propParameter, id_cusParameter, amountParameter, paymentParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getProperty_Result3>("getProperty", id_propParameter);
         }
     
-        public virtual ObjectResult<searchEmployee_Result2> searchEmployee(string id_name)
+        public virtual ObjectResult<getTransaction_Result3> getTransaction()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTransaction_Result3>("getTransaction");
+        }
+    
+        public virtual ObjectResult<searchEmployee_Result3> searchEmployee(string id_name)
         {
             var id_nameParameter = id_name != null ?
                 new ObjectParameter("id_name", id_name) :
                 new ObjectParameter("id_name", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result2>("searchEmployee", id_nameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result3>("searchEmployee", id_nameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
         }
     
         public virtual int sp_DeleteProperty(string id)
@@ -440,7 +481,41 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertProperty", id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
         }
     
-        public virtual ObjectResult<sp_searchLocationProperty_Result2> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
+        public virtual int sp_InsertTrans(string id_prop, string id_cus, Nullable<double> amount, string status, string payment)
+        {
+            var id_propParameter = id_prop != null ?
+                new ObjectParameter("id_prop", id_prop) :
+                new ObjectParameter("id_prop", typeof(string));
+    
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var statusParameter = status != null ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(string));
+    
+            var paymentParameter = payment != null ?
+                new ObjectParameter("payment", payment) :
+                new ObjectParameter("payment", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
+        }
+    
+        public virtual ObjectResult<sp_searchCusTrans_Result1> sp_searchCusTrans(string id_cus)
+        {
+            var id_cusParameter = id_cus != null ?
+                new ObjectParameter("id_cus", id_cus) :
+                new ObjectParameter("id_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchCusTrans_Result1>("sp_searchCusTrans", id_cusParameter);
+        }
+    
+        public virtual ObjectResult<sp_searchLocationProperty_Result3> sp_searchLocationProperty(Nullable<int> id_town, Nullable<int> id_area, Nullable<int> id_district)
         {
             var id_townParameter = id_town.HasValue ?
                 new ObjectParameter("id_town", id_town) :
@@ -454,7 +529,7 @@ namespace DAL
                 new ObjectParameter("id_district", id_district) :
                 new ObjectParameter("id_district", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchLocationProperty_Result2>("sp_searchLocationProperty", id_townParameter, id_areaParameter, id_districtParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchLocationProperty_Result3>("sp_searchLocationProperty", id_townParameter, id_areaParameter, id_districtParameter);
         }
     
         public virtual int sp_updateProperty(string id_prop, Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
@@ -508,6 +583,107 @@ namespace DAL
                 new ObjectParameter("avatar", typeof(byte[]));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateProperty", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
+        }
+    
+        public virtual int spDelTypeAcc(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelTypeAcc", idParameter);
+        }
+    
+        public virtual ObjectResult<spGetAllTypeAcc_Result1> spGetAllTypeAcc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetAllTypeAcc_Result1>("spGetAllTypeAcc");
+        }
+    
+        public virtual ObjectResult<spGetloaiTK_Result1> spGetloaiTK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spGetloaiTK_Result1>("spGetloaiTK");
+        }
+    
+        public virtual int spInsertAcc(string nameacc, Nullable<int> type, string pass)
+        {
+            var nameaccParameter = nameacc != null ?
+                new ObjectParameter("nameacc", nameacc) :
+                new ObjectParameter("nameacc", typeof(string));
+    
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertAcc", nameaccParameter, typeParameter, passParameter);
+        }
+    
+        public virtual int spInsertContact(string fone, string idprop, string name)
+        {
+            var foneParameter = fone != null ?
+                new ObjectParameter("fone", fone) :
+                new ObjectParameter("fone", typeof(string));
+    
+            var idpropParameter = idprop != null ?
+                new ObjectParameter("idprop", idprop) :
+                new ObjectParameter("idprop", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertContact", foneParameter, idpropParameter, nameParameter);
+        }
+    
+        public virtual int spInsertTypeAcc(string nameoftype)
+        {
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertTypeAcc", nameoftypeParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spLegit(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spLegit", nameParameter, passParameter);
+        }
+    
+        public virtual int spUdateAcc(string name, string pass)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUdateAcc", nameParameter, passParameter);
+        }
+    
+        public virtual int spUpdateTypeAcc(Nullable<int> id, string nameoftype)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var nameoftypeParameter = nameoftype != null ?
+                new ObjectParameter("nameoftype", nameoftype) :
+                new ObjectParameter("nameoftype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateTypeAcc", idParameter, nameoftypeParameter);
         }
     
         public virtual int updateStatusContact(string id_prop, string phone)
