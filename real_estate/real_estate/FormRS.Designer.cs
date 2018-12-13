@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRS));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnDashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSale = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnProject = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -39,9 +39,12 @@
             this.btnCustomer = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEmp = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbNoBell = new System.Windows.Forms.Label();
+            this.picBell = new System.Windows.Forms.PictureBox();
             this.tbExit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dashboard1 = new real_estate.user_control.dashboard();
+            this.dashboard = new real_estate.user_control.dashboard();
+            this.transaction = new real_estate.user_control.Transaction();
             this.realEstate1 = new real_estate.user_control.RealEstate();
             this.projectType1 = new real_estate.user_control.ProjectType();
             this.projects1 = new real_estate.user_control.Projects();
@@ -50,15 +53,17 @@
             this.employee2 = new real_estate.user_control.Employee();
             this.customer2 = new real_estate.user_control.Customer();
             this.bill1 = new real_estate.user_control.Bill();
+            this.bell = new real_estate.user_control.bell();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBell)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel2.Controls.Add(this.bunifuFlatButton2);
+            this.panel2.Controls.Add(this.btnDashboard);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnSale);
             this.panel2.Controls.Add(this.btnProject);
@@ -68,46 +73,47 @@
             this.panel2.Controls.Add(this.btnEmp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(275, 726);
             this.panel2.TabIndex = 1;
             // 
-            // bunifuFlatButton2
+            // btnDashboard
             // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuFlatButton2.ButtonText = "Dashboard";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 60D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 144);
-            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(274, 59);
-            this.bunifuFlatButton2.TabIndex = 11;
-            this.bunifuFlatButton2.Text = "Dashboard";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDashboard.BorderRadius = 0;
+            this.btnDashboard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnDashboard.ButtonText = "Dashboard";
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.DisabledColor = System.Drawing.Color.Gray;
+            this.btnDashboard.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnDashboard.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Iconimage")));
+            this.btnDashboard.Iconimage_right = null;
+            this.btnDashboard.Iconimage_right_Selected = null;
+            this.btnDashboard.Iconimage_Selected = null;
+            this.btnDashboard.IconMarginLeft = 0;
+            this.btnDashboard.IconMarginRight = 0;
+            this.btnDashboard.IconRightVisible = true;
+            this.btnDashboard.IconRightZoom = 0D;
+            this.btnDashboard.IconVisible = true;
+            this.btnDashboard.IconZoom = 60D;
+            this.btnDashboard.IsTab = false;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 144);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnDashboard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnDashboard.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnDashboard.selected = false;
+            this.btnDashboard.Size = new System.Drawing.Size(274, 59);
+            this.btnDashboard.TabIndex = 11;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDashboard.Textcolor = System.Drawing.Color.White;
+            this.btnDashboard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // label3
             // 
@@ -144,7 +150,7 @@
             this.btnSale.IconZoom = 60D;
             this.btnSale.IsTab = false;
             this.btnSale.Location = new System.Drawing.Point(-4, 546);
-            this.btnSale.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSale.Margin = new System.Windows.Forms.Padding(5);
             this.btnSale.Name = "btnSale";
             this.btnSale.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnSale.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -180,7 +186,7 @@
             this.btnProject.IconZoom = 60D;
             this.btnProject.IsTab = false;
             this.btnProject.Location = new System.Drawing.Point(-4, 476);
-            this.btnProject.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnProject.Margin = new System.Windows.Forms.Padding(5);
             this.btnProject.Name = "btnProject";
             this.btnProject.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnProject.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -217,7 +223,7 @@
             this.btnBill.IconZoom = 60D;
             this.btnBill.IsTab = false;
             this.btnBill.Location = new System.Drawing.Point(-4, 407);
-            this.btnBill.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnBill.Margin = new System.Windows.Forms.Padding(5);
             this.btnBill.Name = "btnBill";
             this.btnBill.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnBill.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -255,7 +261,7 @@
             this.btnProduct.IconZoom = 60D;
             this.btnProduct.IsTab = false;
             this.btnProduct.Location = new System.Drawing.Point(-4, 340);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnProduct.Margin = new System.Windows.Forms.Padding(5);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnProduct.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -292,7 +298,7 @@
             this.btnCustomer.IconZoom = 60D;
             this.btnCustomer.IsTab = false;
             this.btnCustomer.Location = new System.Drawing.Point(-4, 270);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnCustomer.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -329,7 +335,7 @@
             this.btnEmp.IconZoom = 60D;
             this.btnEmp.IsTab = false;
             this.btnEmp.Location = new System.Drawing.Point(-4, 204);
-            this.btnEmp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEmp.Margin = new System.Windows.Forms.Padding(5);
             this.btnEmp.Name = "btnEmp";
             this.btnEmp.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnEmp.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -346,13 +352,36 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel3.Controls.Add(this.lbNoBell);
+            this.panel3.Controls.Add(this.picBell);
             this.panel3.Controls.Add(this.tbExit);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(275, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1285, 39);
             this.panel3.TabIndex = 3;
+            // 
+            // lbNoBell
+            // 
+            this.lbNoBell.AutoSize = true;
+            this.lbNoBell.ForeColor = System.Drawing.Color.White;
+            this.lbNoBell.Location = new System.Drawing.Point(1201, 0);
+            this.lbNoBell.Name = "lbNoBell";
+            this.lbNoBell.Size = new System.Drawing.Size(16, 17);
+            this.lbNoBell.TabIndex = 11;
+            this.lbNoBell.Text = "0";
+            // 
+            // picBell
+            // 
+            this.picBell.Image = ((System.Drawing.Image)(resources.GetObject("picBell.Image")));
+            this.picBell.Location = new System.Drawing.Point(1175, 6);
+            this.picBell.Name = "picBell";
+            this.picBell.Size = new System.Drawing.Size(30, 30);
+            this.picBell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBell.TabIndex = 1;
+            this.picBell.TabStop = false;
+            this.picBell.Click += new System.EventHandler(this.picBell_Click);
             // 
             // tbExit
             // 
@@ -370,7 +399,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dashboard1);
+            this.panel1.Controls.Add(this.bell);
+            this.panel1.Controls.Add(this.dashboard);
+            this.panel1.Controls.Add(this.transaction);
             this.panel1.Controls.Add(this.realEstate1);
             this.panel1.Controls.Add(this.projectType1);
             this.panel1.Controls.Add(this.projects1);
@@ -381,23 +412,32 @@
             this.panel1.Controls.Add(this.bill1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(275, 39);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1285, 687);
             this.panel1.TabIndex = 4;
             // 
-            // dashboard1
+            // dashboard
             // 
-            this.dashboard1.Location = new System.Drawing.Point(0, -1);
-            this.dashboard1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(1285, 687);
-            this.dashboard1.TabIndex = 8;
+            this.dashboard.Location = new System.Drawing.Point(0, -1);
+            this.dashboard.Margin = new System.Windows.Forms.Padding(4);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(1285, 687);
+            this.dashboard.TabIndex = 10;
+            // 
+            // transaction
+            // 
+            this.transaction.BackColor = System.Drawing.Color.White;
+            this.transaction.Location = new System.Drawing.Point(0, 0);
+            this.transaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.transaction.Name = "transaction";
+            this.transaction.Size = new System.Drawing.Size(1285, 687);
+            this.transaction.TabIndex = 9;
             // 
             // realEstate1
             // 
             this.realEstate1.Location = new System.Drawing.Point(0, -4);
-            this.realEstate1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.realEstate1.Margin = new System.Windows.Forms.Padding(5);
             this.realEstate1.Name = "realEstate1";
             this.realEstate1.Size = new System.Drawing.Size(1285, 687);
             this.realEstate1.TabIndex = 7;
@@ -405,7 +445,7 @@
             // projectType1
             // 
             this.projectType1.Location = new System.Drawing.Point(0, 0);
-            this.projectType1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.projectType1.Margin = new System.Windows.Forms.Padding(5);
             this.projectType1.Name = "projectType1";
             this.projectType1.Size = new System.Drawing.Size(1285, 687);
             this.projectType1.TabIndex = 6;
@@ -413,7 +453,7 @@
             // projects1
             // 
             this.projects1.Location = new System.Drawing.Point(0, 0);
-            this.projects1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.projects1.Margin = new System.Windows.Forms.Padding(5);
             this.projects1.Name = "projects1";
             this.projects1.Size = new System.Drawing.Size(1285, 687);
             this.projects1.TabIndex = 5;
@@ -421,7 +461,7 @@
             // products1
             // 
             this.products1.Location = new System.Drawing.Point(0, 0);
-            this.products1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.products1.Margin = new System.Windows.Forms.Padding(5);
             this.products1.Name = "products1";
             this.products1.Size = new System.Drawing.Size(1285, 687);
             this.products1.TabIndex = 4;
@@ -429,23 +469,27 @@
             // marketing1
             // 
             this.marketing1.Location = new System.Drawing.Point(0, 0);
-            this.marketing1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.marketing1.Margin = new System.Windows.Forms.Padding(5);
             this.marketing1.Name = "marketing1";
             this.marketing1.Size = new System.Drawing.Size(1285, 687);
             this.marketing1.TabIndex = 3;
             // 
             // employee2
             // 
+            this.employee2.BackColor = System.Drawing.Color.Gainsboro;
+            this.employee2.ForeColor = System.Drawing.Color.Black;
             this.employee2.Location = new System.Drawing.Point(0, 0);
-            this.employee2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.employee2.Margin = new System.Windows.Forms.Padding(5);
             this.employee2.Name = "employee2";
             this.employee2.Size = new System.Drawing.Size(1285, 687);
             this.employee2.TabIndex = 2;
             // 
             // customer2
             // 
+            this.customer2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.customer2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customer2.BackgroundImage")));
             this.customer2.Location = new System.Drawing.Point(0, -1);
-            this.customer2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.customer2.Margin = new System.Windows.Forms.Padding(5);
             this.customer2.Name = "customer2";
             this.customer2.Size = new System.Drawing.Size(1285, 687);
             this.customer2.TabIndex = 1;
@@ -453,10 +497,18 @@
             // bill1
             // 
             this.bill1.Location = new System.Drawing.Point(0, 0);
-            this.bill1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bill1.Margin = new System.Windows.Forms.Padding(5);
             this.bill1.Name = "bill1";
             this.bill1.Size = new System.Drawing.Size(1285, 687);
             this.bill1.TabIndex = 0;
+            // 
+            // bell
+            // 
+            this.bell.Location = new System.Drawing.Point(823, 23);
+            this.bell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bell.Name = "bell";
+            this.bell.Size = new System.Drawing.Size(404, 279);
+            this.bell.TabIndex = 11;
             // 
             // FormRS
             // 
@@ -467,7 +519,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí bất động sản";
@@ -475,6 +527,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBell)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -494,7 +547,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnSale;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private user_control.dashboard dashboard1;
         private user_control.RealEstate realEstate1;
         private user_control.ProjectType projectType1;
         private user_control.Projects projects1;
@@ -503,7 +555,12 @@
         private user_control.Employee employee2;
         private user_control.Customer customer2;
         private user_control.Bill bill1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDashboard;
+        private user_control.Transaction transaction;
+        private user_control.dashboard dashboard;
+        private System.Windows.Forms.Label lbNoBell;
+        private System.Windows.Forms.PictureBox picBell;
+        private user_control.bell bell;
     }
 }
 

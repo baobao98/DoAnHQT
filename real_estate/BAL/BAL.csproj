@@ -62,6 +62,7 @@
     <Compile Include="BALNV.cs" />
     <Compile Include="BALPROJ.cs" />
     <Compile Include="BALRealEstate.cs" />
+    <Compile Include="BALTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -528,7 +528,7 @@ namespace real_estate.user_control
             int idArea;
             int.TryParse(cbSearchArea.SelectedValue.ToString(), out idArea);
             int idDistrict;
-            int.TryParse(cbSearchDistrict.SelectedValue.ToString(), out idDistrict);
+             int.TryParse(cbSearchDistrict.SelectedValue.ToString(), out idDistrict);
             var res = prop.searchPropertyByPlace(idTown, idArea, idDistrict);
             dgvRealEstate.DataSource = res;
         }

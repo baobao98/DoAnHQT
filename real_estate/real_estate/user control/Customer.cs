@@ -26,7 +26,11 @@ namespace real_estate.user_control
         }
         void ShowCustomer()
         {
-            dataGridView.DataSource = cus.GetCustomer();
+            try
+            {
+                dataGridView.DataSource = cus.GetCustomer();
+            }
+            catch (Exception ex) { }
             //
         }
         private void btnAdd_Click(object sender, EventArgs e)
