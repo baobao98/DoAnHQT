@@ -330,22 +330,18 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getContact_Result>("getContact");
         }
     
-        public virtual ObjectResult<customer> getCustomer(string id_cus)
+        public virtual ObjectResult<getCustomer_Result> getCustomer(string id_cus)
         {
             var id_cusParameter = id_cus != null ?
                 new ObjectParameter("id_cus", id_cus) :
                 new ObjectParameter("id_cus", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("getCustomer", id_cusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getCustomer_Result>("getCustomer", id_cusParameter);
         }
     
-        public virtual ObjectResult<customer> getCustomer(string id_cus, MergeOption mergeOption)
+        public virtual ObjectResult<getEmployee_Result> getEmployee()
         {
-            var id_cusParameter = id_cus != null ?
-                new ObjectParameter("id_cus", id_cus) :
-                new ObjectParameter("id_cus", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("getCustomer", mergeOption, id_cusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployee_Result>("getEmployee");
         }
     
         public virtual ObjectResult<getInforTrans_Result> getInforTrans(string id_cus, string id_prop)
@@ -380,6 +376,24 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getTransaction_Result>("getTransaction");
         }
     
+        public virtual ObjectResult<customer> SearchByName(string name_cus)
+        {
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", name_cusParameter);
+        }
+    
+        public virtual ObjectResult<customer> SearchByName(string name_cus, MergeOption mergeOption)
+        {
+            var name_cusParameter = name_cus != null ?
+                new ObjectParameter("name_cus", name_cus) :
+                new ObjectParameter("name_cus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", mergeOption, name_cusParameter);
+        }
+    
         public virtual ObjectResult<searchEmployee_Result> searchEmployee(string id_name)
         {
             var id_nameParameter = id_name != null ?
@@ -387,27 +401,6 @@ namespace DAL
                 new ObjectParameter("id_name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<searchEmployee_Result>("searchEmployee", id_nameParameter);
-        }
-    
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> sp_checktaikhoan(string name, string pass)
@@ -423,27 +416,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_checktaikhoan", nameParameter, passParameter);
         }
     
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
         public virtual int sp_DeleteProperty(string id)
         {
             var idParameter = id != null ?
@@ -453,43 +425,9 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteProperty", idParameter);
         }
     
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_getChartByYear()
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_getChartByYear");
         }
     
         public virtual int sp_InsertProperty(Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
@@ -566,23 +504,6 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertTrans", id_propParameter, id_cusParameter, amountParameter, statusParameter, paymentParameter);
         }
     
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
         public virtual ObjectResult<sp_searchCusTrans_Result> sp_searchCusTrans(string id_cus)
         {
             var id_cusParameter = id_cus != null ?
@@ -624,6 +545,16 @@ namespace DAL
                 new ObjectParameter("id_district", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<property>("sp_searchLocationProperty", mergeOption, id_townParameter, id_areaParameter, id_districtParameter);
+        }
+    
+        public virtual int sp_statisticalByMonth()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_statisticalByMonth");
+        }
+    
+        public virtual int sp_statisticalByYear()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_statisticalByYear");
         }
     
         public virtual int sp_updateProperty(string id_prop, Nullable<int> id_real_estate_type, string id_project, Nullable<int> floor, Nullable<int> room, Nullable<double> price, Nullable<int> id_town_region, Nullable<int> id_area, Nullable<int> id_district, string status, string name, byte[] avatar)
@@ -677,11 +608,6 @@ namespace DAL
                 new ObjectParameter("avatar", typeof(byte[]));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_updateProperty", id_propParameter, id_real_estate_typeParameter, id_projectParameter, floorParameter, roomParameter, priceParameter, id_town_regionParameter, id_areaParameter, id_districtParameter, statusParameter, nameParameter, avatarParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
         public virtual int spDelTypeAcc(Nullable<int> id)
@@ -796,34 +722,6 @@ namespace DAL
                 new ObjectParameter("phone", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateStatusContact", id_propParameter, phoneParameter);
-        }
-    
-        public virtual ObjectResult<customer> SearchByName(string name_cus)
-        {
-            var name_cusParameter = name_cus != null ?
-                new ObjectParameter("name_cus", name_cus) :
-                new ObjectParameter("name_cus", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", name_cusParameter);
-        }
-    
-        public virtual ObjectResult<customer> SearchByName(string name_cus, MergeOption mergeOption)
-        {
-            var name_cusParameter = name_cus != null ?
-                new ObjectParameter("name_cus", name_cus) :
-                new ObjectParameter("name_cus", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<customer>("SearchByName", mergeOption, name_cusParameter);
-        }
-    
-        public virtual ObjectResult<employee> getEmployee()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<employee>("getEmployee");
-        }
-    
-        public virtual ObjectResult<employee> getEmployee(MergeOption mergeOption)
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<employee>("getEmployee", mergeOption);
         }
     }
 }

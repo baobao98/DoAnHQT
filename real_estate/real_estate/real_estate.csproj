@@ -96,11 +96,35 @@
     <Compile Include="FormRS.Designer.cs">
       <DependentUpon>FormRS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\acceptContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\acceptContact.designer.cs">
+      <DependentUpon>acceptContact.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\appointment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\appointment.Designer.cs">
       <DependentUpon>appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAccept_ExportTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAccept_ExportTrans.designer.cs">
+      <DependentUpon>FormAccept_ExportTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProperty.designer.cs">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTransaction.designer.cs">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Mail.cs">
       <SubType>Form</SubType>
@@ -121,11 +145,11 @@
     <Compile Include="SetAppointment.Designer.cs">
       <DependentUpon>SetAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="user control\Bill.cs">
+    <Compile Include="user control\bell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="user control\Bill.Designer.cs">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <Compile Include="user control\bell.designer.cs">
+      <DependentUpon>bell.cs</DependentUpon>
     </Compile>
     <Compile Include="user control\Customer.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +199,12 @@
     <Compile Include="user control\RealEstate.Designer.cs">
       <DependentUpon>RealEstate.cs</DependentUpon>
     </Compile>
+    <Compile Include="user control\Transaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="user control\Transaction.designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,8 +220,20 @@
     <EmbeddedResource Include="FormRS.resx">
       <DependentUpon>FormRS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\acceptContact.resx">
+      <DependentUpon>acceptContact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\appointment.resx">
       <DependentUpon>appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAccept_ExportTrans.resx">
+      <DependentUpon>FormAccept_ExportTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProperty.resx">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTransaction.resx">
+      <DependentUpon>FormTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mail.resx">
       <DependentUpon>Mail.cs</DependentUpon>
@@ -204,8 +246,8 @@
     <EmbeddedResource Include="SetAppointment.resx">
       <DependentUpon>SetAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user control\Bill.resx">
-      <DependentUpon>Bill.cs</DependentUpon>
+    <EmbeddedResource Include="user control\bell.resx">
+      <DependentUpon>bell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user control\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
@@ -230,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user control\RealEstate.resx">
       <DependentUpon>RealEstate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user control\Transaction.resx">
+      <DependentUpon>Transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIP.resx">
       <DependentUpon>VIP.cs</DependentUpon>

@@ -46,7 +46,6 @@ namespace real_estate
 
         private void btnBill_Click(object sender, EventArgs e)
         {
-            bill1.BringToFront();
         }
 
         private void btnProject_Click(object sender, EventArgs e)

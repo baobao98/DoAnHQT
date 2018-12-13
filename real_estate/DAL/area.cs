@@ -18,6 +18,7 @@ namespace DAL
         public area()
         {
             this.districts = new HashSet<district>();
+            this.districts1 = new HashSet<district>();
             this.properties = new HashSet<property>();
         }
     
@@ -26,8 +27,11 @@ namespace DAL
         public Nullable<int> id_town_region { get; set; }
     
         public virtual townRegion townRegion { get; set; }
+        public virtual townRegion townRegion1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<district> districts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<district> districts1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<property> properties { get; set; }
     }

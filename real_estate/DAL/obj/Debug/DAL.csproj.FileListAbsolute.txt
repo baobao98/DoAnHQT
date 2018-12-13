@@ -10,3 +10,15 @@ C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.Cop
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb

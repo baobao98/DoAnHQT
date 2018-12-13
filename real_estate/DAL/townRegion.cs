@@ -18,6 +18,7 @@ namespace DAL
         public townRegion()
         {
             this.areas = new HashSet<area>();
+            this.areas1 = new HashSet<area>();
             this.properties = new HashSet<property>();
         }
     
@@ -26,6 +27,8 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<area> areas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<area> areas1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<property> properties { get; set; }
     }

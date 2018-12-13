@@ -23,6 +23,7 @@ namespace DAL
         public Nullable<System.DateTime> create_date { get; set; }
     
         public virtual customer customer { get; set; }
+        public virtual customer customer1 { get; set; }
         public virtual property property { get; set; }
     }
 }

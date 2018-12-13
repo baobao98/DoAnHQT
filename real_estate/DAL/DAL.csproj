@@ -159,12 +159,6 @@
     <Compile Include="spGetloaiTK_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>BDSEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="sp_searchCusTrans_Result.cs">
       <DependentUpon>BDSEntity.tt</DependentUpon>
     </Compile>

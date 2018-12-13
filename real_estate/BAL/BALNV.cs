@@ -10,7 +10,7 @@ namespace BAL
     public class BALNV
     {
         RealEstateEntities dbs = new RealEstateEntities();
-        public System.Data.Entity.Core.Objects.ObjectResult<employee> getEmployees()
+        public System.Data.Entity.Core.Objects.ObjectResult<getEmployee_Result> getEmployees()
         {
             return dbs.getEmployee();
         }

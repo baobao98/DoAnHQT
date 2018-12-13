@@ -21,7 +21,7 @@ namespace BAL
         {
             return db.getAllProp().ToList();
         }
-       
+
         public List<townRegion> getTown()
         {
             return prop.getTown();

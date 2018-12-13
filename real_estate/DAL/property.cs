@@ -17,7 +17,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public property()
         {
-            this.advertisements = new HashSet<advertisement>();
             this.trannsactions = new HashSet<trannsaction>();
         }
     
@@ -35,8 +34,6 @@ namespace DAL
         public byte[] avatar { get; set; }
         public string status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<advertisement> advertisements { get; set; }
         public virtual area area { get; set; }
         public virtual district district { get; set; }
         public virtual project project { get; set; }

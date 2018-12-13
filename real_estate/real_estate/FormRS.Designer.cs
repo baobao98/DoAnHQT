@@ -49,7 +49,6 @@
             this.marketing1 = new real_estate.user_control.Marketing();
             this.employee2 = new real_estate.user_control.Employee();
             this.customer2 = new real_estate.user_control.Customer();
-            this.bill1 = new real_estate.user_control.Bill();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -378,7 +377,6 @@
             this.panel1.Controls.Add(this.marketing1);
             this.panel1.Controls.Add(this.employee2);
             this.panel1.Controls.Add(this.customer2);
-            this.panel1.Controls.Add(this.bill1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(275, 39);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -449,14 +447,7 @@
             this.customer2.Name = "customer2";
             this.customer2.Size = new System.Drawing.Size(1285, 687);
             this.customer2.TabIndex = 1;
-            // 
-            // bill1
-            // 
-            this.bill1.Location = new System.Drawing.Point(0, 0);
-            this.bill1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.bill1.Name = "bill1";
-            this.bill1.Size = new System.Drawing.Size(1285, 687);
-            this.bill1.TabIndex = 0;
+           
             // 
             // FormRS
             // 
@@ -502,7 +493,6 @@
         private user_control.Marketing marketing1;
         private user_control.Employee employee2;
         private user_control.Customer customer2;
-        private user_control.Bill bill1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
     }
 }
