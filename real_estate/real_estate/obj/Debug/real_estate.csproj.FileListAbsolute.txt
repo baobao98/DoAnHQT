@@ -143,14 +143,12 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.dll
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\MyLibDummy.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.pdb
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.pdb
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.xml
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\EntityFramework.SqlServer.xml
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojResolveAssemblyReference.cache
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.DangNhap.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.FormRS.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormTransaction.resources
@@ -170,3 +168,8 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.user_con
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.acceptContact.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.CustomerAccept.resources
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.FormProperty.resources
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\BAL.dll.config
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\bin\Debug\DAL.dll.config
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csprojAssemblyReference.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CoreCompileInputs.cache
+D:\Năm 3\He CSDL\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.CopyComplete
