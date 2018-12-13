@@ -15,8 +15,10 @@
     </Key>
     <Property Name="id_ad" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="name_ad" Type="nvarchar" MaxLength="255" />
-    <Property Name="information" Type="text" />
+    <Property Name="information" Type="nvarchar(max)" />
     <Property Name="discount" Type="varchar" MaxLength="10" />
+    <Property Name="prop" Type="varchar" MaxLength="10" />
+    <Property Name="img" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -151,7 +153,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__appointme__id_cu__498EEC8D">
+  <Association Name="FK__appointme__id_cu__25869641">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
     <ReferentialConstraint>
@@ -163,19 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__appointme__id_cu__7E37BEF6">
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="customer">
-        <PropertyRef Name="id_cus" />
-      </Principal>
-      <Dependent Role="appointment">
-        <PropertyRef Name="id_cus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__area__id_town_re__4A8310C6">
+  <Association Name="FK__area__id_town_re__1CF15040">
     <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
     <End Role="area" Type="Self.area" Multiplicity="*" />
     <ReferentialConstraint>
@@ -187,31 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__area__id_town_re__7F2BE32F">
-    <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
-    <End Role="area" Type="Self.area" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="townRegion">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="area">
-        <PropertyRef Name="id_town_region" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__district__id_are__00200768">
-    <End Role="area" Type="Self.area" Multiplicity="0..1" />
-    <End Role="district" Type="Self.district" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="area">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="district">
-        <PropertyRef Name="id_area" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__district__id_are__4B7734FF">
+  <Association Name="FK__district__id_are__1FCDBCEB">
     <End Role="area" Type="Self.area" Multiplicity="0..1" />
     <End Role="district" Type="Self.district" Multiplicity="*" />
     <ReferentialConstraint>
@@ -283,19 +249,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__trannsact__id_cu__06CD04F7">
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
-    <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="customer">
-        <PropertyRef Name="id_cus" />
-      </Principal>
-      <Dependent Role="trannsaction">
-        <PropertyRef Name="id_cus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__trannsact__id_cu__4C6B5938">
+  <Association Name="FK__trannsact__id_cu__3A81B327">
     <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
     <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
@@ -316,6 +270,18 @@
       </Principal>
       <Dependent Role="trannsaction">
         <PropertyRef Name="id_prop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_advertisement_property">
+    <End Role="property" Type="Self.property" Multiplicity="0..1" />
+    <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property">
+        <PropertyRef Name="id_prop" />
+      </Principal>
+      <Dependent Role="advertisement">
+        <PropertyRef Name="prop" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -510,6 +476,9 @@
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="nameoftype" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="TuDongThemMa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="updateStatusContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_prop" Type="varchar" Mode="In" />
     <Parameter Name="phone" Type="varchar" Mode="In" />
@@ -533,27 +502,15 @@
       <End Role="typeAccount" EntitySet="typeAccount" />
       <End Role="account" EntitySet="account" />
     </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__498EEC8D" Association="Self.FK__appointme__id_cu__498EEC8D">
+    <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
       <End Role="customer" EntitySet="customer" />
       <End Role="appointment" EntitySet="appointment" />
     </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__7E37BEF6" Association="Self.FK__appointme__id_cu__7E37BEF6">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="appointment" EntitySet="appointment" />
-    </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__4A8310C6" Association="Self.FK__area__id_town_re__4A8310C6">
+    <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="area" EntitySet="area" />
     </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__7F2BE32F" Association="Self.FK__area__id_town_re__7F2BE32F">
-      <End Role="townRegion" EntitySet="townRegion" />
-      <End Role="area" EntitySet="area" />
-    </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__00200768" Association="Self.FK__district__id_are__00200768">
-      <End Role="area" EntitySet="area" />
-      <End Role="district" EntitySet="district" />
-    </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__4B7734FF" Association="Self.FK__district__id_are__4B7734FF">
+    <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
       <End Role="area" EntitySet="area" />
       <End Role="district" EntitySet="district" />
     </AssociationSet>
@@ -577,17 +534,17 @@
       <End Role="townRegion" EntitySet="townRegion" />
       <End Role="property" EntitySet="property" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__06CD04F7" Association="Self.FK__trannsact__id_cu__06CD04F7">
-      <End Role="customer" EntitySet="customer" />
-      <End Role="trannsaction" EntitySet="trannsaction" />
-    </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__4C6B5938" Association="Self.FK__trannsact__id_cu__4C6B5938">
+    <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
       <End Role="customer" EntitySet="customer" />
       <End Role="trannsaction" EntitySet="trannsaction" />
     </AssociationSet>
     <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="Self.FK__trannsact__id_pr__398D8EEE">
       <End Role="property" EntitySet="property" />
       <End Role="trannsaction" EntitySet="trannsaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_advertisement_property" Association="Self.FK_advertisement_property">
+      <End Role="property" EntitySet="property" />
+      <End Role="advertisement" EntitySet="advertisement" />
     </AssociationSet>
     <AssociationSet Name="FK_property_project" Association="Self.FK_property_project">
       <End Role="project" EntitySet="project" />

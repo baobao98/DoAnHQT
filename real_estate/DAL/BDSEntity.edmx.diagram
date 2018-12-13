@@ -35,6 +35,7 @@
         <AssociationConnector Association="RealEstateModel.FK__property__id_rea__31EC6D26" />
         <AssociationConnector Association="RealEstateModel.FK__property__id_tow__32E0915F" />
         <AssociationConnector Association="RealEstateModel.FK__trannsact__id_pr__398D8EEE" />
+        <AssociationConnector Association="RealEstateModel.FK_advertisement_property" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

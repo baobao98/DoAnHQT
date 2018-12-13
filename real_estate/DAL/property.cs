@@ -18,6 +18,7 @@ namespace DAL
         public property()
         {
             this.trannsactions = new HashSet<trannsaction>();
+            this.advertisements = new HashSet<advertisement>();
         }
     
         public string id_prop { get; set; }
@@ -41,5 +42,7 @@ namespace DAL
         public virtual townRegion townRegion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<trannsaction> trannsactions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<advertisement> advertisements { get; set; }
     }
 }

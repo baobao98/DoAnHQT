@@ -262,6 +262,10 @@
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="phone" Mode="In" Type="String" />
     </FunctionImport>
+    <AssociationSet Name="FK_advertisement_property" Association="RealEstateModel.FK_advertisement_property">
+      <End Role="property" EntitySet="properties" />
+      <End Role="advertisement" EntitySet="advertisements" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="account">
     <Key>
@@ -280,8 +284,11 @@
     </Key>
     <Property Name="id_ad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="property" Relationship="RealEstateModel.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -392,6 +399,7 @@
     <NavigationProperty Name="realEstateType" Relationship="RealEstateModel.FK__property__id_rea__31EC6D26" FromRole="property" ToRole="realEstateType" />
     <NavigationProperty Name="townRegion" Relationship="RealEstateModel.FK__property__id_tow__32E0915F" FromRole="property" ToRole="townRegion" />
     <NavigationProperty Name="trannsactions" Relationship="RealEstateModel.FK__trannsact__id_pr__398D8EEE" FromRole="property" ToRole="trannsaction" />
+    <NavigationProperty Name="advertisements" Relationship="RealEstateModel.FK_advertisement_property" FromRole="property" ToRole="advertisement" />
   </EntityType>
   <EntityType Name="realEstateType">
     <Key>
@@ -787,4 +795,16 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
   </ComplexType>
+  <Association Name="FK_advertisement_property">
+    <End Type="RealEstateModel.property" Role="property" Multiplicity="0..1" />
+    <End Type="RealEstateModel.advertisement" Role="advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="property">
+        <PropertyRef Name="id_prop" />
+      </Principal>
+      <Dependent Role="advertisement">
+        <PropertyRef Name="prop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

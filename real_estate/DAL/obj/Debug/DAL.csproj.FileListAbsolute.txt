@@ -22,3 +22,15 @@ D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
 D:\Năm 3\He CSDL\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
+D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll.config
+D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.dll
+D:\DoAnHQT\real_estate\DAL\bin\Debug\DAL.pdb
+D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.dll
+D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.xml
+D:\DoAnHQT\real_estate\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.dll
+D:\DoAnHQT\real_estate\DAL\obj\Debug\DAL.pdb
