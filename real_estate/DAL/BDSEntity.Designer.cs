@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿// T4 code generation is enabled for model 'C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\DAL\BDSEntity.edmx'. 
-=======
-﻿// T4 code generation is enabled for model 'D:\DBMS\PROJECT\DoAnHQT\real_estate\DAL\BDSEntity.edmx'. 
->>>>>>> Khoa_Lam
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

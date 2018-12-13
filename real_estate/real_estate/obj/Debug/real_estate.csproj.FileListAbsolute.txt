@@ -199,3 +199,9 @@ D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.Cop
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.exe
 D:\DBMS\PROJECT\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.pdb
 >>>>>>> Khoa_Lam
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Appointmentt.resources
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Forms.appointment.resources
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.Mail.resources
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.SetAppointment.resources
+C:\Users\Admin\Documents\GitHub\DoAnHQT\real_estate\real_estate\obj\Debug\real_estate.VIP.resources

@@ -14,6 +14,7 @@ namespace DAL
     public partial class getAllProp_Result
     {
         public string id_prop { get; set; }
+        public string name { get; set; }
         public Nullable<int> id_real_estate_type { get; set; }
         public string id_project { get; set; }
         public Nullable<int> floor { get; set; }
@@ -23,8 +24,7 @@ namespace DAL
         public Nullable<int> id_town_region { get; set; }
         public Nullable<int> id_area { get; set; }
         public Nullable<int> id_district { get; set; }
-        public string status { get; set; }
-        public string name { get; set; }
         public byte[] avatar { get; set; }
+        public string status { get; set; }
     }
 }

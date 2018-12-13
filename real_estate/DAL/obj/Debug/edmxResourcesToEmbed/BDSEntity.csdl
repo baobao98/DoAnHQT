@@ -1,340 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<Schema Namespace="RealEstateEntity" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="accounts" EntityType="RealEstateEntity.account" />
-    <EntitySet Name="advertisements" EntityType="RealEstateEntity.advertisement" />
-    <EntitySet Name="appointments" EntityType="RealEstateEntity.appointment" />
-    <EntitySet Name="areas" EntityType="RealEstateEntity.area" />
-    <EntitySet Name="contacts" EntityType="RealEstateEntity.contact" />
-    <EntitySet Name="customers" EntityType="RealEstateEntity.customer" />
-    <EntitySet Name="districts" EntityType="RealEstateEntity.district" />
-    <EntitySet Name="employees" EntityType="RealEstateEntity.employee" />
-    <EntitySet Name="projects" EntityType="RealEstateEntity.project" />
-    <EntitySet Name="properties" EntityType="RealEstateEntity.property" />
-    <EntitySet Name="realEstateTypes" EntityType="RealEstateEntity.realEstateType" />
-    <EntitySet Name="townRegions" EntityType="RealEstateEntity.townRegion" />
-    <EntitySet Name="trannsactions" EntityType="RealEstateEntity.trannsaction" />
-    <EntitySet Name="typeAccounts" EntityType="RealEstateEntity.typeAccount" />
-    <AssociationSet Name="FK__account__type_ac__145C0A3F" Association="RealEstateEntity.FK__account__type_ac__145C0A3F">
-      <End Role="typeAccount" EntitySet="typeAccounts" />
-      <End Role="account" EntitySet="accounts" />
-    </AssociationSet>
-    <AssociationSet Name="FK__employee__accoun__182C9B23" Association="RealEstateEntity.FK__employee__accoun__182C9B23">
-      <End Role="account" EntitySet="accounts" />
-      <End Role="employee" EntitySet="employees" />
-    </AssociationSet>
-    <AssociationSet Name="FK_advertisement_property" Association="RealEstateEntity.FK_advertisement_property">
-      <End Role="property" EntitySet="properties" />
-      <End Role="advertisement" EntitySet="advertisements" />
-    </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2">
-      <End Role="customer" EntitySet="customers" />
-      <End Role="appointment" EntitySet="appointments" />
-    </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__5CD6CB2B" Association="RealEstateEntity.FK__area__id_town_re__5CD6CB2B">
-      <End Role="townRegion" EntitySet="townRegions" />
-      <End Role="area" EntitySet="areas" />
-    </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="RealEstateEntity.FK__district__id_are__5DCAEF64">
-      <End Role="area" EntitySet="areas" />
-      <End Role="district" EntitySet="districts" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_are__33D4B598" Association="RealEstateEntity.FK__property__id_are__33D4B598">
-      <End Role="area" EntitySet="areas" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="RealEstateEntity.FK__trannsact__id_cu__6477ECF3">
-      <End Role="customer" EntitySet="customers" />
-      <End Role="trannsaction" EntitySet="trannsactions" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_dis__34C8D9D1" Association="RealEstateEntity.FK__property__id_dis__34C8D9D1">
-      <End Role="district" EntitySet="districts" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK_property_project" Association="RealEstateEntity.FK_property_project">
-      <End Role="project" EntitySet="projects" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_rea__31EC6D26" Association="RealEstateEntity.FK__property__id_rea__31EC6D26">
-      <End Role="realEstateType" EntitySet="realEstateTypes" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__property__id_tow__32E0915F" Association="RealEstateEntity.FK__property__id_tow__32E0915F">
-      <End Role="townRegion" EntitySet="townRegions" />
-      <End Role="property" EntitySet="properties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_pr__398D8EEE" Association="RealEstateEntity.FK__trannsact__id_pr__398D8EEE">
-      <End Role="property" EntitySet="properties" />
-      <End Role="trannsaction" EntitySet="trannsactions" />
-    </AssociationSet>
-    <FunctionImport Name="addEmployee">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="email" Mode="In" Type="String" />
-      <Parameter Name="phone" Mode="In" Type="String" />
-      <Parameter Name="birthday" Mode="In" Type="DateTime" />
-      <Parameter Name="acc" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="addProject">
-      <Parameter Name="name_project" Mode="In" Type="String" />
-      <Parameter Name="address" Mode="In" Type="String" />
-      <Parameter Name="license_number" Mode="In" Type="String" />
-      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-      <Parameter Name="information" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="appo_GetAllAppo" ReturnType="Collection(RealEstateEntity.appo_GetAllAppo_Result)" />
-    <FunctionImport Name="AppoCreate">
-      <Parameter Name="description" Mode="In" Type="String" />
-      <Parameter Name="status" Mode="In" Type="String" />
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-      <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="AppointmentUpdate">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-      <Parameter Name="description" Mode="In" Type="String" />
-      <Parameter Name="status" Mode="In" Type="String" />
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-      <Parameter Name="appointment_date" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="cusp_CustomerUpdate">
-      <Parameter Name="id" Mode="In" Type="String" />
-      <Parameter Name="name_cus" Mode="In" Type="String" />
-      <Parameter Name="email_cus" Mode="In" Type="String" />
-      <Parameter Name="phone_cus" Mode="In" Type="String" />
-      <Parameter Name="birthday" Mode="In" Type="DateTime" />
-      <Parameter Name="create_date" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="CustomerCreate" ReturnType="Collection(RealEstateEntity.CustomerCreate_Result)">
-      <Parameter Name="id" Mode="In" Type="String" />
-      <Parameter Name="name_cus" Mode="In" Type="String" />
-      <Parameter Name="email_cus" Mode="In" Type="String" />
-      <Parameter Name="phone_cus" Mode="In" Type="String" />
-      <Parameter Name="birthday" Mode="In" Type="DateTime" />
-      <Parameter Name="create_date" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="CustomerDelete">
-      <Parameter Name="id" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="CustomerVip" ReturnType="Collection(RealEstateEntity.CustomerVip_Result)" />
-    <FunctionImport Name="DeleteAppo">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="deleteEmployee">
-      <Parameter Name="id" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="deleteProject">
-      <Parameter Name="id" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="editEmployee">
-      <Parameter Name="id" Mode="In" Type="String" />
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="email" Mode="In" Type="String" />
-      <Parameter Name="phone" Mode="In" Type="String" />
-      <Parameter Name="birthday" Mode="In" Type="DateTime" />
-    </FunctionImport>
-    <FunctionImport Name="editProject">
-      <Parameter Name="id" Mode="In" Type="String" />
-      <Parameter Name="name_project" Mode="In" Type="String" />
-      <Parameter Name="address" Mode="In" Type="String" />
-      <Parameter Name="license_number" Mode="In" Type="String" />
-      <Parameter Name="dateOfIssue" Mode="In" Type="DateTime" />
-      <Parameter Name="information" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="getAddressProp" ReturnType="Collection(RealEstateEntity.getAddressProp_Result)">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="GetAllCustomer" ReturnType="Collection(RealEstateEntity.GetAllCustomer_Result)" />
-    <FunctionImport Name="getAllProp" EntitySet="properties" ReturnType="Collection(RealEstateEntity.property)" />
-    <FunctionImport Name="getContact" ReturnType="Collection(RealEstateEntity.getContact_Result)" />
-    <FunctionImport Name="getCustomer" ReturnType="Collection(RealEstateEntity.getCustomer_Result)">
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="getInforTrans" ReturnType="Collection(RealEstateEntity.getInforTrans_Result)">
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="getProject" ReturnType="Collection(RealEstateEntity.getProject_Result)" />
-    <FunctionImport Name="getProperty" ReturnType="Collection(RealEstateEntity.getProperty_Result)">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateEntity.getTransaction_Result)" />
-    <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateEntity.searchEmployee_Result)">
-      <Parameter Name="id_name" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_checktaikhoan" ReturnType="Collection(Int32)">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_DeleteProperty">
-      <Parameter Name="Id" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_InsertProperty">
-      <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
-      <Parameter Name="id_project" Mode="In" Type="String" />
-      <Parameter Name="floor" Mode="In" Type="Int32" />
-      <Parameter Name="room" Mode="In" Type="Int32" />
-      <Parameter Name="price" Mode="In" Type="Double" />
-      <Parameter Name="id_town_region" Mode="In" Type="Int32" />
-      <Parameter Name="id_area" Mode="In" Type="Int32" />
-      <Parameter Name="id_district" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="String" />
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="avatar" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_InsertTrans">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-      <Parameter Name="amount" Mode="In" Type="Double" />
-      <Parameter Name="status" Mode="In" Type="String" />
-      <Parameter Name="payment" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateEntity.sp_searchCusTrans_Result)">
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_searchLocationProperty" EntitySet="properties" ReturnType="Collection(RealEstateEntity.property)">
-      <Parameter Name="id_town" Mode="In" Type="Int32" />
-      <Parameter Name="id_area" Mode="In" Type="Int32" />
-      <Parameter Name="id_district" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_updateProperty">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-      <Parameter Name="id_real_estate_type" Mode="In" Type="Int32" />
-      <Parameter Name="id_project" Mode="In" Type="String" />
-      <Parameter Name="floor" Mode="In" Type="Int32" />
-      <Parameter Name="room" Mode="In" Type="Int32" />
-      <Parameter Name="price" Mode="In" Type="Double" />
-      <Parameter Name="id_town_region" Mode="In" Type="Int32" />
-      <Parameter Name="id_area" Mode="In" Type="Int32" />
-      <Parameter Name="id_district" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="String" />
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="avatar" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="spDelTypeAcc">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="spGetAllTypeAcc" ReturnType="Collection(RealEstateEntity.spGetAllTypeAcc_Result)" />
-    <FunctionImport Name="spGetloaiTK" ReturnType="Collection(RealEstateEntity.spGetloaiTK_Result)" />
-    <FunctionImport Name="spInsertAcc">
-      <Parameter Name="nameacc" Mode="In" Type="String" />
-      <Parameter Name="type" Mode="In" Type="Int32" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="spInsertContact">
-      <Parameter Name="fone" Mode="In" Type="String" />
-      <Parameter Name="idprop" Mode="In" Type="String" />
-      <Parameter Name="name" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="spInsertTypeAcc">
-      <Parameter Name="nameoftype" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="spLegit" ReturnType="Collection(Int32)">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="spUdateAcc">
-      <Parameter Name="name" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="spUpdateTypeAcc">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-      <Parameter Name="nameoftype" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="updateStatusContact">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-      <Parameter Name="phone" Mode="In" Type="String" />
-    </FunctionImport>
-  </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="sp_InsertProperty1_Result">
-    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
-    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
-    <Property Type="Int32" Name="floor" Nullable="true" />
-    <Property Type="Int32" Name="room" Nullable="true" />
-    <Property Type="Double" Name="price" Nullable="true" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="id_town_region" Nullable="true" />
-    <Property Type="Int32" Name="id_area" Nullable="true" />
-    <Property Type="Int32" Name="id_district" Nullable="true" />
-    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
-    <Property Type="Binary" Name="avatar" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_searchLocationProperty_Result">
-    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
-    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
-    <Property Type="Int32" Name="floor" Nullable="true" />
-    <Property Type="Int32" Name="room" Nullable="true" />
-    <Property Type="Double" Name="price" Nullable="true" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="id_town_region" Nullable="true" />
-    <Property Type="Int32" Name="id_area" Nullable="true" />
-    <Property Type="Int32" Name="id_district" Nullable="true" />
-    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
-    <Property Type="Binary" Name="avatar" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="getAllProp_Result">
-    <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
-    <Property Type="String" Name="id_project" Nullable="true" MaxLength="10" />
-    <Property Type="Int32" Name="floor" Nullable="true" />
-    <Property Type="Int32" Name="room" Nullable="true" />
-    <Property Type="Double" Name="price" Nullable="true" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="id_town_region" Nullable="true" />
-    <Property Type="Int32" Name="id_area" Nullable="true" />
-    <Property Type="Int32" Name="id_district" Nullable="true" />
-    <Property Type="String" Name="status" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
-    <Property Type="Binary" Name="avatar" Nullable="true" />
-  </ComplexType>
-=======
 <Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
->>>>>>> Khoa_Lam
   <EntityType Name="account">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="nameAcc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="type_ac" Type="Int32" />
     <Property Name="pass" Type="Binary" MaxLength="Max" FixedLength="false" />
-<<<<<<< HEAD
-    <NavigationProperty Name="typeAccount" Relationship="RealEstateEntity.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
-    <NavigationProperty Name="employees" Relationship="RealEstateEntity.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
-=======
     <NavigationProperty Name="typeAccount" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="account" ToRole="typeAccount" />
     <NavigationProperty Name="employees" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="account" ToRole="employee" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="advertisement">
     <Key>
       <PropertyRef Name="id_ad" />
     </Key>
-    <Property Name="id_ad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_ad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name_ad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-<<<<<<< HEAD
-    <NavigationProperty Name="property" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
-=======
     <NavigationProperty Name="property" Relationship="Self.FK_advertisement_property" FromRole="advertisement" ToRole="property" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="appointment">
     <Key>
@@ -345,11 +32,7 @@
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="appointment_date" Type="DateTime" Precision="3" />
-<<<<<<< HEAD
-    <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2" FromRole="appointment" ToRole="customer" />
-=======
-    <NavigationProperty Name="customer" Relationship="Self.FK__appointme__id_cu__25869641" FromRole="appointment" ToRole="customer" />
->>>>>>> Khoa_Lam
+    <NavigationProperty Name="customer" Relationship="Self.FK__appointme__id_cu__5BE2A6F2" FromRole="appointment" ToRole="customer" />
   </EntityType>
   <EntityType Name="area">
     <Key>
@@ -358,9 +41,9 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="id_town_region" Type="Int32" />
-    <NavigationProperty Name="townRegion" Relationship="RealEstateEntity.FK__area__id_town_re__5CD6CB2B" FromRole="area" ToRole="townRegion" />
-    <NavigationProperty Name="districts" Relationship="RealEstateEntity.FK__district__id_are__5DCAEF64" FromRole="area" ToRole="district" />
-    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_are__33D4B598" FromRole="area" ToRole="property" />
+    <NavigationProperty Name="townRegion" Relationship="Self.FK__area__id_town_re__5CD6CB2B" FromRole="area" ToRole="townRegion" />
+    <NavigationProperty Name="districts" Relationship="Self.FK__district__id_are__5DCAEF64" FromRole="area" ToRole="district" />
+    <NavigationProperty Name="properties" Relationship="Self.FK__property__id_are__33D4B598" FromRole="area" ToRole="property" />
   </EntityType>
   <EntityType Name="contact">
     <Key>
@@ -376,14 +59,14 @@
     <Key>
       <PropertyRef Name="id_cus" />
     </Key>
-    <Property Name="id_cus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name_cus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="email_cus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="phone_cus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="birthday" Type="DateTime" Precision="0" />
     <Property Name="create_date" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="appointments" Relationship="RealEstateEntity.FK__appointme__id_cu__5BE2A6F2" FromRole="customer" ToRole="appointment" />
-    <NavigationProperty Name="trannsactions" Relationship="RealEstateEntity.FK__trannsact__id_cu__6477ECF3" FromRole="customer" ToRole="trannsaction" />
+    <NavigationProperty Name="appointments" Relationship="Self.FK__appointme__id_cu__5BE2A6F2" FromRole="customer" ToRole="appointment" />
+    <NavigationProperty Name="trannsactions" Relationship="Self.FK__trannsact__id_cu__6477ECF3" FromRole="customer" ToRole="trannsaction" />
   </EntityType>
   <EntityType Name="district">
     <Key>
@@ -392,43 +75,39 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="id_area" Type="Int32" />
-    <NavigationProperty Name="area" Relationship="RealEstateEntity.FK__district__id_are__5DCAEF64" FromRole="district" ToRole="area" />
-    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_dis__34C8D9D1" FromRole="district" ToRole="property" />
+    <NavigationProperty Name="area" Relationship="Self.FK__district__id_are__5DCAEF64" FromRole="district" ToRole="area" />
+    <NavigationProperty Name="properties" Relationship="Self.FK__property__id_dis__34C8D9D1" FromRole="district" ToRole="property" />
   </EntityType>
   <EntityType Name="employee">
     <Key>
       <PropertyRef Name="id_emp" />
     </Key>
-    <Property Name="id_emp" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_emp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name_emp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="email_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="phone_emp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="birthday" Type="DateTime" Precision="0" />
     <Property Name="create_date" Type="DateTime" Precision="3" />
     <Property Name="account" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="account1" Relationship="RealEstateEntity.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
+    <NavigationProperty Name="account1" Relationship="Self.FK__employee__accoun__182C9B23" FromRole="employee" ToRole="account" />
   </EntityType>
   <EntityType Name="project">
     <Key>
       <PropertyRef Name="id_proj" />
     </Key>
-    <Property Name="id_proj" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_proj" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name_project" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="license_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="dateOfIssue" Type="DateTime" Precision="0" />
     <Property Name="information" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-<<<<<<< HEAD
-    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK_property_project" FromRole="project" ToRole="property" />
-=======
     <NavigationProperty Name="properties" Relationship="Self.FK_property_project" FromRole="project" ToRole="property" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="property">
     <Key>
       <PropertyRef Name="id_prop" />
     </Key>
-    <Property Name="id_prop" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="id_real_estate_type" Type="Int32" />
     <Property Name="id_project" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -441,15 +120,6 @@
     <Property Name="id_district" Type="Int32" />
     <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-<<<<<<< HEAD
-    <NavigationProperty Name="advertisements" Relationship="RealEstateEntity.FK_advertisement_property" FromRole="property" ToRole="advertisement" />
-    <NavigationProperty Name="area" Relationship="RealEstateEntity.FK__property__id_are__33D4B598" FromRole="property" ToRole="area" />
-    <NavigationProperty Name="district" Relationship="RealEstateEntity.FK__property__id_dis__34C8D9D1" FromRole="property" ToRole="district" />
-    <NavigationProperty Name="project" Relationship="RealEstateEntity.FK_property_project" FromRole="property" ToRole="project" />
-    <NavigationProperty Name="realEstateType" Relationship="RealEstateEntity.FK__property__id_rea__31EC6D26" FromRole="property" ToRole="realEstateType" />
-    <NavigationProperty Name="townRegion" Relationship="RealEstateEntity.FK__property__id_tow__32E0915F" FromRole="property" ToRole="townRegion" />
-    <NavigationProperty Name="trannsactions" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="property" ToRole="trannsaction" />
-=======
     <NavigationProperty Name="advertisements" Relationship="Self.FK_advertisement_property" FromRole="property" ToRole="advertisement" />
     <NavigationProperty Name="area" Relationship="Self.FK__property__id_are__33D4B598" FromRole="property" ToRole="area" />
     <NavigationProperty Name="district" Relationship="Self.FK__property__id_dis__34C8D9D1" FromRole="property" ToRole="district" />
@@ -457,7 +127,6 @@
     <NavigationProperty Name="realEstateType" Relationship="Self.FK__property__id_rea__31EC6D26" FromRole="property" ToRole="realEstateType" />
     <NavigationProperty Name="townRegion" Relationship="Self.FK__property__id_tow__32E0915F" FromRole="property" ToRole="townRegion" />
     <NavigationProperty Name="trannsactions" Relationship="Self.FK__trannsact__id_pr__398D8EEE" FromRole="property" ToRole="trannsaction" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="realEstateType">
     <Key>
@@ -465,11 +134,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-<<<<<<< HEAD
-    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_rea__31EC6D26" FromRole="realEstateType" ToRole="property" />
-=======
     <NavigationProperty Name="properties" Relationship="Self.FK__property__id_rea__31EC6D26" FromRole="realEstateType" ToRole="property" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="townRegion">
     <Key>
@@ -477,27 +142,22 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="areas" Relationship="RealEstateEntity.FK__area__id_town_re__5CD6CB2B" FromRole="townRegion" ToRole="area" />
-    <NavigationProperty Name="properties" Relationship="RealEstateEntity.FK__property__id_tow__32E0915F" FromRole="townRegion" ToRole="property" />
+    <NavigationProperty Name="areas" Relationship="Self.FK__area__id_town_re__5CD6CB2B" FromRole="townRegion" ToRole="area" />
+    <NavigationProperty Name="properties" Relationship="Self.FK__property__id_tow__32E0915F" FromRole="townRegion" ToRole="property" />
   </EntityType>
   <EntityType Name="trannsaction">
     <Key>
       <PropertyRef Name="id_trans" />
     </Key>
-    <Property Name="id_trans" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id_trans" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="id_prop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="id_cus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="amount" Type="Double" />
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="create_date" Type="DateTime" Precision="3" />
-<<<<<<< HEAD
-    <NavigationProperty Name="customer" Relationship="RealEstateEntity.FK__trannsact__id_cu__6477ECF3" FromRole="trannsaction" ToRole="customer" />
-    <NavigationProperty Name="property" Relationship="RealEstateEntity.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
-=======
-    <NavigationProperty Name="customer" Relationship="Self.FK__trannsact__id_cu__3A81B327" FromRole="trannsaction" ToRole="customer" />
+    <NavigationProperty Name="customer" Relationship="Self.FK__trannsact__id_cu__6477ECF3" FromRole="trannsaction" ToRole="customer" />
     <NavigationProperty Name="property" Relationship="Self.FK__trannsact__id_pr__398D8EEE" FromRole="trannsaction" ToRole="property" />
->>>>>>> Khoa_Lam
   </EntityType>
   <EntityType Name="typeAccount">
     <Key>
@@ -505,11 +165,11 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NameOfTypeAcc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="accounts" Relationship="RealEstateEntity.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
+    <NavigationProperty Name="accounts" Relationship="Self.FK__account__type_ac__145C0A3F" FromRole="typeAccount" ToRole="account" />
   </EntityType>
   <Association Name="FK__account__type_ac__145C0A3F">
-    <End Type="RealEstateEntity.typeAccount" Role="typeAccount" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.account" Role="account" Multiplicity="*" />
+    <End Role="typeAccount" Type="Self.typeAccount" Multiplicity="0..1" />
+    <End Role="account" Type="Self.account" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="typeAccount">
         <PropertyRef Name="id" />
@@ -520,8 +180,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__employee__accoun__182C9B23">
-    <End Type="RealEstateEntity.account" Role="account" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.employee" Role="employee" Multiplicity="*" />
+    <End Role="account" Type="Self.account" Multiplicity="0..1" />
+    <End Role="employee" Type="Self.employee" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="account">
         <PropertyRef Name="id" />
@@ -532,13 +192,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_advertisement_property">
-<<<<<<< HEAD
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.advertisement" Role="advertisement" Multiplicity="*" />
-=======
     <End Role="property" Type="Self.property" Multiplicity="0..1" />
     <End Role="advertisement" Type="Self.advertisement" Multiplicity="*" />
->>>>>>> Khoa_Lam
     <ReferentialConstraint>
       <Principal Role="property">
         <PropertyRef Name="id_prop" />
@@ -549,8 +204,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__appointme__id_cu__5BE2A6F2">
-    <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.appointment" Role="appointment" Multiplicity="*" />
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="customer">
         <PropertyRef Name="id_cus" />
@@ -561,8 +216,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__area__id_town_re__5CD6CB2B">
-    <End Type="RealEstateEntity.townRegion" Role="townRegion" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.area" Role="area" Multiplicity="*" />
+    <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+    <End Role="area" Type="Self.area" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="townRegion">
         <PropertyRef Name="id" />
@@ -573,8 +228,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__district__id_are__5DCAEF64">
-    <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.district" Role="district" Multiplicity="*" />
+    <End Role="area" Type="Self.area" Multiplicity="0..1" />
+    <End Role="district" Type="Self.district" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="area">
         <PropertyRef Name="id" />
@@ -585,8 +240,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__property__id_are__33D4B598">
-    <End Type="RealEstateEntity.area" Role="area" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
+    <End Role="area" Type="Self.area" Multiplicity="0..1" />
+    <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="area">
         <PropertyRef Name="id" />
@@ -597,8 +252,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__trannsact__id_cu__6477ECF3">
-    <End Type="RealEstateEntity.customer" Role="customer" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.trannsaction" Role="trannsaction" Multiplicity="*" />
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="customer">
         <PropertyRef Name="id_cus" />
@@ -609,8 +264,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__property__id_dis__34C8D9D1">
-    <End Type="RealEstateEntity.district" Role="district" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
+    <End Role="district" Type="Self.district" Multiplicity="0..1" />
+    <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="district">
         <PropertyRef Name="id" />
@@ -621,13 +276,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_property_project">
-<<<<<<< HEAD
-    <End Type="RealEstateEntity.project" Role="project" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
-=======
     <End Role="project" Type="Self.project" Multiplicity="0..1" />
     <End Role="property" Type="Self.property" Multiplicity="*" />
->>>>>>> Khoa_Lam
     <ReferentialConstraint>
       <Principal Role="project">
         <PropertyRef Name="id_proj" />
@@ -638,8 +288,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__property__id_rea__31EC6D26">
-    <End Type="RealEstateEntity.realEstateType" Role="realEstateType" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
+    <End Role="realEstateType" Type="Self.realEstateType" Multiplicity="0..1" />
+    <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="realEstateType">
         <PropertyRef Name="id" />
@@ -650,8 +300,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__property__id_tow__32E0915F">
-    <End Type="RealEstateEntity.townRegion" Role="townRegion" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="*" />
+    <End Role="townRegion" Type="Self.townRegion" Multiplicity="0..1" />
+    <End Role="property" Type="Self.property" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="townRegion">
         <PropertyRef Name="id" />
@@ -662,8 +312,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__trannsact__id_pr__398D8EEE">
-    <End Type="RealEstateEntity.property" Role="property" Multiplicity="0..1" />
-    <End Type="RealEstateEntity.trannsaction" Role="trannsaction" Multiplicity="*" />
+    <End Role="property" Type="Self.property" Multiplicity="0..1" />
+    <End Role="trannsaction" Type="Self.trannsaction" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="property">
         <PropertyRef Name="id_prop" />
@@ -673,8 +323,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-<<<<<<< HEAD
-=======
   <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="accounts" EntityType="Self.account" />
     <EntitySet Name="advertisements" EntityType="Self.advertisement" />
@@ -702,15 +350,15 @@
       <End Role="property" EntitySet="properties" />
       <End Role="advertisement" EntitySet="advertisements" />
     </AssociationSet>
-    <AssociationSet Name="FK__appointme__id_cu__25869641" Association="Self.FK__appointme__id_cu__25869641">
+    <AssociationSet Name="FK__appointme__id_cu__5BE2A6F2" Association="Self.FK__appointme__id_cu__5BE2A6F2">
       <End Role="customer" EntitySet="customers" />
       <End Role="appointment" EntitySet="appointments" />
     </AssociationSet>
-    <AssociationSet Name="FK__area__id_town_re__1CF15040" Association="Self.FK__area__id_town_re__1CF15040">
+    <AssociationSet Name="FK__area__id_town_re__5CD6CB2B" Association="Self.FK__area__id_town_re__5CD6CB2B">
       <End Role="townRegion" EntitySet="townRegions" />
       <End Role="area" EntitySet="areas" />
     </AssociationSet>
-    <AssociationSet Name="FK__district__id_are__1FCDBCEB" Association="Self.FK__district__id_are__1FCDBCEB">
+    <AssociationSet Name="FK__district__id_are__5DCAEF64" Association="Self.FK__district__id_are__5DCAEF64">
       <End Role="area" EntitySet="areas" />
       <End Role="district" EntitySet="districts" />
     </AssociationSet>
@@ -718,7 +366,7 @@
       <End Role="area" EntitySet="areas" />
       <End Role="property" EntitySet="properties" />
     </AssociationSet>
-    <AssociationSet Name="FK__trannsact__id_cu__3A81B327" Association="Self.FK__trannsact__id_cu__3A81B327">
+    <AssociationSet Name="FK__trannsact__id_cu__6477ECF3" Association="Self.FK__trannsact__id_cu__6477ECF3">
       <End Role="customer" EntitySet="customers" />
       <End Role="trannsaction" EntitySet="trannsactions" />
     </AssociationSet>
@@ -820,7 +468,7 @@
     <FunctionImport Name="GetAllCustomer" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)" />
     <FunctionImport Name="getAllProp" ReturnType="Collection(RealEstateModel.getAllProp_Result)" />
     <FunctionImport Name="getContact" ReturnType="Collection(RealEstateModel.getContact_Result)" />
-    <FunctionImport Name="getCustomer" ReturnType="Collection(RealEstateModel.getCustomer_Result)">
+    <FunctionImport Name="getCustomer" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)">
       <Parameter Name="id_cus" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="getInforTrans" ReturnType="Collection(RealEstateModel.getInforTrans_Result)">
@@ -832,15 +480,6 @@
       <Parameter Name="id_prop" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="getTransaction" ReturnType="Collection(RealEstateModel.getTransaction_Result)" />
-    <FunctionImport Name="insertTransaction">
-      <Parameter Name="id_prop" Mode="In" Type="String" />
-      <Parameter Name="id_cus" Mode="In" Type="String" />
-      <Parameter Name="amount" Mode="In" Type="Double" />
-      <Parameter Name="payment" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="SearchByName" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)">
-      <Parameter Name="name_cus" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="searchEmployee" ReturnType="Collection(RealEstateModel.searchEmployee_Result)">
       <Parameter Name="id_name" Mode="In" Type="String" />
     </FunctionImport>
@@ -903,7 +542,7 @@
     <FunctionImport Name="sp_searchCusTrans" ReturnType="Collection(RealEstateModel.sp_searchCusTrans_Result)">
       <Parameter Name="id_cus" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="sp_searchLocationProperty" ReturnType="Collection(RealEstateModel.sp_searchLocationProperty_Result)">
+    <FunctionImport Name="sp_searchLocationProperty" EntitySet="properties" ReturnType="Collection(RealEstateModel.property)">
       <Parameter Name="id_town" Mode="In" Type="Int32" />
       <Parameter Name="id_area" Mode="In" Type="Int32" />
       <Parameter Name="id_district" Mode="In" Type="Int32" />
@@ -957,9 +596,11 @@
       <Parameter Name="id_prop" Mode="In" Type="String" />
       <Parameter Name="phone" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="getEmployee" ReturnType="Collection(RealEstateModel.getEmployee_Result)" />
+    <FunctionImport Name="SearchByName" EntitySet="customers" ReturnType="Collection(RealEstateModel.customer)">
+      <Parameter Name="name_cus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getEmployee" EntitySet="employees" ReturnType="Collection(RealEstateModel.employee)" />
   </EntityContainer>
->>>>>>> Khoa_Lam
   <ComplexType Name="appo_GetAllAppo_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="description" Nullable="true" MaxLength="255" />
@@ -994,11 +635,7 @@
     <Property Type="DateTime" Name="birthday" Nullable="true" />
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
   </ComplexType>
-<<<<<<< HEAD
-  <ComplexType Name="getAllProp_Result1">
-=======
   <ComplexType Name="getAllProp_Result">
->>>>>>> Khoa_Lam
     <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
     <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -1067,17 +704,6 @@
     <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
   </ComplexType>
-<<<<<<< HEAD
-=======
-  <ComplexType Name="SearchByName_Result">
-    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
-    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
-    <Property Type="DateTime" Name="birthday" Nullable="true" />
-    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
-  </ComplexType>
->>>>>>> Khoa_Lam
   <ComplexType Name="searchEmployee_Result">
     <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
@@ -1087,8 +713,6 @@
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
     <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
   </ComplexType>
-<<<<<<< HEAD
-=======
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />
@@ -1100,7 +724,6 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
->>>>>>> Khoa_Lam
   <ComplexType Name="sp_searchCusTrans_Result">
     <Property Type="String" Name="id_trans" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="id_prop" Nullable="true" MaxLength="10" />
@@ -1110,11 +733,7 @@
     <Property Type="String" Name="payment" Nullable="true" MaxLength="50" />
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
   </ComplexType>
-<<<<<<< HEAD
-  <ComplexType Name="sp_searchLocationProperty_Result1">
-=======
   <ComplexType Name="sp_searchLocationProperty_Result">
->>>>>>> Khoa_Lam
     <Property Type="String" Name="id_prop" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="255" />
     <Property Type="Int32" Name="id_real_estate_type" Nullable="true" />
@@ -1137,8 +756,14 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="NameOfTypeAcc" Nullable="true" MaxLength="50" />
   </ComplexType>
-<<<<<<< HEAD
-=======
+  <ComplexType Name="SearchByName_Result">
+    <Property Type="String" Name="id_cus" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="name_cus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="email_cus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phone_cus" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="birthday" Nullable="true" />
+    <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+  </ComplexType>
   <ComplexType Name="getEmployee_Result">
     <Property Type="String" Name="id_emp" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="name_emp" Nullable="true" MaxLength="255" />
@@ -1148,5 +773,4 @@
     <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
     <Property Type="String" Name="account" Nullable="true" MaxLength="10" />
   </ComplexType>
->>>>>>> Khoa_Lam
 </Schema>

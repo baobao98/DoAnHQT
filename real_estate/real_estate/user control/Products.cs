@@ -34,8 +34,9 @@ namespace real_estate.user_control
                 var listDistrict = prop.getDistrict();
                 var listRealEstateType = prop.getRealEstateType();
                 var listProject = prop.getProject();
-             
+
                 // Đưa dữ liệu lên ComboBox trong DataGridView 
+              
                 (dgvRealEstate.Columns["cbTypeProp"] as DataGridViewComboBoxColumn).DataSource = listRealEstateType;
                 (dgvRealEstate.Columns["cbTypeProp"] as DataGridViewComboBoxColumn).DisplayMember = "name";
                 (dgvRealEstate.Columns["cbTypeProp"] as DataGridViewComboBoxColumn).ValueMember = "id";
@@ -57,7 +58,8 @@ namespace real_estate.user_control
                 (dgvRealEstate.Columns["cbProject"] as DataGridViewComboBoxColumn).DataSource = listProject;
                 (dgvRealEstate.Columns["cbProject"] as DataGridViewComboBoxColumn).DisplayMember = "name_project";
                 (dgvRealEstate.Columns["cbProject"] as DataGridViewComboBoxColumn).ValueMember = "id_proj";
-
+              
+               
                 dgvRealEstate.DataSource = res;
 
 
@@ -240,7 +242,7 @@ namespace real_estate.user_control
 
                 txtPrice.Text = dgvRealEstate.CurrentRow.Cells["price"].Value.ToString();
 
-                txtCreate_date.Text = dgvRealEstate.CurrentRow.Cells["create_date"].Value.ToString();
+               // txtCreate_date.Text = dgvRealEstate.CurrentRow.Cells["create_date"].Value.ToString();
 
                 txtStatus.Text = dgvRealEstate.CurrentRow.Cells["status"].Value.ToString();
                 pcImage.Image = ConverBinaryToImage((byte [])dgvRealEstate.CurrentRow.Cells["avatar"].Value);
@@ -534,6 +536,11 @@ namespace real_estate.user_control
         private void button1_Click(object sender, EventArgs e)
         {
             load();
+        }
+
+        private void cbRealEstateBind_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

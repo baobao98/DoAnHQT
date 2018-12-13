@@ -4,215 +4,158 @@
     <EntitySetMapping Name="accounts">
       <EntityTypeMapping TypeName="RealEstateModel.account">
         <MappingFragment StoreEntitySet="account">
-          <ScalarProperty Name="pass" ColumnName="pass" />
-          <ScalarProperty Name="type_ac" ColumnName="type_ac" />
-<<<<<<< HEAD
-          <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
           <ScalarProperty Name="id" ColumnName="id" />
-=======
+          <ScalarProperty Name="nameAcc" ColumnName="nameAcc" />
+          <ScalarProperty Name="type_ac" ColumnName="type_ac" />
           <ScalarProperty Name="pass" ColumnName="pass" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="advertisements">
       <EntityTypeMapping TypeName="RealEstateModel.advertisement">
         <MappingFragment StoreEntitySet="advertisement">
-          <ScalarProperty Name="img" ColumnName="img" />
-          <ScalarProperty Name="prop" ColumnName="prop" />
-          <ScalarProperty Name="discount" ColumnName="discount" />
-<<<<<<< HEAD
-          <ScalarProperty Name="information" ColumnName="information" />
-          <ScalarProperty Name="name_ad" ColumnName="name_ad" />
           <ScalarProperty Name="id_ad" ColumnName="id_ad" />
-=======
+          <ScalarProperty Name="name_ad" ColumnName="name_ad" />
+          <ScalarProperty Name="information" ColumnName="information" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
           <ScalarProperty Name="prop" ColumnName="prop" />
           <ScalarProperty Name="img" ColumnName="img" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="appointments">
       <EntityTypeMapping TypeName="RealEstateModel.appointment">
         <MappingFragment StoreEntitySet="appointment">
-          <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-<<<<<<< HEAD
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="id" ColumnName="id" />
-=======
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
           <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="areas">
       <EntityTypeMapping TypeName="RealEstateModel.area">
         <MappingFragment StoreEntitySet="area">
-          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="contacts">
       <EntityTypeMapping TypeName="RealEstateModel.contact">
         <MappingFragment StoreEntitySet="contact">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-          <ScalarProperty Name="status" ColumnName="status" />
-<<<<<<< HEAD
-          <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="id_ct" ColumnName="id_ct" />
-=======
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="name" ColumnName="name" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="customers">
       <EntityTypeMapping TypeName="RealEstateModel.customer">
         <MappingFragment StoreEntitySet="customer">
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
-          <ScalarProperty Name="email_cus" ColumnName="email_cus" />
-          <ScalarProperty Name="name_cus" ColumnName="name_cus" />
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="name_cus" ColumnName="name_cus" />
+          <ScalarProperty Name="email_cus" ColumnName="email_cus" />
+          <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="districts">
       <EntityTypeMapping TypeName="RealEstateModel.district">
         <MappingFragment StoreEntitySet="district">
-          <ScalarProperty Name="id_area" ColumnName="id_area" />
-          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="employees">
       <EntityTypeMapping TypeName="RealEstateModel.employee">
         <MappingFragment StoreEntitySet="employee">
-          <ScalarProperty Name="account" ColumnName="account" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
-          <ScalarProperty Name="email_emp" ColumnName="email_emp" />
-          <ScalarProperty Name="name_emp" ColumnName="name_emp" />
           <ScalarProperty Name="id_emp" ColumnName="id_emp" />
+          <ScalarProperty Name="name_emp" ColumnName="name_emp" />
+          <ScalarProperty Name="email_emp" ColumnName="email_emp" />
+          <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="account" ColumnName="account" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="projects">
       <EntityTypeMapping TypeName="RealEstateModel.project">
         <MappingFragment StoreEntitySet="project">
-<<<<<<< HEAD
-          <ScalarProperty Name="information" ColumnName="information" />
-          <ScalarProperty Name="dateOfIssue" ColumnName="dateOfIssue" />
-          <ScalarProperty Name="license_number" ColumnName="license_number" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="name_project" ColumnName="name_project" />
-          <ScalarProperty Name="id_proj" ColumnName="id_proj" />
-=======
           <ScalarProperty Name="id_proj" ColumnName="id_proj" />
           <ScalarProperty Name="name_project" ColumnName="name_project" />
           <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="license_number" ColumnName="license_number" />
           <ScalarProperty Name="dateOfIssue" ColumnName="dateOfIssue" />
           <ScalarProperty Name="information" ColumnName="information" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="properties">
       <EntityTypeMapping TypeName="RealEstateModel.property">
         <MappingFragment StoreEntitySet="property">
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="avatar" ColumnName="avatar" />
-          <ScalarProperty Name="id_district" ColumnName="id_district" />
-<<<<<<< HEAD
-          <ScalarProperty Name="id_area" ColumnName="id_area" />
-          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="room" ColumnName="room" />
-          <ScalarProperty Name="floor" ColumnName="floor" />
-          <ScalarProperty Name="id_project" ColumnName="id_project" />
-          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
-          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-=======
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
+          <ScalarProperty Name="id_area" ColumnName="id_area" />
+          <ScalarProperty Name="id_district" ColumnName="id_district" />
           <ScalarProperty Name="avatar" ColumnName="avatar" />
           <ScalarProperty Name="status" ColumnName="status" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="realEstateTypes">
       <EntityTypeMapping TypeName="RealEstateModel.realEstateType">
         <MappingFragment StoreEntitySet="realEstateType">
-          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="townRegions">
       <EntityTypeMapping TypeName="RealEstateModel.townRegion">
         <MappingFragment StoreEntitySet="townRegion">
-          <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="trannsactions">
       <EntityTypeMapping TypeName="RealEstateModel.trannsaction">
         <MappingFragment StoreEntitySet="trannsaction">
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="payment" ColumnName="payment" />
-<<<<<<< HEAD
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="amount" ColumnName="amount" />
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="id_trans" ColumnName="id_trans" />
-=======
+          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
+          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
           <ScalarProperty Name="create_date" ColumnName="create_date" />
->>>>>>> Khoa_Lam
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="typeAccounts">
       <EntityTypeMapping TypeName="RealEstateModel.typeAccount">
         <MappingFragment StoreEntitySet="typeAccount">
-          <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="addEmployee" FunctionName="RealEstateEntity.Store.addEmployee" />
-    <FunctionImportMapping FunctionImportName="addProject" FunctionName="RealEstateEntity.Store.addProject" />
-    <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateEntity.Store.appo_GetAllAppo">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.appo_GetAllAppo_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-          <ScalarProperty Name="appointment_date" ColumnName="appointment_date" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="AppoCreate" FunctionName="RealEstateEntity.Store.AppoCreate" />
-    <FunctionImportMapping FunctionImportName="AppointmentUpdate" FunctionName="RealEstateEntity.Store.AppointmentUpdate" />
-    <FunctionImportMapping FunctionImportName="cusp_CustomerUpdate" FunctionName="RealEstateEntity.Store.cusp_CustomerUpdate" />
-    <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateEntity.Store.CustomerCreate">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.CustomerCreate_Result">
-=======
     <FunctionImportMapping FunctionImportName="addEmployee" FunctionName="RealEstateModel.Store.addEmployee" />
     <FunctionImportMapping FunctionImportName="addProject" FunctionName="RealEstateModel.Store.addProject" />
     <FunctionImportMapping FunctionImportName="appo_GetAllAppo" FunctionName="RealEstateModel.Store.appo_GetAllAppo" />
@@ -222,7 +165,6 @@
     <FunctionImportMapping FunctionImportName="CustomerCreate" FunctionName="RealEstateModel.Store.CustomerCreate">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.CustomerCreate_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
           <ScalarProperty Name="name_cus" ColumnName="name_cus" />
           <ScalarProperty Name="email_cus" ColumnName="email_cus" />
@@ -232,33 +174,16 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateEntity.Store.CustomerDelete" />
-    <FunctionImportMapping FunctionImportName="CustomerVip" FunctionName="RealEstateEntity.Store.CustomerVip">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.CustomerVip_Result">
-=======
     <FunctionImportMapping FunctionImportName="CustomerDelete" FunctionName="RealEstateModel.Store.CustomerDelete" />
     <FunctionImportMapping FunctionImportName="CustomerVip" FunctionName="RealEstateModel.Store.CustomerVip">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.CustomerVip_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
           <ScalarProperty Name="name_cus" ColumnName="name_cus" />
           <ScalarProperty Name="amount" ColumnName="amount" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateEntity.Store.DeleteAppo" />
-    <FunctionImportMapping FunctionImportName="deleteEmployee" FunctionName="RealEstateEntity.Store.deleteEmployee" />
-    <FunctionImportMapping FunctionImportName="deleteProject" FunctionName="RealEstateEntity.Store.deleteProject" />
-    <FunctionImportMapping FunctionImportName="editEmployee" FunctionName="RealEstateEntity.Store.editEmployee" />
-    <FunctionImportMapping FunctionImportName="editProject" FunctionName="RealEstateEntity.Store.editProject" />
-    <FunctionImportMapping FunctionImportName="getAddressProp" FunctionName="RealEstateEntity.Store.getAddressProp">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getAddressProp_Result">
-=======
     <FunctionImportMapping FunctionImportName="DeleteAppo" FunctionName="RealEstateModel.Store.DeleteAppo" />
     <FunctionImportMapping FunctionImportName="deleteEmployee" FunctionName="RealEstateModel.Store.deleteEmployee" />
     <FunctionImportMapping FunctionImportName="deleteProject" FunctionName="RealEstateModel.Store.deleteProject" />
@@ -267,7 +192,6 @@
     <FunctionImportMapping FunctionImportName="getAddressProp" FunctionName="RealEstateModel.Store.getAddressProp">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getAddressProp_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="avatar" ColumnName="avatar" />
           <ScalarProperty Name="name_district" ColumnName="name_district" />
           <ScalarProperty Name="name_area" ColumnName="name_area" />
@@ -275,24 +199,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateEntity.Store.GetAllCustomer">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.GetAllCustomer_Result">
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-          <ScalarProperty Name="name_cus" ColumnName="name_cus" />
-          <ScalarProperty Name="email_cus" ColumnName="email_cus" />
-          <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateEntity.Store.getAllProp" />
-    <FunctionImportMapping FunctionImportName="getContact" FunctionName="RealEstateEntity.Store.getContact">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getContact_Result">
-=======
     <FunctionImportMapping FunctionImportName="GetAllCustomer" FunctionName="RealEstateModel.Store.GetAllCustomer" />
     <FunctionImportMapping FunctionImportName="getAllProp" FunctionName="RealEstateModel.Store.getAllProp">
       <ResultMapping>
@@ -316,7 +222,6 @@
     <FunctionImportMapping FunctionImportName="getContact" FunctionName="RealEstateModel.Store.getContact">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getContact_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_ct" ColumnName="id_ct" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="status" ColumnName="status" />
@@ -325,33 +230,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="getCustomer" FunctionName="RealEstateEntity.Store.getCustomer">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getCustomer_Result">
-=======
-    <FunctionImportMapping FunctionImportName="getCustomer" FunctionName="RealEstateModel.Store.getCustomer">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateModel.getCustomer_Result">
->>>>>>> Khoa_Lam
-          <ScalarProperty Name="id_cus" ColumnName="id_cus" />
-          <ScalarProperty Name="name_cus" ColumnName="name_cus" />
-          <ScalarProperty Name="email_cus" ColumnName="email_cus" />
-          <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="getInforTrans" FunctionName="RealEstateEntity.Store.getInforTrans">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getInforTrans_Result">
-=======
+    <FunctionImportMapping FunctionImportName="getCustomer" FunctionName="RealEstateModel.Store.getCustomer" />
     <FunctionImportMapping FunctionImportName="getInforTrans" FunctionName="RealEstateModel.Store.getInforTrans">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getInforTrans_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="name_cus" ColumnName="name_cus" />
           <ScalarProperty Name="phone_cus" ColumnName="phone_cus" />
           <ScalarProperty Name="create_date" ColumnName="create_date" />
@@ -360,15 +242,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="getProject" FunctionName="RealEstateEntity.Store.getProject">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getProject_Result">
-=======
     <FunctionImportMapping FunctionImportName="getProject" FunctionName="RealEstateModel.Store.getProject">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getProject_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_proj" ColumnName="id_proj" />
           <ScalarProperty Name="name_project" ColumnName="name_project" />
           <ScalarProperty Name="address" ColumnName="address" />
@@ -378,15 +254,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="getProperty" FunctionName="RealEstateEntity.Store.getProperty">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getProperty_Result">
-=======
     <FunctionImportMapping FunctionImportName="getProperty" FunctionName="RealEstateModel.Store.getProperty">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getProperty_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
@@ -403,15 +273,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="getTransaction" FunctionName="RealEstateEntity.Store.getTransaction">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.getTransaction_Result">
-=======
     <FunctionImportMapping FunctionImportName="getTransaction" FunctionName="RealEstateModel.Store.getTransaction">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.getTransaction_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_trans" ColumnName="id_trans" />
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
@@ -422,16 +286,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="searchEmployee" FunctionName="RealEstateEntity.Store.searchEmployee">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.searchEmployee_Result">
-=======
-    <FunctionImportMapping FunctionImportName="SearchByName" FunctionName="RealEstateModel.Store.SearchByName" />
     <FunctionImportMapping FunctionImportName="searchEmployee" FunctionName="RealEstateModel.Store.searchEmployee">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.searchEmployee_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_emp" ColumnName="id_emp" />
           <ScalarProperty Name="name_emp" ColumnName="name_emp" />
           <ScalarProperty Name="email_emp" ColumnName="email_emp" />
@@ -442,23 +299,36 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="sp_checktaikhoan" FunctionName="RealEstateEntity.Store.sp_checktaikhoan" />
-    <FunctionImportMapping FunctionImportName="sp_DeleteProperty" FunctionName="RealEstateEntity.Store.sp_DeleteProperty" />
-    <FunctionImportMapping FunctionImportName="sp_InsertProperty" FunctionName="RealEstateEntity.Store.sp_InsertProperty" />
-    <FunctionImportMapping FunctionImportName="sp_InsertTrans" FunctionName="RealEstateEntity.Store.sp_InsertTrans" />
-    <FunctionImportMapping FunctionImportName="sp_searchCusTrans" FunctionName="RealEstateEntity.Store.sp_searchCusTrans">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.sp_searchCusTrans_Result">
-=======
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="RealEstateModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_checktaikhoan" FunctionName="RealEstateModel.Store.sp_checktaikhoan" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RealEstateModel.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_DeleteProperty" FunctionName="RealEstateModel.Store.sp_DeleteProperty" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RealEstateModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RealEstateModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="RealEstateModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_InsertProperty" FunctionName="RealEstateModel.Store.sp_InsertProperty" />
     <FunctionImportMapping FunctionImportName="sp_InsertTrans" FunctionName="RealEstateModel.Store.sp_InsertTrans" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RealEstateModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_searchCusTrans" FunctionName="RealEstateModel.Store.sp_searchCusTrans">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.sp_searchCusTrans_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id_trans" ColumnName="id_trans" />
           <ScalarProperty Name="id_prop" ColumnName="id_prop" />
           <ScalarProperty Name="id_cus" ColumnName="id_cus" />
@@ -469,67 +339,26 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateEntity.Store.sp_searchLocationProperty" />
-    <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateEntity.Store.sp_updateProperty" />
-    <FunctionImportMapping FunctionImportName="spDelTypeAcc" FunctionName="RealEstateEntity.Store.spDelTypeAcc" />
-    <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateEntity.Store.spGetAllTypeAcc">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.spGetAllTypeAcc_Result">
-=======
-    <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateModel.Store.sp_searchLocationProperty">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateModel.sp_searchLocationProperty_Result">
-          <ScalarProperty Name="id_prop" ColumnName="id_prop" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="id_real_estate_type" ColumnName="id_real_estate_type" />
-          <ScalarProperty Name="id_project" ColumnName="id_project" />
-          <ScalarProperty Name="floor" ColumnName="floor" />
-          <ScalarProperty Name="room" ColumnName="room" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="id_town_region" ColumnName="id_town_region" />
-          <ScalarProperty Name="id_area" ColumnName="id_area" />
-          <ScalarProperty Name="id_district" ColumnName="id_district" />
-          <ScalarProperty Name="avatar" ColumnName="avatar" />
-          <ScalarProperty Name="status" ColumnName="status" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_searchLocationProperty" FunctionName="RealEstateModel.Store.sp_searchLocationProperty" />
     <FunctionImportMapping FunctionImportName="sp_updateProperty" FunctionName="RealEstateModel.Store.sp_updateProperty" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RealEstateModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="spDelTypeAcc" FunctionName="RealEstateModel.Store.spDelTypeAcc" />
     <FunctionImportMapping FunctionImportName="spGetAllTypeAcc" FunctionName="RealEstateModel.Store.spGetAllTypeAcc">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.spGetAllTypeAcc_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateEntity.Store.spGetloaiTK">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateEntity.spGetloaiTK_Result">
-=======
     <FunctionImportMapping FunctionImportName="spGetloaiTK" FunctionName="RealEstateModel.Store.spGetloaiTK">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.spGetloaiTK_Result">
->>>>>>> Khoa_Lam
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="NameOfTypeAcc" ColumnName="NameOfTypeAcc" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-<<<<<<< HEAD
-    <FunctionImportMapping FunctionImportName="spInsertAcc" FunctionName="RealEstateEntity.Store.spInsertAcc" />
-    <FunctionImportMapping FunctionImportName="spInsertContact" FunctionName="RealEstateEntity.Store.spInsertContact" />
-    <FunctionImportMapping FunctionImportName="spInsertTypeAcc" FunctionName="RealEstateEntity.Store.spInsertTypeAcc" />
-    <FunctionImportMapping FunctionImportName="spLegit" FunctionName="RealEstateEntity.Store.spLegit" />
-    <FunctionImportMapping FunctionImportName="spUdateAcc" FunctionName="RealEstateEntity.Store.spUdateAcc" />
-    <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateEntity.Store.spUpdateTypeAcc" />
-    <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateEntity.Store.updateStatusContact" />
-=======
     <FunctionImportMapping FunctionImportName="spInsertAcc" FunctionName="RealEstateModel.Store.spInsertAcc" />
     <FunctionImportMapping FunctionImportName="spInsertContact" FunctionName="RealEstateModel.Store.spInsertContact" />
     <FunctionImportMapping FunctionImportName="spInsertTypeAcc" FunctionName="RealEstateModel.Store.spInsertTypeAcc" />
@@ -537,19 +366,7 @@
     <FunctionImportMapping FunctionImportName="spUdateAcc" FunctionName="RealEstateModel.Store.spUdateAcc" />
     <FunctionImportMapping FunctionImportName="spUpdateTypeAcc" FunctionName="RealEstateModel.Store.spUpdateTypeAcc" />
     <FunctionImportMapping FunctionImportName="updateStatusContact" FunctionName="RealEstateModel.Store.updateStatusContact" />
-    <FunctionImportMapping FunctionImportName="getEmployee" FunctionName="RealEstateModel.Store.getEmployee">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateModel.getEmployee_Result">
-          <ScalarProperty Name="id_emp" ColumnName="id_emp" />
-          <ScalarProperty Name="name_emp" ColumnName="name_emp" />
-          <ScalarProperty Name="email_emp" ColumnName="email_emp" />
-          <ScalarProperty Name="phone_emp" ColumnName="phone_emp" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="account" ColumnName="account" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
->>>>>>> Khoa_Lam
+    <FunctionImportMapping FunctionImportName="SearchByName" FunctionName="RealEstateModel.Store.SearchByName" />
+    <FunctionImportMapping FunctionImportName="getEmployee" FunctionName="RealEstateModel.Store.getEmployee" />
   </EntityContainerMapping>
 </Mapping>

@@ -40,7 +40,6 @@
             this.cbProject = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbTypeProp = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbTown = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.propertyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbArea = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbDistrict = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.avatar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,11 +87,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.propertyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRealEstate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.propertyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRealEstate
@@ -187,12 +187,7 @@
             this.cbTown.HeaderText = "TownRegion";
             this.cbTown.Name = "cbTown";
             this.cbTown.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbTown.Visible = false;
             this.cbTown.Width = 150;
-            // 
-            // propertyBindingSource
-            // 
-            this.propertyBindingSource.DataSource = typeof(DAL.property);
             // 
             // cbArea
             // 
@@ -201,7 +196,6 @@
             this.cbArea.HeaderText = "Area";
             this.cbArea.Name = "cbArea";
             this.cbArea.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbArea.Visible = false;
             this.cbArea.Width = 150;
             // 
             // cbDistrict
@@ -343,6 +337,7 @@
             this.cbRealEstateBind.Name = "cbRealEstateBind";
             this.cbRealEstateBind.Size = new System.Drawing.Size(176, 24);
             this.cbRealEstateBind.TabIndex = 8;
+            this.cbRealEstateBind.SelectedIndexChanged += new System.EventHandler(this.cbRealEstateBind_SelectedIndexChanged);
             // 
             // cbTownRegionBind
             // 
@@ -688,6 +683,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
+            // propertyBindingSource
+            // 
+            this.propertyBindingSource.DataSource = typeof(DAL.property);
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -699,12 +698,12 @@
             this.Size = new System.Drawing.Size(1285, 686);
             this.Load += new System.EventHandler(this.Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRealEstate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.propertyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,6 +745,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cbSearchDistrict;
+        private System.Windows.Forms.ComboBox cbSearchArea;
+        private System.Windows.Forms.ComboBox cbSearchTown;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_prop;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn floor;
@@ -760,14 +768,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn avatar;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbSearchDistrict;
-        private System.Windows.Forms.ComboBox cbSearchArea;
-        private System.Windows.Forms.ComboBox cbSearchTown;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
     }
 }

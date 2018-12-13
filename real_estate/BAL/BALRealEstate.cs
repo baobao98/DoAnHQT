@@ -17,7 +17,7 @@ namespace BAL
             //return prop.getProperty();
             return db.properties.ToList();
         }
-        public System.Collections.Generic.List<DAL.property> getAllProp()
+        public System.Collections.Generic.List<DAL.getAllProp_Result> getAllProp()
         {
             return db.getAllProp().ToList();
         }
