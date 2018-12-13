@@ -74,12 +74,12 @@ namespace real_estate
             string pass = txtPass.Text;
 
 
-            //int kt = TaiKhoanBAL.CheckAcc(txtUser.Text, txtPass.Text);
-            //if ( TaiKhoanBAL.CheckAcc(txtUser.Text,txtPass.Text)==1)
-            //{
-            //    account a = TaiKhoanBAL.GetAccountByAcc(txtUser.Text);
-            //    int? quyen=a.type_ac;
-            //}
+            int kt = TaiKhoanBAL.CheckAcc(txtUser.Text, txtPass.Text);
+            if (TaiKhoanBAL.CheckAcc(txtUser.Text, txtPass.Text) == 1)
+            {
+                account a = TaiKhoanBAL.GetAccountByAcc(txtUser.Text);
+                int? quyen = a.type_ac;
+            }
             Form frm = new FormRS();
             frm.Show();
         }
